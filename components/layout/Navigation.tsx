@@ -6,7 +6,7 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4.5 px-8 bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)] max-[720px]:px-5
   max-[720px]:py-3.5">
       <a
-        href="index-v0-heroC.html"
+        href="/"
         className="inline-flex items-center gap-3.5 md:gap-2.5"
         aria-label="Default Social — part of Default Media Group"
       >
@@ -25,7 +25,7 @@ const Navigation = () => {
       </a>
       {/*convert to hamburger menu at 720px */}
       <div className="flex gap-7 items-center font-mono text-[12px] tracking-widest uppercase text-cream-2 relative">
-        <NavLink href="/index">
+        <NavLink href="/">
           Index
         </NavLink>
         <NavLink href="/services">

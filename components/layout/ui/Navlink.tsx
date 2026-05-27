@@ -10,7 +10,7 @@ type Props = {
 export default function NavLink({ href, children }: Props) {
   const pathname = usePathname();
 
-  const isActive = pathname === href;
+  const isActive = pathname === href ;
 
   return (
     <Link
