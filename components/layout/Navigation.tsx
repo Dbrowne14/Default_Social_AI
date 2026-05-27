@@ -1,53 +1,46 @@
 import Link from "next/link";
+import NavLink from "./ui/Navlink";
 
 const Navigation = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex space-between items-center p-[18px, 32px] bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)]">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4.5 px-8 bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)] max-[720px]:px-5
+  max-[720px]:py-3.5">
       <a
         href="index-v0-heroC.html"
-        className="inline-flex items-center gap-3.5"
+        className="inline-flex items-center gap-3.5 md:gap-2.5"
         aria-label="Default Social — part of Default Media Group"
       >
-        <span className=" font-serif text-[24px] leading-1 tracking-[-0.01em] text-cream inline-flex items-baseline lowercase">
+        <span className=" font-serif text-[24px] leading-1 tracking-[-0.01em] text-cream inline-flex items-baseline lowercase md:text-[20px]">
           default<em className="italic text-accent">/social</em>
         </span>
-        <span className="w-px h-6.5 bg-line shrink-0" aria-hidden="true"></span>
-        <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-muted leading-1">
+        <span className="w-px h-6.5 bg-line shrink-0 md:h-5.5" aria-hidden="true"></span>
+        <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-muted leading-1 md:text-[8px] md:tracking-[0.14em]">
           part of
         </span>
         <img
-          className="h-5 width-auto block"
+          className="h-5 w-auto md:h-4 block"
           src="assets/default-media-logo.png"
           alt="Default Media Group"
         />
       </a>
+      {/*convert to hamburger menu at 720px */}
       <div className="flex gap-7 items-center font-mono text-[12px] tracking-widest uppercase text-cream-2 relative">
-        <Link
-          href="index-v0.html"
-          className="
-    relative
-    after:absolute
-    after:left-0
-    after:bottom-0.5
-    after:h-px
-    after:w-full
-    after:bg-accent-2
-    after:content-['']
-  "
-        >
+        <NavLink href="/index">
           Index
-        </Link>
-        <Link href="services-v0.html">
+        </NavLink>
+        <NavLink href="/services">
           Services
-        </Link>
-        <Link href="about-v0.html">
+        </NavLink>
+        <NavLink href="/about">
           About
-        </Link>
-        <Link href="insights-v0.html">
+        </NavLink>
+        <NavLink href="/insights">
           Insights
-        </Link>
+        </NavLink>
       </div>
-      <Link href="#contact" className="cta">
+      <Link href="#contact" className="items-center gap-2 py-2.5 px-4 rounded-[999px] bg-accent text-on-accent font-mono text-[11px] tracking-[0.12em] uppercase font-semibold   transition-all
+  duration-150
+  ease-in-out hover:bg-accent-deep hover:-translate-y-px hidden md:inline-flex">
         Start a project <span>→</span>
       </Link>
     </nav>
