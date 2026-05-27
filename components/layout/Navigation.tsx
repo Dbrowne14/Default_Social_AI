@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NavLink from "./ui/Navlink";
+import Image from "next/image";
 
 const Navigation = () => {
   return (
@@ -17,11 +18,13 @@ const Navigation = () => {
         <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-muted leading-1 md:text-[8px] md:tracking-[0.14em]">
           part of
         </span>
-        <img
-          className="h-5 w-auto md:h-4 block"
-          src="assets/default-media-logo.png"
-          alt="Default Media Group"
-        />
+        <a href="https://defaultmedia.com" target="_blank" rel="noopener noreferrer">
+          <img
+            className="h-5 w-auto md:h-4 block"
+            src="assets/default-media-logo.png"
+            alt="Default Media Group"
+          />
+        </a>
       </a>
       {/*convert to hamburger menu at 720px */}
       <div className="flex gap-7 items-center font-mono text-[12px] tracking-widest uppercase text-cream-2 relative">
