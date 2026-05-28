@@ -1,50 +1,52 @@
+const services = [
+  "Web Development",
+  "SEO & Organic Growth",
+  "Social & Viral Campaigns",
+  "Social-First Creative",
+  "Marketing Strategy",
+  "AI Integration",
+];
+
 export default function Home() {
   return (
     <div>
       /*---complete later---*/
       <section id="hero" className="min-h-screen"></section>
-      /*------------Marquee ticker----------*/
-      <div className="ticker">
-        <div className="marquee">
-          <div className="marquee-track">
-            <span className="item">
-              Web Development <span className="dot"></span>
-            </span>
-            <span className="item italic serif">
-              SEO &amp; Organic Growth <span className="dot"></span>
-            </span>
-            <span className="item">
-              Social &amp; Viral Campaigns <span className="dot"></span>
-            </span>
-            <span className="item italic serif">
-              Social-First Creative <span className="dot"></span>
-            </span>
-            <span className="item">
-              Marketing Strategy <span className="dot"></span>
-            </span>
-            <span className="item italic serif">
-              AI Integration <span className="dot"></span>
-            </span>
-          </div>
-          <div className="marquee-track" aria-hidden="true">
-            <span className="item">
-              Web Development <span className="dot"></span>
-            </span>
-            <span className="item italic serif">
-              SEO &amp; Organic Growth <span className="dot"></span>
-            </span>
-            <span className="item">
-              Social &amp; Viral Campaigns <span className="dot"></span>
-            </span>
-            <span className="item italic serif">
-              Social-First Creative <span className="dot"></span>
-            </span>
-            <span className="item">
-              Marketing Strategy <span className="dot"></span>
-            </span>
-            <span className="item italic serif">
-              AI Integration <span className="dot"></span>
-            </span>
+      <div className="border-y border-line bg-ink py-5.5 overflow-hidden">
+        <div className="flex whitespace-nowrap mask-[linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+          <div className="flex gap-12 items-center animate-marquee [animation-duration:26s]">
+            {/* Track 1 */}
+            <div className="flex gap-12 items-center shrink-0">
+              {services.map((service, index) => (
+                <span
+                  key={`first-${index}`}
+                  className={`font-serif text-[64px] text-cream inline-flex items-center gap-12 ${
+                    index % 2 === 0 ? "" : "italic"
+                  }`}
+                >
+                  {service}
+                  <span className="w-2 h-2 rounded-full bg-accent"></span>
+                </span>
+              ))}
+            </div>
+
+            {/* Track 2 */}
+            <div
+              className="flex gap-12 items-center shrink-0"
+              aria-hidden="true"
+            >
+              {services.map((service, index) => (
+                <span
+                  key={`second-${index}`}
+                  className={`font-serif text-[64px] text-cream inline-flex items-center gap-12 ${
+                    index % 2 === 0 ? "" : "italic"
+                  }`}
+                >
+                  {service}
+                  <span className="w-2 h-2 rounded-full bg-accent"></span>
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

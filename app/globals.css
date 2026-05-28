@@ -24,21 +24,31 @@
   --radius: 14px;
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-ink: oklch(0.95 0.008 85);
-  --color-ink-2: oklch(0.92 0.010 85);
+  --color-ink-2: oklch(0.92 0.01 85);
   --color-ink-3: oklch(0.88 0.012 85);
   --color-line: oklch(0.85 0.012 85);
 
-  --color-cream: oklch(0.20 0.010 60);
-  --color-cream-2: oklch(0.36 0.010 60);
+  --color-cream: oklch(0.2 0.01 60);
+  --color-cream-2: oklch(0.36 0.01 60);
   --color-muted: oklch(0.52 0.012 60);
 
   --color-accent: oklch(0.62 0.18 28);
   --color-accent-deep: oklch(0.54 0.18 28);
-  --color-accent-2: oklch(0.50 0.10 220);
+  --color-accent-2: oklch(0.5 0.1 220);
   --color-on-accent: oklch(0.97 0.005 85);
 
   --font-serif: "Instrument Serif", "Times New Roman", serif;
@@ -112,10 +122,16 @@
   }
 
   .footer-headings {
-    @apply font-mono text-[11px] tracking-[0.14em] uppercase text-muted mb-4.5
+    @apply font-mono text-[11px] tracking-[0.14em] uppercase text-muted mb-4.5;
   }
 
   .footer-links {
-    @apply text-cream-2 hover:text-accent
+    @apply text-cream-2 hover:text-accent;
+  }
+
+ .animate-marquee {
+    animation-name: marquee;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 }
