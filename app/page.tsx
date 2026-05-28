@@ -14,7 +14,7 @@ export default function Home() {
       <section id="hero" className="min-h-screen"></section>
       <div className="border-y border-line bg-ink py-5.5 overflow-hidden">
         <div className="flex whitespace-nowrap mask-[linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
-          <div className="flex gap-12 items-center animate-marquee [animation-duration:26s]">
+          <div className="flex gap-12 items-center animate-marquee [animation-duration:40s]">
             {/* Track 1 */}
             <div className="flex gap-12 items-center shrink-0">
               {services.map((service, index) => (
