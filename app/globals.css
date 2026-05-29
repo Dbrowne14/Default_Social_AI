@@ -129,9 +129,20 @@
     @apply text-cream-2 hover:text-accent;
   }
 
- .animate-marquee {
+  .animate-marquee {
     animation-name: marquee;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] tracking-[0.14em] uppercase text-muted inline-flex items-center gap-2.5;
+  }
+  .eyebrow::before {
+    @apply w-1.5 h-1.5 rounded-full bg-accent-2 shadow-[0_0_12px_color-mix(in_o-klch,var(--accent-2)_50%,transparent)] content-[''];
+  }
+
+  .lede {
+    @apply text-cream-2 max-w-[60ch] text-[clamp(18px,1.4vw,22px)] leading-[1.5];
   }
 }
