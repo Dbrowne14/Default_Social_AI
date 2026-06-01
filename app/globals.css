@@ -154,6 +154,10 @@
     box-shadow: 0 0 8px color-mix(in oklch, var(--accent-2) 55%, transparent);
   }
 
+  .arr {
+    @apply absolute top-10 right-10 w-9 h-9 rounded-[50%] border border-line flex items-center justify-center text-cream-2 transition-[border-color,color,transform] duration-250 ease-in-out group-hover:border-accent group-hover:text-accent group-hover:-rotate-45;
+  }
+
   .animate-marquee {
     animation-name: marquee;
     animation-timing-function: linear;
@@ -173,5 +177,13 @@
 
   .dummy-logo-ui {
     @apply flex items-center gap-2 text-cream-2 font-serif opacity-[0.8] text-[30px] tracking-[-0.02em] whitespace-nowrap transition duration-200 ease-in-out hover:opacity-100 hover:text-cream;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2.5 px-6 py-3 rounded-full border border-line text-[12px] tracking-widest uppercase font-mono transition duration-150 ease-in-out;
+  }
+  .btn:hover {
+    @apply bg-accent-deep;
+    transform: translateY(-1px);
   }
 }
