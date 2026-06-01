@@ -9,7 +9,7 @@ const services = [
 
 const MarqueeTrack = () => {
   return (
-    <div className="flex gap-12 items-center shrink-0">
+    <div className="flex gap-12 items-center shrink-0 pr-12">
       {services.map((service, index) => (
         <span
           key={`first-${index}`}

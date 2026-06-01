@@ -145,4 +145,8 @@
   .lede {
     @apply text-cream-2 max-w-[60ch] text-[clamp(18px,1.4vw,22px)] leading-[1.5];
   }
+
+  .dummy-logo-ui {
+    @apply flex items-center gap-2 text-cream-2 font-serif opacity-[0.8] text-[30px] tracking-[-0.02em] whitespace-nowrap transition duration-200 ease-in-out hover:opacity-100 hover:text-cream;
+  }
 }
