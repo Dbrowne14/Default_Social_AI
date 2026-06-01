@@ -77,20 +77,20 @@ export default function Home() {
           <div className="grid md:grid-cols-2 grid-cols-1 gap-px bg-line border border-line rounded-(--radius) overflow-hidden">
             <article className="bg-ink p-10 flex flex-col gap-4.5 min-h-80 relative transition-[background] duration-250 ease-in-out hover:bg-ink-2 group">
               <div className="absolute top-10 right-10 w-9 h-9 rounded-[50%] border border-line flex items-center justify-center text-cream-2 transition-[border-color,color,transform] duration-250 ease-in-out group-hover:border-accent group-hover:text-accent group-hover:-rotate-45">↗</div>
-              <div className="num">01 / Web Development</div>
-              <h3 className="serif">
+              <div className="font-mono text-[12px] tracking-widest text-muted ">01 / Web Development</div>
+              <h3 className="font-serif text-[clamp(28px,3.4vw,42px)]">
                 Custom, scalable
                 <br />
                 AI-ready builds.
               </h3>
-              <p className="desc">
+              <p className="texxt-cream-2 max-w-[42ch]">
                 Performance-optimised marketing sites and product front-ends —
                 engineered on Next.js, headless CMS and modular AI APIs.
               </p>
-              <div className="tags">
+              <div className="flex gap-2 flex-wrap mt-auto">
                 <span className="pill">Next.js</span>
                 <span className="pill">Headless CMS</span>
-                <span className="pill ai">AI-ready</span>
+                <span className="pill ai"> <span className="dot" />AI-ready</span>
               </div>
             </article>
 
