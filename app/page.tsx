@@ -1,5 +1,6 @@
 import MarqueeTrack from "@/components/layout/ui/MarqueeTrack";
 import DummyClientData from "@/components/layout/ui/DummyClientData";
+import ServicesBuckets from "@/components/layout/ui/ServicesBuckets";
 
 export default function Home() {
   return (
@@ -57,7 +58,7 @@ export default function Home() {
       </section>
       {/*---Services Overview---*/}
       <section data-screen-label="Services">
-        <div className="container-custom">
+        <div className="container-custom py-20">
           <div className="section-headings">
             <div className="section-title">
               <div className="eyebrow">02 · Services</div>
@@ -74,112 +75,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 grid-cols-1 gap-px bg-line border border-line rounded-(--radius) overflow-hidden">
-            <article className="bg-ink p-10 flex flex-col gap-4.5 min-h-80 relative transition-[background] duration-250 ease-in-out hover:bg-ink-2 group">
-              <div className="arr">↗</div>
-              <div className="font-mono text-[12px] tracking-widest text-muted ">
-                01 / Web Development
-              </div>
-              <h3 className="font-serif text-[clamp(28px,3.4vw,42px)]">
-                Custom, scalable
-                <br />
-                AI-ready builds.
-              </h3>
-              <p className="texxt-cream-2 max-w-[42ch]">
-                Performance-optimised marketing sites and product front-ends —
-                engineered on Next.js, headless CMS and modular AI APIs.
-              </p>
-              <div className="flex gap-2 flex-wrap mt-auto">
-                <span className="pill">Next.js</span>
-                <span className="pill">Headless CMS</span>
-                <span className="pill ai">
-                  {" "}
-                  <span className="dot" />
-                  AI-ready
-                </span>
-              </div>
-            </article>
-
-            <article className="svc">
-              <div className="arr">↗</div>
-              <div className="num">02 / SEO &amp; Organic Growth</div>
-              <h3 className="serif">
-                Search that compounds
-                <br />
-                over time.
-              </h3>
-              <p className="desc">
-                Technical foundations, content strategy and AI-assisted insight
-                — built to grow assets that earn, not rent.
-              </p>
-              <div className="tags">
-                <span className="pill">Technical SEO</span>
-                <span className="pill">Content systems</span>
-                <span className="pill ai">AI insights</span>
-              </div>
-            </article>
-
-            <article className="svc">
-              <div className="arr">↗</div>
-              <div className="num">03 / Social &amp; Viral Campaigns</div>
-              <h3 className="serif">
-                Platform-native ideas
-                <br />
-                that travel.
-              </h3>
-              <p className="desc">
-                From always-on social systems to viral-first campaign IP —
-                informed by signal, not vibes.
-              </p>
-              <div className="tags">
-                <span className="pill">Always-on</span>
-                <span className="pill">Campaign IP</span>
-                <span className="pill ai">Audience AI</span>
-              </div>
-            </article>
-
-            <article className="svc">
-              <div className="arr">↗</div>
-              <div className="num">04 / Social-First Creative</div>
-              <h3 className="serif">
-                Brand storytelling
-                <br />
-                built for the feed.
-              </h3>
-              <p className="desc">
-                Short-form, motion and static content — directed by craft,
-                sharpened by performance data.
-              </p>
-              <div className="tags">
-                <span className="pill">Short-form</span>
-                <span className="pill">Motion</span>
-                <span className="pill">Creative direction</span>
-              </div>
-            </article>
-
-            <article className="svc grid-cols-full">
-              <div className="arr">↗</div>
-              <div className="num">05 / Marketing Strategy</div>
-              <h3 className="serif">
-                Integrated planning, executed with AI-grade discipline.
-              </h3>
-              <p className="desc max-w-[60ch]">
-                Data-driven planning, audience architecture, channel mix and
-                forecasting — supported by predictive AI tooling so the plan
-                flexes with the market, not against it.
-              </p>
-              <div className="tags">
-                <span className="pill">Strategy sprints</span>
-                <span className="pill">Forecasting</span>
-                <span className="pill">Channel mix</span>
-                <span className="pill ai">Predictive AI</span>
-              </div>
-            </article>
-          </div>
+          <ServicesBuckets />
 
           <div className="mt-8 flex justify-end">
             <a
-              href="services-v0.html"
+              href="/services"
               className="btn bg-transparent text-cream border border-line hover:border-accent hover:text-accent"
             >
               Explore all services{" "}
