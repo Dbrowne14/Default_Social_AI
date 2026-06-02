@@ -3,6 +3,8 @@ import DummyClientData from "@/components/layout/ui/DummyClientData";
 import ServicesBuckets from "@/components/layout/ui/ServicesBuckets";
 import TeamBio from "@/components/layout/ui/TeamBio";
 import { team } from "@/data/teamData";
+import BlogCard from "@/components/layout/ui/BlogCard";
+import { insights } from "@/data/blogData";
 
 export default function Home() {
   return (
@@ -43,7 +45,7 @@ export default function Home() {
       </section>
       {/*---Client Logos---*/}
       <section
-        className="py-15 border-y border-y-line"
+        className="border-y border-y-line"
         data-screen-label="Clients"
       >
         <div className="container-custom">
@@ -159,70 +161,11 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <article className="flex flex-col gap-4 pt-6 border-t border-line">
-              <div className="aspect-4/3 rounded-[10px] border border-line relative overflow-hidden bg-[repeating-linear-gradient(135deg,var(--ink-2)_0_12px,var(--ink-3)_12px_24px)]">
-                <span className="pill absolute top-3 left-3 bg-ink border border-line">SEO</span>
-              </div>
-              <div className="meta flex gap-3 font-mono text-[11px] tracking-widest uppercase text-muted">
-                April 2026 · 6 min read
-              </div>
-              <h3 className="font-serif text-[26px]">
-                Topic clusters in the age of answer engines.
-              </h3>
-              <p className="text-cream-2 text-[15px]">
-                How we restructure content systems for sites that need to be
-                both Google-friendly and LLM-citable.
-              </p>
-              <a
-                className="font-mono text-accent"
-                href="/insights/seo-topic-clusters"
-              >
-                Read article →
-              </a>
-            </article>
-            <article className="insight">
-              <div className="thumb">
-                <span className="pill tag bg-ink border border-line">
-                  Social
-                </span>
-              </div>
-              <div className="meta">April 2026 · 4 min read</div>
-              <h3 className="serif">
-                Anatomy of a campaign that travelled 14 million times.
-              </h3>
-              <p>
-                A short forensic on a recent platform-native idea: the brief,
-                the spike, and the long tail.
-              </p>
-              <a
-                className="font-mono text-accent"
-                href="/insights/anatomy-of-a-campaign-that-travelled-14-million-times"
-              >
-                Read article →
-              </a>
-            </article>
-            <article className="insight">
-              <div className="thumb">
-                <span className="pill tag bg-ink border border-line">Web</span>
-              </div>
-              <div className="meta">March 2026 · 7 min read</div>
-              <h3 className="serif">
-                Why we ship Next.js with a modular middleware layer.
-              </h3>
-              <p>
-                A look at our default stack — and the patterns that have made
-                the biggest difference for clients.
-              </p>
-              <a
-                className="font-mono text-accent"
-                href="/insights/why-we-ship-nextjs-with-a-modular-middleware-layer"
-              >
-                Read article →
-              </a>
-            </article>
+            {insights.map((insight, index) => { return(<BlogCard key={index} author={insight.author} date={insight.date} readTime={insight.readTime} tag={insight.tag} title={insight.title} description={insight.description} href={insight.href} />); })}
           </div>
         </div>
       </section>
     </div>
   );
 }
+

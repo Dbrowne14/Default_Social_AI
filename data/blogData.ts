@@ -1,6 +1,7 @@
 export const insights = [
   {
     tag: "SEO",
+    author: "David Browne",
     date: "April 2026",
     readTime: "6 min read",
     title: "Topic clusters in the age of answer engines.",
@@ -10,6 +11,7 @@ export const insights = [
   },
   {
     tag: "Social",
+    author: "David Browne",
     date: "April 2026",
     readTime: "4 min read",
     title: "Anatomy of a campaign that travelled 14 million times.",
@@ -19,6 +21,7 @@ export const insights = [
   },
   {
     tag: "Web",
+    author:"David Browne",
     date: "March 2026",
     readTime: "7 min read",
     title: "Why we ship Next.js with a modular middleware layer.",
