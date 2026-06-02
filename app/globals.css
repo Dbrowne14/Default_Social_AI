@@ -209,4 +209,13 @@
     @apply bg-accent-deep;
     transform: translateY(-1px);
   }
+
+  .form-field {
+    @apply bg-ink-2 border-line text-cream rounded-lg px-3 py-2;
+    font: inherit;
+  }
+
+  .form-field:focus {
+    @apply outline-none border-accent;
+  }
 }
