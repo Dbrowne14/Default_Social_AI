@@ -1,11 +1,11 @@
-import MarqueeTrack from "@/components/layout/ui/MarqueeTrack";
-import DummyClientData from "@/components/layout/ui/DummyClientData";
-import ServicesBuckets from "@/components/layout/ui/ServicesBuckets";
-import TeamBio from "@/components/layout/ui/TeamBio";
+import MarqueeTrack from "@/components/ui/MarqueeTrack";
+import DummyClientData from "@/components/ui/DummyClientData";
+import ServicesBuckets from "@/components/ui/ServicesBuckets";
+import TeamBio from "@/components/ui/TeamBio";
 import { team } from "@/data/teamData";
-import BlogCard from "@/components/layout/ui/BlogCard";
+import BlogCard from "@/components/ui/BlogCard";
 import { insights } from "@/data/blogData";
-
+import ContactForm from "@/components/home/ContactForm";
 export default function Home() {
   return (
     <div>
@@ -25,7 +25,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <section className="py-35" data-screen-label="Value prop">
+      <section className="py-10" data-screen-label="Value prop">
         <div className="container-custom">
           <div className="max-w-190">
             <div className="eyebrow mb-7">01 · The proposition</div>
@@ -44,10 +44,7 @@ export default function Home() {
         </div>
       </section>
       {/*---Client Logos---*/}
-      <section
-        className="border-y border-y-line"
-        data-screen-label="Clients"
-      >
+      <section className="border-y border-y-line" data-screen-label="Clients">
         <div className="container-custom">
           <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted mb-7">
             Selected clients · 2023 — {new Date().getFullYear()}
@@ -155,17 +152,32 @@ export default function Home() {
               Long-form thinking on agency operating models, what we've shipped
               recently, and what's coming next. {"  "}
               <a href="/insights" className="text-accent hover:underline">
-                 All insights →
+                All insights →
               </a>
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {insights.map((insight, index) => { return(<BlogCard key={index} author={insight.author} date={insight.date} readTime={insight.readTime} tag={insight.tag} title={insight.title} description={insight.description} href={insight.href} />); })}
+            {insights.map((insight, index) => {
+              return (
+                <BlogCard
+                  key={index}
+                  author={insight.author}
+                  date={insight.date}
+                  readTime={insight.readTime}
+                  tag={insight.tag}
+                  title={insight.title}
+                  description={insight.description}
+                  href={insight.href}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
+
+      <ContactForm />
+      
     </div>
   );
 }
-
