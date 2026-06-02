@@ -92,6 +92,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/*---About---*/}
       <section data-screen-label="About">
         <div className="container-custom">
           <div className="section-headings">
@@ -133,6 +134,92 @@ export default function Home() {
                 />
               );
             })}
+          </div>
+        </div>
+      </section>
+      {/*---Insights Overview---*/}
+      <section className="border-t border-t-line" data-screen-label="Insights">
+        <div className="container-custom py-20">
+          <div className="section-headings">
+            <div className="section-title">
+              <div className="eyebrow">04 · Insights</div>
+              <h2>
+                Field notes from
+                <br />
+                the practice.
+              </h2>
+            </div>
+            <p className="meta">
+              Long-form thinking on agency operating models, what we've shipped
+              recently, and what's coming next. {"  "}
+              <a href="/insights" className="text-accent hover:underline">
+                 All insights →
+              </a>
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <article className="flex flex-col gap-4 pt-6 border-t border-line">
+              <div className="aspect-4/3 rounded-[10px] border border-line relative overflow-hidden bg-[repeating-linear-gradient(135deg,var(--ink-2)_0_12px,var(--ink-3)_12px_24px)]">
+                <span className="pill absolute top-3 left-3 bg-ink border border-line">SEO</span>
+              </div>
+              <div className="meta flex gap-3 font-mono text-[11px] tracking-widest uppercase text-muted">
+                April 2026 · 6 min read
+              </div>
+              <h3 className="font-serif text-[26px]">
+                Topic clusters in the age of answer engines.
+              </h3>
+              <p className="text-cream-2 text-[15px]">
+                How we restructure content systems for sites that need to be
+                both Google-friendly and LLM-citable.
+              </p>
+              <a
+                className="font-mono text-accent"
+                href="/insights/seo-topic-clusters"
+              >
+                Read article →
+              </a>
+            </article>
+            <article className="insight">
+              <div className="thumb">
+                <span className="pill tag bg-ink border border-line">
+                  Social
+                </span>
+              </div>
+              <div className="meta">April 2026 · 4 min read</div>
+              <h3 className="serif">
+                Anatomy of a campaign that travelled 14 million times.
+              </h3>
+              <p>
+                A short forensic on a recent platform-native idea: the brief,
+                the spike, and the long tail.
+              </p>
+              <a
+                className="font-mono text-accent"
+                href="/insights/anatomy-of-a-campaign-that-travelled-14-million-times"
+              >
+                Read article →
+              </a>
+            </article>
+            <article className="insight">
+              <div className="thumb">
+                <span className="pill tag bg-ink border border-line">Web</span>
+              </div>
+              <div className="meta">March 2026 · 7 min read</div>
+              <h3 className="serif">
+                Why we ship Next.js with a modular middleware layer.
+              </h3>
+              <p>
+                A look at our default stack — and the patterns that have made
+                the biggest difference for clients.
+              </p>
+              <a
+                className="font-mono text-accent"
+                href="/insights/why-we-ship-nextjs-with-a-modular-middleware-layer"
+              >
+                Read article →
+              </a>
+            </article>
           </div>
         </div>
       </section>
