@@ -47,29 +47,31 @@
 
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-ink: oklch(0.95 0.008 85);
-  --color-ink-2: oklch(0.92 0.01 85);
-  --color-ink-3: oklch(0.88 0.012 85);
-  --color-line: oklch(0.85 0.012 85);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
 
-  --color-cream: oklch(0.2 0.01 60);
-  --color-cream-2: oklch(0.36 0.01 60);
-  --color-muted: oklch(0.52 0.012 60);
+  --color-cream: var(--cream);
+  --color-cream-2: var(--cream-2);
+  --color-muted: var(--muted);
 
-  --color-accent: oklch(0.62 0.18 28);
-  --color-accent-deep: oklch(0.54 0.18 28);
-  --color-accent-2: oklch(0.5 0.1 220);
-  --color-on-accent: oklch(0.97 0.005 85);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+  --color-on-accent: var(--on-accent);
+  --color-danger: var(--danger);
 
-  --font-serif: "Instrument Serif", "Times New Roman", serif;
-  --font-sans: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-serif: var(--serif);
+  --font-sans: var(--sans);
+  --font-mono: var(--mono);
+
   --breakpoint-xs: 480px;
   --breakpoint-xs520: 520px;
   --breakpoint-md: 820px;
-  --radius-brand: 14px;
+
+  --radius-brand: var(--radius);
 }
 
 @media (prefers-color-scheme: dark) {
