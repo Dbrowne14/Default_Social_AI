@@ -135,7 +135,7 @@
 
 @layer components {
   .container-custom {
-    @apply w-full max-w-340 mx-auto px-8;
+    @apply w-full max-w-340 mx-auto px-8 py-20;
   }
 
   @media (max-width: 720px) {
