@@ -1,4 +1,4 @@
-import { servicesDetails, serviceType } from "../../data/ServicesDetails";
+import { servicesDetails, serviceType } from "@/data/ServicesDetails";
 
 const ServicesBuckets = () => {
   return (

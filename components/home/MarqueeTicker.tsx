@@ -1,5 +1,5 @@
 import React from 'react'
-import MarqueeTrack from './MarqueeTrack'
+import MarqueeTrack from './subComponents/MarqueeTrack'
 
 const MarqueeTicker = () => {
   return (
