@@ -1,12 +1,12 @@
-import React from "react";
+import Button from "../ui/Button";
 
 const Hero = () => {
   return (
-    <header className="hero" data-screen-label="Hero">
-      <canvas className="blob-canvas" id="blobs"></canvas>
+    <header className="relative p-0 isolate overflow-hidden min-h-screen" data-screen-label="Hero">
+        {/* Decorative blob canvas element. The canvas is used to render dynamic blob-like shapes that add a visually engaging and interactive element to the hero section of the website. The blobs can be animated to create a sense of movement and depth, enhancing the overall aesthetic appeal of the page. The canvas is positioned in such a way that it does not interfere with the readability of the content while still providing an eye-catching background effect see bottom for code. */}
 
       <div className="hero-content">
-        <div className="hero-statusbar">
+        <div className="flex justify-between items-center font-mono text-[11px] tracking-[0.14em] uppercase text-cream mix-blend-difference opacity-0 animate-[fade-in_0.5s_1.7s_forwards]">
           <div className="left">
             <span className="live">ON AIR</span>
             <span>52°29′N · LDN</span>
@@ -55,12 +55,8 @@ const Hero = () => {
             chase it.
           </p>
           <div className="ctas">
-            <a className="btn" href="#contact">
-              Start a project <span className="arr">→</span>
-            </a>
-            <a className="btn ghost" href="services-v0.html">
-              Our services <span className="arr">→</span>
-            </a>
+            <Button link="#contact" text="Start a project" arrowVariant="primaryBlack" />
+            <Button link="/services" text="Our Services" variant="ghost" />
           </div>
         </div>
       </div>
@@ -69,3 +65,4 @@ const Hero = () => {
 };
 
 export default Hero;
+//<canvas className="blob-canvas" id="blobs"></canvas>

@@ -1,3 +1,4 @@
+import Hero from "@/components/home/Hero";
 import MarqueeTicker from "@/components/home/MarqueeTicker";
 import ValueProp from "@/components/home/ValueProp";
 import ClientLogoTicker from "@/components/home/ClientLogoTicker";
@@ -11,8 +12,7 @@ export default function Home() {
   return (
     <div>
       {/*---complete later---*/}
-      <section id="hero" className="min-h-screen"></section>
-      
+      <Hero />
       <MarqueeTicker />
       <ValueProp />
       <ClientLogoTicker />
