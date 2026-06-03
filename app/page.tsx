@@ -6,6 +6,8 @@ import { team } from "@/data/teamData";
 import BlogCard from "@/components/ui/BlogCard";
 import { insights } from "@/data/blogData";
 import ContactForm from "@/components/home/ContactForm";
+import Button from "@/components/ui/Button";
+
 export default function Home() {
   return (
     <div>
@@ -79,15 +81,7 @@ export default function Home() {
           <ServicesBuckets />
 
           <div className="mt-8 flex justify-end">
-            <a
-              href="/services"
-              className="btn bg-transparent text-cream border border-line hover:border-accent hover:text-accent"
-            >
-              Explore all services{" "}
-              <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-accent text-on-accent text-[10px] leading-none">
-                →
-              </span>
-            </a>
+            <Button link="/services" text="Explore all services" variant="ghost"/>
           </div>
         </div>
       </section>

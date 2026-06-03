@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NavLink from "../ui/Navlink";
+import Button from "../ui/Button";
 
 const Navigation = () => {
   return (
@@ -41,12 +42,8 @@ const Navigation = () => {
         <NavLink href="/about">About</NavLink>
         <NavLink href="/insights">Insights</NavLink>
       </div>
-      <Link
-        href="#contact"
-        className="items-center gap-2 py-2.5 px-4 rounded-[999px] bg-accent text-on-accent font-mono text-[11px] tracking-[0.12em] uppercase font-semibold   transition-all duration-150 ease-in-out hover:bg-accent-deep hover:-translate-y-px hidden md:inline-flex"
-      >
-        Start a project <span>→</span>
-      </Link>
+      <Button link="#contact" text="Start a project"/>
+
     </nav>
   );
 };
