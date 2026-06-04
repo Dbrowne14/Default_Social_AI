@@ -25,11 +25,12 @@ const MobileMenu = ({
         `}
     >
       <NavCloseButton toggleMenu={toggleMenu} />
-      {navData.map((page) => {
+      {navData.map((page,key) => {
         return (
           <Link
             href={page === "index" ? "/" : `/${page}`}
             className="py-4 px-1 text-cream-2 border-t border-line-faded"
+            key={key}
           >
             {page}
           </Link>

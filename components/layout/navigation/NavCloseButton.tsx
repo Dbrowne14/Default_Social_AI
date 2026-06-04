@@ -1,3 +1,5 @@
+'use client'
+
 const NavCloseButton = ({toggleMenu}:{toggleMenu:()=> void}) => {
   return (
     <button

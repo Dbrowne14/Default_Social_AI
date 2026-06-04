@@ -11,10 +11,10 @@ const NavHamburgerMenu = () => {
   };
 
   return (
-    <div>
+    <>
       <NavOpenButton menuOpen={menuOpen} toggleMenu={toggleMenu} />
       <MobileMenu menuOpen={menuOpen} toggleMenu={toggleMenu} />
-    </div>
+    </>
   );
 };
 

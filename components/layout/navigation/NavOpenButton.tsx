@@ -1,3 +1,5 @@
+'use client'
+
 const NavOpenButton = ({menuOpen, toggleMenu}:{menuOpen:boolean, toggleMenu:() => void}) => {
   return (
     <button
