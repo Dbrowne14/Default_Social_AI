@@ -169,7 +169,7 @@
   }
 
   .hero-content {
-    @apply relative flex flex-col z-2 min-h-screen 720:p-[120px_32px_48px] p-[100px_20px_28px];
+    @apply relative flex flex-col z-2 min-h-screen 720:p-[80px_32px_48px] p-[100px_20px_28px];
     pointer-events: none;
   }
 

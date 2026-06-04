@@ -1,12 +1,12 @@
-import Link from "next/link";
-import NavLink from "../ui/Navlink";
-import Button from "../ui/Button";
+import NavLink from "../../ui/Navlink";
+import Button from "../../ui/Button";
+import NavHamburgerMenu from "./NavHamburgerMenu";
 
 const Navigation = () => {
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4.5 px-8 bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)] max-[720px]:px-5
-  max-[720px]:py-3.5"
+      className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4.5 px-8 bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)] 720:px-5
+  720:py-3.5"
     >
       <a
         href="/"
@@ -36,14 +36,16 @@ const Navigation = () => {
         </a>
       </a>
       {/*convert to hamburger menu at 720px */}
-      <div className="flex gap-7 items-center font-mono text-[12px] tracking-widest uppercase text-cream-2 relative">
+      <div className="hidden 720:flex gap-7 items-center font-mono text-[12px] tracking-widest uppercase text-cream-2 relative">
         <NavLink href="/">Index</NavLink>
         <NavLink href="/services">Services</NavLink>
         <NavLink href="/about">About</NavLink>
         <NavLink href="/insights">Insights</NavLink>
       </div>
-      <Button link="#contact" text="Start a project"/>
-
+      <div className="hidden md:block">
+        <Button link="#contact" text="Start a project" />
+      </div>
+      <NavHamburgerMenu/>
     </nav>
   );
 };

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
+import Navigation from "@/components/layout/navigation/Navigation";
+import Footer from "@/components/layout/footer/Footer";
 import {
   Instrument_Serif,
   Space_Grotesk,
@@ -24,8 +24,6 @@ const mono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 });
-
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
