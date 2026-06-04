@@ -1,4 +1,4 @@
-import Hero from "@/components/home/Hero";
+import Hero from "@/components/home/Hero/Hero";
 import MarqueeTicker from "@/components/home/MarqueeTicker";
 import ValueProp from "@/components/home/ValueProp";
 import ClientLogoTicker from "@/components/home/ClientLogoTicker";
