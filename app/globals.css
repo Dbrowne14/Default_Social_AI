@@ -78,6 +78,7 @@
 
   --breakpoint-xs: 480px;
   --breakpoint-xs520: 520px;
+  --breakpoint-720: 720px;
   --breakpoint-md: 820px;
 
   --radius-brand: var(--radius);
@@ -168,7 +169,7 @@
   }
 
   .hero-content {
-    @apply relative flex flex-col z-2 min-h-full p-[120px_32px_48px];
+    @apply relative flex flex-col z-2 min-h-full  720:p-[120px_32px_48px] p-[100px_20px_28px];
     pointer-events: none;
   }
 
