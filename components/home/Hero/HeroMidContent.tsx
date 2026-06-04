@@ -1,9 +1,27 @@
-import React from "react";
+"use client";
+import { useState, useEffect } from "react";
 
 const HeroMidContent = () => {
+  const [verbIndex, setVerbIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+  const verbs = ["design", "build", "launch", "scale", "grow"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFading(true);
+
+      setTimeout(() => {
+        setVerbIndex((i) => (i + 1) % verbs.length);
+        setIsFading(false);
+      }, 500);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const mainHeading = [
     { word: "We", space: true, delay: 0.1 },
-    { word: "design", space: false, delay: 0.2, verb: true },
+    { rotating: true },
     { break: true },
     { word: "the", space: true, delay: 0.3 },
     { word: "default", space: true, delay: 0.36 },
@@ -27,13 +45,27 @@ const HeroMidContent = () => {
               key={index}
               className="inline-block overflow-hidden align-top"
             >
-              <span
-                className={`inline-block animate-rise${item.verb ? "italic min-w-[3.5ch]" : ""}`}
-                style={{ animationDelay: `${item.delay}s` }}
-              >
-                {item.word}
-                {item.space ? "\u00A0" : ""}
-              </span>
+              {item.rotating ? (
+                <span
+                  className={`
+                inline-block italic min-w-[3.5ch] text-accent
+                transition-opacity duration-300
+                ${isFading ? "opacity-0" : "opacity-100"}
+              `}
+                >
+                  {verbs[verbIndex]}
+                </span>
+              ) : (
+                <span
+                  className="inline-block animate-rise"
+                  style={{
+                    animationDelay: `${item.delay}s`,
+                  }}
+                >
+                  {item.word}
+                  {item.space ? "\u00A0" : ""}
+                </span>
+              )}
             </span>
           );
         })}

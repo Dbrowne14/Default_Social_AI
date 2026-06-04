@@ -251,7 +251,8 @@
     @apply outline-none border-accent;
   }
 
-   .animate-rise {
+  .animate-rise {
     animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.1, 1) forwards;
   }
+
 }
