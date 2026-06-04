@@ -45,6 +45,15 @@
   }
 }
 
+@keyframes rise {
+  from {
+    transform: translateY(110%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
 
 @theme inline {
   --color-ink: var(--ink);
@@ -240,5 +249,9 @@
 
   .form-field:focus {
     @apply outline-none border-accent;
+  }
+
+   .animate-rise {
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.1, 1) forwards;
   }
 }

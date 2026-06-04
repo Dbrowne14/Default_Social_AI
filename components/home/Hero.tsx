@@ -21,12 +21,12 @@ const Hero = () => {
         </div>
 
         <div className="flex-1 flex items-center justify-start relative mt-15">
-          <h1 className="relative font-serif text-[clamp(56px,11vw,168px)] leading-[0.88] tracking=[-0.03em] text-cream max-w-[14ch] m-0 mix-blend-difference" id="headline">
-            <span className="inline-block overflow-hidden align-top [animation-delay:0.1s]">
-              <span className="[animation-delay:0.1s]">We&nbsp;</span>
+          <h1 className="relative font-serif text-[clamp(56px,11vw,168px)] leading-[0.88] tracking-[-0.03em] text-cream max-w-[14ch] m-0 mix-blend-difference" id="headline">
+            <span className="inline-block overflow-hidden align-top">
+              <span className="inline-block animate-rise [animation-delay:0.1s]">We&nbsp;</span>
             </span>
             <span className="word">
-              <span id="hero-verb" className="verb [animation-delay:0.2s]">
+              <span id="hero-verb" className="italic inline-block max-w-[3.5ch] [animation-delay:0.2s]">
                 design
               </span>
             </span>
