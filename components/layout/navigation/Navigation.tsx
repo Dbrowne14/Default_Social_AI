@@ -38,9 +38,9 @@ const Navigation = () => {
       </div>
 
       <div className="hidden 720:flex gap-7 items-center font-mono text-[12px] tracking-widest uppercase text-cream-2 relative">
-        {navData.map((page, key) => {
+        {navData.map((page) => {
           return (
-            <NavLink href={page === "index" ? "/" : `/${page}`} key={key}>{page}</NavLink>
+            <NavLink href={page === "index" ? "/" : `/${page}`} key={page}>{page}</NavLink>
           );
         })}
       </div>
