@@ -159,13 +159,18 @@
 
 @layer components {
   .container-custom {
-    @apply w-full max-w-340 mx-auto px-8 py-20;
+    @apply w-full max-w-340 mx-auto px-5 py-20 720:px-8;
   }
 
-  @media (max-width: 720px) {
-    .container-custom {
-      @apply px-5;
-    }
+  .border-line-faded {
+    border-color: color-mix(in oklch, var(--line) 70%, transparent);
+  }
+
+  .bg-color-faded {
+    background: color-mix(in oklch, var(--ink) 96%, transparent);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid color-mix(in oklch, var(--line) 70%, transparent);
   }
 
   .hero-content {
@@ -255,5 +260,4 @@
   .animate-rise {
     animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.1, 1) forwards;
   }
-
 }

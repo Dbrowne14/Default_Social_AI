@@ -1,6 +1,7 @@
 import NavLink from "../../ui/Navlink";
 import Button from "../../ui/Button";
 import NavHamburgerMenu from "./NavHamburgerMenu";
+import { navData } from "@/data/navData";
 
 const Navigation = () => {
   return (
@@ -35,13 +36,13 @@ const Navigation = () => {
           />
         </a>
       </a>
-      {/*convert to hamburger menu at 720px */}
+  
       <div className="hidden 720:flex gap-7 items-center font-mono text-[12px] tracking-widest uppercase text-cream-2 relative">
-        <NavLink href="/">Index</NavLink>
-        <NavLink href="/services">Services</NavLink>
-        <NavLink href="/about">About</NavLink>
-        <NavLink href="/insights">Insights</NavLink>
+        {navData.map((page)=> {return(
+          <NavLink href={page === "index" ? "/" : `/${page}`}>{page}</NavLink>
+        )})}
       </div>
+
       <div className="hidden md:block">
         <Button link="#contact" text="Start a project" />
       </div>
