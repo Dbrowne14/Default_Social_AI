@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/layout/navigation/Navigation";
 import Footer from "@/components/layout/footer/Footer";
+import LoaderStrip from "@/components/ui/LoaderStrip";
+
 import {
   Instrument_Serif,
   Space_Grotesk,
@@ -42,6 +44,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <header>
+          <LoaderStrip/>
           <Navigation />
         </header>
         <main>{children}</main>
