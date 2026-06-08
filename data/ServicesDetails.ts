@@ -1,5 +1,6 @@
 export type serviceType = {
   id: string;
+  linkName: string;
   category: string;
   title: string[];
   description: string;
@@ -10,6 +11,7 @@ export type serviceType = {
 export const servicesDetails: serviceType[] = [
   {
     id: "01",
+    linkName: "web",
     category: "Web Development",
     title: ["Custom, scalable", "AI-ready builds."],
     description:
@@ -22,6 +24,7 @@ export const servicesDetails: serviceType[] = [
   },
   {
     id: "02",
+    linkName: "seo",
     category: "SEO & Organic Growth",
     title: ["Search that compounds", "over time."],
     description:
@@ -34,6 +37,7 @@ export const servicesDetails: serviceType[] = [
   },
   {
     id: "03",
+    linkName: "social",
     category: "Social & Viral Campaigns",
     title: ["Platform-native ideas", "that travel."],
     description:
@@ -46,6 +50,7 @@ export const servicesDetails: serviceType[] = [
   },
   {
     id: "04",
+    linkName: "creative",
     category: "Social-First Creative",
     title: ["Brand storytelling", "built for the feed."],
     description:
@@ -58,6 +63,7 @@ export const servicesDetails: serviceType[] = [
   },
   {
     id: "05",
+    linkName: "strategy",
     category: "Marketing Strategy",
     title: ["Integrated planning, executed with AI-grade discipline."],
     description:
