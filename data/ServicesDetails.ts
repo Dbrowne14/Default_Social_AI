@@ -12,7 +12,7 @@ export type serviceType = {
   process: ServiceProcess[];
 };
 
-type serviceOffers = {
+export type serviceOffers = {
   title: string;
   description: string;
 };
