@@ -50,11 +50,11 @@ const ServicesDetailed = () => {
                 />
               </div>
             </div>
-            <div className="process-strip">
-              <div className="step">
-                <span className="n">01</span>
-                <h5 className="serif">Listen</h5>
-                <p>Audience &amp; signal sweep</p>
+            <div className="mt-14 grid grid-cols-2 md:grid-cols-[repeat(5,1fr)] gap-4">
+              <div className="p-4.5 rounded-[10px] border border-line bg-ink flex flex-col gap-2">
+                <span className="font-mono text-[11px] tracking-[0.12em] text-accent">01</span>
+                <h5 className="font-serif text-[18px] m-0">Listen</h5>
+                <p className="text-cream-2 text-[13px] m-0">Audience &amp; signal sweep</p>
               </div>
               <div className="step">
                 <span className="n">02</span>

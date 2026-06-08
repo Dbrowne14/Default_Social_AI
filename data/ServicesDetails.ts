@@ -17,7 +17,7 @@ export type serviceOffers = {
   description: string;
 };
 
-type ServiceProcess = serviceOffers & {
+export type ServiceProcess = serviceOffers & {
   id: string;
 };
 
