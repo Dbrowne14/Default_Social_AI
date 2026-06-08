@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Page = () => {
   return (
     <div>
-      
-    </div>
-  )
-}
 
-export default Page
+    </div>
+  );
+};
+
+export default Page;
