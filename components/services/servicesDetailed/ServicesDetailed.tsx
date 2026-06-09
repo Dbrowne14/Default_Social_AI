@@ -6,11 +6,7 @@ import ServicesProcessStrip from "./ServicesProcessStrip";
 
 const ServicesDetailed = () => {
   return (
-    <section
-      className="border-b border-line"
-      id="web"
-      data-screen-label="Web"
-    >
+    <section className="border-b border-line" id="web" data-screen-label="Web">
       {servicesDetails.map((service, key) => {
         const { id, category, blurb, offers, aiCallout, process } = service;
         return (
@@ -52,16 +48,19 @@ const ServicesDetailed = () => {
               </div>
             </div>
             <div className="mt-14 grid grid-cols-2 md:grid-cols-[repeat(5,1fr)] gap-4">
-                {process.map((p, key) => {
-                  return (
-                    <ServicesProcessStrip id={p.id} title={p.title} description={p.description}/>
-                  )
-                })}
+              {process.map((p, key) => {
+                return (
+                  <ServicesProcessStrip
+                    id={p.id}
+                    title={p.title}
+                    description={p.description}
+                  />
+                );
+              })}
             </div>
           </div>
         );
       })}
-
     </section>
   );
 };
