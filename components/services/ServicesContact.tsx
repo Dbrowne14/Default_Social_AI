@@ -1,4 +1,4 @@
-import React from "react";
+import Button from "../ui/Button";
 
 const ServicesContact = () => {
   return (
@@ -10,12 +10,12 @@ const ServicesContact = () => {
           <em className="text-accent">Talk to a strategist.</em>
         </h2>
         <div className="flex gap-3">
-          <a className="btn" href="/contact">
-            Start a project <span className="arr">→</span>
-          </a>
-          <a className="btn ghost" href="about-v0.html">
-            About the studio <span className="arr">→</span>
-          </a>
+          <Button
+            link="/contact"
+            text="Start a project"
+            arrowVariant="primaryBlack"
+          />
+          <Button link="/about" text="About the studio" variant="ghost" />
         </div>
       </div>
     </section>
