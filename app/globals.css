@@ -72,6 +72,7 @@
   --color-on-accent: var(--on-accent);
   --color-danger: var(--danger);
 
+
   --font-serif: var(--serif);
   --font-sans: var(--sans);
   --font-mono: var(--mono);
@@ -177,28 +178,28 @@
     @apply fixed inset-x-0 top-0 z-9999 h-0.75 overflow-hidden bg-ink-2;
   }
 
-.loader-strip::after {
-  content: "";
-  @apply block h-full w-full;
-  background: linear-gradient(
-    to right,
-    oklch(0.5 0.18 260),
-    var(--accent),
-    var(--accent-3)
-  );
-  transform: translateX(-100%);
-  animation: fill 1.6s 0.1s cubic-bezier(0.6, 0.02, 0.1, 1) forwards;
-}
-
-@keyframes fill {
-  from {
+  .loader-strip::after {
+    content: "";
+    @apply block h-full w-full;
+    background: linear-gradient(
+      to right,
+      oklch(0.5 0.18 260),
+      var(--accent),
+      var(--accent-3)
+    );
     transform: translateX(-100%);
+    animation: fill 1.6s 0.1s cubic-bezier(0.6, 0.02, 0.1, 1) forwards;
   }
 
-  to {
-    transform: translateX(0);
+  @keyframes fill {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
   }
-}
 
   .hero-content {
     @apply relative flex flex-col z-2 min-h-screen 720:p-[80px_32px_48px] p-[100px_20px_28px];
