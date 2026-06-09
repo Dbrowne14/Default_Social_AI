@@ -34,7 +34,7 @@ const AboutOverview = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 xs520:grid-cols-2 gap-8">
-          {team.map((person, index) => {
+          {team.filter((person)=> person.key === true).map((person, index) => {
             return (
               <TeamBio
                 key={index}
