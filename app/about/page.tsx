@@ -1,11 +1,11 @@
-import React from 'react'
+import AboutHeader from "@/components/about/AboutHeader";
 
 const Page = () => {
   return (
-    <div>
-      
+    <div data-screen-label="02 About">
+      <AboutHeader />
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
