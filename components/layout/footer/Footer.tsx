@@ -66,11 +66,10 @@ const Footer = () => {
               <ul className="flex flex-col gap-2.5 p-0 m-0 list-none ">
                 <li>
                   <Link
+                    href="mailto:info@defaultmedia.com"
                     className="footer-links"
-                    href="/cdn-cgi/l/email-protection"
-                    data-cfemail="bcd5d2dad3fcd8d9daddc9d0c8d1d9d8d5dd92dfd3d1"
                   >
-                    [email&#160;protected]
+                    info@defaultmedia.com
                   </Link>
                 </li>
                 <li>+44 7878 849 182</li>
