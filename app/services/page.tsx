@@ -1,7 +1,7 @@
 import StickyToc from "@/components/services/StickyToc";
 import ServicesHeader from "@/components/services/ServicesHeader";
 import ServicesDetailed from "@/components/services/servicesDetailed/ServicesDetailed";
-import ServicesContact from "@/components/services/ServicesContact";
+import CTA from "@/components/ui/Cta";
 
 const Page = () => {
   return (
@@ -9,7 +9,7 @@ const Page = () => {
       <ServicesHeader />
       <StickyToc />
       <ServicesDetailed />
-      <ServicesContact />
+      <CTA primaryText="Not sure where to start?" secondaryText="Talk to a strategist." variant={true} buttonLink="/about" buttonText="About the studio" />
     </div>
   );
 };
