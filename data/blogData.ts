@@ -5,7 +5,7 @@ export const insights: blogPostProps[] = [
     date: "April 2026",
     readTime: "6 min",
     title: "Topic clusters in the age of answer engines.",
-    description:
+    excerpt:
       "How we restructure content systems for sites that need to be both Google-friendly and LLM-citable.",
     href: "/insights/seo-topic-clusters",
   },
@@ -15,7 +15,7 @@ export const insights: blogPostProps[] = [
     date: "April 2026",
     readTime: "4 min",
     title: "Anatomy of a campaign that travelled 14 million times.",
-    description:
+    excerpt:
       "A short forensic on a recent platform-native idea: the brief, the spike, and the long tail.",
     href: "/insights/anatomy-of-a-campaign-that-travelled-14-million-times",
   },
@@ -25,7 +25,7 @@ export const insights: blogPostProps[] = [
     date: "March 2026",
     readTime: "7 min",
     title: "Why we ship Next.js with a modular middleware layer.",
-    description:
+    excerpt:
       "A look at our default stack — and the patterns that have made the biggest difference for clients.",
     href: "/insights/why-we-ship-nextjs-with-a-modular-middleware-layer",
   },
@@ -35,12 +35,12 @@ export const insights: blogPostProps[] = [
     tag: "AI Practice",
     readTime: "12 min",
     title: "The AI concierge isn't a chatbot. It's a sales engineer.",
-    description: "",
     excerpt:
       "Most 'AI on the website' projects fail because they treat AI as a feature — a chatbot in the corner. The teams that win treat it as a role: the sales engineer who's always on, always patient, and always one step ahead of the brief. Here's the four-layer pattern we use to make that real.",
     authorInitials: "R",
     author: "Robin McGlashan",
     authorRole: "Founder, Default Media Group",
+    href: "AI concierge"
   },
   {
     tag: "Social",
@@ -61,16 +61,6 @@ export const insights: blogPostProps[] = [
       "A working pattern for first-party personalisation that improves the experience without spooking the user — or the regulator.",
     author: "David Browne",
     href: "/insights/personalisation-without-creep-factor",
-  },
-  {
-    tag: "Web",
-    date: "Mar 2026",
-    readTime: "7 min",
-    title: "Why we ship Next.js with an AI middleware layer.",
-    excerpt:
-      "A look at our default stack — and the three middleware patterns that have made the biggest difference for clients.",
-    author: "David Browne",
-    href: "/insights/nextjs-ai-middleware-layer",
   },
   {
     tag: "Strategy",
@@ -102,6 +92,16 @@ export const insights: blogPostProps[] = [
     author: "David Browne",
     href: "/insights/four-ai-layers-brand-site",
   },
+  {
+    tag: "SEO",
+    date: "Jan 2026",
+    readTime: "10 min",
+    title: "Programmatic SEO, ethical edition.",
+    excerpt:
+      "Where programmatic still works, where it bites you, and the structural decisions that decide which.",
+    author: "David Browne",
+    href: "/insights/programmatic-seo-ethical-edition",
+  },
 ];
 
 export type blogPostProps = {
@@ -110,10 +110,9 @@ export type blogPostProps = {
   tag: string;
   readTime: string;
   title: string;
-  description?: string;
   excerpt?: string;
   authorInitials?: string;
   author: string;
   authorRole?: string;
-  href?: string;
+  href: string;
 };
