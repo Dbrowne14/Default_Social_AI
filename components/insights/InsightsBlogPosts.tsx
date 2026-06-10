@@ -1,4 +1,4 @@
-import { insights } from "@/data/blogData";
+import Button from "../ui/Button";
 import BlogPost from "../ui/BlogPost";
 
 const InsightsBlogPosts = () => {
@@ -23,10 +23,8 @@ const InsightsBlogPosts = () => {
           <BlogPost />
         </div>
 
-        <div className="flex align-center mt-21">
-          <a className="btn ghost" href="#">
-            Load more <span className="arr">↓</span>
-          </a>
+        <div className="flex justify-center items-center mt-21">
+            <Button link="/" text="Load more " variant="ghost" buttonDirection="down" />
         </div>
       </div>
     </section>

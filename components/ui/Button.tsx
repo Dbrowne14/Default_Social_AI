@@ -5,6 +5,7 @@ type ButtonProps = {
   text: string;
   variant?: "primary" | "ghost";
   arrowVariant?: "primary" | "primaryBlack";
+  buttonDirection?: Direction;
 };
 
 const variants = {
@@ -25,16 +26,26 @@ const variants = {
     hover:text-accent`,
 };
 
-const arrowVariants= {
+const arrowVariants = {
   primary: `bg-accent text-on-accent`,
   primaryBlack: `bg-cream text-ink`,
-}
+};
+
+const buttonDirections = {
+  up: '↑',
+  down: '↓',
+  left: '←',
+  right: '→'
+} as const;
+
+type Direction = keyof typeof buttonDirections;
 
 export default function Button({
   link,
   text,
   variant = "primary",
   arrowVariant = "primary",
+  buttonDirection = "right"
 }: ButtonProps) {
   const classes = `text-[12px] inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono uppercase transition-all duration-150 ease-in-out hover:-translate-y-px tracking-widest
     ${variants[variant]}`;
@@ -42,8 +53,10 @@ export default function Button({
   const content = (
     <>
       {text}
-      <span className={`flex size-4.5 shrink-0 items-center justify-center rounded-full ${arrowVariants[arrowVariant]} text-[10px] leading-none`}>
-        →
+      <span
+        className={`flex size-4.5 shrink-0 items-center justify-center rounded-full ${arrowVariants[arrowVariant]} text-[10px] leading-none`}
+      >
+       {buttonDirections[buttonDirection]}
       </span>
     </>
   );
