@@ -1,8 +1,11 @@
 import InsightsHeader from "@/components/insights/InsightsHeader";
+import InsightsFilter from "@/components/insights/InsightsFilter";
 
 const Page = () => {
   return (
-    <div>
+    <div data-screen-label="03 Insights">
+      <InsightsHeader />
+      <InsightsFilter />
       <InsightsHeader />
     </div>
   );

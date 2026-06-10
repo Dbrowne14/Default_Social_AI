@@ -163,6 +163,10 @@
     @apply w-full max-w-340 mx-auto px-5 py-20 720:px-8;
   }
 
+  .container-thin {
+    @apply w-full max-w-340 mx-auto px-5 720:px-8
+  }
+
   .border-line-faded {
     border-color: color-mix(in oklch, var(--line) 70%, transparent);
   }
