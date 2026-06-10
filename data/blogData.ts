@@ -1,4 +1,4 @@
-export const insights = [
+export const insights:blogPostProps[] = [
   {
     tag: "SEO",
     author: "David Browne",
@@ -29,4 +29,33 @@ export const insights = [
       "A look at our default stack — and the patterns that have made the biggest difference for clients.",
     href: "/insights/why-we-ship-nextjs-with-a-modular-middleware-layer",
   },
+  {
+    featured: true,
+    date: "May 2026",
+    tag: "AI Practice",
+    readTime: "12 min read",
+    title: "The AI concierge isn't a chatbot. It's a sales engineer.",
+    description:"",
+    excerpt:
+      "Most 'AI on the website' projects fail because they treat AI as a feature — a chatbot in the corner. The teams that win treat it as a role: the sales engineer who's always on, always patient, and always one step ahead of the brief. Here's the four-layer pattern we use to make that real.",
+    authorInitials: "R",
+    author: "Robin McGlashan",
+    authorRole: "Founder, Default Media Group",
+  }
 ];
+
+export type blogPostProps = {
+  featured?: boolean;
+  date: string;
+  tag: string;
+  readTime: string;
+  title: string;
+  description?: string;
+  excerpt?: string;
+  authorInitials?: string;
+  author: string;
+  authorRole?: string;
+  href?:string
+};
+
+
