@@ -1,0 +1,39 @@
+"use client";
+import { useState } from "react";
+
+const filterData = [
+  "All",
+  "AI Practice",
+  "Web",
+  "SEO",
+  "Social",
+  "Strategy",
+  "Studio Ops",
+];
+
+const InsightsFilterToc = () => {
+  const [isActive, setIsActive] = useState("All");
+
+  const handleClick = (data: string) => {
+    setIsActive(data);
+  };
+  return (
+    <>
+      {filterData.map((data) => {
+        const [All] = data
+        return (
+          <button
+            key={data}
+            className={`py-2 px-3.5 rounded-[999px] border border-line ${isActive === data ? "bg-accent text-ink" : "text-cream-2 hover:border-accent hover:text-accent"} font-mono text-[11px] tracking-widest uppercase  cursor-pointer transition-colors duration-150 ease-in-out `}
+            data-filter="all"
+            onClick={() => handleClick(data)}
+          >
+            {data}
+          </button>
+        );
+      })}
+    </>
+  );
+};
+
+export default InsightsFilterToc;

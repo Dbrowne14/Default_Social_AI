@@ -7,8 +7,8 @@ const Page = () => {
   return (
     <div data-screen-label="03 Insights">
       <InsightsHeader />
-      <InsightsFilter />
       <InsightsFeatured />
+      <InsightsFilter />
       <InsightsBlogPosts/>
     </div>
   );

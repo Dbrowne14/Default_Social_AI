@@ -23,7 +23,7 @@ const companyInfo = [
 
 const AboutHeader = () => {
   return (
-    <header className="pt-50 pb-20 border-b border-line">
+    <header className=" pt-20 md:pt-50 md:pb-20 border-b border-line min-h-screen">
       <div className="container-custom">
         <div className="mb-9 eyebrow">About</div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-end">
