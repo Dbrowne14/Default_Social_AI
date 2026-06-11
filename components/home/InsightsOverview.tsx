@@ -1,4 +1,4 @@
-import BlogPost from "../ui/BlogPost";
+import BlogPost from "../insights/BlogPost";
 
 const InsightsOverview = () => {
   return (
@@ -23,7 +23,7 @@ const InsightsOverview = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <BlogPost/>
+          <BlogPost />
         </div>
       </div>
     </section>

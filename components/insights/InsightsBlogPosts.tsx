@@ -1,5 +1,5 @@
 import Button from "../ui/Button";
-import BlogPost from "../ui/BlogPost";
+import BlogPost from "./BlogPost";
 
 const InsightsBlogPosts = () => {
   return (
@@ -24,7 +24,12 @@ const InsightsBlogPosts = () => {
         </div>
 
         <div className="flex justify-center items-center mt-21">
-            <Button link="/" text="Load more " variant="ghost" buttonDirection="down" />
+          <Button
+            link="/"
+            text="Load more "
+            variant="ghost"
+            buttonDirection="down"
+          />
         </div>
       </div>
     </section>
