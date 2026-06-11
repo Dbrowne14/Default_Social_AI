@@ -3,7 +3,7 @@ import DummyClientData from "../ui/DummyClientData"
 const ClientLogoTicker = () => {
   return (
           <section className="border-y border-y-line" data-screen-label="Clients">
-        <div className="container-custom">
+        <div className="container-thin py-10">
           <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted mb-7">
             Selected clients · 2023 — {new Date().getFullYear()}
           </div>

@@ -9,7 +9,7 @@ const StickyTocPills = () => {
   return (
     <nav
       aria-label="Table of contents"
-      className="flex gap-2 flex-wrap container-custom py-0"
+      className="flex gap-2 flex-wrap container-thin"
     >
       {servicesDetails.map((service) => {
         return (
