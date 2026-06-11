@@ -1,5 +1,5 @@
 import Button from "@/components/ui/Button";
-import BlogPost from "../BlogPost";
+import BlogPost from "./BlogPost";
 
 const InsightsBlogPosts = ({isActive}:{isActive:string}) => {
   return (
@@ -20,7 +20,7 @@ const InsightsBlogPosts = ({isActive}:{isActive:string}) => {
           className="grid grid-cols-1 xs520:grid-cols-2 md:grid-cols-3 gap-8 mt-6"
           id="articles-grid"
         >
-          <BlogPost />
+          <BlogPost isActive={isActive} />
         </div>
 
         <div className="flex justify-center items-center mt-21">

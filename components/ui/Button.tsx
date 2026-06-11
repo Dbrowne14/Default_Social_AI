@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 type ButtonProps = {
-  link: string;
+  link?: string;
+  onClick?: () => void;
   text: string;
   variant?: "primary" | "ghost";
   arrowVariant?: "primary" | "primaryBlack";
@@ -43,9 +44,11 @@ type Direction = keyof typeof buttonDirections;
 export default function Button({
   link,
   text,
+  onClick,
   variant = "primary",
   arrowVariant = "primary",
   buttonDirection = "right"
+  
 }: ButtonProps) {
   const classes = `text-[12px] inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono uppercase transition-all duration-150 ease-in-out hover:-translate-y-px tracking-widest
     ${variants[variant]}`;
@@ -61,17 +64,25 @@ export default function Button({
     </>
   );
 
-  if (link.startsWith("#")) {
-    return (
-      <a href={link} className={classes}>
-        {content}
-      </a>
-    );
-  }
+if (link?.startsWith("#")) {
+  return (
+    <a href={link} className={classes}>
+      {content}
+    </a>
+  );
+}
 
+if (link) {
   return (
     <Link href={link} className={classes}>
       {content}
     </Link>
   );
+}
+
+return (
+  <button type="button" onClick={onClick} className={classes}>
+    {content}
+  </button>
+);
 }
