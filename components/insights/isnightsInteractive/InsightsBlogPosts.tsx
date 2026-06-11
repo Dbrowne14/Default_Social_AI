@@ -1,7 +1,10 @@
+'use client'
+import { useState } from "react";
 import Button from "@/components/ui/Button";
 import BlogPost from "./BlogPost";
 
 const InsightsBlogPosts = ({isActive}:{isActive:string}) => {
+  const [showMore, setShowMore] = useState<number>(6)
   return (
     <section className="pt-10">
       <div className="container-custom">
@@ -20,15 +23,15 @@ const InsightsBlogPosts = ({isActive}:{isActive:string}) => {
           className="grid grid-cols-1 xs520:grid-cols-2 md:grid-cols-3 gap-8 mt-6"
           id="articles-grid"
         >
-          <BlogPost isActive={isActive} />
+          <BlogPost isActive={isActive} showMore={showMore} />
         </div>
 
         <div className="flex justify-center items-center mt-21">
           <Button
-            link="/"
             text="Load more "
             variant="ghost"
             buttonDirection="down"
+            onClick={() => setShowMore(prev => prev +6)}
           />
         </div>
       </div>

@@ -1,7 +1,13 @@
 import BlogCard from "@/components/ui/BlogCard";
 import { insights } from "@/data/blogData";
 
-const BlogPost = ({ isActive }: { isActive: string }) => {
+const BlogPost = ({
+  isActive,
+  showMore,
+}: {
+  isActive: string;
+  showMore: number;
+}) => {
   return (
     <>
       {insights
@@ -9,6 +15,7 @@ const BlogPost = ({ isActive }: { isActive: string }) => {
           (post) =>
             !post.featured && (isActive === "All" || post.tag === isActive),
         )
+        .slice(0, showMore)
         .map((post) => {
           const { author, tag, title, excerpt, date, readTime, href } = post;
           return (
