@@ -1,5 +1,4 @@
-"use client";
-import { useState } from "react";
+import type { activeSetterProps } from "./InsightsFilter"; 
 
 const filterData = [
   "All",
@@ -11,8 +10,7 @@ const filterData = [
   "Studio Ops",
 ];
 
-const InsightsFilterToc = () => {
-  const [isActive, setIsActive] = useState("All");
+const InsightsFilterToc = ({isActive, setIsActive}:activeSetterProps) => {
 
   const handleClick = (data: string) => {
     setIsActive(data);
@@ -20,7 +18,6 @@ const InsightsFilterToc = () => {
   return (
     <>
       {filterData.map((data) => {
-        const [All] = data
         return (
           <button
             key={data}

@@ -1,6 +1,14 @@
 import InsightsFilterToc from "./InsightsFilterToc";
 
-const InsightsFilter = () => {
+export type activeSetterProps = {
+  isActive: string;
+  setIsActive: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const InsightsFilter = ({
+  isActive,
+  setIsActive,
+}: activeSetterProps) => {
   return (
     <aside className="sticky top-22 py-4 [background:color-mix(in_oklch,var(--ink)_80%,transparent)] backdrop-blur-lg z-30 border-b border-line">
       <div className="container-thin">
@@ -8,7 +16,7 @@ const InsightsFilter = () => {
           <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-muted mr-2 ">
             Filter by
           </span>
-          <InsightsFilterToc/>
+          <InsightsFilterToc isActive={isActive} setIsActive={setIsActive} />
         </div>
       </div>
     </aside>

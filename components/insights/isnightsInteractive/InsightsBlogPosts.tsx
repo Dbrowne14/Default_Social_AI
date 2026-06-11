@@ -1,7 +1,7 @@
 import Button from "@/components/ui/Button";
 import BlogPost from "../BlogPost";
 
-const InsightsBlogPosts = () => {
+const InsightsBlogPosts = ({isActive}:{isActive:string}) => {
   return (
     <section className="pt-10">
       <div className="container-custom">
