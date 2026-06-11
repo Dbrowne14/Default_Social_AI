@@ -1,7 +1,7 @@
 
 const InsightsHeader = () => {
   return (
-    <header className="pt-15 border-b border-line min-h-screen ">
+    <header className="pt-nav border-b border-line min-h-screen flex items-center ">
       <div className="container-custom">
         <div className="eyebrow mb-9">Insights</div>
         <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-20 md:gap-10 items-end">

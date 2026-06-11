@@ -1,34 +1,40 @@
-type BlogCardProps = {
-  tag: string;
-  date: string;
-  author: string;
-  readTime: string;
-  title: string;
-  description: string;
-  href: string;
-};
+import { blogPostProps } from "@/data/blogData";
+import Link from "next/link";
 
-const BlogCard = ({ tag, date, author, readTime, title, description, href }: BlogCardProps) => {
+const BlogCard = ({ tag, date, author, readTime, title, excerpt, href }: blogPostProps) => {
+  const ai = tag === "AI Practice"
   return (
-    <article className="flex flex-col gap-4 pt-6 border-t border-line">
-      <div className="aspect-4/3 rounded-[10px] border border-line relative overflow-hidden bg-[repeating-linear-gradient(135deg,var(--ink-2)_0_12px,var(--ink-3)_12px_24px)]">
-        <span className="pill absolute top-3 left-3 bg-ink border border-line">
-          {tag}
-        </span>
-      </div>
-      <div className="meta flex gap-3 font-mono text-[11px] tracking-widest uppercase text-muted">
-        {date} · {readTime}
-      </div>
-      <h3 className="font-serif text-[26px]">
-        {title}
-      </h3>
-      <p className="text-cream-2 text-[15px]">
-        {description}
-      </p>
-      <a className="font-mono text-accent" href={href}>
-        Read article →
-      </a>
-    </article>
+            <article
+              className="flex flex-col gap-4.5 pt-6 border-t border-line cursor-pointer transition-transform duration-200 ease-in-out hover:-translate-y-0.5"
+              data-cat="seo"
+            >
+              {" "}
+              <div className="aspect-4/3 rounded-[14px] border border-line relative overflow-hidden [background:radial-gradient(circle_at_30%_40%,color-mix(in_oklch,var(--accent)_22%,var(--ink-3)),transparent_60%),repeating-linear-gradient(135deg,var(--ink-2)_0_12px,var(--ink-3)_12px_24px)]">
+                <span className={`${ai ? "pill-ai": "pill"} bg-ink absolute top-3.5 left-3.5`}>
+                  {ai && ( <span>·</span>)}
+                  {tag}
+                </span>
+                <span className="absolute inset-0 flex items-center justify-center font-serif text-[96px] text-cream opacity-[0.65] tracking-[-0.04em]">
+                  ⌬
+                </span>
+              </div>
+              <div className="flex gap-3 font-mono text-[11px] tracking-widest uppercase text-muted">
+                <span>By {author}</span>
+                <span>·</span>
+                <span>{date}</span>
+                <span>·</span>
+                <span>{readTime}</span>
+              </div>
+              <h3 className="font-serif text-[26px] leading-[1.15]">
+                {title}
+              </h3>
+              <p className="text-cream-2 text-[15px] leading-normal">
+               {excerpt}
+              </p>
+              <Link href={href} className="font-mono text-[11px] tracking-widest uppercase text-accent mt-auto">
+                Read article →
+              </Link>
+            </article>
   );
 };
 

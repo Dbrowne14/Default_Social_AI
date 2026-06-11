@@ -6,7 +6,7 @@ import { navData } from "@/data/navData";
 const Navigation = () => {
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4.5 px-8 bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)] 720:px-5
+      className="fixed top-0 left-0 right-0 z-50 heihgt-nav flex justify-between items-center py-4.5 px-8 bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)] 720:px-5
   720:py-3.5"
     >
       <div className="inline-flex items-center gap-3.5 md:gap-2.5">
