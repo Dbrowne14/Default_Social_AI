@@ -1,5 +1,4 @@
-import { insights } from "@/data/blogData";
-import BlogCard from "../ui/BlogCard";
+import BlogPost from "../ui/BlogPost";
 
 const InsightsOverview = () => {
   return (
@@ -24,20 +23,7 @@ const InsightsOverview = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {insights.map((insight, index) => {
-            return (
-              <BlogCard
-                key={index}
-                author={insight.author}
-                date={insight.date}
-                readTime={insight.readTime}
-                tag={insight.tag}
-                title={insight.title}
-                description={insight.description}
-                href={insight.href}
-              />
-            );
-          })}
+          <BlogPost/>
         </div>
       </div>
     </section>

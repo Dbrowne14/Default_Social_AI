@@ -31,6 +31,7 @@ const MobileMenu = ({
             href={page === "index" ? "/" : `/${page}`}
             className="py-4 px-1 text-cream-2 border-t border-line-faded"
             key={page}
+            onClick={toggleMenu}
           >
             {page}
           </Link>
