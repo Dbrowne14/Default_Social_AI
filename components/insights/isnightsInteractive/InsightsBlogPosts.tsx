@@ -1,5 +1,5 @@
-import Button from "../ui/Button";
-import BlogPost from "./BlogPost";
+import Button from "@/components/ui/Button";
+import BlogPost from "../BlogPost";
 
 const InsightsBlogPosts = () => {
   return (
