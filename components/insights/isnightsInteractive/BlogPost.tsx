@@ -17,7 +17,7 @@ const BlogPost = ({
         )
         .slice(0, showMore)
         .map((post) => {
-          const { author, tag, title, excerpt, date, readTime, href } = post;
+          const { author, tag, title, excerpt, date, readTime, slug } = post;
           return (
             <BlogCard
               author={author}
@@ -26,7 +26,7 @@ const BlogPost = ({
               excerpt={excerpt}
               date={date}
               readTime={readTime}
-              href={href}
+              slug={slug}
               key={title}
             />
           );

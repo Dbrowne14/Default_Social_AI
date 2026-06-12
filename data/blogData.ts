@@ -7,7 +7,7 @@ export const insights: blogPostProps[] = [
     title: "Topic clusters in the age of answer engines.",
     excerpt:
       "How we restructure content systems for sites that need to be both Google-friendly and LLM-citable.",
-    href: "/insights/seo-topic-clusters",
+    slug: "seo-topic-clusters",
   },
   {
     tag: "Social",
@@ -17,7 +17,7 @@ export const insights: blogPostProps[] = [
     title: "Anatomy of a campaign that travelled 14 million times.",
     excerpt:
       "A short forensic on a recent platform-native idea: the brief, the spike, and the long tail.",
-    href: "/insights/anatomy-of-a-campaign-that-travelled-14-million-times",
+    slug: "anatomy-of-a-campaign-that-travelled-14-million-times",
   },
   {
     tag: "Web",
@@ -27,7 +27,7 @@ export const insights: blogPostProps[] = [
     title: "Why we ship Next.js with a modular middleware layer.",
     excerpt:
       "A look at our default stack — and the patterns that have made the biggest difference for clients.",
-    href: "/insights/why-we-ship-nextjs-with-a-modular-middleware-layer",
+    slug: "why-we-ship-nextjs-with-a-modular-middleware-layer",
   },
   {
     featured: true,
@@ -40,7 +40,7 @@ export const insights: blogPostProps[] = [
     authorInitials: "R",
     author: "Robin McGlashan",
     authorRole: "Founder, Default Media Group",
-    href: "AI concierge"
+    slug: "ai-concierge-sales-engineer",
   },
   {
     tag: "Social",
@@ -50,7 +50,7 @@ export const insights: blogPostProps[] = [
     excerpt:
       "A short forensic on a recent platform-native idea: the brief, the spike, and the long tail no-one talks about.",
     author: "David Browne",
-    href: "/insights/anatomy-campaign-travelled-14m-times",
+    slug: "anatomy-campaign-travelled-14m-times",
   },
   {
     tag: "AI Practice",
@@ -60,7 +60,7 @@ export const insights: blogPostProps[] = [
     excerpt:
       "A working pattern for first-party personalisation that improves the experience without spooking the user — or the regulator.",
     author: "David Browne",
-    href: "/insights/personalisation-without-creep-factor",
+    slug: "personalisation-without-creep-factor",
   },
   {
     tag: "Strategy",
@@ -70,7 +70,7 @@ export const insights: blogPostProps[] = [
     excerpt:
       "A practical case for predictive mix modelling — and the reason most quarterly plans drift by week six.",
     author: "David Browne",
-    href: "/insights/marketing-mix-is-a-forecast",
+    slug: "marketing-mix-is-a-forecast",
   },
   {
     tag: "Studio Ops",
@@ -80,7 +80,7 @@ export const insights: blogPostProps[] = [
     excerpt:
       "What we cut to compress discovery without losing the strategic depth — and the one document we'd never skip.",
     author: "David Browne",
-    href: "/insights/discovery-one-week-not-four",
+    slug: "discovery-one-week-not-four",
   },
   {
     tag: "AI Practice",
@@ -90,7 +90,7 @@ export const insights: blogPostProps[] = [
     excerpt:
       "Experience, content, growth, analytics — and why 'AI chatbot' usually only covers a quarter of the value.",
     author: "David Browne",
-    href: "/insights/four-ai-layers-brand-site",
+    slug: "four-ai-layers-brand-site",
   },
   {
     tag: "SEO",
@@ -100,7 +100,7 @@ export const insights: blogPostProps[] = [
     excerpt:
       "Where programmatic still works, where it bites you, and the structural decisions that decide which.",
     author: "David Browne",
-    href: "/insights/programmatic-seo-ethical-edition",
+    slug: "programmatic-seo-ethical-edition",
   },
 ];
 
@@ -114,5 +114,5 @@ export type blogPostProps = {
   authorInitials?: string;
   author: string;
   authorRole?: string;
-  href: string;
+  slug: string;
 };

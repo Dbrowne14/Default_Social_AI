@@ -8,7 +8,7 @@ const BlogCard = ({
   readTime,
   title,
   excerpt,
-  href,
+  slug,
 }: blogPostProps) => {
   const ai = tag === "AI Practice";
   return (
@@ -38,7 +38,7 @@ const BlogCard = ({
       <h3 className="font-serif text-[26px] leading-[1.15]">{title}</h3>
       <p className="text-cream-2 text-[15px] leading-normal">{excerpt}</p>
       <Link
-        href={href}
+        href={`/insights/${slug}`}
         className="font-mono text-[11px] tracking-widest uppercase text-accent mt-auto"
       >
         Read article →
