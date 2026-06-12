@@ -33,6 +33,7 @@ export const insights: blogPostProps[] = [
     featured: true,
     date: "May 2026",
     tag: "AI Practice",
+    subject: "The AI Concierge",
     readTime: "12 min",
     title: "The AI concierge isn't a chatbot. It's a sales engineer.",
     excerpt:
@@ -41,6 +42,8 @@ export const insights: blogPostProps[] = [
     author: "Robin McGlashan",
     authorRole: "Founder, Default Media Group",
     slug: "ai-concierge-sales-engineer",
+    imageCaption:
+      "The concierge sits between the brief and the buyer — closer to a sales engineer than a help widget.",
   },
   {
     tag: "Social",
@@ -106,6 +109,7 @@ export const insights: blogPostProps[] = [
 
 export type blogPostProps = {
   featured?: boolean;
+  subject?: string;
   date: string;
   tag: string;
   readTime: string;
@@ -115,4 +119,5 @@ export type blogPostProps = {
   author: string;
   authorRole?: string;
   slug: string;
+  imageCaption?: string;
 };

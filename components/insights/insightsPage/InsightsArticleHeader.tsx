@@ -1,63 +1,69 @@
+"use client";
+
 import SingleStatBlock from "@/components/ui/SingleStatBlock";
 import SocialsFrame from "@/components/ui/SocialsFrame";
+import { insights } from "@/data/blogData";
+import { usePathname } from "next/navigation";
 
 const InsightsArticleHeader = () => {
+  const pathname = usePathname();
+  const slug = pathname.split("/").pop();
+  const article = insights.find((post) => post.slug === slug);
+
   return (
     <header
       className="pt-nav min-h-screen flex items-center"
       data-screen-label="Article header"
     >
-      <div className="container-custom">
+      <div className="container-thin">
         <nav
-          className="flex items-center gap 2.5 font-mono text-[11px] tracking-[0.12em] uppercase text-muted mb-8 flex-wrap md:no-wrap md:mb-10"
+          className="flex items-center gap 2.5 font-mono text-[11px] tracking-[0.12em] uppercase text-muted mt-4 mb-8 flex-wrap md:no-wrap md:mb-20"
           aria-label="Breadcrumb"
         >
           <a
             href="/insights"
             className="text-muted transition-colors duration-150 ease-in-out hover:text-accent"
           >
-            Insights
+            {pathname.split("/")[1]}
           </a>
           <span className="opacity-[0.5]">/</span>
           <a
             href="/insights"
             className="text-muted transition-colors duration-150 ease-in-out hover:text-accent"
           >
-            AI Practice
+            {article?.tag}
           </a>
           <span className="opacity-[0.5]">/</span>
-          <span className="text-cream-2">The AI concierge</span>
+          <span className="text-accent-deep italic ">{article?.subject}</span>
         </nav>
 
         <div className="max-w-245">
           <div className="flex items-center flex-wrap text-[11px] gap-3.5 font-mono tracking-[0.12em] uppercase text-muted mb-7">
-            <span className="pill-ai">AI Practice</span>
-            <span className="font-mono text-muted">Essay · 12 min read</span>
-            <span className="font-mono text-muted">14 May 2026</span>
+            <span className="pill-ai">{article?.tag}</span>
+            <span className="font-mono text-muted">
+              Essay · {article?.readTime} ·
+            </span>
+            <span className="font-mono text-muted">{article?.date}</span>
           </div>
-          <h1 className="font-serif text-[clamp(40px,6.4vw,88px)] leading-none tracking-[-0.02em] max-w-[16ch]">
-            The AI concierge isn't a chatbot. It's a{" "}
-            <em className="text-accent">sales engineer.</em>
+          <h1 className="font-serif text-[clamp(40px,6.4vw,88px)] leading-none tracking-[-0.02em] max-w-[20ch]">
+           {article?.title}
           </h1>
-          <p className="font-serif text-[clamp(21px,2.1vw,30px)] leading-[1.4] text-cream-2 max-w-[46ch] mt-6 md:mt-8">
-            Most "AI on the website" projects fail because they treat the model
-            as a feature in the corner. The teams that win treat it as a role —
-            and roles have responsibilities, judgement, and a moment to step
-            back.
+          <p className="font-serif text-[clamp(21px,2.1vw,30px)] leading-[1.4] text-cream-2 max-w-[80ch] mt-6 md:mt-8">
+            {article?.excerpt}
           </p>
         </div>
 
         <div className="flex items-center gap-y-4.5 gap-x-7 md:gap-7 flex-wrap mt-8 md:mt-11 py-6 border-y border-line">
           <div className="flex items-center gap-3.5">
             <div className="w-11.5 h-11.5 rounded-[50%] bg-accent text-on-accent font-serif text-[24px] flex items-center justify-center shrink-0">
-              R
+              {article?.authorInitials}
             </div>
             <div className="flex flex-col gap-0.75 ">
               <span className="font-sans font-semibold text-[15px] text-cream">
-                Robin McGlashan
+                {article?.author}
               </span>
               <span className="font-mono text-[10px] tracking-widest uppercase text-muted">
-                Founder · Default Media Group
+                {article?.authorRole}
               </span>
             </div>
           </div>
@@ -65,8 +71,8 @@ const InsightsArticleHeader = () => {
           <SingleStatBlock statsHeader="2,940 words" stat="Long-form" />
 
           <div className="md:ml-auto flex gap-2 ml-0" aria-label="Share">
-            <SocialsFrame link="" logo="in"/>
-            <SocialsFrame link="" logo="↗"/>
+            <SocialsFrame link="" logo="in" />
+            <SocialsFrame link="" logo="↗" />
           </div>
         </div>
 
@@ -80,8 +86,7 @@ const InsightsArticleHeader = () => {
             </span>
           </div>
           <figcaption className="font-mono text-[11px] tracking-[0.06em] text-muted mt-3.5 uppercase">
-            The concierge sits between the brief and the buyer — closer to a
-            sales engineer than a help widget.
+            {article?.imageCaption}
           </figcaption>
         </figure>
       </div>
