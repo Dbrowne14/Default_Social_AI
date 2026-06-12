@@ -1,4 +1,5 @@
 import SingleStatBlock from "@/components/ui/SingleStatBlock";
+import SocialsFrame from "@/components/ui/SocialsFrame";
 
 const InsightsArticleHeader = () => {
   return (
@@ -64,16 +65,8 @@ const InsightsArticleHeader = () => {
           <SingleStatBlock statsHeader="2,940 words" stat="Long-form" />
 
           <div className="md:ml-auto flex gap-2 ml-0" aria-label="Share">
-            <a
-              href="#"
-              aria-label="Share on LinkedIn"
-              className="w-9.5 h-9.5 rounded-[50%] border border-line flex items-center justify-center font-mono text-[12px] text-cream-2 [transition:border-color_.15s_ease,color_.15s_ease,transform_.15s_ease] hover:border-accent hover:text-accent hover:translate-y-px"
-            >
-              in
-            </a>
-            <a href="#" aria-label="Copy link">
-              ↗
-            </a>
+            <SocialsFrame link="" logo="in"/>
+            <SocialsFrame link="" logo="↗"/>
           </div>
         </div>
 
