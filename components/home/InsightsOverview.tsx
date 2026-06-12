@@ -25,7 +25,7 @@ const InsightsOverview = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {insights.slice(0, 3).map((post) => {
-            const { author, tag, title, excerpt, date, readTime, href } = post;
+            const { author, tag, title, excerpt, date, readTime, slug } = post;
             return (
               <BlogCard
                 author={author}
@@ -34,7 +34,7 @@ const InsightsOverview = () => {
                 excerpt={excerpt}
                 date={date}
                 readTime={readTime}
-                href={href}
+                slug={slug}
                 key={title}
               />
             );
