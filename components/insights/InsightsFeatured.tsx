@@ -39,7 +39,7 @@ const InsightsFeatured = () => {
 
             <div className="flex gap-3 mt-3">
               <Button
-                link="/"
+                link={`/insights/${featuredArticle?.slug}`}
                 text="Read the essay"
                 arrowVariant="primaryBlack"
               />
