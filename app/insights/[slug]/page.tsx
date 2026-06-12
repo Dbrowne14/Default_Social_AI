@@ -1,9 +1,9 @@
-import React from 'react'
+import InsightsArticle from "@/components/insights/insightsPage/insightsArticle"
 
 const Page = () => {
   return (
-    <div>
-      
+    <div data-screen-label="04 Insights · Article">
+      <InsightsArticle/>
     </div>
   )
 }
