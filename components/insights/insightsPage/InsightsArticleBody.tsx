@@ -36,19 +36,19 @@ const InsightsArticleBody = () => {
                 className="max-w-[22ch] font-serif text-[clamp(30px,4vw,46px)] leading-[1.12] tracking-[-0.015em] text-cream"
               >
                 A chatbot deflects questions. A sales engineer{" "}
-                <em>moves a deal forward.</em>
+                <em className="italic text-accent">moves a deal forward.</em>
               </p>
 
-              <cite>The distinction the whole essay turns on</cite>
+              <cite className="block mt-6 font-mono text-[11px] tracking-widest uppercase text-muted font-normal">The distinction the whole essay turns on</cite>
             </div>
             {/*--Stop point styling--*/}
 
-            <div className="chapter" id="s1">
-              <span className="ix">01</span>
-              <span className="kick">Memory</span>
-              <span className="rule-fill"></span>
+            <div className="flex items-center gap-4.5 mt-21 scroll-mt-25" id="s1">
+              <span className="font-serif text-[clamp(40px,4.6vw,56px)] leading-[0.8] text-accent tracking-[-0.02em] shrink-0">01</span>
+              <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-muted shrink-0">Memory</span>
+              <span className="flex-1 h-px [background:linear-gradient(90deg,var(--line),color-mix(in_oklch,var(--line)_30%,transparent))]"></span>
             </div>
-            <h2>It has to remember the brief</h2>
+            <h2 className="text-[clamp(28px,3.4vw,40px)] leading-[1.08] text-cream mt-5.5 max-w-[20ch]">It has to remember the brief</h2>
             <p>
               The first layer is memory, and it's the one most teams skip. A
               generic assistant starts every conversation from zero — it has no
@@ -118,14 +118,6 @@ const InsightsArticleBody = () => {
               judgement call, which is the next layer.
             </p>
 
-            <div className="pull">
-              <p>
-                The model never sets the price. It decides who's{" "}
-                <em>ready to hear it.</em>
-              </p>
-              <cite>Layer two, in one line</cite>
-            </div>
-
             <div className="chapter" id="s3">
               <span className="ix">03</span>
               <span className="kick">Judgement</span>
@@ -190,8 +182,8 @@ const InsightsArticleBody = () => {
             </p>
 
             <div className="chapter" id="s5">
-              <span className="ix dot-mark"></span>
-              <span className="kick">Coda</span>
+              <span className="block w-3.5 h-3.5 rounded-[50%] bg-accent-2 [box-shadow:0_0_14px_color-mix(in_oklch,var(--accent-2)_55%,transparent)]"></span>
+              <span className="kick">Conclusion</span>
               <span className="rule-fill"></span>
             </div>
             <h2>Build the role, not the widget</h2>
@@ -209,14 +201,12 @@ const InsightsArticleBody = () => {
               best-briefed member of the team — the one that's always on, never
               tired, and smart enough to know when to get a human. That's not a
               chatbot.{" "}
-              <a className="inline" href="index.html#contact">
                 That's a sales engineer.
-              </a>
             </p>
 
-            <div className="article-end">
-              <div className="article-tags">
-                <span className="pill ai">AI Practice</span>
+            <div className="max-w-full m-0">
+              <div className="flex gap-2 flex-wrap mt-9 pt-7 border-t border-line">
+                <span className="pill-ai">AI Practice</span>
                 <span className="pill">Sales</span>
                 <span className="pill">Conversion</span>
                 <span className="pill">Web</span>
