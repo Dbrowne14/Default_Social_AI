@@ -1,14 +1,18 @@
+"use client";
 import { insights } from "@/data/blogData";
+import { usePathname } from "next/navigation";
 
 const InsightsArticleBody = () => {
+  const pathname = usePathname();
+  const slug = pathname.split("/").pop();
   return (
     <div className="pt-12 pb-19 720:pt-18 720:pb-24">
       <div className="container-custom">
         <div className="grid grid-cols-1 min-[900px]:grid-cols-[minmax(0,1fr)_280px] min-[1080px]:grid-cols-[minmax(0,1fr)_320px] min-[900px]:gap-x-12 min-[1080px]:gap-x-18">
           <article className="prose text-[17.5px] 720:text-[19px] leading-[1.68] 720:leading-[1.72] text-cream-2 min-[900px]:col-start-1 space-y-7">
             {insights
-              .filter((post) => post.featured)
-              .map((post) => {
+              .filter((post) => post.slug === slug)
+              ?.map((post) => {
                 return (
                   <>
                     {post.intro?.map((paragraph, index) => {
@@ -52,9 +56,13 @@ const InsightsArticleBody = () => {
                             className="flex items-center gap-4.5 mt-21 scroll-mt-25"
                             id={`s${paragraph.number}`}
                           >
-                            <span className="font-serif text-[clamp(40px,4.6vw,56px)] leading-[0.8] text-accent tracking-[-0.02em] shrink-0">
-                              {paragraph.number}
-                            </span>
+                            {paragraph.kicker === "Conclusion" ? (
+                              <span className="block w-3.5 h-3.5 rounded-[50%] bg-accent-2 [box-shadow:0_0_14px_color-mix(in_oklch,var(--accent-2)_55%,transparent)]"></span>
+                            ) : (
+                              <span className="font-serif text-[clamp(40px,4.6vw,56px)] leading-[0.8] text-accent tracking-[-0.02em] shrink-0">
+                                {paragraph.number}
+                              </span>
+                            )}
                             <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-muted shrink-0">
                               {paragraph.kicker}
                             </span>
@@ -69,20 +77,23 @@ const InsightsArticleBody = () => {
                         </>
                       );
                     })}
+                    <div className="max-w-full m-0">
+                      <div className="flex gap-2 flex-wrap mt-9 pt-7 border-t border-line">
+                        {post.allTags?.map((tag, index) => {
+                          return (
+                            <span
+                              className={`${tag === "AI Practice" ? "pill-ai" : "pill"}`}
+                              key={index}
+                            >
+                              {tag}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </div>
                   </>
                 );
               })}
-
-            {/*--Stop point styling--*/}
-
-            <div className="max-w-full m-0">
-              <div className="flex gap-2 flex-wrap mt-9 pt-7 border-t border-line">
-                <span className="pill-ai">AI Practice</span>
-                <span className="pill">Sales</span>
-                <span className="pill">Conversion</span>
-                <span className="pill">Web</span>
-              </div>
-            </div>
           </article>
         </div>
       </div>

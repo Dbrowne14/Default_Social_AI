@@ -33,6 +33,7 @@ export const insights: blogPostProps[] = [
     featured: true,
     date: "May 2026",
     tag: "AI Practice",
+    allTags: ["AI Practice", "Web", "Conversions", "Social"],
     subject: "The AI Concierge",
     readTime: "12 min",
     title: "The AI concierge isn't a chatbot. It's a sales engineer.",
@@ -144,10 +145,12 @@ export const insights: blogPostProps[] = [
           },
         ],
       },
-    ],
-
-    conclusion: [
-      {
+       {
+        number: "05",
+        kicker: "Conclusion",
+        title: "Build the role, not the widget",
+        paragraphs: [
+{
         text: "None of these four layers requires a frontier model or a research budget. They require a decision: to treat AI as a colleague with a job description rather than a feature with a backlog.",
       },
       {
@@ -158,6 +161,8 @@ export const insights: blogPostProps[] = [
       },
       {
         text: "That's not a chatbot. That's a sales engineer.",
+      },
+        ],
       },
     ],
   },
@@ -228,6 +233,7 @@ export type blogPostProps = {
   subject?: string;
   date: string;
   tag: string;
+  allTags?: string[];
   readTime: string;
   title: string;
   excerpt?: string;
@@ -239,7 +245,6 @@ export type blogPostProps = {
   intro?: text[];
   pullQuotes?: pullQuotes[];
   sections?: sectionProps[];
-  conclusion?: text[];
 };
 
 type text = {
