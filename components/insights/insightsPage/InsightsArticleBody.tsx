@@ -1,208 +1,79 @@
+import { insights } from "@/data/blogData";
+
 const InsightsArticleBody = () => {
   return (
     <div className="pt-12 pb-19 720:pt-18 720:pb-24">
       <div className="container-custom">
         <div className="grid grid-cols-1 min-[900px]:grid-cols-[minmax(0,1fr)_280px] min-[1080px]:grid-cols-[minmax(0,1fr)_320px] min-[900px]:gap-x-12 min-[1080px]:gap-x-18">
           <article className="prose text-[17.5px] 720:text-[19px] leading-[1.68] 720:leading-[1.72] text-cream-2 min-[900px]:col-start-1 space-y-7">
-            <p className="lead text-[19px] leading-[1.6] text-cream 720:text-[21px] first-letter:float-left first-letter:font-serif first-letter:text-[72px] first-letter:leading-[0.72] first-letter:pr-2.5 first-letter:pt-1.5 first-letter:text-accent 720:first-letter:text-[88px]720:first-letter:pr-3.5 720:first-letter:pt-2 max-w-[74ch]">
-              Walk into any pitch this year and someone will ask for "AI on the
-              website." What they almost always mean is a chatbot — a friendly
-              bubble in the bottom-right that answers FAQs and, on a good day,
-              books a call. We build those. We also think they are the least
-              interesting thing AI can do for a brand, and the reason so many of
-              these projects quietly underwhelm six weeks after launch.
-            </p>
+            {insights
+              .filter((post) => post.featured)
+              .map((post) => {
+                return (
+                  <>
+                    {post.intro?.map((paragraph, index) => {
+                      if ("superText" in paragraph) {
+                        return (
+                          <p
+                            key={index}
+                            className="lead text-[19px] leading-[1.6] text-cream 720:text-[21px] first-letter:float-left first-letter:font-serif first-letter:text-[72px] first-letter:leading-[0.72] first-letter:pr-2.5 first-letter:pt-1.5 first-letter:text-accent 720:first-letter:text-[88px] 720:first-letter:pr-3.5 720:first-letter:pt-2 max-w-[74ch]"
+                          >
+                            {paragraph.superText}
+                          </p>
+                        );
+                      }
 
-            <p className="max-w-[74ch]">
-              The framing is the problem. A chatbot is a <em>feature</em>: a box
-              you bolt on, scoped by how many questions it can deflect. A sales
-              engineer is a <strong>role</strong>: the person who joins the call
-              when the conversation gets technical, who knows the product cold,
-              who can read whether you're a tyre-kicker or a signed contract
-              waiting to happen — and who knows exactly when to bring in a human
-              and get out of the way.
-            </p>
+                      return (
+                        <p key={index} className="max-w-[74ch]">
+                          {paragraph.text}
+                        </p>
+                      );
+                    })}
+                    {post.pullQuotes?.map((paragraph, index) => {
+                      return (
+                        <div
+                          className="pull max-w-full my-14 p-0 border-none"
+                          key={index}
+                        >
+                          <p className="max-w-[22ch] font-serif text-[clamp(30px,4vw,46px)] leading-[1.12] tracking-[-0.015em] text-cream">
+                            {paragraph.quote}
+                          </p>
 
-            <p>
-              When you brief AI as a role instead of a feature, almost every
-              decision downstream changes: what it needs to know, what it's
-              allowed to decide, how you measure it, and what "good" looks like.
-              This essay is the pattern we use to make that real — four layers,
-              in the order we build them.
-            </p>
+                          <cite className="block mt-6 font-mono text-[11px] tracking-widest uppercase text-accent-deep font-normal">
+                            {paragraph.cite}
+                          </cite>
+                        </div>
+                      );
+                    })}
+                    {post.sections?.map((paragraph) => {
+                      return (
+                        <>
+                          <div
+                            className="flex items-center gap-4.5 mt-21 scroll-mt-25"
+                            id={`s${paragraph.number}`}
+                          >
+                            <span className="font-serif text-[clamp(40px,4.6vw,56px)] leading-[0.8] text-accent tracking-[-0.02em] shrink-0">
+                              {paragraph.number}
+                            </span>
+                            <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-muted shrink-0">
+                              {paragraph.kicker}
+                            </span>
+                            <span className="flex-1 h-px [background:linear-gradient(90deg,var(--line),color-mix(in_oklch,var(--line)_30%,transparent))]"></span>
+                          </div>
+                          <h2 className="text-[clamp(28px,3.4vw,40px)] leading-[1.08] text-cream mt-5.5 max-w-[20ch]">
+                            {paragraph.title}
+                          </h2>
+                          {paragraph.paragraphs.map((paragraph, index) => {
+                            return <p key={index}>{paragraph.text}</p>;
+                          })}
+                        </>
+                      );
+                    })}
+                  </>
+                );
+              })}
 
-            <div className="pull max-w-full my-14 p-0 border-none">
-              <p
-                className="max-w-[22ch] font-serif text-[clamp(30px,4vw,46px)] leading-[1.12] tracking-[-0.015em] text-cream"
-              >
-                A chatbot deflects questions. A sales engineer{" "}
-                <em className="italic text-accent">moves a deal forward.</em>
-              </p>
-
-              <cite className="block mt-6 font-mono text-[11px] tracking-widest uppercase text-muted font-normal">The distinction the whole essay turns on</cite>
-            </div>
             {/*--Stop point styling--*/}
-
-            <div className="flex items-center gap-4.5 mt-21 scroll-mt-25" id="s1">
-              <span className="font-serif text-[clamp(40px,4.6vw,56px)] leading-[0.8] text-accent tracking-[-0.02em] shrink-0">01</span>
-              <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-muted shrink-0">Memory</span>
-              <span className="flex-1 h-px [background:linear-gradient(90deg,var(--line),color-mix(in_oklch,var(--line)_30%,transparent))]"></span>
-            </div>
-            <h2 className="text-[clamp(28px,3.4vw,40px)] leading-[1.08] text-cream mt-5.5 max-w-[20ch]">It has to remember the brief</h2>
-            <p>
-              The first layer is memory, and it's the one most teams skip. A
-              generic assistant starts every conversation from zero — it has no
-              idea who you are, what page you arrived on, what campaign sent
-              you, or what you asked the last time you visited. A sales engineer
-              who reintroduced themselves every five minutes would be fired by
-              lunchtime.
-            </p>
-
-            <p>
-              Memory means the concierge is grounded in two things: the{" "}
-              <strong>brand's own context</strong> — positioning, services, the
-              real difference between the Sprint and the Programme — and the{" "}
-              <strong>visitor's session</strong> — referrer, pages viewed, the
-              half-finished form, the question they asked before they got
-              distracted. None of that is exotic. It's a retrieval layer over
-              your own content and a thin profile of the session. But it changes
-              the first sentence the AI gets to say from "How can I help?" to
-              something that already knows why you're here.
-            </p>
-
-            <p>
-              In practice this is unglamorous. On a live site, the concierge
-              reads the section you're sitting in when you open it — offering to
-              scope work on the Services page, offering to summarise the essay
-              on an Insights page. Same model, different memory.
-            </p>
-
-            <div className="chapter" id="s2">
-              <span className="ix">02</span>
-              <span className="kick">Inventory</span>
-              <span className="rule-fill"></span>
-            </div>
-            <h2>It has to know what you actually sell</h2>
-            <p>
-              The second layer is the one clients are most nervous about and the
-              one that pays for the whole project. A help-desk bot can get away
-              with knowing your FAQ. A sales engineer has to know the{" "}
-              <em>inventory</em>: what you offer, what it costs, what's in
-              scope, what isn't, and where the genuine trade-offs live. That's
-              the knowledge that lets it move a conversation from "interesting"
-              to "let's talk numbers" without fetching a human for every
-              sentence.
-            </p>
-
-            <p>
-              This is uncomfortable because it forces a decision most brands
-              defer: how much of your commercial reality are you willing to put
-              in front of a machine that talks to strangers? Our answer is a
-              tiered one — and it's the heart of the pattern.
-            </p>
-
-            <p>
-              We tier it. <strong>Public knowledge</strong> — positioning,
-              services, process, the shape of an engagement — the AI shares
-              freely, because it's already on the site.{" "}
-              <strong>Qualified knowledge</strong> — indicative ranges, typical
-              timelines, what moves the price — it shares only once a visitor
-              has shown genuine intent. <strong>Human-only knowledge</strong> —
-              specific quotes, contract terms, anything that commits the studio
-              — it never touches; it names the boundary and hands over.
-            </p>
-
-            <p>
-              Notice the AI isn't deciding the commercials. It's deciding{" "}
-              <em>which tier a given visitor has earned</em> — and that's a
-              judgement call, which is the next layer.
-            </p>
-
-            <div className="chapter" id="s3">
-              <span className="ix">03</span>
-              <span className="kick">Judgement</span>
-              <span className="rule-fill"></span>
-            </div>
-            <h2>It has to qualify, and it has to say no</h2>
-            <p>
-              A good sales engineer spends as much energy disqualifying as
-              qualifying. The wrong-fit lead who consumes three weeks of scoping
-              is more expensive than the deal you politely declined on day one.
-              So the third layer is judgement: the concierge reads the
-              conversation for the signals that actually predict fit — budget
-              posture, timeline, decision authority, the specificity of the
-              problem — and routes accordingly.
-            </p>
-
-            <p>
-              Crucially, "routes accordingly" sometimes means saying no. A
-              concierge that enthusiastically promises everything to everyone
-              isn't helpful; it's a liability that books calls your team has to
-              un-book. We tune ours to be honest about misfit — to suggest a
-              different kind of partner when that's the truth, and to protect
-              the calendar of the humans behind it.
-            </p>
-
-            <p>
-              What it never does is invent a number, promise a date, or commit
-              the studio to anything a partner would have to honour. Within
-              those limits, every turn it re-reads fit and picks one of three
-              moves: go deeper, hand to a human, or wind down gracefully. The
-              behaviour is predictable on purpose — that's what earns the trust
-              to talk pricing at all.
-            </p>
-
-            <div className="chapter" id="s4">
-              <span className="ix">04</span>
-              <span className="kick">Handoff</span>
-              <span className="rule-fill"></span>
-            </div>
-            <h2>It has to know when to step back</h2>
-            <p>
-              The final layer is the one that separates a tool from a teammate:
-              knowing the moment to stop talking and bring in a person. The best
-              sales engineers are defined as much by their handoffs as their
-              pitches — the clean briefing note, the warm introduction, the
-              context the human doesn't have to re-gather.
-            </p>
-
-            <p>
-              So the concierge's job at the end isn't to close. It's to{" "}
-              <strong>hand over a deal that's already warm</strong>: a short,
-              structured summary of who the visitor is, what they need, which
-              tier of knowledge they reached, and why it thinks they're worth a
-              call. The human picks up a conversation already in motion, not a
-              cold transcript.
-            </p>
-
-            <p>
-              Here's the test. If your AI's proudest metric is "questions
-              answered," it's still a chatbot. If it's "qualified conversations
-              handed to a human, with context," you've built the sales engineer.
-            </p>
-
-            <div className="chapter" id="s5">
-              <span className="block w-3.5 h-3.5 rounded-[50%] bg-accent-2 [box-shadow:0_0_14px_color-mix(in_oklch,var(--accent-2)_55%,transparent)]"></span>
-              <span className="kick">Conclusion</span>
-              <span className="rule-fill"></span>
-            </div>
-            <h2>Build the role, not the widget</h2>
-            <p>
-              None of these four layers requires a frontier model or a research
-              budget. They require a decision: to treat AI as a colleague with a
-              job description rather than a feature with a backlog. Memory so it
-              knows the context. Inventory so it knows the product. Judgement so
-              it qualifies honestly. Handoff so it knows when it's done.
-            </p>
-
-            <p>
-              Do that, and the bubble in the corner stops being the thing you
-              apologise for in month two. It becomes the most patient,
-              best-briefed member of the team — the one that's always on, never
-              tired, and smart enough to know when to get a human. That's not a
-              chatbot.{" "}
-                That's a sales engineer.
-            </p>
 
             <div className="max-w-full m-0">
               <div className="flex gap-2 flex-wrap mt-9 pt-7 border-t border-line">

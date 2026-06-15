@@ -46,7 +46,7 @@ export const insights: blogPostProps[] = [
       "The concierge sits between the brief and the buyer — closer to a sales engineer than a help widget.",
     intro: [
       {
-        text: "Walk into any pitch this year and someone will ask for 'AI on the website.' What they almost always mean is a chatbot — a friendly bubble in the bottom-right that answers FAQs and, on a good day, books a call. We build those. We also think they are the least interesting thing AI can do for a brand, and the reason so many of these projects quietly underwhelm six weeks after launch.",
+        superText: "Walk into any pitch this year and someone will ask for 'AI on the website.' What they almost always mean is a chatbot — a friendly bubble in the bottom-right that answers FAQs and, on a good day, books a call. We build those. We also think they are the least interesting thing AI can do for a brand, and the reason so many of these projects quietly underwhelm six weeks after launch.",
       },
       {
         text: "The framing is the problem. A chatbot is a feature: a box you bolt on, scoped by how many questions it can deflect. A sales engineer is a role: the person who joins the call when the conversation gets technical, who knows the product cold, who can read whether you're a tyre-kicker or a signed contract waiting to happen — and who knows exactly when to bring in a human and get out of the way.",
@@ -62,16 +62,11 @@ export const insights: blogPostProps[] = [
           "A chatbot deflects questions. A sales engineer moves a deal forward.",
         cite: "The distinction the whole essay turns on",
       },
-      {
-        quote:
-          "The model never sets the price. It decides who's ready to hear it.",
-        cite: "Layer two, in one line",
-      },
     ],
 
     sections: [
       {
-        id: "s1",
+
         number: "01",
         kicker: "Memory",
         title: "It has to remember the brief",
@@ -89,7 +84,7 @@ export const insights: blogPostProps[] = [
       },
 
       {
-        id: "s2",
+   
         number: "02",
         kicker: "Inventory",
         title: "It has to know what you actually sell",
@@ -110,7 +105,7 @@ export const insights: blogPostProps[] = [
       },
 
       {
-        id: "s3",
+
         number: "03",
         kicker: "Judgement",
         title: "It has to qualify, and it has to say no",
@@ -131,7 +126,6 @@ export const insights: blogPostProps[] = [
       },
 
       {
-        id: "s4",
         number: "04",
         kicker: "Handoff",
         title: "It has to know when to step back",
@@ -249,7 +243,8 @@ export type blogPostProps = {
 };
 
 type text = {
-  text: string;
+  text?: string;
+  superText?:string;
 };
 
 type pullQuotes = {
@@ -258,7 +253,6 @@ type pullQuotes = {
 };
 
 type sectionProps = {
-  id: string;
   number: string;
   kicker: string;
   title: string;
