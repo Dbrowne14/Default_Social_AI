@@ -1,9 +1,13 @@
-import InsightsArticle from "@/components/insights/insightsPage/InsightsArticle";
+import InsightsArticleHeader from "@/components/insights/insightsPage/InsightsArticleHeader";
+import InsightsArticleBody from "@/components/insights/insightsPage/InsightsContent/InsightsArticleBody";
+import InsightsArticleRelated from "@/components/insights/insightsPage/InsightsArticleRelated";
 
 const Page = () => {
   return (
     <div data-screen-label="04 Insights · Article">
-      <InsightsArticle />
+      <InsightsArticleHeader />
+      <InsightsArticleBody />
+      <InsightsArticleRelated />
     </div>
   );
 };
