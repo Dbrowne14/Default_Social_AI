@@ -31,7 +31,7 @@ const Navigation = () => {
         >
           <img
             className="h-5 w-auto md:h-4 block"
-            src="assets/default-media-logo.png"
+            src="/assets/default-media-logo.png"
             alt="Default Media Group"
           />
         </a>
