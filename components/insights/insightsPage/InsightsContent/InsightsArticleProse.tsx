@@ -1,5 +1,4 @@
 import { blogPostProps } from '@/data/blogData';
-import React from 'react'
 
 const InsightsArticleProse = ({article}:{article:blogPostProps | undefined}) => {
   return (
