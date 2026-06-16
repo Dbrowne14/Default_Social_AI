@@ -1,11 +1,11 @@
-import InsightsArticle from "@/components/insights/insightsPage/insightsArticle"
+import InsightsArticle from "@/components/insights/insightsPage/InsightsArticle";
 
 const Page = () => {
   return (
     <div data-screen-label="04 Insights · Article">
-      <InsightsArticle/>
+      <InsightsArticle />
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
