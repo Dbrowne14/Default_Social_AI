@@ -1,5 +1,5 @@
 import InsightsArticleHeader from "./InsightsArticleHeader";
-import InsightsArticleBody from "./InsightsArticleBody";
+import InsightsArticleBody from "./InsightsContent/InsightsArticleBody";
 
 const insightsArticle = () => {
   return (
