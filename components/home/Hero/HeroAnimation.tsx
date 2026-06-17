@@ -28,26 +28,23 @@ const HeroAnimation = () => {
     };
 
     function resize() {
-      const parent = canvas?.parentElement;
-      if (!parent) return;
-
-      const rect = parent.getBoundingClientRect();
+      if (!canvas) return;
+      if (!ctx) return;
+      const rect = canvas.getBoundingClientRect();
 
       W = rect.width;
       H = rect.height;
 
       canvas.width = W * DPR;
       canvas.height = H * DPR;
-      canvas.style.width = `${W}px`;
-      canvas.style.height = `${H}px`;
 
-      ctx?.setTransform(DPR, 0, 0, DPR, 0, 0);
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
     }
 
     resize();
     window.addEventListener("resize", resize);
 
-    const blobs = Array.from({ length: 14 }, (_, i) => {
+    let blobs = Array.from({ length: 14 }, (_, i) => {
       const fromSide = i % 4;
 
       let x = 0;
@@ -80,7 +77,7 @@ const HeroAnimation = () => {
       };
     });
 
-    const accents = Array.from({ length: 5 }, (_, i) => ({
+    let accents = Array.from({ length: 5 }, (_, i) => ({
       x: Math.random() * W,
       y: Math.random() * H,
       r: 60 + Math.random() * 60,
@@ -204,7 +201,6 @@ const HeroAnimation = () => {
         let fill = "oklch(0.62 0.18 28 / 0.6)";
 
         if (a.hue === "b") fill = "oklch(0.50 0.18 260 / 0.7)";
-    
 
         const gradient = ctx.createRadialGradient(x, y, 0, x, y, a.r);
 
@@ -240,7 +236,7 @@ const HeroAnimation = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 -z-10 h-full w-full"
+      className="absolute inset-0 -z-10 h-full  w-1000 "
       aria-hidden="true"
     />
   );
