@@ -46,7 +46,7 @@ const Navigation = () => {
       </div>
 
       <div className="hidden md:block">
-        <Button link="#contact" text="Start a project" />
+        <Button link="/#contact" text="Start a project" />
       </div>
       <NavHamburgerMenu />
     </nav>
