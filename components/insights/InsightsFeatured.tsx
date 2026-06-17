@@ -4,7 +4,10 @@ import { insights } from "@/data/blogData";
 const InsightsFeatured = () => {
   const featuredArticle = insights.find((blog) => blog.featured);
   return (
-    <section className="pt-20 px-0 xl:px-15 xl bg-[linear-gradient(180deg,var(--ink-2),var(--ink))]" data-screen-label="Featured">
+    <section
+      className="pt-20 px-0 xl:px-15 xl bg-[linear-gradient(180deg,var(--ink-2),var(--ink))]"
+      data-screen-label="Featured"
+    >
       <div className="container-custom">
         <article className="grid grid-cols-1 xl:grid-cols-2 gap-0 xl:gap-14 items-stretch border border-line rounded-[20px] overflow-hidden [background:linear-gradient(180deg,var(--ink-2),var(--ink))]">
           <div className="min-h-80 md:min-h-120 relative justify-end p-9 [background:radial-gradient(circle_at_30%_30%,color-mix(in_oklch,var(--accent)_25%,var(--ink-3)),transparent_55%),radial-gradient(circle_at_70%_70%,color-mix(in_oklch,var(--accent)_12%,var(--ink-3)),transparent_60%),repeating-linear-gradient(135deg,var(--ink-2)_0_14px,var(--ink-3)_14px_28px)]">
@@ -28,22 +31,24 @@ const InsightsFeatured = () => {
             <p className="text-cream-2 text-[15px] leading-[1.55]">
               {featuredArticle?.excerpt}
             </p>
-            <div className="flex items-center flex-col gap-3 mt-2">
-              <div className="w-9 h-9 rounded-[50%] bg-accent text-ink font-serif text-[18px]  items-center justify-center hidden xl:flex">
-                {featuredArticle?.authorInitials}
-              </div>
-              <div className="font-mono text-[11px] tracking-widest uppercase text-cream-2">
-                {featuredArticle?.author} · {featuredArticle?.authorRole}
-              </div>
-            </div>
 
-            <div className="flex gap-3 mt-3">
+            <div className="flex justify-between md:mt-6 mt-3">
+              <div className="flex items-center gap-3 mt-2">
+                <div className="w-9 h-9 rounded-[50%] bg-accent text-ink font-serif text-[18px]  items-center justify-center hidden min-[1500px]:flex">
+                  {featuredArticle?.authorInitials}
+                </div>
+                <div className="flex flex-col font-mono text-[11px] tracking-widest uppercase text-cream-2">
+                  <span className="font-semibold">
+                    {featuredArticle?.author} ·
+                  </span>
+                  <span>{featuredArticle?.authorRole}</span>
+                </div>
+              </div>
               <Button
                 link={`/insights/${featuredArticle?.slug}`}
                 text="Read the essay"
                 arrowVariant="primaryBlack"
               />
-              <Button link="/" text="Open in reader" variant="ghost" />
             </div>
           </div>
         </article>
