@@ -204,7 +204,7 @@ const HeroAnimation = () => {
         let fill = "oklch(0.62 0.18 28 / 0.6)";
 
         if (a.hue === "b") fill = "oklch(0.50 0.18 260 / 0.7)";
-        if (a.hue === "g") fill = "oklch(0.62 0.20 145 / 0.7)";
+        if (a.hue === "g") fill = "oklch(0.58 0.12 145 / 0.32)";
 
         const gradient = ctx.createRadialGradient(x, y, 0, x, y, a.r);
 
@@ -240,10 +240,10 @@ const HeroAnimation = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 h-full w-full"
+      className="absolute inset-0 -z-10 h-full w-full"
       aria-hidden="true"
     />
   );
-}
+};
 
-export default HeroAnimation
+export default HeroAnimation;

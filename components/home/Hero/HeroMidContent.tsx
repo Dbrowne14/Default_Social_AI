@@ -62,7 +62,7 @@ const HeroMidContent = () => {
                     animationDelay: `${item.delay}s`,
                   }}
                 >
-                  {item.word}
+                  <span className={`${item.word === "default" ? "":""}`}>{item.word}</span>
                   {item.space ? "\u00A0" : ""}
                 </span>
               )}
