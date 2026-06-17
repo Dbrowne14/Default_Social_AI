@@ -1,4 +1,3 @@
-import React from "react";
 import { servicesDetails } from "@/data/ServicesDetails";
 import ServiceOffers from "./ServiceOffers";
 import ServicesAi from "./ServicesAi";
@@ -54,6 +53,7 @@ const ServicesDetailed = () => {
                     id={p.id}
                     title={p.title}
                     description={p.description}
+                    key={key}
                   />
                 );
               })}
