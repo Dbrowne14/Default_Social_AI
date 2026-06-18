@@ -1,4 +1,4 @@
-import ServicesBuckets from "@/components/home//subComponents/ServicesBuckets";
+import ServicesBuckets from "@/components/home/servicesOverview/ServicesBuckets";
 import Button from "@/components/ui/Button";
 const ServicesOverview = () => {
   return (
