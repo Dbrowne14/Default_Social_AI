@@ -1,5 +1,5 @@
 import Hero from "@/components/home/Hero/Hero";
-import MarqueeTicker from "@/components/home/MarqueeTicker";
+import MarqueeTicker from "@/components/home/marqueeTicker/MarqueeTicker";
 import ValueProp from "@/components/home/ValueProp";
 import ClientLogoTicker from "@/components/home/ClientLogoTicker";
 import ServicesOverview from "@/components/home/ServicesOverview";
