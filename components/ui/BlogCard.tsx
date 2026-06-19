@@ -1,4 +1,4 @@
-import { blogPostProps } from "@/data/blogData";
+import type { BlogPostProps } from "@/types";
 import Link from "next/link";
 
 const BlogCard = ({
@@ -9,7 +9,7 @@ const BlogCard = ({
   title,
   excerpt,
   slug,
-}: blogPostProps) => {
+}: BlogPostProps) => {
   const ai = tag === "AI Practice";
   return (
     <article

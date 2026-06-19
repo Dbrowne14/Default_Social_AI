@@ -1,5 +1,3 @@
-import React from "react";
-
 const DummyClientData = () => {
   return (
     <div className="flex gap-20 items-center shrink-0 pr-20">
