@@ -2,8 +2,9 @@
 import { useState } from "react";
 import Button from "@/components/ui/Button";
 import BlogPost from "./BlogPost";
+import type { ActiveProps } from "@/types";
 
-const InsightsBlogPosts = ({isActive}:{isActive:string}) => {
+const InsightsBlogPosts = ({isActive}:ActiveProps) => {
   const [showMore, setShowMore] = useState<number>(6)
   return (
     <section className="pt-10">

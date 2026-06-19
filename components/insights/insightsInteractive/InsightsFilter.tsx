@@ -1,14 +1,10 @@
 import InsightsFilterToc from "./InsightsFilterToc";
-
-export type activeSetterProps = {
-  isActive: string;
-  setIsActive: React.Dispatch<React.SetStateAction<string>>;
-};
+ import { ActiveSetterProps } from "@/types";
 
 const InsightsFilter = ({
   isActive,
   setIsActive,
-}: activeSetterProps) => {
+}: ActiveSetterProps) => {
   return (
     <aside className="sticky top-22 py-4 [background:color-mix(in_oklch,var(--ink)_80%,transparent)] backdrop-blur-lg z-30 border-b border-line">
       <div className="container-thin">

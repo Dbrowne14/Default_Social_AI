@@ -37,3 +37,12 @@ type SectionProps = {
 export type ArticleProps = {
     article: BlogPostProps
 }
+
+export type ActiveProps = {
+  isActive: string;
+};
+
+export type ActiveSetterProps = {
+  isActive: string;
+  setIsActive: React.Dispatch<React.SetStateAction<string>>;
+};
