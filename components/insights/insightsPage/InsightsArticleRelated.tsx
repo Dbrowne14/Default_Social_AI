@@ -1,15 +1,16 @@
 "use client";
-import { usePathname } from "next/navigation";
+import type { InsightsArticleBodyProps } from "./InsightsContent/InsightsArticleBody";
 import { insights } from "@/data/blogData";
 import BlogCard from "@/components/ui/BlogCard";
 import Button from "@/components/ui/Button";
 
-const InsightsArticleRelated = () => {
-  const pathname = usePathname();
-  const slug = pathname.split("/").pop();
-  const articleTag = insights.find((post) => post.slug === slug)?.tag;
+
+const InsightsArticleRelated = ({ params }: InsightsArticleBodyProps) => {
+
+  const article = insights.find((post) => post.slug === params.slug);
+  const articleTag = article?.tag;
   const relatedArticles = insights?.filter(
-    (post) => post.slug !== slug && post.tag === articleTag,
+    (post) => post.slug !== params.slug && post.tag === articleTag,
   );
 
   return (

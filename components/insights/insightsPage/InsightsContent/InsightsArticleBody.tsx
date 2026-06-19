@@ -1,14 +1,19 @@
 "use client";
 import { insights } from "@/data/blogData";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 import InsightsArticleProse from "./InsightsArticleProse";
 import InsightsArticleRail from "./InsightsArticleRail";
 
-const InsightsArticleBody = () => {
-  const pathname = usePathname();
-  const slug = pathname.split("/").pop();
-  const article = insights.find((post) => post.slug === slug);
+export type InsightsArticleBodyProps = {
+  params: {
+    slug: string;
+  };
+};
+
+const InsightsArticleBody = ({ params }: InsightsArticleBodyProps) => {
+  const article = insights.find(
+    (post) => post.slug === params.slug
+  );
   const [section, setSection] = useState("");
   return (
     <div className="pt-12 pb-19 720:pt-18 720:pb-24">
