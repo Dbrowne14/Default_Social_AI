@@ -38,6 +38,8 @@
 
 /Users/davidbrowne/Desktop/Practice_coding/NextJs/Default_Social/Default_Social_Website/components/home/Hero/HeroMidContent.tsx
   20:6  warning  React Hook useEffect has a missing dependency: 'verbs.length'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+[x] Completed task
+
 
 /Users/davidbrowne/Desktop/Practice_coding/NextJs/Default_Social/Default_Social_Website/components/home/InsightsOverview.tsx
   18:67  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                 react/no-unescaped-entities

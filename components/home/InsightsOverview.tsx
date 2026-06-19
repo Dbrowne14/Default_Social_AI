@@ -1,5 +1,6 @@
 import { insights } from "@/data/blogData";
 import BlogCard from "../ui/BlogCard";
+import Link from "next/link";
 
 const InsightsOverview = () => {
   return (
@@ -15,11 +16,11 @@ const InsightsOverview = () => {
             </h2>
           </div>
           <p className="meta">
-            Long-form thinking on agency operating models, what we've shipped
-            recently, and what's coming next. {"  "}
-            <a href="/insights" className="text-accent hover:underline">
+            Long-form thinking on agency operating models, what we&apos;ve shipped
+            recently, and what&apos;s coming next. {"  "}
+            <Link href="/insights" className="text-accent hover:underline">
               All insights →
-            </a>
+            </Link>
           </p>
         </div>
 
