@@ -3,6 +3,7 @@ import "./globals.css";
 import Navigation from "@/components/layout/navigation/Navigation";
 import Footer from "@/components/layout/footer/Footer";
 import LoaderStrip from "@/components/ui/LoaderStrip";
+import { siteConfig } from "@/lib/seo/site";
 
 import {
   Instrument_Serif,
@@ -30,24 +31,21 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://defaultsocial.co.uk"),
   title: {
-    default: "Default Social",
-    template: "%s | Default Social",
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "AI-powered web development, social media, SEO, creative production and digital strategy for modern businesses.",
+  description: siteConfig.description,
   openGraph: {
-    title: "Default Social",
-    description:
-      "AI-powered web development, social media, SEO, creative production and digital strategy for modern businesses.",
+    title: siteConfig.name,
+    description: siteConfig.description,
     url: "/",
-    siteName: "Default Social",
+    siteName: siteConfig.name,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Default Social",
-    description:
-      "AI-powered web development, social media, SEO, creative production and digital strategy for modern businesses.",
+    title: siteConfig.name,
+    description: siteConfig.description,
   },
 };
 
