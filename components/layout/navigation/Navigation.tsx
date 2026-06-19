@@ -32,9 +32,11 @@ const Navigation = () => {
           rel="noopener noreferrer"
         >
           <Image
-            className="h-5 w-auto md:h-4 block"
             src="/assets/default-media-logo.png"
             alt="Default Media Group"
+            width={200}
+            height={40}
+            className="h-5 w-auto md:h-4 block"
           />
         </a>
       </div>
@@ -42,7 +44,9 @@ const Navigation = () => {
       <div className="hidden 720:flex gap-7 items-center font-mono text-[12px] tracking-widest uppercase text-cream-2 relative">
         {navData.map((page) => {
           return (
-            <NavLink href={page === "index" ? "/" : `/${page}`} key={page}>{page}</NavLink>
+            <NavLink href={page === "index" ? "/" : `/${page}`} key={page}>
+              {page}
+            </NavLink>
           );
         })}
       </div>
