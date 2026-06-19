@@ -35,7 +35,7 @@ const InsightsArticleRail = ({
     });
 
     return () => observer.disconnect();
-  }, [article]);
+  }, [article, setSection]);
   return (
     <aside className="grid-cols-1 hidden min-[900px]:block min-[900px]:col-start-2">
       <div className="sticky top-29 flex flex-col gap-7">

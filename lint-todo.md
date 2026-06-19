@@ -58,6 +58,7 @@
 
 /Users/davidbrowne/Desktop/Practice_coding/NextJs/Default_Social/Default_Social_Website/components/insights/insightsPage/InsightsContent/InsightsArticleRail.tsx
   38:6  warning  React Hook useEffect has a missing dependency: 'setSection'. Either include it or remove the dependency array. If 'setSection' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+  [x] Completed task
 
 /Users/davidbrowne/Desktop/Practice_coding/NextJs/Default_Social/Default_Social_Website/components/insights/isnightsInteractive/InsightsBlogPosts.tsx
   17:54  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
