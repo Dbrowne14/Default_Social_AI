@@ -6,10 +6,10 @@ import ServicesProcessStrip from "./ServicesProcessStrip";
 const ServicesDetailed = () => {
   return (
     <section className="border-b border-line" id="web" data-screen-label="Web">
-      {servicesDetails.map((service, key) => {
+      {servicesDetails.map((service) => {
         const { id, category, blurb, offers, aiCallout, process } = service;
         return (
-          <div className="container-custom">
+          <div className="container-custom" key={service.id}>
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-7 md:gap-20 items-end mb-14">
               <div>
                 <div className="font-serif text-[clamp(80px,12vw,180px)] leading-[0.85] text-accent tracking-[-0.04em]">
@@ -27,7 +27,7 @@ const ServicesDetailed = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-[1.2fr_0.7fr] gap-10 md:gap-16  items-start">
               <div>
-                <div className="eyebrow mb-4.5">What's in it</div>
+                <div className="eyebrow mb-4.5">What&apos;s in it</div>
                 <div className="flex flex-col">
                   {offers.map((offer, key) => {
                     return (

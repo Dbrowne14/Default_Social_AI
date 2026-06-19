@@ -73,6 +73,8 @@
    9:38  warning  'key' is defined but never used                                  @typescript-eslint/no-unused-vars
   12:11  error    Missing "key" prop for element in iterator                       react/jsx-key
   30:53  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+[x] Completed task
+
 
 /Users/davidbrowne/Desktop/Practice_coding/NextJs/Default_Social/Default_Social_Website/components/ui/LoaderStrip.tsx
   9:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
