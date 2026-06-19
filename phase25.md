@@ -116,9 +116,9 @@ Required for:
 
 Status:
 
-* [ ] Not started
-* [ ] In progress
-* [ ] Complete
+* [x] Not started
+* [x] In progress
+* [x] Complete
 
 ---
 
