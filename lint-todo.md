@@ -9,6 +9,7 @@
   96:31  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
   97:39  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
 
+
 /Users/davidbrowne/Desktop/Practice_coding/NextJs/Default_Social/Default_Social_Website/components/about/AboutHeader.tsx
   43:69  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
 

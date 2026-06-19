@@ -50,7 +50,7 @@ const AboutGroupStructure = () => {
             </h2>
           </div>
           <p className="meta">
-            We're one of three sibling studios inside Default Media Group — each
+            We&apos;re one of three sibling studios inside Default Media Group — each
             independent, but networked through a shared operating spine, shared
             AI tooling, and a shared address in Brentford.
           </p>
@@ -93,8 +93,8 @@ const AboutGroupStructure = () => {
 
         <p className="lede mt-19 max-w-[70ch]">
           When a client engages Default Social, they get our studio on the front
-          line — and the group's full operating depth standing behind it. One
-          brief, one team, four houses' worth of muscle.
+          line — and the group&apos;s full operating depth standing behind it. One
+          brief, one team, four houses&apos; worth of muscle.
         </p>
       </div>
     </section>
