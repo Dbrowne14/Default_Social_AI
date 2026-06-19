@@ -1,15 +1,22 @@
-"use client";
-
 import SingleStatBlock from "@/components/ui/SingleStatBlock";
 import SocialsFrame from "@/components/ui/SocialsFrame";
-import { insights } from "@/data/blogData";
-import { usePathname } from "next/navigation";
+import { ArticleProps } from "@/types";
 import Link from "next/link";
 
-const InsightsArticleHeader = () => {
-  const pathname = usePathname();
-  const slug = pathname.split("/").pop();
-  const article = insights.find((post) => post.slug === slug);
+const InsightsArticleHeader = ({ article }: ArticleProps) => {
+  const {
+    title,
+    tag,
+    slug,
+    author,
+    readTime,
+    excerpt,
+    date,
+    subject,
+    authorInitials,
+    authorRole,
+    imageCaption,
+  } = article;
 
   return (
     <header
@@ -25,46 +32,44 @@ const InsightsArticleHeader = () => {
             href="/insights"
             className="text-muted transition-colors duration-150 ease-in-out hover:text-accent"
           >
-            {pathname.split("/")[1]}
+            {slug}
           </Link>
           <span className="opacity-[0.5]">/</span>
           <Link
             href="/insights"
             className="text-muted transition-colors duration-150 ease-in-out hover:text-accent"
           >
-            {article?.tag}
+            {tag}
           </Link>
           <span className="opacity-[0.5]">/</span>
-          <span className="text-accent-deep italic ">{article?.subject}</span>
+          <span className="text-accent-deep italic ">{subject}</span>
         </nav>
 
         <div className="max-w-245">
           <div className="flex items-center flex-wrap text-[11px] gap-3.5 font-mono tracking-[0.12em] uppercase text-muted mb-7">
-            <span className="pill-ai">{article?.tag}</span>
-            <span className="font-mono text-muted">
-              Essay · {article?.readTime} ·
-            </span>
-            <span className="font-mono text-muted">{article?.date}</span>
+            <span className="pill-ai">{tag}</span>
+            <span className="font-mono text-muted">Essay · {readTime} ·</span>
+            <span className="font-mono text-muted">{date}</span>
           </div>
           <h1 className="font-serif text-[clamp(40px,6.4vw,88px)] leading-none tracking-[-0.02em] max-w-[20ch]">
-           {article?.title}
+            {title}
           </h1>
           <p className="font-serif text-[clamp(21px,2.1vw,30px)] leading-[1.4] text-cream-2 max-w-[80ch] mt-6 md:mt-8">
-            {article?.excerpt}
+            {excerpt}
           </p>
         </div>
 
         <div className="flex items-center gap-y-4.5 gap-x-7 md:gap-7 flex-wrap mt-8 md:mt-11 py-6 border-y border-line">
           <div className="flex items-center gap-3.5">
             <div className="w-11.5 h-11.5 rounded-[50%] bg-accent text-on-accent font-serif text-[24px] flex items-center justify-center shrink-0">
-              {article?.authorInitials}
+              {authorInitials}
             </div>
             <div className="flex flex-col gap-0.75 ">
               <span className="font-sans font-semibold text-[15px] text-cream">
-                {article?.author}
+                {author}
               </span>
               <span className="font-mono text-[10px] tracking-widest uppercase text-muted">
-                {article?.authorRole}
+                {authorRole}
               </span>
             </div>
           </div>
@@ -87,7 +92,7 @@ const InsightsArticleHeader = () => {
             </span>
           </div>
           <figcaption className="font-mono text-[11px] tracking-[0.06em] text-muted mt-3.5 uppercase">
-            {article?.imageCaption}
+            {imageCaption}
           </figcaption>
         </figure>
       </div>

@@ -43,7 +43,7 @@ const Page = async ({ params }: InsightsArticleBodyProps) => {
   );
   return (
     <div data-screen-label="04 Insights · Article">
-      <InsightsArticleHeader />
+      <InsightsArticleHeader article={article}/>
       <InsightsArticleBody article={article}/>
       <InsightsArticleRelated
         article={article}
