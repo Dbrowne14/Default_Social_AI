@@ -37,6 +37,7 @@ const InsightsArticleRelated = () => {
                 title={article.title}
                 excerpt={article.excerpt}
                 slug={article.slug}
+                key={article.title}
               />
             );
           })}
