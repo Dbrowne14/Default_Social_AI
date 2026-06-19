@@ -40,7 +40,7 @@ const AboutHeader = () => {
             <p className="lede">
               Default Social is the digital, social and technology arm of the
               Default Media Group — a 10-year-old company with one studio in
-              Brentford, one foot in the data, and both eyes on what's next.
+              Brentford, one foot in the data, and both eyes on what&apos;s next.
             </p>
             <div className="flex flex-col gap-3 font-mono text-[11px] tracking-[0.08em] uppercase mt-10">
               {companyInfo.map((info, key) => {
