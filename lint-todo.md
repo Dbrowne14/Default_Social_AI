@@ -62,7 +62,8 @@
 
 /Users/davidbrowne/Desktop/Practice_coding/NextJs/Default_Social/Default_Social_Website/components/insights/isnightsInteractive/InsightsBlogPosts.tsx
   17:54  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
-
+ [x] Completed task
+ 
 /Users/davidbrowne/Desktop/Practice_coding/NextJs/Default_Social/Default_Social_Website/components/layout/navigation/Navigation.tsx
   13:9   error    Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages                                                                                                                                    @next/next/no-html-link-for-pages
   32:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element

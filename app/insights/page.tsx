@@ -1,5 +1,5 @@
 import InsightsHeader from "@/components/insights/InsightsHeader";
-import InsightsInteractive from "@/components/insights/isnightsInteractive/InsightsInteractive";
+import InsightsInteractive from "@/components/insights/insightsInteractive/InsightsInteractive";
 import InsightsFeatured from "@/components/insights/InsightsFeatured";
 
 const Page = () => {

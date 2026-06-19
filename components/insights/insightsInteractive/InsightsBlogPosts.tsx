@@ -14,7 +14,7 @@ const InsightsBlogPosts = ({isActive}:{isActive:string}) => {
             <h2>Recent reading.</h2>
           </div>
           <p className="meta">
-            Updated weekly. Long-form by default — we'd rather publish one good
+            Updated weekly. Long-form by default — we&apos;d rather publish one good
             essay than ten posts.
           </p>
         </div>
