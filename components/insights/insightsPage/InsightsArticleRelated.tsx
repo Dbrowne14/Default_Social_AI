@@ -1,17 +1,17 @@
-"use client";
-import type { InsightsArticleBodyProps } from "./InsightsContent/InsightsArticleBody";
-import { insights } from "@/data/blogData";
 import BlogCard from "@/components/ui/BlogCard";
 import Button from "@/components/ui/Button";
+import { blogPostProps } from "@/data/blogData";
 
+type InsightsArticleRelatedProps = {
+  article: blogPostProps;
+  relatedArticles: blogPostProps[];
+};
 
-const InsightsArticleRelated = ({ params }: InsightsArticleBodyProps) => {
-
-  const article = insights.find((post) => post.slug === params.slug);
+const InsightsArticleRelated = ({
+  article,
+  relatedArticles,
+}: InsightsArticleRelatedProps) => {
   const articleTag = article?.tag;
-  const relatedArticles = insights?.filter(
-    (post) => post.slug !== params.slug && post.tag === articleTag,
-  );
 
   return (
     <section data-screen-label="Related reading">

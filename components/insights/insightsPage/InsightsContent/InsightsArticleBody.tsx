@@ -1,19 +1,13 @@
 "use client";
-import { insights } from "@/data/blogData";
+import { blogPostProps } from "@/data/blogData";
 import { useState } from "react";
 import InsightsArticleProse from "./InsightsArticleProse";
 import InsightsArticleRail from "./InsightsArticleRail";
 
-export type InsightsArticleBodyProps = {
-  params: {
-    slug: string;
-  };
-};
 
-const InsightsArticleBody = ({ params }: InsightsArticleBodyProps) => {
-  const article = insights.find(
-    (post) => post.slug === params.slug
-  );
+
+const InsightsArticleBody = ({ article }: {article: blogPostProps}) => {
+
   const [section, setSection] = useState("");
   return (
     <div className="pt-12 pb-19 720:pt-18 720:pb-24">
