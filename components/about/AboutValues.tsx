@@ -11,22 +11,22 @@ const AboutValues = () => {
           <div className="text-cream-2 leading-[1.62] text-[clamp(15px,1.4vw,16px)] space-y-4">
             <p>
               Slower briefs, longer cycles, fewer channels: that was the world
-              the old playbook was written for. Today's brands need a partner
+              the old playbook was written for. Today&apos;s brands need a partner
               who moves at the speed of the feed, but thinks at the depth of the
-              boardroom — and most can't do both halves of the job at once.
+              boardroom — and most can&apos;t do both halves of the job at once.
             </p>
             <p>
               We sit inside the Default Media Group because the work we do —
               marketing, technology, creative, AI — is too entangled to be split
-              across four agencies. We want one team you can call when you don't
+              across four agencies. We want one team you can call when you don&apos;t
               yet know if the answer is a campaign, a product, a content engine,
               or a strategy reset.
             </p>
           </div>
           <div className=" border-accent border-t-2 pt-5.5 font-serif text-[clamp(22px,2.6vw,30px)] leading-[1.22] text-cream">
-            <span className="block font-mono text-[10px] tracking-[0.16em] uppercase text-muted mb-3.5">What we're really after</span>
+            <span className="block font-mono text-[10px] tracking-[0.16em] uppercase text-muted mb-3.5">What we&apos;re really after</span>
             Work that looks <em className="italic text-accent">obvious in hindsight</em> — where, a year later,
-            you can't believe the brand ever did it any other way.
+            you can&apos;t believe the brand ever did it any other way.
           </div>
         </div>
       </div>
