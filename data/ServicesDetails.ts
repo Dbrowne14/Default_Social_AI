@@ -1,27 +1,6 @@
-export type serviceType = {
-  id: string;
-  linkName: string;
-  category: string;
-  title: string[];
-  description: string;
-  blurb: string;
-  tags: { label: string; ai?: boolean }[];
-  featured?: boolean;
-  offers: serviceOffers[];
-  aiCallout: serviceOffers;
-  process: ServiceProcess[];
-};
+import type { ServiceTypeProps } from "@/types";
 
-export type serviceOffers = {
-  title: string;
-  description: string;
-};
-
-export type ServiceProcess = serviceOffers & {
-  id: string;
-};
-
-export const servicesDetails: serviceType[] = [
+export const servicesDetails: ServiceTypeProps[] = [
   {
     id: "01",
     linkName: "web",

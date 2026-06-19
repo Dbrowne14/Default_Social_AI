@@ -1,4 +1,4 @@
-import type { ServiceProcess } from "@/data/ServicesDetails";
+import type { ServiceProcess } from "@/types";
 
 const ServicesProcessStrip = ({ id, title, description }: ServiceProcess) => {
   return (
