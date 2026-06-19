@@ -1,4 +1,3 @@
-"use client";
 import InsightsArticleHeader from "@/components/insights/insightsPage/InsightsArticleHeader";
 import InsightsArticleBody from "@/components/insights/insightsPage/InsightsContent/InsightsArticleBody";
 import InsightsArticleRelated from "@/components/insights/insightsPage/InsightsArticleRelated";
@@ -11,7 +10,7 @@ export type InsightsArticleBodyProps = {
   };
 };
 
-const Page = async({ params }: InsightsArticleBodyProps) => {
+const Page = async ({ params }: InsightsArticleBodyProps) => {
   const {slug} = await params
   const article = insights.find((post) => post.slug === slug);
 
