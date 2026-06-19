@@ -45,8 +45,8 @@ function AboutApproach() {
             </h2>
           </div>
           <p className="meta">
-            "Innovation" is overused. Here's what it actually means inside our
-            studio.
+            &ldquo;Innovation is overused. Here&apos;s what it actually means inside our
+            studio. &rdquo;
           </p>
         </div>
 
