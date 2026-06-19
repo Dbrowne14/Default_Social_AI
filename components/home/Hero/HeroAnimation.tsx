@@ -44,7 +44,7 @@ const HeroAnimation = () => {
     resize();
     window.addEventListener("resize", resize);
 
-    let blobs = Array.from({ length: 14 }, (_, i) => {
+    const blobs = Array.from({ length: 14 }, (_, i) => {
       const fromSide = i % 4;
 
       let x = 0;
@@ -77,7 +77,7 @@ const HeroAnimation = () => {
       };
     });
 
-    let accents = Array.from({ length: 5 }, (_, i) => ({
+    const accents = Array.from({ length: 5 }, (_, i) => ({
       x: Math.random() * W,
       y: Math.random() * H,
       r: 60 + Math.random() * 60,

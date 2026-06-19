@@ -78,3 +78,4 @@
 
 /Users/davidbrowne/Desktop/Practice_coding/NextJs/Default_Social/Default_Social_Website/components/ui/LoaderStrip.tsx
   9:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+  [x] Completed task
