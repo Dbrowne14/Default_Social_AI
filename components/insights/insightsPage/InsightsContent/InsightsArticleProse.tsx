@@ -1,10 +1,7 @@
-import { blogPostProps } from "@/data/blogData";
-
+import type { ArticleProps } from "@/types";
 const InsightsArticleProse = ({
   article,
-}: {
-  article: blogPostProps | undefined;
-}) => {
+}: ArticleProps) => {
   return (
     <article className="text-[17.5px] 720:text-[19px] leading-[1.68] 720:leading-[1.72] text-cream-2 min-[900px]:col-start-1 space-y-7">
       {article && (

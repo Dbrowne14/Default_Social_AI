@@ -1,12 +1,12 @@
 "use client";
-import { blogPostProps } from "@/data/blogData";
+import { ArticleProps } from "@/types";
 import { useState } from "react";
 import InsightsArticleProse from "./InsightsArticleProse";
 import InsightsArticleRail from "./InsightsArticleRail";
 
 
 
-const InsightsArticleBody = ({ article }: {article: blogPostProps}) => {
+const InsightsArticleBody = ({ article }: ArticleProps) => {
 
   const [section, setSection] = useState("");
   return (

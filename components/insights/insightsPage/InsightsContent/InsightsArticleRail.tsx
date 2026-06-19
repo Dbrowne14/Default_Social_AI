@@ -1,16 +1,17 @@
 "use client";
-import { blogPostProps } from "@/data/blogData";
+import { ArticleProps } from "@/types";
 import { useEffect } from "react";
+
+type ArticleRailProps = ArticleProps & {
+  section: string;
+  setSection: React.Dispatch<React.SetStateAction<string>>;
+}
 
 const InsightsArticleRail = ({
   article,
   section,
   setSection,
-}: {
-  article: blogPostProps | undefined;
-  section: string;
-  setSection: React.Dispatch<React.SetStateAction<string>>;
-}) => {
+}: ArticleRailProps) => {
   useEffect(() => {
     if (!article?.sections) return;
 

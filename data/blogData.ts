@@ -1,4 +1,6 @@
-export const insights: blogPostProps[] = [
+import type { BlogPostProps } from "@/types";
+
+export const insights: BlogPostProps[] = [
   {
     tag: "SEO",
     author: "David Browne",
@@ -228,38 +230,3 @@ export const insights: blogPostProps[] = [
   },
 ];
 
-export type blogPostProps = {
-  featured?: boolean;
-  subject?: string;
-  date: string;
-  tag: string;
-  allTags?: string[];
-  readTime: string;
-  title: string;
-  excerpt?: string;
-  authorInitials?: string;
-  author: string;
-  authorRole?: string;
-  slug: string;
-  imageCaption?: string;
-  intro?: text[];
-  pullQuotes?: pullQuotes[];
-  sections?: sectionProps[];
-};
-
-type text = {
-  text?: string;
-  superText?:string;
-};
-
-type pullQuotes = {
-  quote?: string;
-  cite?: string;
-};
-
-type sectionProps = {
-  number: string;
-  kicker: string;
-  title: string;
-  paragraphs: text[];
-};
