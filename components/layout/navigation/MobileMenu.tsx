@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { navData } from "@/data/navData";
 import NavCloseButton from "./NavCloseButton";
+import type { NavMenuProps } from "@/types";
 
 const MobileMenu = ({
   menuOpen,
   toggleMenu,
-}: {
-  menuOpen: boolean;
-  toggleMenu: () => void;
-}) => {
+}: NavMenuProps) => {
   return (
     <div
       id="mobileMenu"

@@ -19,7 +19,7 @@ export type BlogPostProps = {
 
 type Text = {
   text?: string;
-  superText?:string;
+  superText?: string;
 };
 
 type PullQuotes = {
@@ -35,8 +35,8 @@ type SectionProps = {
 };
 
 export type ArticleProps = {
-    article: BlogPostProps
-}
+  article: BlogPostProps;
+};
 
 export type ActiveProps = {
   isActive: string;
@@ -45,4 +45,12 @@ export type ActiveProps = {
 export type ActiveSetterProps = {
   isActive: string;
   setIsActive: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export type ToggleMenuProps = {
+ toggleMenu: () => void;
+};
+
+export type NavMenuProps = ToggleMenuProps & {
+  menuOpen: boolean;
 };

@@ -1,6 +1,7 @@
-'use client'
+"use client";
+import type { NavMenuProps } from "@/types";
 
-const NavOpenButton = ({menuOpen, toggleMenu}:{menuOpen:boolean, toggleMenu:() => void}) => {
+const NavOpenButton = ({ menuOpen, toggleMenu }: NavMenuProps) => {
   return (
     <button
       id="navBurger"
