@@ -17,7 +17,7 @@ const AboutOverview = () => {
           <p className="meta">
             The digital, social &amp; technology arm of the Default Media Group
             — a ten-year-old company with one studio in Brentford, one foot in
-            the data, and both eyes on what's next.{" "}
+            the data, and both eyes on what&apos;s next.{" "}
             <a href="/about" className="text-accent hover:underline">
               More about the studio →
             </a>
