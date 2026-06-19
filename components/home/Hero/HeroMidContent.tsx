@@ -1,17 +1,19 @@
 "use client";
 import { useState, useEffect } from "react";
 
+const VERBS = ["design", "build", "launch", "scale", "grow"];
+
 const HeroMidContent = () => {
   const [verbIndex, setVerbIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
-  const verbs = ["design", "build", "launch", "scale", "grow"];
+
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIsFading(true);
 
       setTimeout(() => {
-        setVerbIndex((i) => (i + 1) % verbs.length);
+        setVerbIndex((i) => (i + 1) % VERBS.length);
         setIsFading(false);
       }, 500);
     }, 2500);
@@ -53,7 +55,7 @@ const HeroMidContent = () => {
                 ${isFading ? "opacity-0" : "opacity-100"}
               `}
                 >
-                  {verbs[verbIndex]}
+                  {VERBS[verbIndex]}
                 </span>
               ) : (
                 <span
