@@ -2,6 +2,8 @@ import NavLink from "../../ui/Navlink";
 import Button from "../../ui/Button";
 import NavHamburgerMenu from "./NavHamburgerMenu";
 import { navData } from "@/data/navData";
+import Link from "next/link";
+import Image from "next/image";
 
 const Navigation = () => {
   return (
@@ -10,13 +12,13 @@ const Navigation = () => {
   720:py-3.5"
     >
       <div className="inline-flex items-center gap-3.5 md:gap-2.5">
-        <a
+        <Link
           href="/"
           className="font-serif text-[24px] leading-1 tracking-[-0.01em] text-cream inline-flex items-baseline lowercase md:text-[20px]"
           aria-label="Default Social"
         >
           default<em className="italic text-accent">/social</em>
-        </a>
+        </Link>
 
         <span className="w-px h-6.5 bg-line shrink-0 md:h-5.5" />
 
@@ -29,7 +31,7 @@ const Navigation = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             className="h-5 w-auto md:h-4 block"
             src="/assets/default-media-logo.png"
             alt="Default Media Group"
