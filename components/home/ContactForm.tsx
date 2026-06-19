@@ -51,7 +51,7 @@ export default function ContactForm() {
           <div className="eyebrow">05 · Contact</div>
 
           <h2 className="mt-5 font-serif text-[clamp(40px,5vw,80px)]">
-            Let's make
+            Let&apos;s make
             <br />
             your default,
             <br />
@@ -59,7 +59,7 @@ export default function ContactForm() {
           </h2>
 
           <p className="mt-4.5 max-w-[38ch] text-cream-2">
-            Tell us where you're going — a sentence or two is fine. A real human
+            Tell us where you&apos;re going — a sentence or two is fine. A real human
             reads everything that comes in, and we aim to reply within two
             working days.
           </p>
