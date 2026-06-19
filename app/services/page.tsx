@@ -2,6 +2,13 @@ import StickyToc from "@/components/services/StickyToc";
 import ServicesHeader from "@/components/services/ServicesHeader";
 import ServicesDetailed from "@/components/services/servicesDetailed/ServicesDetailed";
 import CTA from "@/components/ui/Cta";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "AI-powered web development, SEO, social campaigns, creative production and growth strategy for modern brands.",
+};
 
 const Page = () => {
   return (

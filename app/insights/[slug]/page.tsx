@@ -3,12 +3,32 @@ import InsightsArticleBody from "@/components/insights/insightsPage/InsightsCont
 import InsightsArticleRelated from "@/components/insights/insightsPage/InsightsArticleRelated";
 import { insights } from "@/data/blogData";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
 export type InsightsArticleBodyProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
+
+export async function generateMetadata({
+  params,
+}: InsightsArticleBodyProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  const article = insights.find((post) => post.slug === slug);
+
+  if (!article) {
+    return {
+      title: "Article not found",
+    };
+  }
+
+  return {
+    title: article.title,
+    description: article.excerpt,
+  };
+}
 
 const Page = async ({ params }: InsightsArticleBodyProps) => {
   const {slug} = await params

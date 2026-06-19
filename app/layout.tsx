@@ -34,11 +34,11 @@ export const metadata: Metadata = {
     template: "%s | Default Social",
   },
   description:
-    "AI-powered websites, content systems and automation for modern service businesses.",
+    "AI-powered web development, social media, SEO, creative production and digital strategy for modern businesses.",
   openGraph: {
     title: "Default Social",
     description:
-      "AI-powered websites, content systems and automation for modern service businesses.",
+      "AI-powered web development, social media, SEO, creative production and digital strategy for modern businesses.",
     url: "/",
     siteName: "Default Social",
     type: "website",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Default Social",
     description:
-      "AI-powered websites, content systems and automation for modern service businesses.",
+      "AI-powered web development, social media, SEO, creative production and digital strategy for modern businesses.",
   },
 };
 
@@ -63,7 +63,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <header>
-          <LoaderStrip/>
+          <LoaderStrip />
           <Navigation />
         </header>
         <main>{children}</main>
