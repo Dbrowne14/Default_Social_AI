@@ -4,6 +4,7 @@ import SingleStatBlock from "@/components/ui/SingleStatBlock";
 import SocialsFrame from "@/components/ui/SocialsFrame";
 import { insights } from "@/data/blogData";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const InsightsArticleHeader = () => {
   const pathname = usePathname();
@@ -20,19 +21,19 @@ const InsightsArticleHeader = () => {
           className="flex items-center gap 2.5 font-mono text-[11px] tracking-[0.12em] uppercase text-muted mt-4 mb-8 flex-wrap md:no-wrap md:mb-20"
           aria-label="Breadcrumb"
         >
-          <a
+          <Link
             href="/insights"
             className="text-muted transition-colors duration-150 ease-in-out hover:text-accent"
           >
             {pathname.split("/")[1]}
-          </a>
+          </Link>
           <span className="opacity-[0.5]">/</span>
-          <a
+          <Link
             href="/insights"
             className="text-muted transition-colors duration-150 ease-in-out hover:text-accent"
           >
             {article?.tag}
-          </a>
+          </Link>
           <span className="opacity-[0.5]">/</span>
           <span className="text-accent-deep italic ">{article?.subject}</span>
         </nav>

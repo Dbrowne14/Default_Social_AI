@@ -45,10 +45,12 @@
   18:67  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                 react/no-unescaped-entities
   19:31  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                 react/no-unescaped-entities
   20:13  error  Do not use an `<a>` element to navigate to `/insights/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+  [x] Completed task
 
 /Users/davidbrowne/Desktop/Practice_coding/NextJs/Default_Social/Default_Social_Website/components/insights/insightsPage/InsightsArticleHeader.tsx
   23:11  error  Do not use an `<a>` element to navigate to `/insights/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
   30:11  error  Do not use an `<a>` element to navigate to `/insights/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+   [x] Completed task
 
 /Users/davidbrowne/Desktop/Practice_coding/NextJs/Default_Social/Default_Social_Website/components/insights/insightsPage/InsightsArticleRelated.tsx
   32:15  error  Missing "key" prop for element in iterator  react/jsx-key
