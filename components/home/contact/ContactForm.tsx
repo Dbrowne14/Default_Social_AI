@@ -1,3 +1,7 @@
+"use client";
+import { useActionState } from "react";
+import { submitContactForm } from "@/app/actions/contact";
+
 const inputFields = [
   {
     label: "Name",
@@ -52,7 +56,14 @@ function InfoRow({ label, children }: LabelledSlotProps) {
   );
 }
 
+const initialState = {
+  success: false,
+  message: "",
+  errors: {},
+};
+
 export default function ContactForm() {
+  const [state, formAction, pending] = useActionState(submitContactForm, initialState);
   return (
     <section
       id="contact"
@@ -91,7 +102,7 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <form className="flex flex-col gap-4.5">
+        <form className="flex flex-col gap-4.5" action={formAction}>
           <div className="grid gap-2.5 xs520:grid-cols-2">
             {inputFields.map((field) => (
               <Field key={field.name} label={field.label}>
