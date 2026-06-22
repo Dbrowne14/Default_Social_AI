@@ -1,8 +1,22 @@
-
 const inputFields = [
-  ["Name", "text", "First & last"],
-  ["Company", "text", "Brand or org"],
-  ["Work email", "email", "you@company.com"],
+  {
+    label: "Name",
+    type: "text",
+    placeholder: "First & last",
+    name: "name",
+  },
+  {
+    label: "Company",
+    type: "text",
+    placeholder: "Brand or org",
+    name: "company",
+  },
+  {
+    label: "Work email",
+    type: "email",
+    placeholder: "you@company.com",
+    name: "email",
+  },
 ];
 
 const enquiries = [
@@ -17,7 +31,6 @@ type FormProps = {
   label: string;
   children: React.ReactNode;
 };
-
 
 function Field({ label, children }: FormProps) {
   return (
@@ -59,8 +72,8 @@ export default function ContactForm() {
           </h2>
 
           <p className="mt-4.5 max-w-[38ch] text-cream-2">
-            Tell us where you&apos;re going — a sentence or two is fine. A real human
-            reads everything that comes in, and we aim to reply within two
+            Tell us where you&apos;re going — a sentence or two is fine. A real
+            human reads everything that comes in, and we aim to reply within two
             working days.
           </p>
 
@@ -80,20 +93,20 @@ export default function ContactForm() {
 
         <form className="flex flex-col gap-4.5">
           <div className="grid gap-2.5 xs520:grid-cols-2">
-            {inputFields.map(([label, type, placeholder]) => (
-              <Field key={label} label={label}>
+            {inputFields.map((field) => (
+              <Field key={field.name} label={field.label}>
                 <input
                   required
                   className="form-field"
-                  type={type}
-                  name={label.toLowerCase().replaceAll(" ", "-")}
-                  placeholder={placeholder}
+                  type={field.type}
+                  name={field.name}
+                  placeholder={field.placeholder}
                 />
               </Field>
             ))}
 
             <Field label="Type of enquiry">
-              <select required name="enquiry-type" className="form-field">
+              <select required name="enquiryType" className="form-field">
                 {enquiries.map((item) => (
                   <option key={item}>{item}</option>
                 ))}
@@ -125,4 +138,3 @@ export default function ContactForm() {
     </section>
   );
 }
-

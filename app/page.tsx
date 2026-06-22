@@ -6,7 +6,7 @@ import ServicesOverview from "@/components/home/servicesOverview/ServicesOvervie
 import AboutOverview from "@/components/home/AboutOverview";
 import InsightsOverview from "@/components/home/InsightsOverview";
 
-import ContactForm from "@/components/home/ContactForm";
+import ContactForm from "@/components/home/contact/ContactForm";
 
 export default function Home() {
   return (
