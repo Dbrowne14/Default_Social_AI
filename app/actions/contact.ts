@@ -1,8 +1,6 @@
 import { contactSchema } from "@/lib/validation/contact";
 import { z } from "zod";
-import {Resend}  from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { Resend } from "resend";
 
 export type ContactFormState = {
   success: boolean;
@@ -20,6 +18,20 @@ export const submitContactForm = async (
   previousState: ContactFormState,
   formData: FormData,
 ): Promise<ContactFormState> => {
+console.log("API key exists:", Boolean(process.env.RESEND_API_KEY));
+console.log("cwd:", process.cwd());
+
+  const apiKey = process.env.RESEND_API_KEY;
+
+  if (!apiKey) {
+    return {
+      success: false,
+      message: "Contact form is not configured yet.",
+      errors: {},
+    };
+  }
+
+  const resend = new Resend(apiKey);
   const values = {
     name: formData.get("name"),
     company: formData.get("company"),
@@ -39,13 +51,12 @@ export const submitContactForm = async (
     };
   }
 
-  
   // send email
   const { name, company, email, enquiryType, message } = result.data;
 
   const { error } = await resend.emails.send({
     from: "Default Social <onboarding@resend.dev>",
-    to: ["info@defaultmedia.com"],
+    to: ["davidbrowne1992@gmail.com"],
     replyTo: email,
     subject: `New enquiry: ${enquiryType}`,
     html: `
@@ -72,5 +83,4 @@ export const submitContactForm = async (
     message: "Thanks for reaching out. We’ll get back to you shortly.",
     errors: {},
   };
-
 };
