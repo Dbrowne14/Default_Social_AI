@@ -1,6 +1,9 @@
+"use server";
+
 import { contactSchema } from "@/lib/validation/contact";
 import { z } from "zod";
 import { Resend } from "resend";
+
 
 export type ContactFormState = {
   success: boolean;
@@ -18,8 +21,8 @@ export const submitContactForm = async (
   previousState: ContactFormState,
   formData: FormData,
 ): Promise<ContactFormState> => {
-console.log("API key exists:", Boolean(process.env.RESEND_API_KEY));
-console.log("cwd:", process.cwd());
+  console.log("API key exists:", Boolean(process.env.RESEND_API_KEY));
+  console.log("cwd:", process.cwd());
 
   const apiKey = process.env.RESEND_API_KEY;
 
