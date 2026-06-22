@@ -63,7 +63,10 @@ const initialState = {
 };
 
 export default function ContactForm() {
-  const [state, formAction, pending] = useActionState(submitContactForm, initialState);
+  const [state, formAction, pending] = useActionState(
+    submitContactForm,
+    initialState,
+  );
   return (
     <section
       id="contact"
@@ -136,14 +139,20 @@ export default function ContactForm() {
           </Field>
 
           <button
+            disabled={pending}
             type="submit"
-            className="btn w-fit border bg-accent text-on-accent hover:bg-accent-deep"
+            className="btn w-fit border bg-accent text-on-accent hover:bg-accent-deep disabled:opacity-60"
           >
-            Send message
+            {pending ? "Sending..." : "Send message"}
             <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-cream text-on-accent text-[10px] leading-none">
               →
             </span>
           </button>
+          {state.message && (
+            <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-muted">
+              {state.message}
+            </p>
+          )}
         </form>
       </div>
     </section>
