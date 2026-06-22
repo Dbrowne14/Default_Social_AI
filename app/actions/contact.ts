@@ -1,5 +1,8 @@
 import { contactSchema } from "@/lib/validation/contact";
 import { z } from "zod";
+import {Resend}  from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export type ContactFormState = {
   success: boolean;
@@ -36,12 +39,38 @@ export const submitContactForm = async (
     };
   }
 
+  
+  // send email
+  const { name, company, email, enquiryType, message } = result.data;
+
+  const { error } = await resend.emails.send({
+    from: "Default Social <onboarding@resend.dev>",
+    to: ["info@defaultmedia.com"],
+    replyTo: email,
+    subject: `New enquiry: ${enquiryType}`,
+    html: `
+      <h2>New website enquiry</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Company:</strong> ${company || "Not provided"}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Enquiry type:</strong> ${enquiryType}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message}</p>
+    `,
+  });
+
+  if (error) {
+    return {
+      success: false,
+      message: "Something went wrong. Please try again.",
+      errors: {},
+    };
+  }
+
   return {
     success: true,
-    message: "Thanks for reaching out.",
+    message: "Thanks for reaching out. We’ll get back to you shortly.",
     errors: {},
   };
-  // send email
-
 
 };
