@@ -1,27 +1,7 @@
 "use client";
 import { useActionState } from "react";
 import { submitContactForm } from "@/app/actions/contact";
-
-const inputFields = [
-  {
-    label: "Name",
-    type: "text",
-    placeholder: "First & last",
-    name: "name",
-  },
-  {
-    label: "Company",
-    type: "text",
-    placeholder: "Brand or org",
-    name: "company",
-  },
-  {
-    label: "Work email",
-    type: "email",
-    placeholder: "you@company.com",
-    name: "email",
-  },
-] as const;
+import type { ContactFormState } from "@/app/actions/contact";
 
 const enquiries = [
   "New project",
@@ -56,7 +36,7 @@ function InfoRow({ label, children }: LabelledSlotProps) {
   );
 }
 
-const initialState = {
+const initialState: ContactFormState = {
   success: false,
   message: "",
   errors: {},
@@ -67,6 +47,7 @@ export default function ContactForm() {
     submitContactForm,
     initialState,
   );
+
   return (
     <section
       id="contact"
@@ -107,17 +88,49 @@ export default function ContactForm() {
 
         <form className="flex flex-col gap-4.5" action={formAction}>
           <div className="grid gap-2.5 xs520:grid-cols-2">
-            {inputFields.map((field) => (
-              <Field key={field.name} label={field.label}>
-                <input
-                  required
-                  className="form-field"
-                  type={field.type}
-                  name={field.name}
-                  placeholder={field.placeholder}
-                />
-              </Field>
-            ))}
+            <Field label="Name">
+              <input
+                required
+                className="form-field"
+                type="text"
+                name="name"
+                placeholder="First & last"
+              />
+              {state.errors.name && (
+                <p className="font-mono text-[10px] uppercase tracking-[0.08em] text-red-400">
+                  {state.errors.name[0]}
+                </p>
+              )}
+            </Field>
+
+            <Field label="Company">
+              <input
+                className="form-field"
+                type="text"
+                name="company"
+                placeholder="Brand or org"
+              />
+              {state.errors.company && (
+                <p className="font-mono text-[10px] uppercase tracking-[0.08em] text-red-400">
+                  {state.errors.company[0]}
+                </p>
+              )}
+            </Field>
+
+            <Field label="Work email">
+              <input
+                required
+                className="form-field"
+                type="email"
+                name="email"
+                placeholder="you@company.com"
+              />
+              {state.errors.email && (
+                <p className="font-mono text-[10px] uppercase tracking-[0.08em] text-red-400">
+                  {state.errors.email[0]}
+                </p>
+              )}
+            </Field>
 
             <Field label="Type of enquiry">
               <select required name="enquiryType" className="form-field">
@@ -125,6 +138,11 @@ export default function ContactForm() {
                   <option key={item}>{item}</option>
                 ))}
               </select>
+              {state.errors.enquiryType && (
+                <p className="font-mono text-[10px] uppercase tracking-[0.08em] text-red-400">
+                  {state.errors.enquiryType[0]}
+                </p>
+              )}
             </Field>
           </div>
 
@@ -136,6 +154,11 @@ export default function ContactForm() {
               className="form-field"
               placeholder="A few sentences is enough."
             />
+            {state.errors.message && (
+              <p className="font-mono text-[10px] uppercase tracking-[0.08em] text-red-400">
+                {state.errors.message[0]}
+              </p>
+            )}
           </Field>
 
           <button
@@ -148,6 +171,7 @@ export default function ContactForm() {
               →
             </span>
           </button>
+
           {state.message && (
             <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-muted">
               {state.message}
