@@ -17,7 +17,7 @@ const inputFields = [
     placeholder: "you@company.com",
     name: "email",
   },
-];
+] as const;
 
 const enquiries = [
   "New project",
@@ -27,12 +27,12 @@ const enquiries = [
   "Other",
 ];
 
-type FormProps = {
+type LabelledSlotProps = {
   label: string;
   children: React.ReactNode;
 };
 
-function Field({ label, children }: FormProps) {
+function Field({ label, children }: LabelledSlotProps) {
   return (
     <label className="flex flex-col gap-1.5">
       <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
@@ -43,7 +43,7 @@ function Field({ label, children }: FormProps) {
   );
 }
 
-function InfoRow({ label, children }: FormProps) {
+function InfoRow({ label, children }: LabelledSlotProps) {
   return (
     <div className="flex items-center justify-between font-mono text-[12px] uppercase tracking-[0.08em]">
       <span className="text-muted">{label}</span>
