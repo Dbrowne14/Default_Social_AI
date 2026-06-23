@@ -9,8 +9,8 @@ const Navigation = () => {
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 height-nav flex justify-between items-center py-4.5 px-8 bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)] 720:px-5
-  720:py-3.5"
-   aria-label="Primary navigation"
+  720:py-3.5 max-w-[100vw]"
+      aria-label="Primary navigation"
     >
       <div className="inline-flex items-center gap-3.5 md:gap-2.5">
         <Link
@@ -21,10 +21,9 @@ const Navigation = () => {
           default<em className="italic text-accent">/social</em>
         </Link>
 
-        <span className="w-px h-6.5 bg-line shrink-0 md:h-5.5" aria-hidden="true"/>
+        <span className="w-px h-6.5 bg-line shrink-0 md:h-5.5" />
 
-        <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-muted leading-1 md:text-[8px] md:tracking-[0.14em]"
-        aria-hidden="true">
+        <span className="font-mono hidden xs:block text-[9px] tracking-[0.16em] uppercase text-muted leading-1 md:text-[8px] md:tracking-[0.14em]">
           part of
         </span>
 
