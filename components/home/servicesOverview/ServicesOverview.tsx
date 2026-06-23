@@ -26,7 +26,7 @@ const ServicesOverview = () => {
           <Button
             link="/services"
             text="Explore all services"
-            variant="ghost"
+            variant="secondary"
           />
         </div>
       </div>
