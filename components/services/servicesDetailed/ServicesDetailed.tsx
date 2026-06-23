@@ -25,19 +25,18 @@ const ServicesDetailed = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-[1.2fr_0.7fr] gap-10 md:gap-16  items-start">
+            <div className="grid grid-cols-1 md:grid-cols-[1.3fr_0.7fr] gap-10 md:gap-16 items-start">
               <div>
-                <div className="eyebrow mb-4.5">What&apos;s in it</div>
+                <div className="eyebrow mb-4.5">What's included</div>
+
                 <div className="flex flex-col">
-                  {offers.map((offer, key) => {
-                    return (
-                      <ServiceOffers
-                        title={offer.title}
-                        description={offer.description}
-                        key={key}
-                      />
-                    );
-                  })}
+                  {offers.map((offer, key) => (
+                    <ServiceOffers
+                      title={offer.title}
+                      description={offer.description}
+                      key={key}
+                    />
+                  ))}
                 </div>
 
                 <ServicesAi
@@ -45,18 +44,21 @@ const ServicesDetailed = () => {
                   description={aiCallout.description}
                 />
               </div>
-            </div>
-            <div className="mt-14 grid grid-cols-2 md:grid-cols-[repeat(5,1fr)] gap-4">
-              {process.map((p, key) => {
-                return (
-                  <ServicesProcessStrip
-                    id={p.id}
-                    title={p.title}
-                    description={p.description}
-                    key={key}
-                  />
-                );
-              })}
+
+              <aside className="hidden md:flex flex-col md:sticky md:top-24">
+                <div className="eyebrow mb-4.5">Process</div>
+
+                <div className="flex flex-col gap-3">
+                  {process.map((p, key) => (
+                    <ServicesProcessStrip
+                      id={p.id}
+                      title={p.title}
+                      description={p.description}
+                      key={key}
+                    />
+                  ))}
+                </div>
+              </aside>
             </div>
           </div>
         );

@@ -2,7 +2,7 @@ import type { ServiceProcess } from "@/types";
 
 const ServicesProcessStrip = ({ id, title, description }: ServiceProcess) => {
   return (
-    <div className="p-4.5 rounded-[10px] border border-line bg-ink flex flex-col gap-2">
+    <div className="p-4.5 rounded-[10px] border border-line bg-ink hidden md:flex flex-col gap-2">
       <span className="font-mono text-[11px] tracking-[0.12em] text-accent">
         {id}
       </span>

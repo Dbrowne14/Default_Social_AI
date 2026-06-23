@@ -20,7 +20,7 @@ const StickyTocPills = () => {
             key={service.id}
           >
             {" "}
-            {service.id} / {service.category}{" "}
+            {service.id} / {service.linkName}{" "}
           </a>
         );
       })}

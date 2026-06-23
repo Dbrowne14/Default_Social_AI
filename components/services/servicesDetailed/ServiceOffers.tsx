@@ -10,8 +10,8 @@ const ServiceOffers = ({
         ✓
       </span>
       <div>
-        <h4>{title}</h4>
-        <p>
+        <h4 >{title}</h4>
+        <p >
           {description}
         </p>
       </div>
