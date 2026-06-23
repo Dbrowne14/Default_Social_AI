@@ -14,8 +14,9 @@ const NavOpenButton = ({ menuOpen, toggleMenu }: NavMenuProps) => {
         `}
       aria-label={menuOpen ? "Close menu" : "Open menu"}
       aria-expanded={menuOpen}
-      aria-controls="mobileMenu"
+      aria-controls="mobile-navigation"
       onClick={toggleMenu}
+      type="button"
     >
       {Array.from({ length: 3 }).map((_, i) => (
         <span

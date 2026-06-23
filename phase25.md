@@ -156,9 +156,9 @@ Potential providers:
 
 Status:
 
-* [ ] Not started
-* [ ] In progress
-* [ ] Complete
+* [x] Not started
+* [x] In progress
+* [x] Complete
 
 ---
 
@@ -199,8 +199,8 @@ Check:
 
 Status:
 
-* [ ] Not started
-* [ ] In progress
+* [x] Not started
+* [x] In progress
 * [ ] Complete
 
 ---

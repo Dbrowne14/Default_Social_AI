@@ -3,13 +3,11 @@ import { navData } from "@/data/navData";
 import NavCloseButton from "./NavCloseButton";
 import type { NavMenuProps } from "@/types";
 
-const MobileMenu = ({
-  menuOpen,
-  toggleMenu,
-}: NavMenuProps) => {
+const MobileMenu = ({ menuOpen, toggleMenu }: NavMenuProps) => {
   return (
-    <div
-      id="mobileMenu"
+    <nav
+      id="mobile-navigation"
+      aria-label="Mobile navigation"
       aria-hidden={!menuOpen}
       className={`
           fixed top-0 left-0 right-0 z-55 720:hidden
@@ -35,7 +33,7 @@ const MobileMenu = ({
           </Link>
         );
       })}
-    </div>
+    </nav>
   );
 };
 

@@ -8,8 +8,9 @@ import Image from "next/image";
 const Navigation = () => {
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 heihgt-nav flex justify-between items-center py-4.5 px-8 bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)] 720:px-5
+      className="fixed top-0 left-0 right-0 z-50 height-nav flex justify-between items-center py-4.5 px-8 bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)] 720:px-5
   720:py-3.5"
+   aria-label="Primary navigation"
     >
       <div className="inline-flex items-center gap-3.5 md:gap-2.5">
         <Link
@@ -20,9 +21,10 @@ const Navigation = () => {
           default<em className="italic text-accent">/social</em>
         </Link>
 
-        <span className="w-px h-6.5 bg-line shrink-0 md:h-5.5" />
+        <span className="w-px h-6.5 bg-line shrink-0 md:h-5.5" aria-hidden="true"/>
 
-        <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-muted leading-1 md:text-[8px] md:tracking-[0.14em]">
+        <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-muted leading-1 md:text-[8px] md:tracking-[0.14em]"
+        aria-hidden="true">
           part of
         </span>
 
@@ -30,6 +32,7 @@ const Navigation = () => {
           href="https://defaultmedia.com"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Visit Default Media Group website"
         >
           <Image
             src="/assets/default-media-logo.png"
