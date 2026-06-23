@@ -13,7 +13,7 @@ const HeroHeaderRibbon = () => {
         <span className="hidden md:block">52°29′N · LDN</span>
         <span className="hidden md:block">v2026.05</span>
       </div>
-      <div className="flex gap-4.5 items-center">
+      <div className="hidden xs:flex gap-4.5 items-center">
         <span>PART OF DEFAULT MEDIA GROUP</span>
       </div>
     </div>
