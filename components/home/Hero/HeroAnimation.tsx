@@ -236,7 +236,7 @@ const HeroAnimation = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 -z-10 h-full  w-1000 "
+      className="absolute inset-0 -z-10 h-full w-1000 motion-reduce:animate-none "
       aria-hidden="true"
     />
   );
