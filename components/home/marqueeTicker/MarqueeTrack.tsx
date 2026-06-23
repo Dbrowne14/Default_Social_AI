@@ -13,7 +13,7 @@ const MarqueeTrack = () => {
       {services.map((service, index) => (
         <span
           key={`first-${index}`}
-          className={`font-serif text-[64px] text-cream inline-flex items-center gap-12 ${
+          className={`font-serif text-[clamp(32px,4.5vw,64px)] text-cream inline-flex items-center gap-12 ${
             index % 2 === 0 ? "" : "italic"
           }`}
         >
