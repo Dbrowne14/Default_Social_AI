@@ -4,7 +4,7 @@ type ButtonProps = {
   link?: string;
   onClick?: () => void;
   text: string;
-  variant?: "primary" | "ghost";
+  variant?: "primary" | "ghost" | "secondary";
   arrowVariant?: "primary" | "primaryBlack";
   buttonDirection?: Direction;
 };
@@ -25,6 +25,14 @@ const variants = {
     border-line
     hover:border-accent
     hover:text-accent`,
+secondary: `
+  bg-cream
+  text-ink
+  border
+  border-cream
+  hover:bg-cream-2
+  hover:border-cream-2
+`,
 };
 
 const arrowVariants = {
@@ -33,10 +41,10 @@ const arrowVariants = {
 };
 
 const buttonDirections = {
-  up: '↑',
-  down: '↓',
-  left: '←',
-  right: '→'
+  up: "↑",
+  down: "↓",
+  left: "←",
+  right: "→",
 } as const;
 
 type Direction = keyof typeof buttonDirections;
@@ -47,8 +55,7 @@ export default function Button({
   onClick,
   variant = "primary",
   arrowVariant = "primary",
-  buttonDirection = "right"
-  
+  buttonDirection = "right",
 }: ButtonProps) {
   const classes = `text-[12px] inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono uppercase transition-all duration-150 ease-in-out hover:-translate-y-px tracking-widest
     ${variants[variant]}`;
@@ -59,30 +66,30 @@ export default function Button({
       <span
         className={`flex size-4.5 shrink-0 items-center justify-center rounded-full ${arrowVariants[arrowVariant]} text-[10px] leading-none`}
       >
-       {buttonDirections[buttonDirection]}
+        {buttonDirections[buttonDirection]}
       </span>
     </>
   );
 
-if (link?.startsWith("#")) {
-  return (
-    <a href={link} className={classes}>
-      {content}
-    </a>
-  );
-}
+  if (link?.startsWith("#")) {
+    return (
+      <a href={link} className={classes}>
+        {content}
+      </a>
+    );
+  }
 
-if (link) {
-  return (
-    <Link href={link} className={classes}>
-      {content}
-    </Link>
-  );
-}
+  if (link) {
+    return (
+      <Link href={link} className={classes}>
+        {content}
+      </Link>
+    );
+  }
 
-return (
-  <button type="button" onClick={onClick} className={classes}>
-    {content}
-  </button>
-);
+  return (
+    <button type="button" onClick={onClick} className={classes}>
+      {content}
+    </button>
+  );
 }

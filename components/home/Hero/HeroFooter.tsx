@@ -11,10 +11,10 @@ const HeroFooter = () => {
       <div className="flex gap-3 flex-wrap">
         <Button
           link="#contact"
-          text="Start a project"
+          text="Get started"
           arrowVariant="primaryBlack"
         />
-        <Button link="/services" text="Our Services" variant="ghost" />
+        <Button link="/services" text="Our Services" variant="secondary" />
       </div>
     </div>
   );

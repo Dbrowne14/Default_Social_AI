@@ -5,13 +5,19 @@ const NavOpenButton = ({ menuOpen, toggleMenu }: NavMenuProps) => {
   return (
     <button
       id="navBurger"
-      className={`
-          inline-flex flex-col justify-center gap-1.25
-          w-10 h-10 px-2.25
-          bg-transparent border border-line rounded-lg cursor-pointer
-          720:hidden transition-transform duration-200
-          ${menuOpen ? "scale-95" : "scale-100"}
-        `}
+className={`
+  inline-flex flex-col justify-center gap-1.25
+  w-10 h-10 px-2.25
+  bg-ink-2
+  border border-line
+  rounded-lg
+  cursor-pointer
+  shadow-[0_12px_30px_rgba(0,0,0,0.35)]
+  720:hidden
+  transition-all duration-200
+  hover:-translate-y-px
+  ${menuOpen ? "scale-95" : "scale-100"}
+`}
       aria-label={menuOpen ? "Close menu" : "Open menu"}
       aria-expanded={menuOpen}
       aria-controls="mobile-navigation"
