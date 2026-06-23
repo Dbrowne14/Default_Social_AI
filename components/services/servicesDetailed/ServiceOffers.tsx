@@ -11,7 +11,7 @@ const ServiceOffers = ({
       </span>
       <div>
         <h4 >{title}</h4>
-        <p >
+        <p className="text-[clamp(12px,1.2vw,17px)]" >
           {description}
         </p>
       </div>

@@ -20,7 +20,7 @@ const ServicesDetailed = () => {
                   {category}
                 </h2>
               </div>
-              <p className="text-cream-2 text-[17px] leading-[1.55] max-w-[52ch] mt-5">
+              <p className="text-cream-2 text-[clamp(14px,1.2vw,17px)] leading-[1.55] max-w-[52ch] mt-5">
                 {blurb}
               </p>
             </div>
