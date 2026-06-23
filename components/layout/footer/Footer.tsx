@@ -7,35 +7,49 @@ const Footer = () => {
   return (
     <div>
       <FooterRibbon />
-      <div className="footer-ribbon" aria-hidden="true"></div>
-      <footer className="bg-ink pt-1 pb-10">
-        <div className="container-custom">
-          <div className="text-[clamp(80px,14vw,220px)] leading-[0.9] font-serif mt-20 tracking-[-0.02em]">
+
+      <div className="footer-ribbon" aria-hidden="true" />
+
+      <footer className="relative overflow-hidden bg-ink pt-1 pb-10 border-t border-line">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,color-mix(in_oklch,var(--accent)_14%,transparent),transparent_34%)]"
+        />
+
+        <div className="container-thin relative">
+          <div className="text-[clamp(56px,18vw,220px)] leading-[0.9] font-serif mt-14 md:mt-20 tracking-[-0.02em] text-cream drop-shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
             default<span className="italic text-accent">/social</span>
           </div>
-          <div className="grid mt-16 gap-12  md:grid-cols-[2fr_1fr_1fr_1fr] xs520:grid-cols-2  grid-cols-1">
-            <div className="footer-headings">
-              <h4>The studio</h4>
-              <p className=" text-cream-2 max-w-[38ch] leading-[1.55]">
-                An AI-enabled digital media, marketing &amp; technology studio
-                inside the Default Media Group.
+
+          <div className="grid mt-10 md:mt-14 pt-8 gap-10 md:gap-12 grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr]">
+            <div className="col-span-2 md:col-span-1 rounded-xl border border-line bg-[color-mix(in_oklch,var(--ink-2)_55%,transparent)] p-5 md:p-6 shadow-[0_1px_0_rgba(255,255,255,0.05)_inset]">
+              <div className="font-mono text-[12px] md:text-[13px] tracking-[0.16em] uppercase text-muted mb-4">
+                AI-enabled studio
+              </div>
+
+              <p className="font-serif text-[clamp(18px,2.2vw,34px)] leading-[1.2] text-cream max-w-[40ch]">
+                Strategy, content, technology and AI systems designed to help
+                brands move faster and grow smarter.
               </p>
             </div>
+
             <div>
               <h4 className="footer-headings">Practices</h4>
-              <ul className="flex flex-col gap-2.5 p-0 m-0 list-none ">
+              <ul className="flex flex-col gap-1.5 md:gap-2.5 p-0 m-0 list-none">
                 {servicesDetails.map((service) => (
                   <li key={service.id}>
                     <Link className="footer-links" href="/services">
-                      {service.category}
+                      <span className="text-accent-deep">/ </span>
+                      {service.linkName}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
+
             <div>
-              <h4 className="footer-headings">Studio</h4>
-              <ul className="flex flex-col gap-2.5 p-0 m-0 list-none text-cream-2 hover:text-accent">
+              <h4 className="footer-headings">Explore</h4>
+              <ul className="flex flex-col gap-1.5 md:gap-2.5 p-0 m-0 list-none text-cream-2">
                 <li>
                   <Link className="footer-links" href="/about">
                     About
@@ -61,34 +75,38 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div>
+
+            <div className="col-span-2 md:col-span-1">
               <h4 className="footer-headings">Contact</h4>
-              <ul className="flex flex-col gap-2.5 p-0 m-0 list-none ">
-                <li>
-                  <Link
-                    href="mailto:info@defaultmedia.com"
-                    className="footer-links"
-                  >
-                    info@defaultmedia.com
-                  </Link>
-                </li>
-                <li>+44 7878 849 182</li>
-                <li>
-                  993 Great West Road,
-                  <br />
-                  Brentford, TW8 9DF
-                </li>
-              </ul>
+
+              <div className="space-y-1.5 md:space-y-2.5 font-mono text-[11px] tracking-[0.08em] uppercase">
+                <Link
+                  href="mailto:info@defaultmedia.com"
+                  className="footer-links block"
+                >
+                  info@defaultmedia.com
+                </Link>
+
+                <div className="text-cream-2">(+44) 7878 849 182</div>
+
+                <div className="text-muted leading-relaxed">
+                  Brentford · London
+                </div>
+              </div>
             </div>
           </div>
-          <div className="flex justify-between items-end mt-16 pt-6 border-t border-t-line font-mono text-[11px] tracking-[0.088em] text-muted uppercase">
-            <span>© 2026 Default Social. A Default Media Group company.</span>
-            <span>Built with Next.js · CMS · AI</span>
+          <div className="flex flex-col gap-2 md:flex-row md:justify-between md:items-end mt-12 md:mt-16 pt-6 border-t border-t-line">
+            <span className="font-mono text-[10px] md:text-[11px] tracking-[0.06em] text-muted">
+              © {new Date().getFullYear()} Default Social · Default Media Group
+            </span>
+
+            <span className="font-mono text-[10px] md:text-[11px] tracking-[0.06em] text-muted">
+              Built with Next.js · Sanity · AI
+            </span>
           </div>
         </div>
       </footer>
     </div>
   );
 };
-
 export default Footer;

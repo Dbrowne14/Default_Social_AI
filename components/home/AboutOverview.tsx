@@ -4,7 +4,7 @@ import TeamBio from "@/components/ui/TeamBio";
 const AboutOverview = () => {
   return (
     <section data-screen-label="About">
-      <div className="container-custom">
+      <div className="container-thin md:mb-8">
         <div className="section-headings">
           <div className="section-title">
             <div className="eyebrow">03 · About</div>
@@ -28,22 +28,27 @@ const AboutOverview = () => {
           <span className="text-mono text-[11px] tracking-[0.12em] uppercase text-accent whitespace-nowrap">
             Key people
           </span>
-          <p className="text-cream-2 text-[15px] max-w=[52ch]">
+          <p className="text-cream-2 text-[15px] max-w-[52ch]">
             Senior partners on the work — the team you meet in the pitch is the
             team that ships.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 xs520:grid-cols-2 gap-8">
-          {team.filter((person)=> person.key === true).map((person, index) => {
-            return (
-              <TeamBio
-                key={index}
-                initials={person.initials}
-                name={person.name}
-                role={person.role}
-              />
-            );
-          })}
+        <div className="flex gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible">
+          {" "}
+          {team
+            .filter((person) => person.key === true)
+            .map((person, index) => {
+              return (
+                <div key={person.name} className="min-w-60 md:min-w-0">
+                  <TeamBio
+                    key={index}
+                    initials={person.initials}
+                    name={person.name}
+                    role={person.role}
+                  />
+                </div>
+              );
+            })}
         </div>
       </div>
     </section>
