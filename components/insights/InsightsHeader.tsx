@@ -1,13 +1,21 @@
 import PageHeader from "../ui/PageHeader";
-import { headerData } from "@/data/headerData";
 
 const InsightsHeader = () => {
-  const header = headerData.find((header) => header.eyebrow === "Insights")
-  if(!header) return null;
   return (
     <>
       {" "}
-      <PageHeader eyebrow={header.eyebrow} titleLines={header.titleLines}>
+      <PageHeader
+        eyebrow="Insights"
+        title={
+          <>
+            Field notes
+            <br />
+            from the
+            <br />
+            <em className="text-accent italic">practice.</em>
+          </>
+        }
+      >
         <div>
           <p className="lede">
             Essays, teardowns and quiet experiments — written by our practice

@@ -1,19 +1,12 @@
 import React from "react";
 
-
-
-type TitleLine = {
-  text: string;
-  accent?: boolean;
-};
-
 type PageHeaderProps = {
   eyebrow: string;
-  titleLines: TitleLine[];
+  title: React.ReactNode;
   children: React.ReactNode;
 };
 
-const PageHeader = ({ eyebrow, titleLines, children }: PageHeaderProps) => {
+const PageHeader = ({ eyebrow, title, children }: PageHeaderProps) => {
   return (
     <header className="relative overflow-hidden pt-nav border-b border-line min-h-screen flex items-center">
       <div
@@ -25,18 +18,7 @@ const PageHeader = ({ eyebrow, titleLines, children }: PageHeaderProps) => {
         <div className="eyebrow mb-9">{eyebrow}</div>
 
         <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-20 md:gap-10 items-end">
-          <h1 className="font-serif text-[clamp(56px,9vw,140px)]">
-            {titleLines.map((line, i) => (
-              <span key={i} className="block">
-                {line.accent ? (
-                  <em className="italic text-accent">{line.text}</em>
-                ) : (
-                  line.text
-                )}
-              </span>
-            ))}
-          </h1>
-
+          <h1 className="font-serif text-[clamp(56px,9vw,140px)]"> {title}</h1>
           {children}
         </div>
       </div>
@@ -45,4 +27,3 @@ const PageHeader = ({ eyebrow, titleLines, children }: PageHeaderProps) => {
 };
 
 export default PageHeader;
-
