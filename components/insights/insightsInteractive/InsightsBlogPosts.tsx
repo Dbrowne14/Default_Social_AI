@@ -1,11 +1,24 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "@/components/ui/Button";
 import BlogPost from "./BlogPost";
 import type { ActiveProps } from "@/types";
 
 const InsightsBlogPosts = ({isActive}:ActiveProps) => {
   const [showMore, setShowMore] = useState<number>(6)
+
+  useEffect(() => {
+  const media = window.matchMedia("(max-width: 719px)");
+
+  const update = () => {
+    setShowMore(media.matches ? 3 : 6);
+  };
+
+  update();
+  media.addEventListener("change", update);
+
+  return () => media.removeEventListener("change", update);
+}, []);
   return (
     <section className="pt-10">
       <div className="container-custom">

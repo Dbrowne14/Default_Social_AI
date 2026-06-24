@@ -42,7 +42,7 @@ bg-[radial-gradient(circle_at_15%_20%,color-mix(in_oklch,var(--accent)_40%,trans
             and craft.
           </h1>
           <div>
-            <p className="lede">
+            <p className="lede hidden md:block">
               Default Social is the digital, social and technology arm of the
               Default Media Group — a 10-year-old company with one studio in
               Brentford, one foot in the data, and both eyes on what&apos;s

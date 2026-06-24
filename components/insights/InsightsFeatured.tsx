@@ -14,9 +14,7 @@ const InsightsFeatured = () => {
           <div className="  aspect-4/3
   xl:aspect-auto
   xl:min-h-fullrelative justify-end p-5 md:p-9 [background:radial-gradient(circle_at_30%_30%,color-mix(in_oklch,var(--accent)_25%,var(--ink-3)),transparent_55%),radial-gradient(circle_at_70%_70%,color-mix(in_oklch,var(--accent)_12%,var(--ink-3)),transparent_60%),repeating-linear-gradient(135deg,var(--ink-2)_0_14px,var(--ink-3)_14px_28px)]">
-            <span className="absolute top-5 right-5 md:top-9 md:right-9 font-serif text-[clamp(56px,18vw,140px)] text-cream opacity-[0.7] tracking-[-0.04em]">
-              ⌁
-            </span>
+
 
             <span className="inline-flex gap-2 py-1.5 px-3 rounded-[999px] bg-ink border border-line font-mono text-[10px] tracking-[0.12em] uppercase text-cream">
               <span className="text-accent">●</span> Featured ·{" "}

@@ -72,7 +72,7 @@ export default function ContactForm() {
             working days.
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 border-t border-line pt-6">
+          <div className="mt-10 hidden md:flex flex-col gap-4 border-t border-line pt-6">
             <InfoRow label="Studio">Brentford · London</InfoRow>
 
             <InfoRow label="Email">

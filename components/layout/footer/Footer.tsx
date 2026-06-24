@@ -17,17 +17,17 @@ const Footer = () => {
         />
 
         <div className="container-thin relative">
-          <div className="text-[clamp(56px,18vw,220px)] leading-[0.9] font-serif mt-14 md:mt-20 tracking-[-0.02em] text-cream drop-shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
+          <div className="text-[clamp(56px,18vw,220px)] leading-[0.9] font-serif my-14 md:my-20 tracking-[-0.02em] text-cream drop-shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
             default<span className="italic text-accent">/social</span>
           </div>
 
-          <div className="grid mt-10 md:mt-14 pt-8 gap-10 md:gap-12 grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr]">
-            <div className="col-span-2 md:col-span-1 rounded-xl border border-line bg-[color-mix(in_oklch,var(--ink-2)_55%,transparent)] p-5 md:p-6 shadow-[0_1px_0_rgba(255,255,255,0.05)_inset]">
-              <div className="font-mono text-[12px] md:text-[13px] tracking-[0.16em] uppercase text-muted mb-4">
+          <div className="grid mt-6 md:mt-14 gap-10 md:gap-12 grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr]">
+            <div className="col-span-2 md:col-span-1 rounded-xl hidden md:block bg-[color-mix(in_oklch,var(--ink-2)_85%,transparent)] p-5 md:p-6 mb-10 md:mb-0 shadow-[0_12px_32px_rgba(0,0,0,0.25),0_1px_0_rgba(255,255,255,0.05)_inset]">
+              <div className="font-mono text-[clamp(12px,2.2vw,14px)] tracking-[0.16em] uppercase text-muted mb-2 md:mb-4">
                 AI-enabled studio
               </div>
 
-              <p className="font-serif text-[clamp(18px,2.2vw,34px)] leading-[1.2] text-cream max-w-[40ch]">
+              <p className="text-[clamp(14px,1.8vw,18px)] leading-[1.2] text-cream max-w-[55ch] md:max-w-[40ch]">
                 Strategy, content, technology and AI systems designed to help
                 brands move faster and grow smarter.
               </p>
@@ -51,26 +51,30 @@ const Footer = () => {
               <h4 className="footer-headings">Explore</h4>
               <ul className="flex flex-col gap-1.5 md:gap-2.5 p-0 m-0 list-none text-cream-2">
                 <li>
+                  <span className="text-accent-deep">/ </span>
                   <Link className="footer-links" href="/about">
                     About
                   </Link>
                 </li>
                 <li>
+                  <span className="text-accent-deep">/ </span>
                   <Link className="footer-links" href="/insights">
                     Insights
                   </Link>
                 </li>
                 <li>
+                  <span className="text-accent-deep">/ </span>
                   <Link className="footer-links" href="#contact">
                     Contact
                   </Link>
                 </li>
                 <li>
+                  <span className="text-accent-deep">/ </span>
                   <Link
-                    className="footer-links"
+                    className="footer-links font-semibold font-accent-2"
                     href="https://defaultmedia.com"
                   >
-                    Default Media Group ↗
+                    Default Media Group
                   </Link>
                 </li>
               </ul>
@@ -80,6 +84,7 @@ const Footer = () => {
               <h4 className="footer-headings">Contact</h4>
 
               <div className="space-y-1.5 md:space-y-2.5 font-mono text-[11px] tracking-[0.08em] uppercase">
+                
                 <Link
                   href="mailto:info@defaultmedia.com"
                   className="footer-links block"
