@@ -36,7 +36,7 @@ const AboutGroupStructure = () => {
   const parent = groupStructure.find((parent) => parent.type === "parent");
   return (
     <section
-      className="bg-[linear-gradient(180deg,var(--ink-2),var(--ink))] border-y border-line"
+      className="bg-[linear-gradient(180deg,var(--ink-2),var(--ink))] md:border-b md:border-line"
       data-screen-label="Group"
     >
       <div className="container-custom">

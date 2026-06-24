@@ -10,10 +10,10 @@ const Footer = () => {
 
       <div className="footer-ribbon" aria-hidden="true" />
 
-      <footer className="relative overflow-hidden bg-ink pt-1 pb-10 border-t border-line">
+      <footer className="relative overflow-hidden bg-ink pt-1 pb-10 ">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,color-mix(in_oklch,var(--accent)_14%,transparent),transparent_34%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_15%_90%,color-mix(in_oklch,var(--accent)_40%,transparent),transparent_42%),radial-gradient(circle_at_85%_95%,color-mix(in_oklch,var(--accent-2)_48%,transparent),transparent_36%),radial-gradient(circle_at_50%_75%,color-mix(in_oklch,var(--accent-3)_22%,transparent),transparent_52%)]"
         />
 
         <div className="container-thin relative">
@@ -22,18 +22,20 @@ const Footer = () => {
           </div>
 
           <div className="grid mt-6 md:mt-14 gap-10 md:gap-12 grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr]">
-            <div className="group border border-transparent
-    hover:border-[color-mix(in_oklch,var(--accent)_20%,var(--line))] 
-    col-span-2 md:col-span-1 rounded-xl hidden md:block p-5 md:p-6 mb-10 md:mb-0 shadow-[0_12px_32px_rgba(0,0,0,0.25),0_1px_0_rgba(255,255,255,0.05)_inset]">
+            <div className="group border border-transparent hover:border-[color-mix(in_oklch,var(--accent)_20%,var(--line))] col-span-2 md:col-span-1 rounded-xl hidden md:block p-5 md:p-6 mb-10 md:mb-0 shadow-[0_12px_32px_rgba(0,0,0,0.25),0_1px_0_rgba(255,255,255,0.05)_inset]">
               <div className="font-mono text-[clamp(12px,2.2vw,14px)] tracking-[0.16em] uppercase text-muted mb-2 md:mb-4">
-                <span className="inline-block   ">
-                  <span className="group-hover:text-accent transition-all duration-300 group-hover:tracking-[0.34em] group-hover:font-bold">AI</span><span className="group-hover:opacity-50">-enabled studio</span>
+                <span className="group-hover:text-accent transition-all duration-300 group-hover:tracking-[0.34em] group-hover:font-bold">
+                  AI
                 </span>
+                <span className="group-hover:opacity-50">-enabled studio</span>
               </div>
 
               <p className="text-[clamp(14px,1.8vw,18px)] leading-[1.2] text-cream max-w-[55ch] md:max-w-[40ch] ">
-                Strategy, content, technology and <span className="group-hover:text-accent-deep transition-all duration-300 ">AI systems </span>designed to help
-                brands move faster and grow smarter.
+                Strategy, content, technology and{" "}
+                <span className="group-hover:text-accent-deep transition-all duration-300 ">
+                  AI systems{" "}
+                </span>
+                designed to help brands move faster and grow smarter.
               </p>
             </div>
 
@@ -72,8 +74,8 @@ const Footer = () => {
                     Contact
                   </Link>
                 </li>
-                <li>
-                  <span className="text-accent-deep">/ </span>
+                <li className="flex gap-1">
+                  <span className="text-accent-deep">/</span>
                   <Link
                     className="footer-links font-semibold font-accent-2"
                     href="https://defaultmedia.com"

@@ -23,7 +23,7 @@ const companyInfo = [
 
 const AboutHeader = () => {
   return (
-    <header className=" pt-nav flex items-center  border-b border-line min-h-screen">
+    <header className=" pt-nav flex items-center   min-h-screen">
       <div
         aria-hidden="true"
         className="absolute inset-0 z-0 opacity-100 blur-[140px]
