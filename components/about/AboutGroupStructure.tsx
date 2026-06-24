@@ -26,9 +26,9 @@ export const groupStructure = [
   {
     type: "sibling",
     label: "Sibling",
-    name: "Default Studios",
+    name: "Default Mgt",
     description:
-      "Brand, identity, packaging and editorial — the group's creative house, supplying craft into every engagement.",
+      "Artist and talent management — building careers, securing partnerships and creating opportunities for creators, presenters and personalities across modern media.",
   },
 ] as const;
 
@@ -50,20 +50,24 @@ const AboutGroupStructure = () => {
             </h2>
           </div>
           <p className="meta">
-            We&apos;re one of three sibling studios inside Default Media Group — each
-            independent, but networked through a shared operating spine, shared
-            AI tooling, and a shared address in Brentford.
+            We&apos;re one of three sibling studios inside Default Media Group —
+            each independent, but networked through a shared operating spine,
+            shared AI tooling, and a shared address in Brentford.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 relative ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-12 relative">
           {parent && (
-            <div className="border rounded-(--radius-brand) p-7 bg-ink flex flex-col gap-3 relative col-span-full items-center text-center bg-[linear-gradient(180deg,color-mix(in_oklch,var(--accent)_6%,var(--ink-2)),var(--ink))] border-[color-mix(in_oklch,var(--accent)_35%,var(--line))]">
-              <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-muted">
+            <div className="border rounded-(--radius-brand) p-6 md:p-7 bg-ink flex flex-col gap-3 relative col-span-full md:items-center md:text-center bg-[linear-gradient(180deg,color-mix(in_oklch,var(--accent)_6%,var(--ink-2)),var(--ink))] border-[color-mix(in_oklch,var(--accent)_35%,var(--line))]">
+              <span className="font-mono text-[10px] md:text-[11px] tracking-[0.12em] uppercase text-muted">
                 {parent.label}
               </span>
-              <h3 className="text-[28px] font-serif ">{parent.name}</h3>
-              <p className="text-cream-2 text-[14px] max-w-[50ch]">
+
+              <h3 className="text-[clamp(24px,5vw,28px)] font-serif">
+                {parent.name}
+              </h3>
+
+              <p className="text-cream-2 text-[14px] leading-[1.55] max-w-[50ch]">
                 {parent.description}
               </p>
             </div>
@@ -71,30 +75,52 @@ const AboutGroupStructure = () => {
 
           {groupStructure
             .filter((group) => group.type !== "parent")
-            .map((sibling, key) => {
-              return (
-                <div
-                  key={key}
-                  className={`border  rounded-(--radius-brand) p-8 bg-ink flex flex-col gap-3 relative ${sibling.type === "self" ? "border-accent [background:linear-gradient(180deg,color-mix(in_oklch,var(--accent)_6%,var(--ink-2)),var(--ink))]" : "border-line"}`}
-                >
+            .map((sibling, key) => (
+              <div
+                key={key}
+                className={`
+          border rounded-(--radius-brand)
+          p-6 md:p-8
+          bg-ink
+          flex flex-col gap-3
+          relative
+          md:min-h-65
+          ${
+            sibling.type === "self"
+              ? "border-accent [background:linear-gradient(180deg,color-mix(in_oklch,var(--accent)_6%,var(--ink-2)),var(--ink))]"
+              : "border-line"
+          }
+        `}
+              >
+                <div className="flex items-center justify-between gap-4">
                   <span
-                    className={`font-mono text-[11px] tracking-[0.12em] uppercase ${sibling.type === "self" ? "text-accent" : "text-muted"}`}
+                    className={`font-mono text-[10px] md:text-[11px] tracking-[0.12em] uppercase ${
+                      sibling.type === "self" ? "text-accent" : "text-muted"
+                    }`}
                   >
                     {sibling.label}
                   </span>
-                  <h3 className="text-[28px] font-serif">{sibling.name}</h3>
-                  <p className="text-cream-2 text-[14px]">
-                    {sibling.description}
-                  </p>
+
+                  <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted md:hidden">
+                    0{key + 1}
+                  </span>
                 </div>
-              );
-            })}
+
+                <h3 className="text-[clamp(24px,5vw,28px)] font-serif">
+                  {sibling.name}
+                </h3>
+
+                <p className="text-cream-2 text-[14px] leading-[1.55]">
+                  {sibling.description}
+                </p>
+              </div>
+            ))}
         </div>
 
         <p className="lede mt-19 max-w-[70ch]">
           When a client engages Default Social, they get our studio on the front
-          line — and the group&apos;s full operating depth standing behind it. One
-          brief, one team, four houses&apos; worth of muscle.
+          line — and the group&apos;s full operating depth standing behind it.
+          One brief, one team, four houses&apos; worth of muscle.
         </p>
       </div>
     </section>
