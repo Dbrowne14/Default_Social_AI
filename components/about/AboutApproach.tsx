@@ -44,10 +44,24 @@ function AboutApproach() {
               mindset, on rails.
             </h2>
           </div>
-          <p className="meta">
-            &ldquo;Innovation is overused. Here&apos;s what it actually means inside our
-            studio. &rdquo;
-          </p>
+
+          <div className="relative w-fit max-w-[42ch] 720:py-5 720:border-y border-line">
+            <p className="font-serif text-[clamp(20px,3vw,32px)] leading-[1.18]">
+              <span className="italic text-accent">Innovation</span> is
+              overused...
+              <br />
+              Here&apos;s what it actually means inside our studio.
+            </p>
+
+            <div
+              aria-hidden="true"
+              className="hidden 720:absolute top-0 right-0 h-px w-20 bg-accent"
+            />
+            <div
+              aria-hidden="true"
+              className="hidden 720:absolute bottom-0 left-0 h-px w-20 bg-accent"
+            />
+          </div>
         </div>
 
         <div className="flex flex-col">
@@ -55,15 +69,21 @@ function AboutApproach() {
             return (
               <div
                 key={approach.id}
-                className="grid grid-cols-1 720:grid-cols-[60px_1fr_1.5fr] gap-8 items-start py-8 border-t border-line"
+                className="border-t border-line py-6 md:py-8 flex flex-col gap-3 720:grid 720:grid-cols-[56px_0.8fr_1.5fr] 720:gap-8 720:items-start"
               >
-                <span className="font-mono text-[11px] text-accent-deep tracking-[0.12em]  pt-1.5">
-                  {approach.id}
-                </span>
-                <h3 className="font-serif text-[clamp(22px,2.4vw,32px)]">
-                  {approach.title}
-                </h3>
-                <p className="text-cream-2">{approach.description}</p>
+                <div className="flex items-baseline gap-3 720:contents">
+                  <span className="font-mono text-[11px] text-accent-deep tracking-[0.12em] uppercase 720:pt-1.5">
+                    {approach.id}
+                  </span>
+
+                  <h3 className="font-serif text-[clamp(24px,6vw,32px)] leading-[1.1]">
+                    {approach.title}
+                  </h3>
+                </div>
+
+                <p className="text-cream-2 text-[15px] md:text-base leading-[1.6] max-w-[62ch] 720:max-w-none">
+                  {approach.description}
+                </p>
               </div>
             );
           })}
