@@ -4,7 +4,7 @@ import { team } from "@/data/teamData";
 const AboutTeam = () => {
   return (
     <section
-      className="bg-[linear-gradient(180deg,var(--ink-2),var(--ink))] border-y border-line"
+      className="bg-[linear-gradient(180deg,var(--ink-2),var(--ink))] border-t border-line"
       data-screen-label="Team"
     >
       <div className="container-custom">
@@ -23,17 +23,16 @@ const AboutTeam = () => {
           </p>
         </div>
 
-        <div className="grid gri-cols-1 xs520:grid-cols-2 md:grid-cols-4 gap-8">
-          {team.map((person) => {
-            return (
+        <div className="flex gap-4 overflow-x-auto pb-2 md:grid md:overflow-visible md:grid-cols-4">
+          {team.map((person) => (
+            <div key={person.initials} className="shrink-0 w-50 md:w-auto">
               <TeamBio
-                key={person.initials}
                 initials={person.initials}
                 name={person.name}
                 role={person.role}
               />
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

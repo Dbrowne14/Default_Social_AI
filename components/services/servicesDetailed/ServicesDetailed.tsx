@@ -5,7 +5,7 @@ import ServicesProcessStrip from "./ServicesProcessStrip";
 
 const ServicesDetailed = () => {
   return (
-    <section className="border-b border-line" id="web" data-screen-label="Web">
+    <section className="" id="web" data-screen-label="Web">
       {servicesDetails.map((service) => {
         const { id, category, blurb, offers, aiCallout, process } = service;
         return (

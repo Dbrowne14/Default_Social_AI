@@ -16,7 +16,7 @@ const CTA = ({
   buttonText,
 }: CTAProps) => {
   return (
-    <section className=" border-t border-line">
+    <section className="">
       <div className="container-custom flex justify-between items-end flex-wrap gap-8">
         <h2 className="font-serif max-w-[18ch]">
           {primaryText}
@@ -33,7 +33,7 @@ const CTA = ({
             text="Start a project"
             arrowVariant="primaryBlack"
           />
-          <Button link={buttonLink} text={buttonText} variant="ghost" />
+          <Button link={buttonLink} text={buttonText} variant="secondary" />
         </div>
       </div>
     </section>
