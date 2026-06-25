@@ -179,3 +179,188 @@ Client {
   featuredInTicker?: boolean;
   sortOrder?: number;
 }
+```
+
+## Services Overview
+
+### Services overview copy
+
+Location: `components/home/servicesOverview/ServicesOverview.tsx`
+
+Content:
+
+- Eyebrow ("02 · Services")
+- Section heading
+- Supporting paragraph/meta copy
+- CTA ("Explore all services")
+
+Target model:
+
+`homePage`
+
+Notes:
+
+- The section heading and supporting copy should become CMS-managed.
+- CTA label and destination should become a reusable CTA object.
+- `ServicesBuckets` should derive from the `service` content model rather than hardcoded service data.
+- Layout, spacing, heading line breaks, button styling, and responsive behaviour remain code-controlled.
+
+### Services buckets
+
+Location: `components/home/servicesOverview/ServicesBuckets.tsx`
+
+Source content:
+
+`data/ServicesDetails.ts`
+
+Target model:
+
+`service`
+
+Notes:
+
+- This component should be driven by `service` documents.
+- It should not have its own CMS model.
+- Service title, category, description, tags, and featured status should come from the `service` model.
+- The grid layout, featured card layout, hover state, arrow, tag styling, and responsive behaviour remain code-controlled.
+- `service.title` should continue to support intentional line breaks, likely through a `TitleLine[]` model.
+
+## About Overview
+
+### About overview copy
+
+Location: `components/home/AboutOverview.tsx`
+
+Content:
+
+- Eyebrow ("03 · About")
+- Section heading
+- Supporting paragraph
+- Inline CTA ("More about the studio →")
+- Key people label
+- Supporting copy for the featured team members
+
+Target model:
+
+`homePage`
+
+Notes:
+
+- Section heading and supporting copy should become CMS-managed.
+- The inline CTA should become a reusable CTA object.
+- The "Key people" label and supporting text should become CMS-managed.
+- Heading line breaks should continue to be supported through the `TitleLine[]` model.
+- Layout, spacing, typography, responsive behaviour, and card layout remain code-controlled.
+
+### Featured team members
+
+Location: `components/home/AboutOverview.tsx`
+
+Source content:
+
+`data/teamData.ts`
+
+Target model:
+
+`person`
+
+Notes:
+
+- Featured team members should be derived from the `person` model.
+- The current `key` property should become a more descriptive flag (for example `featured` or `featuredOnHome`).
+- `TeamBio` remains a reusable presentational component.
+- Card layout, styling, and responsive behaviour remain code-controlled.
+
+## Insights Overview
+
+### Insights overview copy
+
+Location: `components/home/InsightsOverview.tsx`
+
+Content:
+
+- Eyebrow ("04 · Insights")
+- Section heading
+- Supporting paragraph/meta copy
+- Inline CTA ("All insights →")
+
+Target model:
+
+`homePage`
+
+Notes:
+
+- Section heading and supporting copy should become CMS-managed.
+- The inline CTA should become a reusable CTA object.
+- Heading line breaks should continue to be supported through the `TitleLine[]` model.
+- Layout, spacing, typography, responsive behaviour, and card grid remain code-controlled.
+
+### Featured insights
+
+Location: `components/home/InsightsOverview.tsx`
+
+Source content:
+
+`data/blogData.ts`
+
+Target model:
+
+`insight`
+
+Notes:
+
+- Featured/latest insight cards should be driven by `insight` documents.
+- The current `insights.slice(0, 3)` logic should eventually move into the content access layer.
+- `BlogCard` remains a reusable presentational component.
+- Card layout, styling, and responsive behaviour remain code-controlled.
+
+## Contact Section
+
+### Contact section copy
+
+Location: `components/home/contact/ContactForm.tsx`
+
+Content:
+
+- Eyebrow ("05 · Contact")
+- Section heading
+- Supporting paragraph
+- Studio location
+- Email address
+- Phone number
+- Group affiliation label
+
+Target model:
+
+`homePage` and `siteSettings`
+
+Notes:
+
+- Contact section heading and supporting copy should become CMS-managed under `homePage`.
+- Contact details should come from global `siteSettings.contact`.
+- Heading line breaks should continue to be supported through the `TitleLine[]` model.
+- Layout, spacing, typography, form styling, and responsive behaviour remain code-controlled.
+
+### Contact form configuration
+
+Location: `components/home/contact/ContactForm.tsx`
+
+Current hardcoded content:
+
+- Enquiry type options
+- Field labels
+- Placeholder text
+- Submit button text
+- Pending button text
+
+Target model:
+
+Code-controlled for Phase 3
+
+Notes:
+
+- The form structure should remain code-controlled.
+- Validation and server action behaviour should remain code-controlled.
+- Enquiry type options can stay in code for now.
+- Only move enquiry options into the CMS later if non-developers need to change them.
+- Field labels and placeholders are part of the form UX and can remain code-controlled initially.
