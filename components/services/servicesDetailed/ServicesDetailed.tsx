@@ -27,7 +27,7 @@ const ServicesDetailed = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-[1.3fr_0.7fr] gap-10 md:gap-16 items-start">
               <div>
-                <div className="eyebrow mb-4.5">What's included</div>
+                <div className="eyebrow mb-4.5">What&apos;s included</div>
 
                 <div className="flex flex-col">
                   {offers.map((offer, key) => (
