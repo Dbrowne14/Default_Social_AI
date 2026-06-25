@@ -6,56 +6,105 @@
 
 - `data/ServicesDetails.ts`
 - `data/blogData.ts`
-- `data/companInfo.ts`
+- `data/companyInfo.ts`
 - `data/navData.ts`
 - `data/teamData.ts`
 
 ### Likely hardcoded content areas
 
-- Home page sections
-- About page sections
+- Home page hero and landing sections
+- About page copy
 - Services landing copy
 - Insights landing copy
-- Footer content
-- Navigation labels
-- CTA copy
+- Footer copy
 - Contact section copy
+- CTA copy
 - Article template copy
 
 ---
 
 ## Entity mapping
 
-| Current source | Future Sanity model |
-|---|---|
+| Current source | Target model |
+|---------------|--------------|
 | `ServicesDetails.ts` | `service` |
-| `blogData.ts` | `insight`, `author`, `category` |
-| `companInfo.ts` | `siteSettings`, `page`, `stat`, `cta` |
-| `navData.ts` | `navigationItem`, `siteSettings` |
-| `teamData.ts` | `teamMember` |
+| `blogData.ts` | `insight` |
+| `teamData.ts` | `person` |
+| `companyInfo.ts` | `aboutPage.companyFacts` |
+| `navData.ts` | Code-defined `NavigationItem[]` |
 
 ---
 
-## CMS-managed
+## Planned document types
+
+- `homePage`
+- `aboutPage`
+- `servicesPage`
+- `insightsPage`
+- `service`
+- `insight`
+- `person`
+- `siteSettings`
+
+---
+
+## Planned reusable object types
+
+- `seo`
+- `cta`
+- `companyFact`
+- `titleLine`
+- `serviceOffer`
+- `serviceTag`
+- `serviceProcessStep`
+- `serviceCallout`
+- `articleSection`
+- `articleTextBlock`
+- `pullQuote`
+- `contactDetails`
+- `link`
+
+---
+
+## CMS-managed content
+
+### Pages
+
+- Home page copy
+- About page copy
+- Services page introduction
+- Insights page introduction
+
+### Editorial content
 
 - Services
 - Insights
-- Authors
-- Categories
-- Team members
-- Navigation
-- Footer
-- SEO
+- People (team members/authors)
+- Company facts
 - Contact details
-- Page intro copy
 - CTA copy
+- SEO metadata
+
+---
 
 ## Code-controlled
 
+- Navigation
+- Route structure
 - Layout
-- Animation
 - Responsive behaviour
 - Tailwind styling
 - Component structure
-- Route structure
+- Animations
 - Form behaviour
+- Footer layout
+- Navigation behaviour
+
+---
+
+## Derived content
+
+The following should be generated rather than managed separately:
+
+- Service navigation from `service.linkName`
+- Footer practice links from `service` content
