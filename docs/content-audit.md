@@ -196,3 +196,134 @@ AboutPage {
 - No structural changes required.
 - Current data model is already suitable for CMS migration.
 - Rename the object for clarity and consistency with other content models.
+
+## `data/navData.ts`
+
+### Current type
+
+```ts
+string[]
+```
+
+### Current purpose
+
+Stores the labels used to render the site's primary navigation.
+
+```ts
+export const navData = [
+  "index",
+  "services",
+  "about",
+  "insights",
+];
+```
+
+### Current object shape
+
+```ts
+string[]
+```
+
+---
+
+## Target content model
+
+### Proposed model
+
+```ts
+NavigationItem {
+  label: string;
+  href: string;
+}
+```
+
+Example:
+
+```ts
+const navigation = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "Services",
+    href: "/services",
+  },
+  {
+    label: "About",
+    href: "/about",
+  },
+  {
+    label: "Insights",
+    href: "/insights",
+  },
+];
+```
+
+---
+
+## Architectural review
+
+The current implementation stores navigation as an array of strings.
+
+While functional, this relies on the application inferring the destination route from each string.
+
+Using explicit navigation objects makes the relationship between the displayed label and the destination route clearer and easier to maintain.
+
+---
+
+## CMS assessment
+
+This data **does not currently need to become a Sanity document**.
+
+Reasons:
+
+- The primary navigation mirrors the application's route structure.
+- These routes are developer-controlled rather than editorial content.
+- The navigation is unlikely to change frequently.
+- Keeping it in code avoids maintaining duplicate sources of truth.
+
+---
+
+## Future considerations
+
+If the site later requires:
+
+- editable navigation labels
+- page reordering
+- hiding/showing navigation items
+- external navigation links
+- multiple navigation menus
+
+then the navigation could be moved into `siteSettings` within Sanity.
+
+At the current scope of the project, keeping the primary navigation code-defined is the simpler and more maintainable approach.
+
+---
+
+## Service navigation
+
+The services submenu should not have its own static data source.
+
+Instead, it should be generated from the `service` content model.
+
+Example:
+
+```ts
+services.map(service => ({
+  label: service.linkName,
+  href: `/services#${service.slug}`,
+}));
+```
+
+This ensures that adding or removing a service automatically updates the navigation without maintaining a second list.
+
+---
+
+## Planned model changes
+
+| Current | Target |
+|---------|--------|
+| `string[]` | `NavigationItem[]` |
+| Static service links | Generated from `service` content |
+| Primary navigation | Remains code-controlled |

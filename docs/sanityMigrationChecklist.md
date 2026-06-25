@@ -172,7 +172,6 @@ sanity/
       category.ts
       teamMember.ts
       siteSettings.ts
-      navigationItem.ts
     objects/
       seo.ts
       cta.ts
@@ -251,6 +250,7 @@ sanity/
 * [ ] Phone number
 * [ ] Address
 * [ ] Social links
+
 
 ---
 
