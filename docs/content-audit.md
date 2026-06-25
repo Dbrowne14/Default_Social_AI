@@ -127,3 +127,72 @@ ArticleSection {
 - Author information should become reusable across multiple insights.
 - Primary tag and additional tags should remain distinct concepts.
 - Final implementation decisions will be made during the Sanity schema phase.
+
+---
+
+## `data/companyInfo.ts`
+
+### Current type
+
+```ts
+companyInfo: {
+  label: string;
+  value: string;
+}[]
+```
+
+### Current purpose
+
+Stores key company facts displayed on the About page.
+
+### Current object shape
+
+```ts
+{
+  label: string;
+  value: string;
+}
+```
+
+---
+
+### Target content model
+
+#### Future content object
+
+`CompanyFact`
+
+#### Classification
+
+- Reusable content object
+- Page content (About page)
+
+#### Proposed object shape
+
+```ts
+CompanyFact {
+  label: string;
+  value: string;
+}
+```
+
+#### Proposed page model
+
+```ts
+AboutPage {
+  companyFacts: CompanyFact[];
+}
+```
+
+### Planned model changes
+
+| Current | Proposed |
+|---------|----------|
+| Anonymous object | `CompanyFact` |
+| `companyInfo` | `companyFacts` |
+
+### Notes
+
+- No structural changes required.
+- Current data model is already suitable for CMS migration.
+- Rename the object for clarity and consistency with other content models.
