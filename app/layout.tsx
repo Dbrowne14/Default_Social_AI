@@ -5,7 +5,7 @@ import Footer from "@/components/layout/footer/Footer";
 import LoaderStrip from "@/components/ui/LoaderStrip";
 import { siteConfig } from "@/lib/seo/site";
 import { getSiteSettings } from "@/lib/content/site";
-import { servicesDetails } from "@/data/ServicesDetails";
+import { navigationItems } from "@/lib/content/navigation";
 
 import {
   Instrument_Serif,
@@ -65,11 +65,11 @@ export default async function RootLayout({
       <body className="min-h-full flex flex-col">
         <header>
           <LoaderStrip />
-          <Navigation siteSettings={siteSettings} />
+          <Navigation siteSettings={siteSettings} navigation={navigationItems} />
         </header>
         <main>{children}</main>
         <footer>
-          <Footer siteSettings={siteSettings}/>
+          <Footer siteSettings={siteSettings} navigation={navigationItems}/>
         </footer>
       </body>
     </html>

@@ -2,9 +2,15 @@ import Link from "next/link";
 import FooterRibbon from "./FooterRibbon";
 import { servicesDetails } from "@/data/ServicesDetails";
 import type { SiteSettings } from "@/types/site";
+import type { LinkItem } from "@/types/shared";
+
+export type LayoutProps = {
+  siteSettings: SiteSettings;
+  navigation: LinkItem[];
+};
 
 //adding in footer ribbon required if necessary, but can be removed if not needed. It is a decorative element that adds a visual accent to the footer section of the website. The ribbon is designed to scroll and fade as the user interacts with the page, creating a dynamic and engaging visual effect. The ribbon has a maximum width of 1360 pixels and includes 32px gutters for spacing. It is important to note that the ribbon is purely decorative and does not contain any interactive elements or links.
-const Footer = ({ siteSettings }: { siteSettings: SiteSettings }) => {
+const Footer = ({ siteSettings, navigation }: LayoutProps) => {
   const { footer, contact, siteName, groupLink } = siteSettings;
   return (
     <div>
@@ -53,24 +59,18 @@ const Footer = ({ siteSettings }: { siteSettings: SiteSettings }) => {
             <div>
               <h4 className="footer-headings">Explore</h4>
               <ul className="flex flex-col gap-1.5 md:gap-2.5 p-0 m-0 list-none text-cream-2">
-                <li>
-                  <span className="text-accent-deep">/ </span>
-                  <Link className="footer-links" href="/about">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <span className="text-accent-deep">/ </span>
-                  <Link className="footer-links" href="/insights">
-                    Insights
-                  </Link>
-                </li>
-                <li>
-                  <span className="text-accent-deep">/ </span>
-                  <Link className="footer-links" href="#contact">
-                    Contact
-                  </Link>
-                </li>
+                {navigation
+                  .filter((navItem) => navItem.label !== "Index")
+                  .map((navItem) => {
+                    return (
+                      <li>
+                        <span className="text-accent-deep">/ </span>
+                        <Link className="footer-links" href={navItem.href}>
+                          {navItem.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 <li className="flex gap-1">
                   <span className="text-accent-deep">/</span>
                   <a

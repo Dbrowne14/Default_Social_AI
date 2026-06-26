@@ -1,6 +1,6 @@
 // types/site.ts
 
-import type { Link } from "./shared";
+import type { LinkItem } from "./shared";
 
 export type ContactDetails = {
   email: string;
@@ -13,7 +13,7 @@ export type FooterContent = {
   description: string;
 };
 
-export type GroupLink = Link & {
+export type GroupLink = LinkItem & {
     src:string;
 }
 
