@@ -54,3 +54,5 @@ const InsightsBlogPosts = ({isActive}:ActiveProps) => {
 };
 
 export default InsightsBlogPosts;
+
+// compute number of essays not fixed text
