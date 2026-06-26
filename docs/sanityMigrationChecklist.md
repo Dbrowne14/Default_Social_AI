@@ -1,386 +1,458 @@
-# Phase 3 – Sanity CMS Migration Checklist
+# Phase 3 — Sanity CMS Architecture & Migration Plan
 
-## Goal
+## Overview
 
-Migrate the Default Social website from static front-end content to a Sanity-powered CMS, while preserving the completed Phase 2 design and preparing the site for deployment and launch.
+### Goal
 
----
+Replace the current static content architecture with a Sanity-powered content platform while preserving the completed Phase 2 front-end.
 
-# 1. Content Model Plan
+The migration should:
 
-## Objective
-
-Define content around editorial entities, not current UI sections.
-
-## Checklist
-
-* [ ] Audit current static content files
-* [ ] List all content currently hardcoded in components
-* [ ] Identify reusable content entities
-* [ ] Separate page content from global site content
-* [ ] Separate editorial content from layout-specific content
-* [ ] Avoid modelling schemas directly around current component names
-
-## Core document types
-
-* [ ] `page`
-* [ ] `service`
-* [ ] `insight`
-* [ ] `author`
-* [ ] `category`
-* [ ] `teamMember`
-* [ ] `siteSettings`
-* [ ] `navigationItem`
-
-## Core object types
-
-* [ ] `seo`
-* [ ] `cta`
-* [ ] `imageWithAlt`
-* [ ] `portableTextBlock`
-* [ ] `stat`
-* [ ] `link`
-* [ ] `titleLine`
-
-## Key decisions
-
-* [ ] Which pages are fully CMS-managed?
-* [ ] Which sections remain static?
-* [ ] Which fields need editorial control?
-* [ ] Which fields are required?
-* [ ] Which fields need validation?
-* [ ] Which content should be reusable across pages?
+* Preserve the existing design and component architecture.
+* Separate content from presentation.
+* Keep React components largely CMS-agnostic.
+* Introduce a content access layer between Sanity and the UI.
+* Prepare the project for long-term editorial management.
 
 ---
 
-# 2. Type Model Cleanup
+# Architecture Principles
 
-## Objective
+## 1. Content-first
 
-Make TypeScript types match the future CMS structure.
+Model editorial entities rather than UI components.
 
-## Checklist
+Examples:
 
-* [ ] Review current global `types/index.ts`
-* [ ] Identify mixed-domain types
-* [ ] Split types by domain over time
+* Service
+* Insight
+* Person
+* Category
 
-## Suggested type files
+Not:
 
-* [ ] `types/page.ts`
-* [ ] `types/service.ts`
-* [ ] `types/insight.ts`
-* [ ] `types/author.ts`
-* [ ] `types/category.ts`
-* [ ] `types/team.ts`
-* [ ] `types/seo.ts`
-* [ ] `types/shared.ts`
-
-## Article types
-
-* [ ] Create separate `InsightSummary` type
-* [ ] Create separate `InsightDetail` type
-* [ ] Remove broad optional article props where possible
-* [ ] Ensure full article pages require full article data
-* [ ] Ensure listing cards only receive summary data
-
-## Shared types
-
-* [ ] Define reusable `Slug`
-* [ ] Define reusable `ImageWithAlt`
-* [ ] Define reusable `SEO`
-* [ ] Define reusable `CTA`
-* [ ] Define reusable `TitleLine`
-* [ ] Define reusable `PortableTextContent`
+* Hero
+* Card
+* Section
+* Grid
 
 ---
 
-# 3. Content Access Layer
+## 2. Fetch once
 
-## Objective
+Every page should retrieve its content once at the page level.
 
-Stop importing static data directly into routes/components.
-
-## Checklist
-
-* [ ] Create a `lib/content/` folder
-* [ ] Add content access functions
-* [ ] Route all page-level data through content functions
-* [ ] Keep components focused on rendering
-* [ ] Keep client components focused on interaction
-* [ ] Prepare function names for future Sanity queries
-
-## Suggested files
-
-* [ ] `lib/content/getPages.ts`
-* [ ] `lib/content/getServices.ts`
-* [ ] `lib/content/getInsights.ts`
-* [ ] `lib/content/getAuthors.ts`
-* [ ] `lib/content/getTeam.ts`
-* [ ] `lib/content/getSiteSettings.ts`
-* [ ] `lib/content/normalize.ts`
-
-## Required functions
-
-* [ ] `getHomePage()`
-* [ ] `getAboutPage()`
-* [ ] `getServicesPage()`
-* [ ] `getInsightsPage()`
-* [ ] `getAllServices()`
-* [ ] `getAllInsights()`
-* [ ] `getFeaturedInsight()`
-* [ ] `getInsightBySlug(slug)`
-* [ ] `getRelatedInsights(currentSlug, category)`
-* [ ] `getSiteSettings()`
-
-## Migration rule
-
-* [ ] Components should not directly import from `data/`
-* [ ] Routes should call content functions
-* [ ] Content functions can temporarily return static data
-* [ ] Later, content functions will switch from static data to Sanity queries
-
----
-
-# 4. Sanity Schema Implementation
-
-## Objective
-
-Build Sanity schemas that support long-term editorial use.
-
-## Checklist
-
-* [ ] Set up Sanity project
-* [ ] Configure Sanity Studio
-* [ ] Create schema folder structure
-* [ ] Create document schemas
-* [ ] Create object schemas
-* [ ] Add validation rules
-* [ ] Add preview configuration
-* [ ] Add field descriptions for editors
-
-## Suggested structure
-
-```txt
-sanity/
-  schemaTypes/
-    documents/
-      page.ts
-      service.ts
-      insight.ts
-      author.ts
-      category.ts
-      teamMember.ts
-      siteSettings.ts
-    objects/
-      seo.ts
-      cta.ts
-      imageWithAlt.ts
-      portableTextBlock.ts
-      stat.ts
-      link.ts
-      titleLine.ts
+```text
+Page
+    ↓
+Content Access Layer
+    ↓
+Sanity
+    ↓
+View Model
+    ↓
+React Components
 ```
 
-## Document schemas
-
-### `service`
-
-* [ ] Title
-* [ ] Slug
-* [ ] Link name
-* [ ] Category
-* [ ] Short description
-* [ ] Full description
-* [ ] Offers
-* [ ] Process steps
-* [ ] AI callout
-* [ ] Tags
-* [ ] SEO
-
-### `insight`
-
-* [ ] Title
-* [ ] Slug
-* [ ] Excerpt
-* [ ] Author reference
-* [ ] Category reference
-* [ ] Tags
-* [ ] Published date
-* [ ] Read time
-* [ ] Featured flag
-* [ ] Cover image
-* [ ] Image caption
-* [ ] Body content
-* [ ] Related article picks
-* [ ] SEO
-
-### `author`
-
-* [ ] Name
-* [ ] Role
-* [ ] Initials
-* [ ] Bio
-* [ ] Image
-* [ ] Social links
-
-### `category`
-
-* [ ] Title
-* [ ] Slug
-* [ ] Description
-* [ ] Style intent
-
-### `teamMember`
-
-* [ ] Name
-* [ ] Role
-* [ ] Bio
-* [ ] Initials
-* [ ] Image
-* [ ] Sort order
-
-### `siteSettings`
-
-* [ ] Site title
-* [ ] Default SEO
-* [ ] Navigation
-* [ ] Footer content
-* [ ] Contact email
-* [ ] Phone number
-* [ ] Address
-* [ ] Social links
-
+Child components should never query Sanity directly.
 
 ---
 
-# 5. Front-End Migration
+## 3. Components remain presentational
 
-## Objective
+Components should receive data through props.
 
-Connect the completed front-end to Sanity without breaking the Phase 2 design.
+Avoid:
 
-## Checklist
+```ts
+import { servicesDetails } from "@/data/ServicesDetails"
+```
 
-* [ ] Install Sanity packages
-* [ ] Configure Sanity client
-* [ ] Add GROQ queries
-* [ ] Add image URL builder
-* [ ] Replace static content access with Sanity functions
-* [ ] Keep existing components as presentational components
-* [ ] Normalize Sanity responses into front-end view models
-* [ ] Add Portable Text rendering
-* [ ] Add article page dynamic content
-* [ ] Add service page dynamic content
-* [ ] Add global site settings
-* [ ] Add SEO metadata from CMS
-* [ ] Add related article logic
-* [ ] Add fallback handling for missing content
-* [ ] Test all routes
+Instead:
 
-## Suggested folders
+```ts
+const services = await getAllServices()
 
-```txt
+<ServicesBuckets services={services} />
+```
+
+---
+
+## 4. View Models
+
+React components should not depend directly on Sanity document structure.
+
+Instead:
+
+```text
+Sanity Document
+        ↓
+normalize()
+        ↓
+View Model
+        ↓
+React Component
+```
+
+This keeps the UI independent of future CMS changes.
+
+---
+
+# Phase 1 — Content Audit
+
+## Status
+
+* [x] Static data audited
+* [x] Page content audited
+* [x] Component ownership identified
+* [x] CMS ownership identified
+* [x] Code-controlled components identified
+
+---
+
+# Content Model
+
+## Documents
+
+### homePage
+
+Contains:
+
+* Hero copy
+* Value proposition
+* Home section introductions
+* CTA copy
+* Home marketing content
+
+---
+
+### aboutPage
+
+Contains:
+
+* Header
+* Company facts
+* Group structure
+* Values
+* Approach
+* Team section introduction
+
+---
+
+### servicesPage
+
+Contains:
+
+* Page introduction
+* Supporting copy
+* Section headings
+* CTA copy
+
+---
+
+### insightsPage
+
+Contains:
+
+* Page introduction
+* Featured section copy
+* Library section copy
+
+---
+
+### service
+
+Contains:
+
+* Title
+* Slug
+* Link name
+* Category
+* Description
+* Blurb
+* Tags
+* Offers
+* AI callout
+* Process steps
+* Featured flag
+* SEO
+
+---
+
+### insight
+
+Contains:
+
+* Title
+* Slug
+* Subject
+* Excerpt
+* Introduction
+* Pull quotes
+* Sections
+* Categories
+* Tags
+* Related insights
+* Featured flag
+* Author
+* Cover image
+* SEO
+
+---
+
+### person
+
+Replaces:
+
+* Author
+* Team member
+
+A person may be:
+
+* Author
+* Team member
+* Practice lead
+* Key person
+
+depending on fields.
+
+---
+
+### category
+
+Contains:
+
+* Name
+* Slug
+* Description
+
+Used by:
+
+* Services
+* Insights
+* Filtering
+
+---
+
+### siteSettings
+
+Contains:
+
+* Site name
+* Default SEO
+* Contact details
+* Footer information
+* Social links
+* Global metadata
+
+---
+
+# Object Models
+
+## Shared
+
+* SEO
+* CTA
+* TitleLine
+* ImageWithAlt
+* Link
+
+---
+
+## About Page
+
+* CompanyFact
+* GroupEntry
+* ApproachPrinciple
+
+---
+
+## Services
+
+* ServiceOffer
+* ProcessStep
+* ServiceTag
+
+---
+
+## Insights
+
+* PullQuote
+* InsightSection
+* InsightParagraph
+
+---
+
+# Portable Text Strategy
+
+Portable Text will be used only where flexible editorial layouts are required.
+
+## Uses Portable Text
+
+* Home marketing copy
+* About marketing copy
+
+## Does NOT use Portable Text
+
+* Services
+* Process steps
+* Offers
+* Team
+* Company facts
+* Insight articles
+
+Insight articles retain their structured editorial model.
+
+---
+
+# Type Structure
+
+Current:
+
+```text
+types/
+    index.ts
+```
+
+Target:
+
+```text
+types/
+├── page.ts
+├── service.ts
+├── insight.ts
+├── person.ts
+├── category.ts
+├── seo.ts
+├── shared.ts
+└── index.ts
+```
+
+---
+
+# Content Access Layer
+
+Create:
+
+```text
 lib/
-  sanity/
-    client.ts
-    image.ts
-    queries/
-      pages.ts
-      services.ts
-      insights.ts
-      settings.ts
-  content/
-    getPages.ts
-    getServices.ts
-    getInsights.ts
-    getSiteSettings.ts
-    normalize.ts
-  seo/
-    metadata.ts
+└── content/
+    pages.ts
+    services.ts
+    insights.ts
+    persons.ts
+    site.ts
 ```
 
-## Portable Text
+Rules:
 
-* [ ] Define supported block types
-* [ ] Define serializers/components
-* [ ] Handle headings
-* [ ] Handle paragraphs
-* [ ] Handle links
-* [ ] Handle lists
-* [ ] Handle images
-* [ ] Handle pull quotes
-* [ ] Handle callouts
-* [ ] Handle code blocks only if needed
-
-## Related content
-
-* [ ] Allow manual related article picks
-* [ ] Add fallback based on category/tag
-* [ ] Exclude current article
-* [ ] Limit number of related articles
-
-## SEO
-
-* [ ] Generate metadata for pages
-* [ ] Generate metadata for services
-* [ ] Generate metadata for insights
-* [ ] Add fallback metadata from site settings
-* [ ] Add Open Graph image support when available
+* Components never import `data/*`.
+* Components never query Sanity.
+* Routes fetch data.
+* Routes pass props downward.
 
 ---
 
-# Phase 3 QA
+# Sanity Folder Structure
 
-## CMS QA
-
-* [ ] Content can be created
-* [ ] Content can be edited
-* [ ] Required fields are enforced
-* [ ] Preview titles are readable
-* [ ] Images require alt text
-* [ ] Slugs generate correctly
-* [ ] References work correctly
-
-## Front-End QA
-
-* [ ] Home page renders from CMS
-* [ ] About page renders from CMS
-* [ ] Services page renders from CMS
-* [ ] Insights listing renders from CMS
-* [ ] Article pages render from CMS
-* [ ] Related articles work
-* [ ] Metadata works
-* [ ] Missing content does not break pages
-* [ ] Responsive layouts still work
-* [ ] No hydration errors
-* [ ] No console errors
-
-## Deployment QA
-
-* [ ] Environment variables configured
-* [ ] Sanity project ID configured
-* [ ] Dataset configured
-* [ ] API version configured
-* [ ] Vercel deployment succeeds
-* [ ] Domain configured
-* [ ] SSL active
-* [ ] Production content renders
-* [ ] Contact form still works
-* [ ] Final responsive QA completed
+```text
+sanity/
+└── schemaTypes/
+    ├── documents/
+    │   homePage.ts
+    │   aboutPage.ts
+    │   servicesPage.ts
+    │   insightsPage.ts
+    │   service.ts
+    │   insight.ts
+    │   person.ts
+    │   category.ts
+    │   siteSettings.ts
+    │
+    └── objects/
+        seo.ts
+        cta.ts
+        titleLine.ts
+        imageWithAlt.ts
+        companyFact.ts
+        groupEntry.ts
+        approachPrinciple.ts
+        serviceOffer.ts
+        processStep.ts
+        pullQuote.ts
+        insightSection.ts
+```
 
 ---
 
-# Completion Criteria
+# Migration Order
 
-Phase 3 is complete when:
+## Step 1
 
-* [ ] Sanity CMS is implemented
-* [ ] Core content is editable in Sanity
-* [ ] Front-end pages render CMS content
-* [ ] SEO metadata is CMS-driven
-* [ ] Content migration is complete
-* [ ] Site is deployed
-* [ ] Domain is connected
-* [ ] Final QA is complete
-* [ ] Site is ready for launch
+Build schemas.
+
+---
+
+## Step 2
+
+Populate sample content.
+
+---
+
+## Step 3
+
+Create content access layer.
+
+---
+
+## Step 4
+
+Replace static imports with content functions.
+
+---
+
+## Step 5
+
+Normalize CMS responses.
+
+---
+
+## Step 6
+
+Connect page routes.
+
+---
+
+## Step 7
+
+Connect article routes.
+
+---
+
+## Step 8
+
+Replace placeholder images.
+
+---
+
+## Step 9
+
+Add SEO.
+
+---
+
+## Step 10
+
+Final QA.
+
+---
+
+# Guiding Principles
+
+* Fetch once, pass down.
+* Keep React components presentational.
+* Keep content models independent from component hierarchy.
+* Prefer reusable entities over duplicated content.
+* Use objects for page-specific structures.
+* Use documents only for standalone content with its own lifecycle.
+* Preserve the existing design system and UI architecture throughout the migration.
