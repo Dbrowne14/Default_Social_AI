@@ -1,458 +1,227 @@
-# Phase 3 — Sanity CMS Architecture & Migration Plan
 
-## Overview
+# Default Social Content Model Plan
 
-### Goal
+## Goal
 
-Replace the current static content architecture with a Sanity-powered content platform while preserving the completed Phase 2 front-end.
+Complete the architectural improvements identified during the code review before introducing the CMS.
 
-The migration should:
+## Checklist
 
-* Preserve the existing design and component architecture.
-* Separate content from presentation.
-* Keep React components largely CMS-agnostic.
-* Introduce a content access layer between Sanity and the UI.
-* Prepare the project for long-term editorial management.
 
----
+### 1. Finalise documentation first
 
-# Architecture Principles
+- [x] Finalise content model documentation
 
-## 1. Content-first
 
-Model editorial entities rather than UI components.
-
-Examples:
-
-* Service
-* Insight
-* Person
-* Category
-
-Not:
-
-* Hero
-* Card
-* Section
-* Grid
+Why: this becomes the source of truth before refactoring.
 
 ---
 
-## 2. Fetch once
+### 2. Split the types
 
-Every page should retrieve its content once at the page level.
+- [ ] Split `types/index.ts` into domain-specific type files
+- [ ] Create shared reusable object types
+- [ ] Create summary/detail models where appropriate
+- [ ] Reduce unnecessary optional fields
+- [ ] Match types to future CMS models
 
-```text
-Page
-    ↓
-Content Access Layer
-    ↓
-Sanity
-    ↓
-View Model
-    ↓
-React Components
-```
-
-Child components should never query Sanity directly.
+Why: types define the shape your content layer and components will use.
 
 ---
 
-## 3. Components remain presentational
+### 3. Clean the data model
 
-Components should receive data through props.
+- [ ] Merge `team` and `author` into a single `person` model
+- [ ] Remove `navData`
+- [ ] Remove duplicated data structures
+- [ ] Review placeholder data structures
+- [ ] Remove obsolete static data files only after nothing imports them
 
-Avoid:
-
-```ts
-import { servicesDetails } from "@/data/ServicesDetails"
-```
-
-Instead:
-
-```ts
-const services = await getAllServices()
-
-<ServicesBuckets services={services} />
-```
+Why: clean source data before routing it through the content layer.
 
 ---
 
-## 4. View Models
+### 4. Build the content access layer
 
-React components should not depend directly on Sanity document structure.
+- [ ] Introduce a `lib/content/` layer
+- [ ] Create content access functions
+- [ ] Prepare functions with future Sanity names
 
-Instead:
+Example:
 
-```text
-Sanity Document
-        ↓
-normalize()
-        ↓
-View Model
-        ↓
-React Component
-```
+- `getAllServices()`
+- `getAllInsights()`
+- `getFeaturedInsight()`
+- `getAboutPage()`
+- `getSiteSettings()`
 
-This keeps the UI independent of future CMS changes.
+Why: this lets you switch from static data to Sanity later without rewriting components again.
 
 ---
 
-# Phase 1 — Content Audit
+### 5. Move routes to the content layer
 
-## Status
+- [ ] Move all routes to use the content layer
+- [ ] Stop importing directly from `data/` in route files
+- [ ] Pass data through props rather than importing in components
 
-* [x] Static data audited
-* [x] Page content audited
-* [x] Component ownership identified
-* [x] CMS ownership identified
-* [x] Code-controlled components identified
+Why: routes should own data fetching.
 
 ---
 
-# Content Model
+### 6. Refactor components gradually
 
-## Documents
+- [ ] Stop importing directly from `data/` in components
+- [ ] Keep components focused on rendering
+- [ ] Keep client components focused on interaction
+- [ ] Ensure features own their own content where appropriate
+- [ ] Review shared UI components
 
-### homePage
-
-Contains:
-
-* Hero copy
-* Value proposition
-* Home section introductions
-* CTA copy
-* Home marketing content
+Why: do this last so you always have working data shapes first.
 
 ---
 
-### aboutPage
+### 7. Update repo documentation
 
-Contains:
+- [ ] Update repository structure documentation
 
-* Header
-* Company facts
-* Group structure
-* Values
-* Approach
-* Team section introduction
+Why: only update the structure docs after the folders have actually changed.
 
----
+The key sequence is:
 
-### servicesPage
+Documentation → Types → Data cleanup → Content layer → Routes → Components
 
-Contains:
+# Phase 3 — Sanity CMS
 
-* Page introduction
-* Supporting copy
-* Section headings
-* CTA copy
+## Goal
 
----
+Replace static content with Sanity while preserving the completed front-end.
 
-### insightsPage
-
-Contains:
-
-* Page introduction
-* Featured section copy
-* Library section copy
+- [ ] Implement schemas
+- [ ] Populate sample content
+- [ ] Build GROQ queries
+- [ ] Connect the content layer
+- [ ] Replace static imports
+- [ ] Build image pipeline
+- [ ] Add previews
+- [ ] QA
 
 ---
 
-### service
+# Phase 4 — Performance & SEO
 
-Contains:
+## Goal
 
-* Title
-* Slug
-* Link name
-* Category
-* Description
-* Blurb
-* Tags
-* Offers
-* AI callout
-* Process steps
-* Featured flag
-* SEO
+Optimise the completed CMS-powered site before launch.
 
----
+### Performance
 
-### insight
+- [ ] Audit Core Web Vitals
+- [ ] Optimise images
+- [ ] Optimise fonts
+- [ ] Remove unused JavaScript
+- [ ] Review bundle size
+- [ ] Add lazy loading where appropriate
 
-Contains:
+### SEO
 
-* Title
-* Slug
-* Subject
-* Excerpt
-* Introduction
-* Pull quotes
-* Sections
-* Categories
-* Tags
-* Related insights
-* Featured flag
-* Author
-* Cover image
-* SEO
+- [ ] Dynamic metadata
+- [ ] Open Graph images
+- [ ] Structured data
+- [ ] XML sitemap
+- [ ] Robots.txt
+- [ ] Canonicals
+- [ ] Breadcrumb schema
+- [ ] Article schema
+
+### Accessibility
+
+- [ ] Keyboard navigation
+- [ ] Focus management
+- [ ] Heading hierarchy
+- [ ] Colour contrast
+- [ ] Screen reader audit
 
 ---
 
-### person
+# Phase 5 — Production Readiness
 
-Replaces:
+## Goal
 
-* Author
-* Team member
+Prepare the project for deployment.
 
-A person may be:
+### Analytics
 
-* Author
-* Team member
-* Practice lead
-* Key person
+- [ ] Google Analytics
+- [ ] Google Search Console
+- [ ] Cookie consent
+- [ ] Event tracking
 
-depending on fields.
+### Error handling
 
----
+- [ ] Custom 404
+- [ ] Error boundaries
+- [ ] Loading states
+- [ ] Empty states
 
-### category
+### Security
 
-Contains:
+- [ ] Environment variables
+- [ ] API key review
+- [ ] CSP headers
+- [ ] Security headers
 
-* Name
-* Slug
-* Description
+### Deployment
 
-Used by:
-
-* Services
-* Insights
-* Filtering
-
----
-
-### siteSettings
-
-Contains:
-
-* Site name
-* Default SEO
-* Contact details
-* Footer information
-* Social links
-* Global metadata
+- [ ] Vercel production
+- [ ] Domain
+- [ ] SSL
+- [ ] Redirects
+- [ ] Monitoring
 
 ---
 
-# Object Models
+# Phase 6 — AI Concierge
 
-## Shared
+## Goal
 
-* SEO
-* CTA
-* TitleLine
-* ImageWithAlt
-* Link
+Introduce AI capabilities after the marketing site has launched.
 
----
+### Foundation
 
-## About Page
+- [ ] Define AI architecture
+- [ ] Choose model provider
+- [ ] Conversation storage
+- [ ] Prompt management
 
-* CompanyFact
-* GroupEntry
-* ApproachPrinciple
+### Features
 
----
+- [ ] AI concierge
+- [ ] Lead qualification
+- [ ] Service recommendations
+- [ ] Knowledge base retrieval
+- [ ] Contact hand-off
 
-## Services
+### Operations
 
-* ServiceOffer
-* ProcessStep
-* ServiceTag
-
----
-
-## Insights
-
-* PullQuote
-* InsightSection
-* InsightParagraph
+- [ ] Logging
+- [ ] Analytics
+- [ ] Feedback collection
+- [ ] Prompt versioning
 
 ---
 
-# Portable Text Strategy
+# Phase 7 — Continuous Improvement
 
-Portable Text will be used only where flexible editorial layouts are required.
+## Goal
 
-## Uses Portable Text
+Continue evolving the platform after launch.
 
-* Home marketing copy
-* About marketing copy
-
-## Does NOT use Portable Text
-
-* Services
-* Process steps
-* Offers
-* Team
-* Company facts
-* Insight articles
-
-Insight articles retain their structured editorial model.
-
----
-
-# Type Structure
-
-Current:
-
-```text
-types/
-    index.ts
-```
-
-Target:
-
-```text
-types/
-├── page.ts
-├── service.ts
-├── insight.ts
-├── person.ts
-├── category.ts
-├── seo.ts
-├── shared.ts
-└── index.ts
-```
-
----
-
-# Content Access Layer
-
-Create:
-
-```text
-lib/
-└── content/
-    pages.ts
-    services.ts
-    insights.ts
-    persons.ts
-    site.ts
-```
-
-Rules:
-
-* Components never import `data/*`.
-* Components never query Sanity.
-* Routes fetch data.
-* Routes pass props downward.
-
----
-
-# Sanity Folder Structure
-
-```text
-sanity/
-└── schemaTypes/
-    ├── documents/
-    │   homePage.ts
-    │   aboutPage.ts
-    │   servicesPage.ts
-    │   insightsPage.ts
-    │   service.ts
-    │   insight.ts
-    │   person.ts
-    │   category.ts
-    │   siteSettings.ts
-    │
-    └── objects/
-        seo.ts
-        cta.ts
-        titleLine.ts
-        imageWithAlt.ts
-        companyFact.ts
-        groupEntry.ts
-        approachPrinciple.ts
-        serviceOffer.ts
-        processStep.ts
-        pullQuote.ts
-        insightSection.ts
-```
-
----
-
-# Migration Order
-
-## Step 1
-
-Build schemas.
-
----
-
-## Step 2
-
-Populate sample content.
-
----
-
-## Step 3
-
-Create content access layer.
-
----
-
-## Step 4
-
-Replace static imports with content functions.
-
----
-
-## Step 5
-
-Normalize CMS responses.
-
----
-
-## Step 6
-
-Connect page routes.
-
----
-
-## Step 7
-
-Connect article routes.
-
----
-
-## Step 8
-
-Replace placeholder images.
-
----
-
-## Step 9
-
-Add SEO.
-
----
-
-## Step 10
-
-Final QA.
-
----
-
-# Guiding Principles
-
-* Fetch once, pass down.
-* Keep React components presentational.
-* Keep content models independent from component hierarchy.
-* Prefer reusable entities over duplicated content.
-* Use objects for page-specific structures.
-* Use documents only for standalone content with its own lifecycle.
-* Preserve the existing design system and UI architecture throughout the migration.
+- [ ] CMS editorial improvements
+- [ ] New content models
+- [ ] Additional services
+- [ ] New insight formats
+- [ ] A/B testing
+- [ ] Personalisation
+- [ ] AI search optimisation
+- [ ] Performance reviews

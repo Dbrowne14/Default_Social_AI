@@ -1,226 +1,458 @@
-# Default Social Content Model Plan
+# Phase 3 — Sanity CMS Architecture & Migration Plan
 
-## Goal
+## Overview
 
-Complete the architectural improvements identified during the code review before introducing the CMS.
+### Goal
 
-## Checklist
+Replace the current static content architecture with a Sanity-powered content platform while preserving the completed Phase 2 front-end.
 
+The migration should:
 
-### 1. Finalise documentation first
-
-- [ ] Finalise content model documentation
-- [ ] Document view model architecture
-
-Why: this becomes the source of truth before refactoring.
-
----
-
-### 2. Split the types
-
-- [ ] Split `types/index.ts` into domain-specific type files
-- [ ] Create shared reusable object types
-- [ ] Create summary/detail models where appropriate
-- [ ] Reduce unnecessary optional fields
-- [ ] Match types to future CMS models
-
-Why: types define the shape your content layer and components will use.
+* Preserve the existing design and component architecture.
+* Separate content from presentation.
+* Keep React components largely CMS-agnostic.
+* Introduce a content access layer between Sanity and the UI.
+* Prepare the project for long-term editorial management.
 
 ---
 
-### 3. Clean the data model
+# Architecture Principles
 
-- [ ] Merge `team` and `author` into a single `person` model
-- [ ] Remove `navData`
-- [ ] Remove duplicated data structures
-- [ ] Review placeholder data structures
-- [ ] Remove obsolete static data files only after nothing imports them
+## 1. Content-first
 
-Why: clean source data before routing it through the content layer.
+Model editorial entities rather than UI components.
 
----
+Examples:
 
-### 4. Build the content access layer
+* Service
+* Insight
+* Person
+* Category
 
-- [ ] Introduce a `lib/content/` layer
-- [ ] Create content access functions
-- [ ] Prepare functions with future Sanity names
+Not:
 
-Example:
-
-- `getAllServices()`
-- `getAllInsights()`
-- `getFeaturedInsight()`
-- `getAboutPage()`
-- `getSiteSettings()`
-
-Why: this lets you switch from static data to Sanity later without rewriting components again.
+* Hero
+* Card
+* Section
+* Grid
 
 ---
 
-### 5. Move routes to the content layer
+## 2. Fetch once
 
-- [ ] Move all routes to use the content layer
-- [ ] Stop importing directly from `data/` in route files
-- [ ] Pass data through props rather than importing in components
+Every page should retrieve its content once at the page level.
 
-Why: routes should own data fetching.
+```text
+Page
+    ↓
+Content Access Layer
+    ↓
+Sanity
+    ↓
+View Model
+    ↓
+React Components
+```
 
----
-
-### 6. Refactor components gradually
-
-- [ ] Stop importing directly from `data/` in components
-- [ ] Keep components focused on rendering
-- [ ] Keep client components focused on interaction
-- [ ] Ensure features own their own content where appropriate
-- [ ] Review shared UI components
-
-Why: do this last so you always have working data shapes first.
+Child components should never query Sanity directly.
 
 ---
 
-### 7. Update repo documentation
+## 3. Components remain presentational
 
-- [ ] Update repository structure documentation
+Components should receive data through props.
 
-Why: only update the structure docs after the folders have actually changed.
+Avoid:
 
-The key sequence is:
+```ts
+import { servicesDetails } from "@/data/ServicesDetails"
+```
 
-Documentation → Types → Data cleanup → Content layer → Routes → Components
+Instead:
 
-# Phase 3 — Sanity CMS
+```ts
+const services = await getAllServices()
 
-## Goal
-
-Replace static content with Sanity while preserving the completed front-end.
-
-- [ ] Implement schemas
-- [ ] Populate sample content
-- [ ] Build GROQ queries
-- [ ] Connect the content layer
-- [ ] Replace static imports
-- [ ] Build image pipeline
-- [ ] Add previews
-- [ ] QA
+<ServicesBuckets services={services} />
+```
 
 ---
 
-# Phase 4 — Performance & SEO
+## 4. View Models
 
-## Goal
+React components should not depend directly on Sanity document structure.
 
-Optimise the completed CMS-powered site before launch.
+Instead:
 
-### Performance
+```text
+Sanity Document
+        ↓
+normalize()
+        ↓
+View Model
+        ↓
+React Component
+```
 
-- [ ] Audit Core Web Vitals
-- [ ] Optimise images
-- [ ] Optimise fonts
-- [ ] Remove unused JavaScript
-- [ ] Review bundle size
-- [ ] Add lazy loading where appropriate
-
-### SEO
-
-- [ ] Dynamic metadata
-- [ ] Open Graph images
-- [ ] Structured data
-- [ ] XML sitemap
-- [ ] Robots.txt
-- [ ] Canonicals
-- [ ] Breadcrumb schema
-- [ ] Article schema
-
-### Accessibility
-
-- [ ] Keyboard navigation
-- [ ] Focus management
-- [ ] Heading hierarchy
-- [ ] Colour contrast
-- [ ] Screen reader audit
+This keeps the UI independent of future CMS changes.
 
 ---
 
-# Phase 5 — Production Readiness
+# Phase 1 — Content Audit
 
-## Goal
+## Status
 
-Prepare the project for deployment.
-
-### Analytics
-
-- [ ] Google Analytics
-- [ ] Google Search Console
-- [ ] Cookie consent
-- [ ] Event tracking
-
-### Error handling
-
-- [ ] Custom 404
-- [ ] Error boundaries
-- [ ] Loading states
-- [ ] Empty states
-
-### Security
-
-- [ ] Environment variables
-- [ ] API key review
-- [ ] CSP headers
-- [ ] Security headers
-
-### Deployment
-
-- [ ] Vercel production
-- [ ] Domain
-- [ ] SSL
-- [ ] Redirects
-- [ ] Monitoring
+* [x] Static data audited
+* [x] Page content audited
+* [x] Component ownership identified
+* [x] CMS ownership identified
+* [x] Code-controlled components identified
 
 ---
 
-# Phase 6 — AI Concierge
+# Content Model
 
-## Goal
+## Documents
 
-Introduce AI capabilities after the marketing site has launched.
+### homePage
 
-### Foundation
+Contains:
 
-- [ ] Define AI architecture
-- [ ] Choose model provider
-- [ ] Conversation storage
-- [ ] Prompt management
-
-### Features
-
-- [ ] AI concierge
-- [ ] Lead qualification
-- [ ] Service recommendations
-- [ ] Knowledge base retrieval
-- [ ] Contact hand-off
-
-### Operations
-
-- [ ] Logging
-- [ ] Analytics
-- [ ] Feedback collection
-- [ ] Prompt versioning
+* Hero copy
+* Value proposition
+* Home section introductions
+* CTA copy
+* Home marketing content
 
 ---
 
-# Phase 7 — Continuous Improvement
+### aboutPage
 
-## Goal
+Contains:
 
-Continue evolving the platform after launch.
+* Header
+* Company facts
+* Group structure
+* Values
+* Approach
+* Team section introduction
 
-- [ ] CMS editorial improvements
-- [ ] New content models
-- [ ] Additional services
-- [ ] New insight formats
-- [ ] A/B testing
-- [ ] Personalisation
-- [ ] AI search optimisation
-- [ ] Performance reviews
+---
+
+### servicesPage
+
+Contains:
+
+* Page introduction
+* Supporting copy
+* Section headings
+* CTA copy
+
+---
+
+### insightsPage
+
+Contains:
+
+* Page introduction
+* Featured section copy
+* Library section copy
+
+---
+
+### service
+
+Contains:
+
+* Title
+* Slug
+* Link name
+* Category
+* Description
+* Blurb
+* Tags
+* Offers
+* AI callout
+* Process steps
+* Featured flag
+* SEO
+
+---
+
+### insight
+
+Contains:
+
+* Title
+* Slug
+* Subject
+* Excerpt
+* Introduction
+* Pull quotes
+* Sections
+* Categories
+* Tags
+* Related insights
+* Featured flag
+* Author
+* Cover image
+* SEO
+
+---
+
+### person
+
+Replaces:
+
+* Author
+* Team member
+
+A person may be:
+
+* Author
+* Team member
+* Practice lead
+* Key person
+
+depending on fields.
+
+---
+
+### category
+
+Contains:
+
+* Name
+* Slug
+* Description
+
+Used by:
+
+* Services
+* Insights
+* Filtering
+
+---
+
+### siteSettings
+
+Contains:
+
+* Site name
+* Default SEO
+* Contact details
+* Footer information
+* Social links
+* Global metadata
+
+---
+
+# Object Models
+
+## Shared
+
+* SEO
+* CTA
+* TitleLine
+* ImageWithAlt
+* Link
+
+---
+
+## About Page
+
+* CompanyFact
+* GroupEntry
+* ApproachPrinciple
+
+---
+
+## Services
+
+* ServiceOffer
+* ProcessStep
+* ServiceTag
+
+---
+
+## Insights
+
+* PullQuote
+* InsightSection
+* InsightParagraph
+
+---
+
+# Portable Text Strategy
+
+Portable Text will be used only where flexible editorial layouts are required.
+
+## Uses Portable Text
+
+* Home marketing copy
+* About marketing copy
+
+## Does NOT use Portable Text
+
+* Services
+* Process steps
+* Offers
+* Team
+* Company facts
+* Insight articles
+
+Insight articles retain their structured editorial model.
+
+---
+
+# Type Structure
+
+Current:
+
+```text
+types/
+    index.ts
+```
+
+Target:
+
+```text
+types/
+├── page.ts
+├── service.ts
+├── insight.ts
+├── person.ts
+├── category.ts
+├── seo.ts
+├── shared.ts
+└── index.ts
+```
+
+---
+
+# Content Access Layer
+
+Create:
+
+```text
+lib/
+└── content/
+    pages.ts
+    services.ts
+    insights.ts
+    persons.ts
+    site.ts
+```
+
+Rules:
+
+* Components never import `data/*`.
+* Components never query Sanity.
+* Routes fetch data.
+* Routes pass props downward.
+
+---
+
+# Sanity Folder Structure
+
+```text
+sanity/
+└── schemaTypes/
+    ├── documents/
+    │   homePage.ts
+    │   aboutPage.ts
+    │   servicesPage.ts
+    │   insightsPage.ts
+    │   service.ts
+    │   insight.ts
+    │   person.ts
+    │   category.ts
+    │   siteSettings.ts
+    │
+    └── objects/
+        seo.ts
+        cta.ts
+        titleLine.ts
+        imageWithAlt.ts
+        companyFact.ts
+        groupEntry.ts
+        approachPrinciple.ts
+        serviceOffer.ts
+        processStep.ts
+        pullQuote.ts
+        insightSection.ts
+```
+
+---
+
+# Migration Order
+
+## Step 1
+
+Build schemas.
+
+---
+
+## Step 2
+
+Populate sample content.
+
+---
+
+## Step 3
+
+Create content access layer.
+
+---
+
+## Step 4
+
+Replace static imports with content functions.
+
+---
+
+## Step 5
+
+Normalize CMS responses.
+
+---
+
+## Step 6
+
+Connect page routes.
+
+---
+
+## Step 7
+
+Connect article routes.
+
+---
+
+## Step 8
+
+Replace placeholder images.
+
+---
+
+## Step 9
+
+Add SEO.
+
+---
+
+## Step 10
+
+Final QA.
+
+---
+
+# Guiding Principles
+
+* Fetch once, pass down.
+* Keep React components presentational.
+* Keep content models independent from component hierarchy.
+* Prefer reusable entities over duplicated content.
+* Use objects for page-specific structures.
+* Use documents only for standalone content with its own lifecycle.
+* Preserve the existing design system and UI architecture throughout the migration.
