@@ -4,8 +4,10 @@ import NavHamburgerMenu from "./NavHamburgerMenu";
 import { navData } from "@/data/navData";
 import Link from "next/link";
 import Image from "next/image";
+import type { SiteSettings } from "@/types/site";
 
-const Navigation = () => {
+const Navigation = ({siteSettings}:{siteSettings:SiteSettings}) => {
+  const {groupLink} = siteSettings;
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 height-nav flex justify-between items-center py-4.5 px-8 bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)] 720:px-5
@@ -28,14 +30,14 @@ const Navigation = () => {
         </span>
 
         <a
-          href="https://defaultmedia.com"
+          href={groupLink.href}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Visit Default Media Group website"
+          aria-label={`Visit ${groupLink.label} website`}
         >
           <Image
-            src="/assets/default-media-logo.png"
-            alt="Default Media Group"
+            src={groupLink.src}
+            alt={groupLink.label}
             width={200}
             height={40}
             className="h-5 w-auto md:h-4 block"

@@ -4,6 +4,8 @@ import Navigation from "@/components/layout/navigation/Navigation";
 import Footer from "@/components/layout/footer/Footer";
 import LoaderStrip from "@/components/ui/LoaderStrip";
 import { siteConfig } from "@/lib/seo/site";
+import { getSiteSettings } from "@/lib/content/site";
+import { servicesDetails } from "@/data/ServicesDetails";
 
 import {
   Instrument_Serif,
@@ -49,11 +51,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const siteSettings = await getSiteSettings()
   return (
     <html
       lang="en"
@@ -62,11 +65,11 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <header>
           <LoaderStrip />
-          <Navigation />
+          <Navigation siteSettings={siteSettings} />
         </header>
         <main>{children}</main>
         <footer>
-          <Footer />
+          <Footer siteSettings={siteSettings}/>
         </footer>
       </body>
     </html>
