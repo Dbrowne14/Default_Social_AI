@@ -1,12 +1,11 @@
 import NavLink from "../../ui/Navlink";
 import Button from "../../ui/Button";
 import NavHamburgerMenu from "./NavHamburgerMenu";
-import { navData } from "@/data/navData";
 import Link from "next/link";
 import Image from "next/image";
-import type { SiteSettings } from "@/types/site";
+import type { SiteChromeProps } from "@/types/site";
 
-const Navigation = ({siteSettings}:{siteSettings:SiteSettings}) => {
+const Navigation = ({siteSettings, navigation}:SiteChromeProps) => {
   const {groupLink} = siteSettings;
   return (
     <nav
@@ -46,10 +45,10 @@ const Navigation = ({siteSettings}:{siteSettings:SiteSettings}) => {
       </div>
 
       <div className="hidden 720:flex gap-7 items-center font-mono text-[12px] tracking-widest uppercase text-cream-2 relative">
-        {navData.map((page) => {
+        {navigation.map((page) => {
           return (
-            <NavLink href={page === "index" ? "/" : `/${page}`} key={page}>
-              {page}
+            <NavLink href={page.href} key={page.label}>
+              {page.label}
             </NavLink>
           );
         })}

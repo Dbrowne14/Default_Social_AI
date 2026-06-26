@@ -24,3 +24,8 @@ export type SiteSettings = {
   contact: ContactDetails;
   footer: FooterContent;
 };
+
+export type SiteChromeProps = {
+  siteSettings: SiteSettings;
+  navigation: LinkItem[];
+};

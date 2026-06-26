@@ -1,16 +1,10 @@
 import Link from "next/link";
 import FooterRibbon from "./FooterRibbon";
 import { servicesDetails } from "@/data/ServicesDetails";
-import type { SiteSettings } from "@/types/site";
-import type { LinkItem } from "@/types/shared";
-
-export type LayoutProps = {
-  siteSettings: SiteSettings;
-  navigation: LinkItem[];
-};
+import type { SiteChromeProps } from "@/types/site";
 
 //adding in footer ribbon required if necessary, but can be removed if not needed. It is a decorative element that adds a visual accent to the footer section of the website. The ribbon is designed to scroll and fade as the user interacts with the page, creating a dynamic and engaging visual effect. The ribbon has a maximum width of 1360 pixels and includes 32px gutters for spacing. It is important to note that the ribbon is purely decorative and does not contain any interactive elements or links.
-const Footer = ({ siteSettings, navigation }: LayoutProps) => {
+const Footer = ({ siteSettings, navigation }: SiteChromeProps) => {
   const { footer, contact, siteName, groupLink } = siteSettings;
   return (
     <div>
