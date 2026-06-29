@@ -1,12 +1,12 @@
 "use client";
-import { ArticleProps } from "@/types";
+import { InsightArticleProps } from "@/types/site";
 import { useState } from "react";
 import InsightsArticleProse from "./InsightsArticleProse";
 import InsightsArticleRail from "./InsightsArticleRail";
 
 
 
-const InsightsArticleBody = ({ article }: ArticleProps) => {
+const InsightsArticleBody = ({ article }: InsightArticleProps) => {
 
   const [section, setSection] = useState("");
   return (
