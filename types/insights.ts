@@ -1,6 +1,6 @@
+//types for Insights data schema
 import type { Person } from "./person";
 
-//Insights - Blog
 export type Insight = {
   featured?: boolean;
   subject?: string;

@@ -1,3 +1,5 @@
+//types for service data schema
+
 import type { TitleDescription } from "./shared";
 
 export type Service = {
