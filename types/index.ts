@@ -51,25 +51,3 @@ export type ActiveSetterProps = {
 
 
 
-export type ServiceTypeProps = {
-  id: string;
-  linkName: string;
-  category: string;
-  title: string[];
-  description: string;
-  blurb: string;
-  tags: { label: string; ai?: boolean }[];
-  featured?: boolean;
-  offers: ServiceOffers[];
-  aiCallout: ServiceOffers;
-  process: ServiceProcess[];
-};
-
-export type ServiceOffers = {
-  title: string;
-  description: string;
-};
-
-export type ServiceProcess = ServiceOffers & {
-  id: string;
-};

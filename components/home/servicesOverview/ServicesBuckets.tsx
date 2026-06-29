@@ -1,10 +1,10 @@
 import  { servicesDetails } from "@/data/ServicesDetails";
-import type { ServiceTypeProps } from "@/types";
+import type { Service } from "@/types/site";
 
 const ServicesBuckets = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-line border border-line rounded-(--radius) overflow-hidden">
-  {servicesDetails.map((service: ServiceTypeProps) => (
+  {servicesDetails.map((service: Service) => (
     <article
       key={service.id}
       className={`

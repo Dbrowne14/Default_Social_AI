@@ -4,3 +4,7 @@ export type LinkItem = {
   external?: boolean;
 }
 
+export type TitleDescription = {
+  title: string;
+  description: string;
+};
