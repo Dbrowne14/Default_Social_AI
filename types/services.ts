@@ -28,3 +28,10 @@ export type ServiceCallout = TitleDescription;
 export type ServiceProcessStep = ServiceOffer & {
   id: string;
 };
+
+export type ServiceTickerItem = {
+  id: string;
+  label: string;
+  href?: string;
+  source: "service" | "theme";
+}

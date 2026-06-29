@@ -1,4 +1,4 @@
-import type { Service } from "@/types/services";
+import type { Service, ServiceTickerItem } from "@/types/services";
 
 export const servicesDetails: Service[] = [
   {
@@ -338,5 +338,13 @@ export const servicesDetails: Service[] = [
         description: "Weekly signal, quarterly reset",
       },
     ],
+  },
+];
+
+export const broaderServices:ServiceTickerItem[] = [
+  {
+    id: "ai",
+    label: "AI Integration",
+    source: "theme",
   },
 ];

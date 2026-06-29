@@ -1,13 +1,7 @@
-const services = [
-  "Web Development",
-  "SEO & Organic Growth",
-  "Social & Viral Campaigns",
-  "Social-First Creative",
-  "Marketing Strategy",
-  "AI Integration",
-];
+import { getServiceTickerItems } from "@/lib/content/service";
 
-const MarqueeTrack = () => {
+const MarqueeTrack = async() => {
+  const services = await getServiceTickerItems();
   return (
     <div className="flex gap-12 items-center shrink-0 pr-12">
       {services.map((service, index) => (
@@ -17,7 +11,7 @@ const MarqueeTrack = () => {
             index % 2 === 0 ? "" : "italic"
           }`}
         >
-          {service}
+          {service.label}
           <span className="w-2 h-2 rounded-full bg-accent"></span>
         </span>
       ))}
