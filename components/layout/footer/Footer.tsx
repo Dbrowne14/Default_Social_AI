@@ -1,10 +1,11 @@
 import Link from "next/link";
 import FooterRibbon from "./FooterRibbon";
-import { servicesDetails } from "@/data/ServicesDetails";
 import type { SiteChromeProps } from "@/types/site";
+import { getAllServices } from "@/lib/content/service";
 
 //adding in footer ribbon required if necessary, but can be removed if not needed. It is a decorative element that adds a visual accent to the footer section of the website. The ribbon is designed to scroll and fade as the user interacts with the page, creating a dynamic and engaging visual effect. The ribbon has a maximum width of 1360 pixels and includes 32px gutters for spacing. It is important to note that the ribbon is purely decorative and does not contain any interactive elements or links.
-const Footer = ({ siteSettings, navigation }: SiteChromeProps) => {
+const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
+  const allServices = await getAllServices();
   const { footer, contact, siteName, groupLink } = siteSettings;
   return (
     <div>
@@ -39,7 +40,7 @@ const Footer = ({ siteSettings, navigation }: SiteChromeProps) => {
             <div>
               <h4 className="footer-headings">Practices</h4>
               <ul className="flex flex-col gap-1.5 md:gap-2.5 p-0 m-0 list-none">
-                {servicesDetails.map((service) => (
+                {allServices.map((service) => (
                   <li key={service.id}>
                     <Link className="footer-links" href="/services">
                       <span className="text-accent-deep">/ </span>

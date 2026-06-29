@@ -19,11 +19,11 @@ Why: this becomes the source of truth before refactoring.
 
 ### 2. Split the types
 
-- [ ] Split `types/index.ts` into domain-specific type files
-- [ ] Create shared reusable object types
-- [ ] Create summary/detail models where appropriate
-- [ ] Reduce unnecessary optional fields
-- [ ] Match types to future CMS models
+- [x] Split `types/index.ts` into domain-specific type files
+- [x] Create shared reusable object types
+- [x] Create summary/detail models where appropriate
+- [x] Reduce unnecessary optional fields
+- [x] Match types to future CMS models
 
 Why: types define the shape your content layer and components will use.
 

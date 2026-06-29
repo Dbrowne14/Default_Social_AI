@@ -1,10 +1,9 @@
-'use client'
-import { servicesDetails } from "@/data/ServicesDetails";
+"use client";
+import { servicesDetails } from "@/data/servicesDetails";
 import { useState } from "react";
 
-
 const StickyTocPills = () => {
-    const [isActive, setIsActive] = useState("web")
+  const [isActive, setIsActive] = useState("web");
 
   return (
     <nav
@@ -15,7 +14,7 @@ const StickyTocPills = () => {
         return (
           <a
             href={`#${service.linkName}`}
-            className={`py-2 px-3.5 rounded-[999px] border  font-mono text-[11px] tracking-widest uppercase  transition-colors duration-150 ease-in-out hover:text-accent hover:border-accent ${isActive === service.linkName ? "text-accent border-accent": "text-cream-2 border-line"}`}
+            className={`py-2 px-3.5 rounded-[999px] border  font-mono text-[11px] tracking-widest uppercase  transition-colors duration-150 ease-in-out hover:text-accent hover:border-accent ${isActive === service.linkName ? "text-accent border-accent" : "text-cream-2 border-line"}`}
             onClick={() => setIsActive(service.linkName)}
             key={service.id}
           >

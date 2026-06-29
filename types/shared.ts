@@ -10,3 +10,8 @@ export type TitleDescription = {
   title: string;
   description: string;
 };
+
+export type TitleLine = {
+  text: string;
+  emphasis?: boolean;
+};
