@@ -1,6 +1,6 @@
-import type { ServiceTypeProps } from "@/types";
+import type { Service } from "@/types/site";
 
-export const servicesDetails: ServiceTypeProps[] = [
+export const servicesDetails: Service[] = [
   {
     id: "01",
     linkName: "web",
@@ -47,7 +47,7 @@ export const servicesDetails: ServiceTypeProps[] = [
       description:
         "We ship Next.js builds with an AI middleware layer for personalisation, chat concierge, and intelligent routing — all GDPR-clean, all observable, all swappable as models evolve.",
     },
-    process: [
+    processSteps: [
       {
         id: "01",
         title: "Discovery",
@@ -117,7 +117,7 @@ export const servicesDetails: ServiceTypeProps[] = [
       description:
         "Our SEO engine uses AI for topic discovery, intent clustering and brief generation — then hands the brief to a human editor. Speed without slop.",
     },
-    process: [
+    processSteps: [
       {
         id: "01",
         title: "Audit",
@@ -187,7 +187,7 @@ export const servicesDetails: ServiceTypeProps[] = [
       description:
         "Our audience-AI ingests platform + first-party data and surfaces emerging conversation, content gaps and creative angles weekly — so the campaign team starts informed.",
     },
-    process: [
+    processSteps: [
       { id: "01", title: "Listen", description: "Audience & signal sweep" },
       {
         id: "02",
@@ -246,7 +246,7 @@ export const servicesDetails: ServiceTypeProps[] = [
       description:
         "Pre-release, our AI scores each piece against hook-strength, retention curves and platform fit — surfacing notes the human editors can take or leave.",
     },
-    process: [
+    processSteps: [
       { id: "01", title: "Concept", description: "Brief + idea sprint" },
       { id: "02", title: "Script", description: "Hooks, beats, platform fit" },
       { id: "03", title: "Shoot", description: "Studio or location" },
@@ -311,7 +311,7 @@ export const servicesDetails: ServiceTypeProps[] = [
       description:
         "Our strategy stack ingests sales, ad spend and engagement data weekly — and the AI re-forecasts the plan, flags drift, and proposes reallocations before the next steering meeting.",
     },
-    process: [
+    processSteps: [
       {
         id: "01",
         title: "Diagnose",

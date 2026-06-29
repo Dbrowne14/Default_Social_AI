@@ -1,6 +1,6 @@
-import type { ServiceOffers } from "@/types";
+import type { ServiceOffer } from "@/types/site";
 
-const ServicesAi = ({ title, description }: ServiceOffers) => {
+const ServicesAi = ({ title, description }: ServiceOffer) => {
   return (
     <div className="mt-8 p-5 md:p-6 rounded-xl border [background:color-mix(in_oklch,var(--accent)_8%,var(--ink-2))] border-[color-mix(in_oklch,var(--accent)_30%,var(--line))]">
       <div className="grid grid-cols-[48px_1fr] md:grid-cols-[56px_1fr] gap-4.5 items-stretch">

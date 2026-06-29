@@ -7,7 +7,7 @@ const ServicesDetailed = () => {
   return (
     <section className="" id="web" data-screen-label="Web">
       {servicesDetails.map((service) => {
-        const { id, category, blurb, offers, aiCallout, process } = service;
+        const { id, category, blurb, offers, aiCallout, processSteps } = service;
         return (
           <div className="container-custom" key={service.id}>
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-7 md:gap-20 items-end mb-14">
@@ -49,7 +49,7 @@ const ServicesDetailed = () => {
                 <div className="eyebrow mb-4.5">Process</div>
 
                 <div className="flex flex-col gap-3">
-                  {process.map((p, key) => (
+                  {processSteps.map((p, key) => (
                     <ServicesProcessStrip
                       id={p.id}
                       title={p.title}
