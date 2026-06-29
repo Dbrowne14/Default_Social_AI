@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navData } from "@/data/navData";
+import { navigationItems } from "@/data/navigation";
 import NavCloseButton from "./NavCloseButton";
 import type { MobileMenuProps } from "./types";
 
@@ -21,15 +21,15 @@ const MobileMenu = ({ menuOpen, toggleMenu }: MobileMenuProps) => {
         `}
     >
       <NavCloseButton toggleMenu={toggleMenu} />
-      {navData.map((page) => {
+      {navigationItems.map((page) => {
         return (
           <Link
-            href={page === "index" ? "/" : `/${page}`}
+            href={page.label === "index" ? "/" : `/${page.label}`}
             className="py-4 px-1 text-cream-2 border-t border-line-faded"
-            key={page}
+            key={page.label}
             onClick={toggleMenu}
           >
-            {page}
+            {page.label}
           </Link>
         );
       })}
