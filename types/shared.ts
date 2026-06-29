@@ -3,3 +3,4 @@ export type LinkItem = {
   href: string;
   external?: boolean;
 }
+

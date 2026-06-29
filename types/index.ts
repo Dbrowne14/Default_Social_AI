@@ -47,13 +47,9 @@ export type ActiveSetterProps = {
   setIsActive: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export type ToggleMenuProps = {
- toggleMenu: () => void;
-};
 
-export type NavMenuProps = ToggleMenuProps & {
-  menuOpen: boolean;
-};
+
+
 
 export type ServiceTypeProps = {
   id: string;

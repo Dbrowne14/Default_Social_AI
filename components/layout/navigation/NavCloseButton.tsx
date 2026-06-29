@@ -1,5 +1,5 @@
 "use client";
-import type { ToggleMenuProps } from "@/types";
+import type { ToggleMenuProps } from "./types";
 
 const NavCloseButton = ({ toggleMenu }: ToggleMenuProps) => {
   return (

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { navData } from "@/data/navData";
 import NavCloseButton from "./NavCloseButton";
-import type { NavMenuProps } from "@/types";
+import type { MobileMenuProps } from "./types";
 
-const MobileMenu = ({ menuOpen, toggleMenu }: NavMenuProps) => {
+const MobileMenu = ({ menuOpen, toggleMenu }: MobileMenuProps) => {
   return (
     <nav
       id="mobile-navigation"

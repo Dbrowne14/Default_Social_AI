@@ -29,3 +29,4 @@ export type SiteChromeProps = {
   siteSettings: SiteSettings;
   navigation: LinkItem[];
 };
+
