@@ -1,5 +1,5 @@
 "use client";
-import { InsightArticleProps } from "@/types/site";
+import { InsightArticleProps } from "@/types/insights";
 import { useState } from "react";
 import InsightsArticleProse from "./InsightsArticleProse";
 import InsightsArticleRail from "./InsightsArticleRail";

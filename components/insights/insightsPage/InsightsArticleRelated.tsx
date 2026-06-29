@@ -1,9 +1,9 @@
 import BlogCard from "@/components/ui/BlogCard";
 import Button from "@/components/ui/Button";
-import type { ArticleProps, BlogPostProps } from "@/types";
+import type { InsightArticleProps, Insight } from "@/types/insights";
 
-type InsightsArticleRelatedProps = ArticleProps & {
-  relatedArticles: BlogPostProps[];
+type InsightsArticleRelatedProps = InsightArticleProps & {
+  relatedArticles: Insight[];
 };
 
 const InsightsArticleRelated = ({

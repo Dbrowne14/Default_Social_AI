@@ -1,5 +1,5 @@
 "use client";
-import type { InsightArticleProps } from "@/types/site";
+import type { InsightArticleProps } from "@/types/insights";
 import { useEffect } from "react";
 
 type ArticleRailProps = InsightArticleProps & {

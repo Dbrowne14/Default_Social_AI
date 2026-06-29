@@ -1,11 +1,7 @@
 
-type teamType = {
-  initials: string;
-  name: string;
-  role: string;
-};
+import type { Person } from "@/types/person";
 
-const TeamBio = ({ initials, name, role }: teamType) => {
+const TeamBio = ({ initials, name, role }: Person) => {
   return (
     <div className="flex flex-col gap-3">
       <div className="relative aspect-4/5 overflow-hidden rounded-xl border border-line bg-[repeating-linear-gradient(135deg,var(--ink-2)_0_14px,var(--ink-3)_14px_28px)] flex items-center justify-center">

@@ -1,3 +1,5 @@
+import type { Person } from "./person";
+
 //Insights - Blog
 export type Insight = {
   featured?: boolean;
@@ -8,9 +10,7 @@ export type Insight = {
   readTime: string;
   title: string;
   excerpt?: string;
-  authorInitials?: string;
-  author: string;
-  authorRole?: string;
+  author: Person;
   slug: string;
   imageCaption?: string;
   intro?: InsightTextBlock[];

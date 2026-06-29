@@ -1,9 +1,9 @@
 import SingleStatBlock from "@/components/ui/SingleStatBlock";
 import SocialsFrame from "@/components/ui/SocialsFrame";
-import { ArticleProps } from "@/types";
+import type { InsightArticleProps } from "@/types/insights";
 import Link from "next/link";
 
-const InsightsArticleHeader = ({ article }: ArticleProps) => {
+const InsightsArticleHeader = ({ article }: InsightArticleProps) => {
   const {
     title,
     tag,
@@ -13,8 +13,6 @@ const InsightsArticleHeader = ({ article }: ArticleProps) => {
     excerpt,
     date,
     subject,
-    authorInitials,
-    authorRole,
     imageCaption,
   } = article;
 
@@ -62,14 +60,14 @@ const InsightsArticleHeader = ({ article }: ArticleProps) => {
         <div className="flex items-center gap-y-4.5 gap-x-7 md:gap-7 flex-wrap mt-8 md:mt-11 py-6 border-y border-line">
           <div className="flex items-center gap-3.5">
             <div className="w-11.5 h-11.5 rounded-[50%] bg-accent text-on-accent font-serif text-[24px] flex items-center justify-center shrink-0">
-              {authorInitials}
+              {author.initials}
             </div>
             <div className="flex flex-col gap-0.75 ">
               <span className="font-sans font-semibold text-[15px] text-cream">
-                {author}
+                {author.name}
               </span>
               <span className="font-mono text-[10px] tracking-widest uppercase text-muted">
-                {authorRole}
+                {author.role}
               </span>
             </div>
           </div>

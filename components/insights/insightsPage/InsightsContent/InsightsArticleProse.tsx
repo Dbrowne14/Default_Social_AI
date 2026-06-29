@@ -1,4 +1,4 @@
-import type { InsightArticleProps } from "@/types/site";
+import type { InsightArticleProps } from "@/types/insights";
 const InsightsArticleProse = ({
   article,
 }: InsightArticleProps) => {
