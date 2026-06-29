@@ -5,7 +5,7 @@ import Footer from "@/components/layout/footer/Footer";
 import LoaderStrip from "@/components/ui/LoaderStrip";
 import { siteConfig } from "@/lib/seo/site";
 import { getSiteSettings } from "@/lib/content/site";
-import { navigationItems } from "@/lib/content/navigation";
+import { navigationItems } from "@/data/navigation";
 
 import {
   Instrument_Serif,
