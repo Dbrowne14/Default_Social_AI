@@ -2,9 +2,9 @@
 import { useState, useEffect } from "react";
 import Button from "@/components/ui/Button";
 import BlogPost from "./BlogPost";
-import type { ActiveProps } from "@/types";
+import type { ActiveFilterProps } from "./types";
 
-const InsightsBlogPosts = ({isActive}:ActiveProps) => {
+const InsightsBlogPosts = ({isActive}:ActiveFilterProps) => {
   const [showMore, setShowMore] = useState<number>(6)
 
   useEffect(() => {

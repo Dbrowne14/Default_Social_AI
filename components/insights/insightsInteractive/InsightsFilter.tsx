@@ -1,10 +1,10 @@
 import InsightsFilterToc from "./InsightsFilterToc";
- import { ActiveSetterProps } from "@/types";
+ import { ActiveFilterSetterProps } from "./types";
 
 const InsightsFilter = ({
   isActive,
   setIsActive,
-}: ActiveSetterProps) => {
+}: ActiveFilterSetterProps) => {
   return (
     <aside className="sticky top-22 py-4 [background:color-mix(in_oklch,var(--ink)_80%,transparent)] backdrop-blur-lg z-30 border-b border-line">
       <div className="container-thin">

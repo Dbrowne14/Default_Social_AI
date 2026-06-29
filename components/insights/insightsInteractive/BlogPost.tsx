@@ -1,15 +1,8 @@
 import BlogCard from "@/components/ui/BlogCard";
 import { insights } from "@/data/blogData";
-import { ActiveProps } from "@/types";
+import { BlogStateProps } from "./types";
 
-type BlogStateProps = ActiveProps & {
-  showMore: number;
-}
-
-const BlogPost = ({
-  isActive,
-  showMore,
-}: BlogStateProps) => {
+const BlogPost = ({ isActive, showMore }: BlogStateProps) => {
   return (
     <>
       {insights

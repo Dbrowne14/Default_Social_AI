@@ -1,4 +1,4 @@
-import type { ActiveSetterProps } from "@/types";
+import type { ActiveFilterSetterProps } from "./types";
 
 const filterData = [
   "All",
@@ -10,7 +10,7 @@ const filterData = [
   "Studio Ops",
 ];
 
-const InsightsFilterToc = ({isActive, setIsActive}:ActiveSetterProps) => {
+const InsightsFilterToc = ({isActive, setIsActive}:ActiveFilterSetterProps) => {
 
   const handleClick = (data: string) => {
     setIsActive(data);
