@@ -1,5 +1,3 @@
-import React from "react";
-
 const ValueProp = () => {
   return (
     <section className="py-10" data-screen-label="Value prop">
