@@ -3,19 +3,19 @@ export const team = [
     initials: "RM",
     name: "Robin McGlashan",
     role: "Founder · Default Media Group",
-    key: true,
+    keyPerson: true,
   },
   {
     initials: "DB",
     name: "David Browne",
     role: "Head of Development",
-    key:true
+    keyPerson: true,
   },
   {
     initials: "JK",
     name: "Jules Kapoor",
     role: "Strategy Lead",
-    key:true
+    keyPerson: true,
   },
   {
     initials: "MH",

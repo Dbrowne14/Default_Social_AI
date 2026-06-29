@@ -36,12 +36,12 @@ const AboutOverview = () => {
         <div className="flex gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible">
           {" "}
           {team
-            .filter((person) => person.key === true)
-            .map((person, index) => {
+            .filter((person) => person.keyPerson === true)
+            .map((person) => {
               return (
                 <div key={person.name} className="min-w-60 md:min-w-0">
                   <TeamBio
-                    key={index}
+                    key={person.name}
                     initials={person.initials}
                     name={person.name}
                     role={person.role}

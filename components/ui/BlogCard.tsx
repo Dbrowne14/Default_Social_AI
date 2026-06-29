@@ -29,7 +29,7 @@ const BlogCard = ({
         </span>
       </div>
       <div className="flex gap-3 font-mono text-[11px] tracking-widest uppercase text-muted">
-        <span>By {author}</span>
+        <span>By {author.role}</span>
         <span>·</span>
         <span>{date}</span>
         <span>·</span>

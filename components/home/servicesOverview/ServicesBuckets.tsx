@@ -1,5 +1,5 @@
 import  { servicesDetails } from "@/data/ServicesDetails";
-import type { Service } from "@/types/site";
+import type { Service } from "@/types/services";
 
 const ServicesBuckets = () => {
   return (
