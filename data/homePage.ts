@@ -1,5 +1,24 @@
 export const homePage = {
-    hero: {
-       footer_Text: "A digital media, marketing & technology studio inside the Default Media Group — building AI-native websites, social systems and growth programmes for brands that want to set the standard, not chase it." 
-    }
-}
+  hero: {
+    footer_Text:
+      "A digital media, marketing & technology studio inside the Default Media Group — building AI-native websites, social systems and growth programmes for brands that want to set the standard, not chase it.",
+  },
+  valueProp: {
+    eyebrow: "01 · The proposition",
+    title: [
+      {
+        segments: [{ text: "Five practices." }],
+      },
+      {
+        segments: [
+          { text: "One " },
+          { text: "AI-native", italic: true, accent: true },
+        ],
+      },
+      {
+        segments: [{ text: "operating model." }],
+      },
+    ],
+    lede: "Default Social is the digital, social and technology arm of the Default Media Group. We work with brands solving complex growth and brand challenges, where the answer sits somewhere between creative, code and signal.",
+  },
+};
