@@ -8,6 +8,7 @@ export type HomePage = {
   servicesOverview: SectionIntro;
   aboutOverview: AboutOverviewSection;
   insightsOverview: SectionIntro;
+  contactFormOverview: SectionIntro;
 };
 
 export type HomeHero = {

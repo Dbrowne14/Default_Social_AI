@@ -2,6 +2,8 @@
 import { useActionState } from "react";
 import { submitContactForm } from "@/app/actions/contact";
 import type { ContactFormState } from "@/app/actions/contact";
+import type { SectionIntro } from "@/types/homePage";
+import RichTitle from "@/components/ui/RichTitle";
 
 const enquiries = [
   "New project",
@@ -14,6 +16,10 @@ const enquiries = [
 type LabelledSlotProps = {
   label: string;
   children: React.ReactNode;
+};
+
+type ContactFormOverviewProps = {
+  section: SectionIntro;
 };
 
 function Field({ label, children }: LabelledSlotProps) {
@@ -42,7 +48,8 @@ const initialState: ContactFormState = {
   errors: {},
 };
 
-export default function ContactForm() {
+export default function ContactForm({ section }: ContactFormOverviewProps) {
+  const { eyebrow, title, meta } = section;
   const [state, formAction, pending] = useActionState(
     submitContactForm,
     initialState,
@@ -56,21 +63,13 @@ export default function ContactForm() {
     >
       <div className="container-custom grid gap-10 py-20 md:grid-cols-2 md:gap-12">
         <div>
-          <div className="eyebrow">05 · Contact</div>
+          <div className="eyebrow">{eyebrow}</div>
 
           <h2 className="mt-5 font-serif text-[clamp(40px,5vw,80px)]">
-            Let&apos;s make
-            <br />
-            your default,
-            <br />
-            <em className="text-accent">remarkable.</em>
+            <RichTitle title={title} />
           </h2>
 
-          <p className="mt-4.5 max-w-[38ch] text-cream-2">
-            Tell us where you&apos;re going — a sentence or two is fine. A real
-            human reads everything that comes in, and we aim to reply within two
-            working days.
-          </p>
+          <p className="mt-4.5 max-w-[38ch] text-cream-2">{meta}</p>
 
           <div className="mt-10 hidden md:flex flex-col gap-4 border-t border-line pt-6">
             <InfoRow label="Studio">Brentford · London</InfoRow>

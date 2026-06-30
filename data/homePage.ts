@@ -1,5 +1,5 @@
 import type { HomePage } from "@/types/homePage";
-export const homePage:HomePage = {
+export const homePage: HomePage = {
   hero: {
     footer_Text:
       "A digital media, marketing & technology studio inside the Default Media Group — building AI-native websites, social systems and growth programmes for brands that want to set the standard, not chase it.",
@@ -69,7 +69,34 @@ export const homePage:HomePage = {
         ],
       },
     ],
-
     meta: "Each practice is led by a senior partner and runs as an autonomous unit, networked through a shared AI and data layer. Engage them individually — or as a programme.",
+  },
+  contactFormOverview: {
+    eyebrow: "05 · Contact",
+    title: [
+      {
+        segments: [
+          {
+            text: "Let's make",
+          },
+        ],
+      },
+      {
+        segments: [
+          {
+            text: "your default,",
+          },
+        ],
+      },
+      {
+        segments: [
+          {
+            text: "remarkable.",
+            accent: true,
+          },
+        ],
+      },
+    ],
+    meta: "Tell us where you're going — a sentence or two is fine. A real human reads everything that comes in, and we aim to reply within two working days.",
   },
 };

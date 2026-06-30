@@ -9,19 +9,21 @@ import ContactForm from "@/components/home/contact/ContactForm";
 import { getHomePage } from "@/lib/content/homePage";
 import { getKeyPeople } from "@/lib/content/people";
 
+
 export default async function Home() {
   const homePage = await getHomePage();
   const feauturedPeople = await getKeyPeople()
+
   return (
     <>
       <Hero hero={homePage.hero} />
-      <MarqueeTicker />
+      <MarqueeTicker/>
       <ValueProp valueProp={homePage.valueProp} />
       <ClientLogoTicker />
       <ServicesOverview section={homePage.servicesOverview} />
       <AboutOverview section={homePage.aboutOverview} featuredPeople={feauturedPeople}/>
       <InsightsOverview section={homePage.insightsOverview} />
-      <ContactForm />
+      <ContactForm section={homePage.contactFormOverview}/>
     </>
   );
 }
