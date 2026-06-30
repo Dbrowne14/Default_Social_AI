@@ -24,7 +24,7 @@ const MobileMenu = ({ menuOpen, toggleMenu }: MobileMenuProps) => {
       {navigationItems.map((page) => {
         return (
           <Link
-            href={page.label === "index" ? "/" : `/${page.label}`}
+            href={page.label === "Index" ? "/" : `/${page.label.toLowerCase()}`}
             className="py-4 px-1 text-cream-2 border-t border-line-faded"
             key={page.label}
             onClick={toggleMenu}
