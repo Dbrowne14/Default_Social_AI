@@ -1,6 +1,6 @@
 import TeamBio from "@/components/ui/TeamBio";
 import { getAboutOVerview } from "@/lib/content/homePage";
-import { getKeyPeople } from "@/lib/content/person";
+import { getKeyPeople } from "@/lib/content/people";
 import RichTitle from "../ui/RichTitle";
 
 const AboutOverview = async () => {

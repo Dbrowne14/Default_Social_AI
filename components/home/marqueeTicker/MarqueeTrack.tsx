@@ -1,6 +1,6 @@
-import { getServiceTickerItems } from "@/lib/content/service";
+import { getServiceTickerItems } from "@/lib/content/services";
 
-const MarqueeTrack = async() => {
+const MarqueeTrack = async () => {
   const services = await getServiceTickerItems();
   return (
     <div className="flex gap-12 items-center shrink-0 pr-12">
