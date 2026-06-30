@@ -1,10 +1,11 @@
-import { servicesDetails } from "@/data/servicesDetails";
+import { getAllServices } from "@/lib/content/services";
 import type { Service } from "@/types/services";
 
-const ServicesBuckets = () => {
+const ServicesBuckets = async () => {
+  const services = await getAllServices();
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-line border border-line rounded-(--radius) overflow-hidden">
-      {servicesDetails.map((service: Service) => (
+      {services.map((service: Service) => (
         <article
           key={service.id}
           className={`
