@@ -1,7 +1,7 @@
 import { insights } from "@/data/blogData";
 import BlogCard from "../ui/BlogCard";
 import Link from "next/link";
-import type { SectionIntro } from "@/types/homePage";
+import type { SectionIntro } from "@/types/shared";
 import RichTitle from "../ui/RichTitle";
 
 type InsightsOverviewProps = {

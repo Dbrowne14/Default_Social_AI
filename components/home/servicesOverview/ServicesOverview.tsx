@@ -1,7 +1,7 @@
 import ServicesBuckets from "@/components/home/servicesOverview/ServicesBuckets";
 import Button from "@/components/ui/Button";
 import RichTitle from "@/components/ui/RichTitle";
-import type { SectionIntro } from "@/types/homePage";
+import type { SectionIntro } from "@/types/shared";
 
 type ServicesOverviewProps = {
   section: SectionIntro;

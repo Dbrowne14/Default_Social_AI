@@ -1,5 +1,4 @@
 import TeamBio from "@/components/ui/TeamBio";
-import { getKeyPeople } from "@/lib/content/people";
 import RichTitle from "../ui/RichTitle";
 import type { AboutOverviewSection } from "@/types/homePage";
 import type { Person } from "@/types/person";

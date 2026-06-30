@@ -20,3 +20,9 @@ export type TitleSegment = {
 export type TitleLine = {
   segments: TitleSegment[];
 };
+
+export type SectionIntro = {
+  eyebrow: string;
+  title: TitleLine[];
+  meta: string;
+};

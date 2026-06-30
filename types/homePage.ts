@@ -1,6 +1,6 @@
 // types/page.ts
 
-import type { TitleLine, LinkItem } from "./shared";
+import type { LinkItem, SectionIntro, TitleLine } from "./shared";
 
 export type HomePage = {
   hero: HomeHero;
@@ -21,12 +21,6 @@ export type ValuePropSection = {
   eyebrow: string;
   title: TitleLine[];
   lede: string;
-};
-
-export type SectionIntro = {
-  eyebrow: string;
-  title: TitleLine[];
-  meta: string;
 };
 
 export type AboutOverviewSection = SectionIntro & {
