@@ -1,10 +1,11 @@
-import { team } from "@/data/teamData";
 import TeamBio from "@/components/ui/TeamBio";
 import { getAboutOVerview } from "@/lib/content/homePage";
+import { getKeyPeople } from "@/lib/content/person";
 import RichTitle from "../ui/RichTitle";
 
 const AboutOverview = async () => {
   const { eyebrow, title, meta, keyPeople } = await getAboutOVerview();
+  const featuredPeople = await getKeyPeople();
   return (
     <section data-screen-label="About">
       <div className="container-thin md:mb-8">
@@ -33,20 +34,18 @@ const AboutOverview = async () => {
         </div>
         <div className="flex gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-3 md:overflow-visible">
           {" "}
-          {team
-            .filter((person) => person.keyPerson === true)
-            .map((person) => {
-              return (
-                <div key={person.name} className="min-w-60 md:min-w-0">
-                  <TeamBio
-                    key={person.name}
-                    initials={person.initials}
-                    name={person.name}
-                    role={person.role}
-                  />
-                </div>
-              );
-            })}
+          {featuredPeople.map((person) => {
+            return (
+              <div key={person.name} className="min-w-60 md:min-w-0">
+                <TeamBio
+                  key={person.name}
+                  initials={person.initials}
+                  name={person.name}
+                  role={person.role}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
