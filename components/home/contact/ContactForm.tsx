@@ -3,6 +3,7 @@ import { useActionState } from "react";
 import { submitContactForm } from "@/app/actions/contact";
 import type { ContactFormState } from "@/app/actions/contact";
 import type { SectionIntro } from "@/types/homePage";
+import type { SiteSettings } from "@/types/site";
 import RichTitle from "@/components/ui/RichTitle";
 
 const enquiries = [
@@ -11,15 +12,16 @@ const enquiries = [
   "Speaking & press",
   "Careers",
   "Other",
-];
+] as const;
 
 type LabelledSlotProps = {
   label: string;
   children: React.ReactNode;
 };
 
-type ContactFormOverviewProps = {
+type ContactFormProps = {
   section: SectionIntro;
+  siteSettings: SiteSettings;
 };
 
 function Field({ label, children }: LabelledSlotProps) {
@@ -48,8 +50,14 @@ const initialState: ContactFormState = {
   errors: {},
 };
 
-export default function ContactForm({ section }: ContactFormOverviewProps) {
+export default function ContactForm({
+  section,
+  siteSettings,
+}: ContactFormProps) {
   const { eyebrow, title, meta } = section;
+  const { contact, groupLink } = siteSettings;
+  const { email, phone, location } = contact;
+
   const [state, formAction, pending] = useActionState(
     submitContactForm,
     initialState,
@@ -72,16 +80,16 @@ export default function ContactForm({ section }: ContactFormOverviewProps) {
           <p className="mt-4.5 max-w-[38ch] text-cream-2">{meta}</p>
 
           <div className="mt-10 hidden md:flex flex-col gap-4 border-t border-line pt-6">
-            <InfoRow label="Studio">Brentford · London</InfoRow>
+            <InfoRow label="Studio">{location}</InfoRow>
 
             <InfoRow label="Email">
-              <a href="mailto:info@defaultmedia.com" className="footer-links">
-                info@defaultmedia.com
+              <a href={`mailto:${email}`} className="footer-links">
+                {email}
               </a>
             </InfoRow>
 
-            <InfoRow label="Phone">+44 7878 849 182</InfoRow>
-            <InfoRow label="Part of">Default Media Group</InfoRow>
+            <InfoRow label="Phone">{phone}</InfoRow>
+            <InfoRow label="Part of">{groupLink.label}</InfoRow>
           </div>
         </div>
         <form className="flex flex-col gap-4.5" action={formAction} noValidate>

@@ -8,22 +8,26 @@ import InsightsOverview from "@/components/home/InsightsOverview";
 import ContactForm from "@/components/home/contact/ContactForm";
 import { getHomePage } from "@/lib/content/homePage";
 import { getKeyPeople } from "@/lib/content/people";
-
+import { getSiteSettings } from "@/lib/content/site";
 
 export default async function Home() {
   const homePage = await getHomePage();
-  const feauturedPeople = await getKeyPeople()
+  const feauturedPeople = await getKeyPeople();
+  const siteSettings = await getSiteSettings();
 
   return (
     <>
       <Hero hero={homePage.hero} />
-      <MarqueeTicker/>
+      <MarqueeTicker />
       <ValueProp valueProp={homePage.valueProp} />
       <ClientLogoTicker />
       <ServicesOverview section={homePage.servicesOverview} />
-      <AboutOverview section={homePage.aboutOverview} featuredPeople={feauturedPeople}/>
+      <AboutOverview
+        section={homePage.aboutOverview}
+        featuredPeople={feauturedPeople}
+      />
       <InsightsOverview section={homePage.insightsOverview} />
-      <ContactForm section={homePage.contactFormOverview}/>
+      <ContactForm section={homePage.contactFormOverview} siteSettings={siteSettings} />
     </>
   );
 }
