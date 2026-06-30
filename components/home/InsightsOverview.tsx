@@ -2,9 +2,10 @@ import { insights } from "@/data/blogData";
 import BlogCard from "../ui/BlogCard";
 import Link from "next/link";
 import { getInsightsOverview } from "@/lib/content/homePage";
+import RichTitle from "../ui/RichTitle";
 
 const InsightsOverview = async () => {
-  const {title, eyebrow, meta} = await getInsightsOverview()
+  const { title, eyebrow, meta } = await getInsightsOverview();
   return (
     <section className="border-t border-t-line" data-screen-label="Insights">
       <div className="container-custom py-20">
@@ -12,14 +13,13 @@ const InsightsOverview = async () => {
           <div className="section-title">
             <div className="eyebrow">{eyebrow}</div>
             <h2>
-              Field notes from
-              <br />
-              the practice.
+              <RichTitle title={title} />
             </h2>
           </div>
           <p className="meta">
             {meta}
             <Link href="/insights" className="text-accent hover:underline">
+              {" "}
               All insights →
             </Link>
           </p>
