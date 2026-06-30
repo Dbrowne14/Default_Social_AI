@@ -1,4 +1,5 @@
 import InsightsOverview from "@/components/home/InsightsOverview";
+import ServicesOverview from "@/components/home/servicesOverview/ServicesOverview";
 
 export const homePage = {
   hero: {
@@ -51,5 +52,26 @@ export const homePage = {
       description:
         "Senior partners on the work — the team you meet in the pitch is the team that ships.",
     },
+  },
+  servicesOverview: {
+    eyebrow: "02 · Services",
+    title: [
+      {
+        segments: [
+          {
+            text: "Five practices,",
+          },
+        ],
+      },
+      {
+        segments: [
+          {
+            text: "one operating model.",
+          },
+        ],
+      },
+    ],
+
+    meta: "Each practice is led by a senior partner and runs as an autonomous unit, networked through a shared AI and data layer. Engage them individually — or as a programme.",
   },
 };

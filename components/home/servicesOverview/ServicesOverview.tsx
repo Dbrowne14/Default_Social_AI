@@ -1,23 +1,21 @@
 import ServicesBuckets from "@/components/home/servicesOverview/ServicesBuckets";
 import Button from "@/components/ui/Button";
-const ServicesOverview = () => {
+import { getServicesOverview } from "@/lib/content/homePage";
+import RichTitle from "@/components/ui/RichTitle";
+
+const ServicesOverview = async () => {
+  const { eyebrow, title, meta } = await getServicesOverview();
   return (
     <section data-screen-label="Services">
       <div className="container-custom py-20">
         <div className="section-headings">
           <div className="section-title">
-            <div className="eyebrow">02 · Services</div>
+            <div className="eyebrow">{eyebrow}</div>
             <h2>
-              Five practices,
-              <br />
-              one operating model.
+              <RichTitle title={title} />
             </h2>
           </div>
-          <p className="meta">
-            Each practice is led by a senior partner and runs as an autonomous
-            unit, networked through a shared AI and data layer. Engage them
-            individually — or as a programme.
-          </p>
+          <p className="meta">{meta}</p>
         </div>
 
         <ServicesBuckets />

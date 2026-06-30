@@ -11,6 +11,10 @@ export const getInsightsOverview = async () => {
   return homePage.insightsOverview;
 };
 
-export const getAboutOVerview = async () => {
+export const getAboutOverview = async () => {
   return homePage.aboutOverview;
 };
+
+export const getServicesOverview = async () => {
+return homePage.servicesOverview
+}

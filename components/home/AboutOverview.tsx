@@ -1,10 +1,10 @@
 import TeamBio from "@/components/ui/TeamBio";
-import { getAboutOVerview } from "@/lib/content/homePage";
+import { getAboutOverview } from "@/lib/content/homePage";
 import { getKeyPeople } from "@/lib/content/people";
 import RichTitle from "../ui/RichTitle";
 
 const AboutOverview = async () => {
-  const { eyebrow, title, meta, keyPeople } = await getAboutOVerview();
+  const { eyebrow, title, meta, keyPeople } = await getAboutOverview();
   const featuredPeople = await getKeyPeople();
   return (
     <section data-screen-label="About">
