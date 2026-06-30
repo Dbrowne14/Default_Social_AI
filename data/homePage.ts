@@ -35,4 +35,21 @@ export const homePage = {
     ],
     meta: "Long-form thinking on agency operating models, what we've shipped recently, and what's coming next.",
   },
+  aboutOverview: {
+    eyebrow: "03 · About",
+    title: [
+      {
+        segments: [{ text: "A studio between" }],
+      },
+      {
+        segments: [{ text: "signal and craft." }],
+      },
+    ],
+    meta: "The digital, social & technology arm of the Default Media Group — a ten-year-old company with one studio in Brentford, one foot in the data, and both eyes on what's next.",
+    keyPeople: {
+      label: "Key people",
+      description:
+        "Senior partners on the work — the team you meet in the pitch is the team that ships.",
+    },
+  },
 };

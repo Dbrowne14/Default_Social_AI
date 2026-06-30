@@ -7,6 +7,10 @@ export const getHeroFooter = async () => {
 export const getValueProp = async () => {
   return homePage.valueProp;
 };
-export const getInsightsOverview = async ()=> {
-  return homePage.insightsOverview
-}
+export const getInsightsOverview = async () => {
+  return homePage.insightsOverview;
+};
+
+export const getAboutOVerview = async () => {
+  return homePage.aboutOverview;
+};
