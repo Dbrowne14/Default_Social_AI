@@ -1,14 +1,16 @@
 import { insights } from "@/data/blogData";
 import BlogCard from "../ui/BlogCard";
 import Link from "next/link";
+import { getInsightsOverview } from "@/lib/content/homePage";
 
-const InsightsOverview = () => {
+const InsightsOverview = async () => {
+  const {title, eyebrow, meta} = await getInsightsOverview()
   return (
     <section className="border-t border-t-line" data-screen-label="Insights">
       <div className="container-custom py-20">
         <div className="section-headings">
           <div className="section-title">
-            <div className="eyebrow">04 · Insights</div>
+            <div className="eyebrow">{eyebrow}</div>
             <h2>
               Field notes from
               <br />
@@ -16,8 +18,7 @@ const InsightsOverview = () => {
             </h2>
           </div>
           <p className="meta">
-            Long-form thinking on agency operating models, what we&apos;ve shipped
-            recently, and what&apos;s coming next. {"  "}
+            {meta}
             <Link href="/insights" className="text-accent hover:underline">
               All insights →
             </Link>

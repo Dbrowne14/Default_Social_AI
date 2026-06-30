@@ -1,3 +1,5 @@
+import InsightsOverview from "@/components/home/InsightsOverview";
+
 export const homePage = {
   hero: {
     footer_Text:
@@ -20,5 +22,17 @@ export const homePage = {
       },
     ],
     lede: "Default Social is the digital, social and technology arm of the Default Media Group. We work with brands solving complex growth and brand challenges, where the answer sits somewhere between creative, code and signal.",
+  },
+  insightsOverview: {
+    eyebrow: "04 · Insights",
+    title: [
+      {
+        segments: [{ text: "Field notes from" }],
+      },
+      {
+        segments: [{ text: "the practice." }],
+      },
+    ],
+    meta: "Long-form thinking on agency operating models, what we've shipped recently, and what's coming next.",
   },
 };

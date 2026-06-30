@@ -11,7 +11,12 @@ export type TitleDescription = {
   description: string;
 };
 
-export type TitleLine = {
+export type TitleSegment = {
   text: string;
-  emphasis?: boolean;
+  italic?: boolean;
+  accent?: boolean;
+};
+
+export type TitleLine = {
+  segments: TitleSegment[];
 };
