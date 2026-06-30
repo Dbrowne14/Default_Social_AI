@@ -1,5 +1,9 @@
 import { homePage } from "@/data/homePage";
 
+export async function getHomePage() {
+  return homePage;
+}
+
 export const getHeroFooter = async () => {
   return homePage.hero.footer_Text;
 };

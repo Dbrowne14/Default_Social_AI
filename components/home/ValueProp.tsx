@@ -1,8 +1,12 @@
-import { getValueProp } from "@/lib/content/homePage";
 import RichTitle from "../ui/RichTitle";
+import type { ValuePropSection } from "@/types/homePage";
 
-const ValueProp = async () => {
-  const { eyebrow, title, lede } = await getValueProp();
+type ValuePropProps = {
+  valueProp: ValuePropSection;
+};
+
+const ValueProp = ({ valueProp }: ValuePropProps) => {
+  const { eyebrow, title, lede } = valueProp;
   return (
     <section className="py-10" data-screen-label="Value prop">
       <div className="container-custom">

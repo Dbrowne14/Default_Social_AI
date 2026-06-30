@@ -1,11 +1,16 @@
 import TeamBio from "@/components/ui/TeamBio";
-import { getAboutOverview } from "@/lib/content/homePage";
 import { getKeyPeople } from "@/lib/content/people";
 import RichTitle from "../ui/RichTitle";
+import type { AboutOverviewSection } from "@/types/homePage";
+import type { Person } from "@/types/person";
 
-const AboutOverview = async () => {
-  const { eyebrow, title, meta, keyPeople } = await getAboutOverview();
-  const featuredPeople = await getKeyPeople();
+type AboutOverviewProps = {
+  section: AboutOverviewSection;
+  featuredPeople: Person[];
+};
+
+const AboutOverview = async ({ section, featuredPeople }: AboutOverviewProps) => {
+  const { eyebrow, title, meta, keyPeople } = section;
   return (
     <section data-screen-label="About">
       <div className="container-thin md:mb-8">
@@ -38,7 +43,6 @@ const AboutOverview = async () => {
             return (
               <div key={person.name} className="min-w-60 md:min-w-0">
                 <TeamBio
-                  key={person.name}
                   initials={person.initials}
                   name={person.name}
                   role={person.role}

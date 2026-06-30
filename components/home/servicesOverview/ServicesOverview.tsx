@@ -1,10 +1,14 @@
 import ServicesBuckets from "@/components/home/servicesOverview/ServicesBuckets";
 import Button from "@/components/ui/Button";
-import { getServicesOverview } from "@/lib/content/homePage";
 import RichTitle from "@/components/ui/RichTitle";
+import type { SectionIntro } from "@/types/homePage";
 
-const ServicesOverview = async () => {
-  const { eyebrow, title, meta } = await getServicesOverview();
+type ServicesOverviewProps = {
+  section: SectionIntro;
+};
+
+const ServicesOverview = ({ section }: ServicesOverviewProps) => {
+  const { eyebrow, title, meta } = section;
   return (
     <section data-screen-label="Services">
       <div className="container-custom py-20">

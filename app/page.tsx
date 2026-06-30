@@ -5,21 +5,23 @@ import ClientLogoTicker from "@/components/home/ClientLogoTicker";
 import ServicesOverview from "@/components/home/servicesOverview/ServicesOverview";
 import AboutOverview from "@/components/home/AboutOverview";
 import InsightsOverview from "@/components/home/InsightsOverview";
-
 import ContactForm from "@/components/home/contact/ContactForm";
+import { getHomePage } from "@/lib/content/homePage";
+import { getKeyPeople } from "@/lib/content/people";
 
-export default function Home() {
+export default async function Home() {
+  const homePage = await getHomePage();
+  const feauturedPeople = await getKeyPeople()
   return (
-    <div>
-      {/*---complete later---*/}
-      <Hero />
+    <>
+      <Hero hero={homePage.hero} />
       <MarqueeTicker />
-      <ValueProp />
+      <ValueProp valueProp={homePage.valueProp} />
       <ClientLogoTicker />
-      <ServicesOverview />
-      <AboutOverview />
-      <InsightsOverview />
+      <ServicesOverview section={homePage.servicesOverview} />
+      <AboutOverview section={homePage.aboutOverview} featuredPeople={feauturedPeople}/>
+      <InsightsOverview section={homePage.insightsOverview} />
       <ContactForm />
-    </div>
+    </>
   );
 }

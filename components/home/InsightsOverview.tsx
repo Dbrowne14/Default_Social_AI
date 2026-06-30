@@ -1,11 +1,15 @@
 import { insights } from "@/data/blogData";
 import BlogCard from "../ui/BlogCard";
 import Link from "next/link";
-import { getInsightsOverview } from "@/lib/content/homePage";
+import type { SectionIntro } from "@/types/homePage";
 import RichTitle from "../ui/RichTitle";
 
-const InsightsOverview = async () => {
-  const { title, eyebrow, meta } = await getInsightsOverview();
+type InsightsOverviewProps = {
+  section: SectionIntro;
+};
+
+const InsightsOverview = ({ section }: InsightsOverviewProps) => {
+  const { title, eyebrow, meta } = section;
   return (
     <section className="border-t border-t-line" data-screen-label="Insights">
       <div className="container-custom py-20">
