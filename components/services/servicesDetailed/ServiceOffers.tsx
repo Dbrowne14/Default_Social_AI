@@ -1,4 +1,4 @@
-import type { ServiceOffer } from "@/types/site";
+import type { ServiceOffer } from "@/types/services";
 
 const ServiceOffers = ({
   title,

@@ -2,11 +2,12 @@ import { servicesDetails } from "@/data/servicesDetails";
 import ServiceOffers from "./ServiceOffers";
 import ServicesAi from "./ServicesAi";
 import ServicesProcessStrip from "./ServicesProcessStrip";
+import type { ServicesProps } from "@/types/services";
 
-const ServicesDetailed = () => {
+const ServicesDetailed = ({services}:ServicesProps) => {
   return (
     <section className="" id="web" data-screen-label="Web">
-      {servicesDetails.map((service) => {
+      {services.map((service) => {
         const { id, category, blurb, offers, aiCallout, processSteps } =
           service;
         return (

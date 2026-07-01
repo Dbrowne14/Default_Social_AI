@@ -19,7 +19,7 @@ const Page = async () => {
     <div data-screen-label="03 Services">
       <ServicesHeader servicesHeader={servicesPageData.servicesHeader} />
       <StickyToc services={services} />
-      <ServicesDetailed />
+      <ServicesDetailed services={services}/>
       <CTA
         primaryText="Not sure where to start?"
         secondaryText="Talk to a strategist."

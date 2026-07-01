@@ -1,4 +1,4 @@
-import type { ServiceProcessStep } from "@/types/site";
+import type { ServiceProcessStep } from "@/types/services";
 
 const ServicesProcessStrip = ({ id, title, description }: ServiceProcessStep) => {
   return (
