@@ -5,6 +5,8 @@ import AboutApproach from "@/components/about/AboutApproach";
 import AboutTeam from "@/components/about/AboutTeam";
 import CTA from "@/components/ui/Cta";
 import type { Metadata } from "next";
+import { getAboutPage } from "@/lib/content/aboutPage";
+
 
 export const metadata: Metadata = {
   title: "About",
@@ -12,10 +14,12 @@ export const metadata: Metadata = {
     "Default Social is the AI-native, digital, social and technology studio from Default Media Group, combining strategy, data and craft from London.",
 };
 
-const Page = () => {
+const Page = async() => {
+  const aboutPage = await getAboutPage()
+  
   return (
     <div data-screen-label="02 About">
-      <AboutHeader />
+      <AboutHeader aboutHeader={aboutPage.aboutHeader}/>
       <AboutValues />
       <AboutGroupStructure />
       <AboutApproach />

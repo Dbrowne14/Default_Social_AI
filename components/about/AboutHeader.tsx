@@ -1,20 +1,18 @@
 import PageHeader from "../ui/PageHeader";
-import { companyInfo } from "@/data/companyInfo";
-import type { AboutPageHeader } from "@/types/aboutPage";
 
+import type { AboutHeader } from "@/types/aboutPage";
 
-const AboutHeader = ({aboutHeader}:AboutPageHeader) => {
-  const {eyebrow, title, lede} = aboutHeader;
+type AboutHeaderProps = {
+  aboutHeader: AboutHeader;
+};
+
+const AboutHeader = ({ aboutHeader }: AboutHeaderProps) => {
+  const { eyebrow, title, lede, companyInfo } = aboutHeader;
   return (
-    <PageHeader
-      eyebrow={eyebrow}
-      title={title}
-    >
+    <PageHeader eyebrow={eyebrow} title={title}>
       {" "}
       <div>
-        <p className="lede hidden xl:block">
-         {lede}
-        </p>
+        <p className="lede hidden xl:block">{lede}</p>
         <div className="flex flex-col gap-3 font-mono text-[11px] tracking-[0.08em] uppercase mt-10">
           {companyInfo.map((info, key) => {
             return (
