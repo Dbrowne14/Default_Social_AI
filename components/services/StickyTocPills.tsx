@@ -1,8 +1,8 @@
 "use client";
-import { servicesDetails } from "@/data/servicesDetails";
+import type { ServicesProps } from "@/types/services";
 import { useState } from "react";
 
-const StickyTocPills = () => {
+const StickyTocPills = ({ services }: ServicesProps) => {
   const [isActive, setIsActive] = useState("web");
 
   return (
@@ -10,7 +10,7 @@ const StickyTocPills = () => {
       aria-label="Table of contents"
       className="flex gap-2 flex-wrap container-thin"
     >
-      {servicesDetails.map((service) => {
+      {services.map((service) => {
         return (
           <a
             href={`#${service.linkName}`}

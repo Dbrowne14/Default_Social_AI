@@ -35,3 +35,7 @@ export type ServiceTickerItem = {
   href?: string;
   source: "service" | "theme";
 }
+
+export type ServicesProps = {
+  services: Service[];
+};

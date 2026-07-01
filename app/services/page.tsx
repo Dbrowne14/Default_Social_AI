@@ -4,6 +4,7 @@ import ServicesDetailed from "@/components/services/servicesDetailed/ServicesDet
 import CTA from "@/components/ui/Cta";
 import type { Metadata } from "next";
 import { getAllServicesPage } from "@/lib/content/servicesPage";
+import { getAllServices } from "@/lib/content/services";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -13,11 +14,11 @@ export const metadata: Metadata = {
 
 const Page = async () => {
   const servicesPageData = await getAllServicesPage();
-
+  const services = await getAllServices();
   return (
     <div data-screen-label="03 Services">
       <ServicesHeader servicesHeader={servicesPageData.servicesHeader} />
-      <StickyToc />
+      <StickyToc services={services} />
       <ServicesDetailed />
       <CTA
         primaryText="Not sure where to start?"
