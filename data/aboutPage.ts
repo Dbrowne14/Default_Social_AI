@@ -1,6 +1,6 @@
 import type { AboutPage } from "@/types/aboutPage";
 
-export const aboutPage:AboutPage = {
+export const aboutPage: AboutPage = {
   aboutHeader: {
     eyebrow: "About",
 
@@ -145,5 +145,74 @@ export const aboutPage:AboutPage = {
 
     closingStatement:
       "When a client engages Default Social, they get our studio on the front line — and the group's full operating depth standing behind it. One brief, one team, four houses' worth of muscle.",
+  },
+  approach: {
+    eyebrow: "04 · Approach",
+
+    title: [
+      {
+        segments: [{ text: "An innovation" }],
+      },
+      {
+        segments: [{ text: "mindset, on rails." }],
+      },
+    ],
+
+    meta: "",
+
+    statement: [
+      {
+        segments: [
+          {
+            text: "Innovation",
+            italic: true,
+            accent: true,
+          },
+          {
+            text: " is overused...",
+          },
+        ],
+      },
+      {
+        segments: [
+          {
+            text: "Here's what it actually means inside our studio.",
+          },
+        ],
+      },
+    ],
+
+    principles: [
+      {
+        id: "i",
+        title: "Hypothesis-led",
+        description:
+          "Every engagement opens with a written hypothesis — what we believe will move the metric, and why. It's the document the strategist defends in week one, and the document we score against in week twelve.",
+      },
+      {
+        id: "ii",
+        title: "Modular AI from day one",
+        description:
+          "The AI layer is never bolted on at the end. It's chosen at brief — concierge, content engine, predictive scoring, personalisation — and wired into the architecture so each module can evolve independently.",
+      },
+      {
+        id: "iii",
+        title: "Shipping over showing",
+        description:
+          "We'd rather ship a small, real thing in week four than a perfect deck in week eight. The first thing that goes live is the spine — everything else iterates onto it.",
+      },
+      {
+        id: "iv",
+        title: "Senior on the work",
+        description:
+          "The senior team you meet in the pitch is the senior team that builds the thing. We don't hand off; the partner who scoped the engagement owns delivery to launch.",
+      },
+      {
+        id: "v",
+        title: "Compounding by default",
+        description:
+          "Every project leaves an asset behind — a design system, a content engine, a model, a measurement spine. The next project starts further down the curve than the last one ended.",
+      },
+    ],
   },
 };

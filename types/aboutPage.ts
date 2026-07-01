@@ -4,6 +4,7 @@ export type AboutPage = {
   aboutHeader: AboutHeader;
   values: ValuesSection;
   groupStructure: GroupStructureSection;
+  approach: ApproachSection;
 };
 
 export type AboutHeader = PageHeading & {
@@ -37,5 +38,16 @@ export type GroupStructureEntry = {
   type: "parent" | "self" | "sibling";
   label: string;
   name: string;
+  description: string;
+};
+
+export type ApproachSection = SectionIntro & {
+  statement: TitleLine[];
+  principles: ApproachPrinciple[];
+};
+
+export type ApproachPrinciple = {
+  id: string;
+  title: string;
   description: string;
 };

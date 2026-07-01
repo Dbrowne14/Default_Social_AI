@@ -22,7 +22,7 @@ const Page = async() => {
       <AboutHeader aboutHeader={aboutPage.aboutHeader}/>
       <AboutValues values={aboutPage.values}/>
       <AboutGroupStructure groupStructure={aboutPage.groupStructure}/>
-      <AboutApproach />
+      <AboutApproach approach={aboutPage.approach}/>
       <AboutTeam/>
       <CTA primaryText="Want to see what we'd" secondaryText="build for you?" buttonLink="/services" buttonText="See services"/>
     </div>

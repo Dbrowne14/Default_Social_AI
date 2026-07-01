@@ -1,56 +1,25 @@
-export const approachData = [
-  {
-    id: "i",
-    title: "Hypothesis-led",
-    description:
-      "Every engagement opens with a written hypothesis — what we believe will move the metric, and why. It's the document the strategist defends in week one, and the document we score against in week twelve.",
-  },
-  {
-    id: "ii",
-    title: "Modular AI from day one",
-    description:
-      "The AI layer is never bolted on at the end. It's chosen at brief — concierge, content engine, predictive scoring, personalisation — and wired into the architecture so each module can evolve independently.",
-  },
-  {
-    id: "iii",
-    title: "Shipping over showing",
-    description:
-      "We'd rather ship a small, real thing in week four than a perfect deck in week eight. The first thing that goes live is the spine — everything else iterates onto it.",
-  },
-  {
-    id: "iv",
-    title: "Senior on the work",
-    description:
-      "The senior team you meet in the pitch is the senior team that builds the thing. We don't hand off; the partner who scoped the engagement owns delivery to launch.",
-  },
-  {
-    id: "v",
-    title: "Compounding by default",
-    description:
-      "Every project leaves an asset behind — a design system, a content engine, a model, a measurement spine. The next project starts further down the curve than the last one ended.",
-  },
-];
+import type { ApproachSection } from "@/types/aboutPage";
+import RichTitle from "../ui/RichTitle";
+type AboutApproachProps = {
+  approach: ApproachSection;
+};
 
-function AboutApproach() {
+export const AboutApproach = ({ approach }: AboutApproachProps) => {
+  const { eyebrow, title, statement, principles } = approach;
   return (
     <section data-screen-label="Approach">
       <div className="container-custom">
         <div className="section-headings">
           <div className="section-title">
-            <div className="eyebrow">04 · Approach</div>
+            <div className="eyebrow">{eyebrow}</div>
             <h2>
-              An innovation
-              <br />
-              mindset, on rails.
+              <RichTitle title={title} />
             </h2>
           </div>
 
           <div className="relative w-fit max-w-[42ch] 720:py-5 720:border-y border-line">
             <p className="font-serif text-[clamp(20px,3vw,32px)] leading-[1.18]">
-              <span className="italic text-accent">Innovation</span> is
-              overused...
-              <br />
-              Here&apos;s what it actually means inside our studio.
+              <RichTitle title={statement} />
             </p>
 
             <div
@@ -65,7 +34,7 @@ function AboutApproach() {
         </div>
 
         <div className="flex flex-col">
-          {approachData.map((approach) => {
+          {principles.map((approach) => {
             return (
               <div
                 key={approach.id}
@@ -91,6 +60,6 @@ function AboutApproach() {
       </div>
     </section>
   );
-}
+};
 
 export default AboutApproach;
