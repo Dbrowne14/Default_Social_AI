@@ -1,8 +1,10 @@
 import React from "react";
+import RichTitle from "./RichTitle";
+import type { TitleLine } from "@/types/shared";
 
 type PageHeaderProps = {
   eyebrow: string;
-  title: React.ReactNode;
+  title: TitleLine[];
   children: React.ReactNode;
 };
 
@@ -18,7 +20,7 @@ const PageHeader = ({ eyebrow, title, children }: PageHeaderProps) => {
         <div className="eyebrow mb-9">{eyebrow}</div>
 
         <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-20 md:gap-10 items-end">
-          <h1 className="font-serif text-[clamp(56px,9vw,140px)]"> {title}</h1>
+          <h1 className="font-serif text-[clamp(56px,9vw,140px)]"> <RichTitle title={title}/></h1>
           {children}
         </div>
       </div>

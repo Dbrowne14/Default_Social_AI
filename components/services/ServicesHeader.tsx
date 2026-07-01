@@ -1,24 +1,17 @@
 import PageHeader from "../ui/PageHeader";
+import type { PageHeading } from "@/types/shared";
 
-const servicesHeader = () => {
+type servicesHeader = {
+  servicesHeader: PageHeading;
+};
+
+const servicesHeader = ({ servicesHeader }: servicesHeader) => {
+  const { eyebrow, title, lede } = servicesHeader;
   return (
-    <PageHeader
-      eyebrow="Services"
-      title={
-        <>
-          Five practices.
-          <br />
-          One <em className="text-accent italic">AI-native</em>
-          <br />
-          operating model.
-        </>
-      }
-    >
+    <PageHeader eyebrow={eyebrow} title={title}>
       <div>
         <p className="lede">
-          Each practice ships standalone work — or networks together as a
-          programme. Underneath all of them: a shared spine of strategy, data
-          and an AI layer built to evolve with the market.
+         {lede}
         </p>
       </div>
     </PageHeader>

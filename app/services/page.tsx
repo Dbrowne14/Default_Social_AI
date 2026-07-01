@@ -3,6 +3,7 @@ import ServicesHeader from "@/components/services/ServicesHeader";
 import ServicesDetailed from "@/components/services/servicesDetailed/ServicesDetailed";
 import CTA from "@/components/ui/Cta";
 import type { Metadata } from "next";
+import { getAllServicesPage } from "@/lib/content/servicesPage";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -10,13 +11,21 @@ export const metadata: Metadata = {
     "AI-powered web development, SEO, social campaigns, creative production and growth strategy for modern brands.",
 };
 
-const Page = () => {
+const Page = async () => {
+  const servicesPageData = await getAllServicesPage();
+
   return (
     <div data-screen-label="03 Services">
-      <ServicesHeader />
+      <ServicesHeader servicesHeader={servicesPageData.servicesHeader} />
       <StickyToc />
       <ServicesDetailed />
-      <CTA primaryText="Not sure where to start?" secondaryText="Talk to a strategist." variant={true} buttonLink="/about" buttonText="About the studio" />
+      <CTA
+        primaryText="Not sure where to start?"
+        secondaryText="Talk to a strategist."
+        variant={true}
+        buttonLink="/about"
+        buttonText="About the studio"
+      />
     </div>
   );
 };

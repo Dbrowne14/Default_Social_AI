@@ -1,10 +1,10 @@
 // types/page.ts
 
-import type { LinkItem, SectionIntro, PageHeader } from "./shared";
+import type { LinkItem, SectionIntro, PageHeading } from "./shared";
 
 export type HomePage = {
   hero: HomeHero;
-  valueProp: PageHeader;
+  valueProp: PageHeading;
   servicesOverview: SectionIntro;
   aboutOverview: AboutOverviewSection;
   insightsOverview: SectionIntro;
