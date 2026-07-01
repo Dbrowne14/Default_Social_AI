@@ -1,27 +1,18 @@
 import PageHeader from "../ui/PageHeader";
+import type { PageHeading } from "@/types/shared";
 
-const InsightsHeader = () => {
+type InsightsHeaderProps = {
+  insightsHeader: PageHeading;
+};
+
+const InsightsHeader = ({ insightsHeader }: InsightsHeaderProps) => {
+  const { eyebrow, title, lede } = insightsHeader;
   return (
     <>
       {" "}
-      <PageHeader
-        eyebrow="Insights"
-        title={
-          <>
-            Field notes
-            <br />
-            from the
-            <br />
-            <em className="text-accent italic">practice.</em>
-          </>
-        }
-      >
+      <PageHeader eyebrow={eyebrow} title={title}>
         <div>
-          <p className="lede">
-            Essays, teardowns and quiet experiments — written by our practice
-            leads. Long-form by default, edited by humans, published when we
-            have something worth saying.
-          </p>
+          <p className="lede">{lede}</p>
         </div>
       </PageHeader>
     </>
