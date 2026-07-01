@@ -58,9 +58,9 @@ const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
                   .filter((navItem) => navItem.label !== "Index")
                   .map((navItem) => {
                     return (
-                      <li>
+                      <li key={navItem.label}>
                         <span className="text-accent-deep">/ </span>
-                        <Link className="footer-links" href={navItem.href}>
+                        <Link className="footer-links" href={navItem.href} >
                           {navItem.label}
                         </Link>
                       </li>
