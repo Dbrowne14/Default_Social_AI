@@ -215,4 +215,26 @@ export const aboutPage: AboutPage = {
       },
     ],
   },
+  team: {
+    eyebrow: "05 · The team",
+
+    title: [
+      {
+        segments: [
+          {
+            text: "Senior people,",
+          },
+        ],
+      },
+      {
+        segments: [
+          {
+            text: "on the work.",
+          },
+        ],
+      },
+    ],
+
+    meta: "A flat structure of practice leads. Each owns a discipline; each ships their own work.",
+  },
 };

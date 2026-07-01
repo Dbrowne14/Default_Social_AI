@@ -5,6 +5,7 @@ export type AboutPage = {
   values: ValuesSection;
   groupStructure: GroupStructureSection;
   approach: ApproachSection;
+  team: SectionIntro;
 };
 
 export type AboutHeader = PageHeading & {
