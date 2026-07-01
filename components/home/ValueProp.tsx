@@ -1,8 +1,8 @@
 import RichTitle from "../ui/RichTitle";
-import type { ValuePropSection } from "@/types/homePage";
+import type { PageHeader } from "@/types/shared";
 
 type ValuePropProps = {
-  valueProp: ValuePropSection;
+  valueProp: PageHeader;
 };
 
 const ValueProp = ({ valueProp }: ValuePropProps) => {

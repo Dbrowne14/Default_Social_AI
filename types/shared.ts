@@ -26,3 +26,9 @@ export type SectionIntro = {
   title: TitleLine[];
   meta: string;
 };
+
+export type PageHeader = {
+  eyebrow: string;
+  title: TitleLine[];
+  lede: string;
+};

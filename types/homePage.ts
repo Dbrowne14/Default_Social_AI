@@ -1,10 +1,10 @@
 // types/page.ts
 
-import type { LinkItem, SectionIntro, TitleLine } from "./shared";
+import type { LinkItem, SectionIntro, PageHeader } from "./shared";
 
 export type HomePage = {
   hero: HomeHero;
-  valueProp: ValuePropSection;
+  valueProp: PageHeader;
   servicesOverview: SectionIntro;
   aboutOverview: AboutOverviewSection;
   insightsOverview: SectionIntro;
@@ -17,11 +17,7 @@ export type HomeHero = {
   secondaryCta?: LinkItem;
 };
 
-export type ValuePropSection = {
-  eyebrow: string;
-  title: TitleLine[];
-  lede: string;
-};
+
 
 export type AboutOverviewSection = SectionIntro & {
   keyPeople: {
