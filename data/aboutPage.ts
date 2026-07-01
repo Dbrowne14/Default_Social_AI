@@ -1,4 +1,6 @@
-export const aboutPage = {
+import type { AboutPage } from "@/types/aboutPage";
+
+export const aboutPage:AboutPage = {
   aboutHeader: {
     eyebrow: "About",
 
@@ -95,5 +97,53 @@ export const aboutPage = {
         },
       ],
     },
+  },
+  groupStructure: {
+    eyebrow: "02 · Our place in the group",
+
+    title: [
+      {
+        segments: [{ text: "Part of Default" }],
+      },
+      {
+        segments: [{ text: "Media Group." }],
+      },
+    ],
+
+    meta: "We're one of three sibling studios inside Default Media Group — each independent, but networked through a shared operating spine, shared AI tooling, and a shared address in Brentford.",
+
+    entries: [
+      {
+        type: "parent",
+        label: "Group",
+        name: "Default Media Group",
+        description:
+          "A privately-held media, marketing and technology group founded in 2016. Three sibling studios operate beneath one shared spine of finance, AI, data and people.",
+      },
+      {
+        type: "self",
+        label: "▍ This studio",
+        name: "Default Social",
+        description:
+          "Digital, social, technology & AI. Web builds, SEO, social systems, viral campaign IP, marketing strategy, AI integration.",
+      },
+      {
+        type: "sibling",
+        label: "Sibling",
+        name: "Default Media",
+        description:
+          "Above-the-line media planning, partnerships, sponsorships and broadcast — the group's traditional media engine.",
+      },
+      {
+        type: "sibling",
+        label: "Sibling",
+        name: "Default Mgt",
+        description:
+          "Artist and talent management — building careers, securing partnerships and creating opportunities for creators, presenters and personalities across modern media.",
+      },
+    ],
+
+    closingStatement:
+      "When a client engages Default Social, they get our studio on the front line — and the group's full operating depth standing behind it. One brief, one team, four houses' worth of muscle.",
   },
 };

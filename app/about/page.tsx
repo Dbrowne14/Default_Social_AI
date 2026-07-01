@@ -21,7 +21,7 @@ const Page = async() => {
     <div data-screen-label="02 About">
       <AboutHeader aboutHeader={aboutPage.aboutHeader}/>
       <AboutValues values={aboutPage.values}/>
-      <AboutGroupStructure />
+      <AboutGroupStructure groupStructure={aboutPage.groupStructure}/>
       <AboutApproach />
       <AboutTeam/>
       <CTA primaryText="Want to see what we'd" secondaryText="build for you?" buttonLink="/services" buttonText="See services"/>

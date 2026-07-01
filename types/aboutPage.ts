@@ -1,8 +1,9 @@
-import type { PageHeading, TitleLine } from "./shared";
+import type { PageHeading, TitleLine, SectionIntro } from "./shared";
 
 export type AboutPage = {
-  aboutHeader: PageHeading;
+  aboutHeader: AboutHeader;
   values: ValuesSection;
+  groupStructure: GroupStructureSection;
 };
 
 export type AboutHeader = PageHeading & {
@@ -25,4 +26,16 @@ export type ValuesSection = {
 export type ValuesCallout = {
   eyebrow: string;
   statement: TitleLine[];
+};
+
+export type GroupStructureSection = SectionIntro & {
+  entries: GroupStructureEntry[];
+  closingStatement: string;
+};
+
+export type GroupStructureEntry = {
+  type: "parent" | "self" | "sibling";
+  label: string;
+  name: string;
+  description: string;
 };

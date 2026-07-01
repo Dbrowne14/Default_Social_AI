@@ -1,39 +1,13 @@
-export const groupStructure = [
-  {
-    type: "parent",
-    label: "Group",
-    name: "Default Media Group",
-    description:
-      "A privately-held media, marketing and technology group founded in 2016. Three sibling studios operate beneath one shared spine of finance, AI, data and people.",
-  },
+import type { GroupStructureSection } from "@/types/aboutPage";
+import RichTitle from "../ui/RichTitle";
 
-  {
-    type: "self",
-    label: "▍ This studio",
-    name: "Default Social",
-    description:
-      "Digital, social, technology & AI. Web builds, SEO, social systems, viral campaign IP, marketing strategy, AI integration.",
-  },
+type AboutGroupStructureProps = {
+  groupStructure: GroupStructureSection;
+};
 
-  {
-    type: "sibling",
-    label: "Sibling",
-    name: "Default Media",
-    description:
-      "Above-the-line media planning, partnerships, sponsorships and broadcast — the group's traditional media engine.",
-  },
-
-  {
-    type: "sibling",
-    label: "Sibling",
-    name: "Default Mgt",
-    description:
-      "Artist and talent management — building careers, securing partnerships and creating opportunities for creators, presenters and personalities across modern media.",
-  },
-] as const;
-
-const AboutGroupStructure = () => {
-  const parent = groupStructure.find((parent) => parent.type === "parent");
+const AboutGroupStructure = ({ groupStructure }: AboutGroupStructureProps) => {
+  const { eyebrow, entries, title, meta, closingStatement } = groupStructure;
+  const parent = entries.find((parent) => parent.type === "parent");
   return (
     <section
       className="bg-[linear-gradient(180deg,var(--ink-2),var(--ink))] md:border-b md:border-line"
@@ -42,18 +16,12 @@ const AboutGroupStructure = () => {
       <div className="container-custom">
         <div className="section-headings">
           <div className="section-title">
-            <div className="eyebrow">02 · Our place in the group</div>
+            <div className="eyebrow">{eyebrow}</div>
             <h2>
-              Part of Default
-              <br />
-              Media Group.
+              <RichTitle title={title} />
             </h2>
           </div>
-          <p className="meta">
-            We&apos;re one of three sibling studios inside Default Media Group —
-            each independent, but networked through a shared operating spine,
-            shared AI tooling, and a shared address in Brentford.
-          </p>
+          <p className="meta">{meta}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-12 relative">
@@ -73,24 +41,24 @@ const AboutGroupStructure = () => {
             </div>
           )}
 
-          {groupStructure
+          {entries
             .filter((group) => group.type !== "parent")
             .map((sibling, key) => (
               <div
                 key={key}
                 className={`
-          border rounded-(--radius-brand)
-          p-6 md:p-8
-          bg-ink
-          flex flex-col gap-3
-          relative
-          md:min-h-65
-          ${
-            sibling.type === "self"
-              ? "border-accent [background:linear-gradient(180deg,color-mix(in_oklch,var(--accent)_6%,var(--ink-2)),var(--ink))]"
-              : "border-line"
-          }
-        `}
+                  border rounded-(--radius-brand)
+                  p-6 md:p-8
+                  bg-ink
+                  flex flex-col gap-3
+                  relative
+                  md:min-h-65
+                  ${
+                    sibling.type === "self"
+                      ? "border-accent [background:linear-gradient(180deg,color-mix(in_oklch,var(--accent)_6%,var(--ink-2)),var(--ink))]"
+                      : "border-line"
+                  }
+                `}
               >
                 <div className="flex items-center justify-between gap-4">
                   <span
@@ -117,11 +85,7 @@ const AboutGroupStructure = () => {
             ))}
         </div>
 
-        <p className="lede mt-19 max-w-[70ch]">
-          When a client engages Default Social, they get our studio on the front
-          line — and the group&apos;s full operating depth standing behind it.
-          One brief, one team, four houses&apos; worth of muscle.
-        </p>
+        <p className="lede mt-19 max-w-[70ch]">{closingStatement}</p>
       </div>
     </section>
   );
