@@ -3,6 +3,7 @@ import InsightsInteractive from "@/components/insights/insightsInteractive/Insig
 import InsightsFeatured from "@/components/insights/InsightsFeatured";
 import type { Metadata } from "next";
 import { getInsightsPage } from "@/lib/content/insightsPage";
+import { getFeaturedInsights } from "@/lib/content/insights";
 
 export const metadata: Metadata = {
   title: "Insights",
@@ -10,11 +11,15 @@ export const metadata: Metadata = {
 };
 
 const Page = async () => {
-  const insightsPage = getInsightsPage();
+  const insightsPage = await getInsightsPage();
+  const featureInsights = await getFeaturedInsights();
+  if (!featureInsights) {
+    return null;
+  }
   return (
     <div data-screen-label="03 Insights">
       <InsightsHeader insightsHeader={insightsPage.insightsHeader} />
-      <InsightsFeatured />
+      <InsightsFeatured featuredInsights={featureInsights} />
       <InsightsInteractive />
     </div>
   );

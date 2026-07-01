@@ -1,8 +1,12 @@
 import Button from "../ui/Button";
-import { insights } from "@/data/blogData";
+import type { Insight } from "@/types/insights";
 
-const InsightsFeatured = () => {
-  const featuredArticle = insights.find((blog) => blog.featured);
+type FeaturedInsights = {
+  featuredInsights: Insight
+}
+
+const InsightsFeatured = ({featuredInsights}:FeaturedInsights) => {
+  const{date, tag, readTime, title, excerpt, author, slug} = featuredInsights;
 
   return (
     <section
@@ -18,41 +22,41 @@ const InsightsFeatured = () => {
 
             <span className="inline-flex gap-2 py-1.5 px-3 rounded-[999px] bg-ink border border-line font-mono text-[10px] tracking-[0.12em] uppercase text-cream">
               <span className="text-accent">●</span> Featured ·{" "}
-              {featuredArticle?.date}
+              {date}
             </span>
           </div>
 
           <div className="py-8 px-5 sm:px-7 md:py-14 md:px-14 flex flex-col gap-5 md:gap-6 bg-ink">
             <div className="meta flex flex-wrap gap-x-4 gap-y-1 font-mono text-[10px] md:text-[11px] text-muted tracking-widest uppercase">
-              <span>{featuredArticle?.tag}</span>
+              <span>{tag}</span>
               <span>·</span>
-              <span>{featuredArticle?.readTime}</span>
+              <span>{readTime}</span>
             </div>
 
             <h2 className="font-serif text-[clamp(22px,8.5vw,56px)] leading-[1.02]">
-              {featuredArticle?.title}
+              {title}
             </h2>
 
             <p className="text-cream-2 text-[clamp(12px,3vw,18px)] leading-[1.55]">
-              {featuredArticle?.excerpt}
+              {excerpt}
             </p>
 
             <div className="flex flex-row sm:flex-row sm:items-end sm:justify-between gap-6 md:mt-6 mt-3">
               <div className="flex items-center gap-3 mt-2">
                 <div className="w-9 h-9 rounded-[50%] bg-accent text-ink font-serif text-[18px] items-center justify-center hidden min-[1500px]:flex">
-                  {featuredArticle?.authorInitials}
+                  {author.initials}
                 </div>
 
                 <div className="flex flex-col font-mono text-[10px] md:text-[11px] tracking-widest uppercase text-cream-2 max-w-[22ch]">
                   <span className="font-bold">
-                    {featuredArticle?.author} ·
+                    {author.name} ·
                   </span>
-                  <span className="">{featuredArticle?.authorRole}</span>
+                  <span className="">{author.role}</span>
                 </div>
               </div>
 
               <Button
-                link={`/insights/${featuredArticle?.slug}`}
+                link={`/insights/${slug}`}
                 text="Read More"
                 arrowVariant="primaryBlack"
               />
