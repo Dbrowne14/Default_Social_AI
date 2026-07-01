@@ -1,9 +1,13 @@
-import type { BlogPostProps } from "@/types";
+import type { Insight } from "@/types/insights";
 
-export const insights: BlogPostProps[] = [
+export const insights: Insight[] = [
   {
     tag: "SEO",
-    author: "David Browne",
+    author: {
+      name: "David Browne",
+      initials: "DB",
+      role: "Head of Development",
+    },
     date: "April 2026",
     readTime: "6 min",
     title: "Topic clusters in the age of answer engines.",
@@ -13,7 +17,11 @@ export const insights: BlogPostProps[] = [
   },
   {
     tag: "Social",
-    author: "David Browne",
+    author: {
+      name: "David Browne",
+      initials: "DB",
+      role: "Head of Development",
+    },
     date: "April 2026",
     readTime: "4 min",
     title: "Anatomy of a campaign that travelled 14 million times.",
@@ -23,7 +31,11 @@ export const insights: BlogPostProps[] = [
   },
   {
     tag: "Web",
-    author: "David Browne",
+    author: {
+      name: "David Browne",
+      initials: "DB",
+      role: "Head of Development",
+    },
     date: "March 2026",
     readTime: "7 min",
     title: "Why we ship Next.js with a modular middleware layer.",
@@ -41,15 +53,20 @@ export const insights: BlogPostProps[] = [
     title: "The AI concierge isn't a chatbot. It's a sales engineer.",
     excerpt:
       "Most 'AI on the website' projects fail because they treat AI as a feature — a chatbot in the corner. The teams that win treat it as a role: the sales engineer who's always on, always patient, and always one step ahead of the brief. Here's the four-layer pattern we use to make that real.",
-    authorInitials: "R",
-    author: "Robin McGlashan",
-    authorRole: "Founder, Default Media Group",
+
+    author: {
+      name: "Robin McGlashan",
+      initials: "RM",
+      role: "Founder, Default Media Group",
+    },
+
     slug: "ai-concierge-sales-engineer",
     imageCaption:
       "The concierge sits between the brief and the buyer — closer to a sales engineer than a help widget.",
     intro: [
       {
-        superText: "Walk into any pitch this year and someone will ask for 'AI on the website.' What they almost always mean is a chatbot — a friendly bubble in the bottom-right that answers FAQs and, on a good day, books a call. We build those. We also think they are the least interesting thing AI can do for a brand, and the reason so many of these projects quietly underwhelm six weeks after launch.",
+        superText:
+          "Walk into any pitch this year and someone will ask for 'AI on the website.' What they almost always mean is a chatbot — a friendly bubble in the bottom-right that answers FAQs and, on a good day, books a call. We build those. We also think they are the least interesting thing AI can do for a brand, and the reason so many of these projects quietly underwhelm six weeks after launch.",
       },
       {
         text: "The framing is the problem. A chatbot is a feature: a box you bolt on, scoped by how many questions it can deflect. A sales engineer is a role: the person who joins the call when the conversation gets technical, who knows the product cold, who can read whether you're a tyre-kicker or a signed contract waiting to happen — and who knows exactly when to bring in a human and get out of the way.",
@@ -69,7 +86,6 @@ export const insights: BlogPostProps[] = [
 
     sections: [
       {
-
         number: "01",
         kicker: "Memory",
         title: "It has to remember the brief",
@@ -87,7 +103,6 @@ export const insights: BlogPostProps[] = [
       },
 
       {
-   
         number: "02",
         kicker: "Inventory",
         title: "It has to know what you actually sell",
@@ -108,7 +123,6 @@ export const insights: BlogPostProps[] = [
       },
 
       {
-
         number: "03",
         kicker: "Judgement",
         title: "It has to qualify, and it has to say no",
@@ -147,23 +161,23 @@ export const insights: BlogPostProps[] = [
           },
         ],
       },
-       {
+      {
         number: "05",
         kicker: "Conclusion",
         title: "Build the role, not the widget",
         paragraphs: [
-{
-        text: "None of these four layers requires a frontier model or a research budget. They require a decision: to treat AI as a colleague with a job description rather than a feature with a backlog.",
-      },
-      {
-        text: "Memory so it knows the context. Inventory so it knows the product. Judgement so it qualifies honestly. Handoff so it knows when it's done.",
-      },
-      {
-        text: "Do that, and the bubble in the corner stops being the thing you apologise for in month two. It becomes the most patient, best-briefed member of the team — the one that's always on, never tired, and smart enough to know when to get a human.",
-      },
-      {
-        text: "That's not a chatbot. That's a sales engineer.",
-      },
+          {
+            text: "None of these four layers requires a frontier model or a research budget. They require a decision: to treat AI as a colleague with a job description rather than a feature with a backlog.",
+          },
+          {
+            text: "Memory so it knows the context. Inventory so it knows the product. Judgement so it qualifies honestly. Handoff so it knows when it's done.",
+          },
+          {
+            text: "Do that, and the bubble in the corner stops being the thing you apologise for in month two. It becomes the most patient, best-briefed member of the team — the one that's always on, never tired, and smart enough to know when to get a human.",
+          },
+          {
+            text: "That's not a chatbot. That's a sales engineer.",
+          },
         ],
       },
     ],
@@ -175,7 +189,11 @@ export const insights: BlogPostProps[] = [
     title: "Anatomy of a campaign that travelled 14m times.",
     excerpt:
       "A short forensic on a recent platform-native idea: the brief, the spike, and the long tail no-one talks about.",
-    author: "David Browne",
+    author: {
+      name: "David Browne",
+      initials: "DB",
+      role: "Head of Development",
+    },
     slug: "anatomy-campaign-travelled-14m-times",
   },
   {
@@ -185,7 +203,11 @@ export const insights: BlogPostProps[] = [
     title: "Personalisation without the creep factor.",
     excerpt:
       "A working pattern for first-party personalisation that improves the experience without spooking the user — or the regulator.",
-    author: "David Browne",
+    author: {
+      name: "David Browne",
+      initials: "DB",
+      role: "Head of Development",
+    },
     slug: "personalisation-without-creep-factor",
   },
   {
@@ -195,7 +217,11 @@ export const insights: BlogPostProps[] = [
     title: "The marketing mix is a forecast, not a plan.",
     excerpt:
       "A practical case for predictive mix modelling — and the reason most quarterly plans drift by week six.",
-    author: "David Browne",
+    author: {
+      name: "David Browne",
+      initials: "DB",
+      role: "Head of Development",
+    },
     slug: "marketing-mix-is-a-forecast",
   },
   {
@@ -205,7 +231,11 @@ export const insights: BlogPostProps[] = [
     title: "Why our discovery is one week, not four.",
     excerpt:
       "What we cut to compress discovery without losing the strategic depth — and the one document we'd never skip.",
-    author: "David Browne",
+    author: {
+      name: "David Browne",
+      initials: "DB",
+      role: "Head of Development",
+    },
     slug: "discovery-one-week-not-four",
   },
   {
@@ -215,7 +245,11 @@ export const insights: BlogPostProps[] = [
     title: "The four AI layers every brand site should plan for.",
     excerpt:
       "Experience, content, growth, analytics — and why 'AI chatbot' usually only covers a quarter of the value.",
-    author: "David Browne",
+    author: {
+      name: "David Browne",
+      initials: "DB",
+      role: "Head of Development",
+    },
     slug: "four-ai-layers-brand-site",
   },
   {
@@ -225,8 +259,11 @@ export const insights: BlogPostProps[] = [
     title: "Programmatic SEO, ethical edition.",
     excerpt:
       "Where programmatic still works, where it bites you, and the structural decisions that decide which.",
-    author: "David Browne",
+    author: {
+      name: "David Browne",
+      initials: "DB",
+      role: "Head of Development",
+    },
     slug: "programmatic-seo-ethical-edition",
   },
 ];
-

@@ -1,28 +1,19 @@
 import PageHeader from "../ui/PageHeader";
-import { companyInfo } from "@/data/companInfo";
+import { companyInfo } from "@/data/companyInfo";
+import type { AboutPageHeader } from "@/types/aboutPage";
 
-const AboutHeader = () => {
+
+const AboutHeader = ({aboutHeader}:AboutPageHeader) => {
+  const {eyebrow, title, lede} = aboutHeader;
   return (
     <PageHeader
-      eyebrow="About"
-      title={
-        <>
-          A studio
-          <br />
-          between
-          <br />
-          <em className="text-accent italic">signal</em>
-          <br />
-          and craft.
-        </>
-      }
+      eyebrow={eyebrow}
+      title={title}
     >
       {" "}
       <div>
         <p className="lede hidden xl:block">
-          Default Social is the digital, social and technology arm of the
-          Default Media Group — a 10-year-old company with one studio in
-          Brentford, one foot in the data, and both eyes on what&apos;s next.
+         {lede}
         </p>
         <div className="flex flex-col gap-3 font-mono text-[11px] tracking-[0.08em] uppercase mt-10">
           {companyInfo.map((info, key) => {
