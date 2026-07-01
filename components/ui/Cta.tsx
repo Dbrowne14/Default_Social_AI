@@ -1,20 +1,12 @@
 import Button from "./Button";
-
-export type CTAProps = {
-  primaryText: string;
-  secondaryText: string;
-  variant?: boolean;
-  buttonLink: string;
-  buttonText: string;
-};
+import type { PageCTA } from "@/types/shared";
 
 const CTA = ({
   primaryText,
   secondaryText,
   variant,
-  buttonLink,
-  buttonText,
-}: CTAProps) => {
+  button,
+}: PageCTA) => {
   return (
     <section className="">
       <div className="container-custom flex justify-between items-end flex-wrap gap-8">
@@ -33,7 +25,7 @@ const CTA = ({
             text="Start a project"
             arrowVariant="primaryBlack"
           />
-          <Button link={buttonLink} text={buttonText} variant="secondary" />
+          <Button link={button.label} text={button.href} variant="secondary" />
         </div>
       </div>
     </section>

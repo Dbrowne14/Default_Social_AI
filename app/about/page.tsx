@@ -29,8 +29,7 @@ const Page = async () => {
       <CTA
         primaryText={primaryText}
         secondaryText={secondaryText}
-        buttonLink={button.href}
-        buttonText={button.label}
+        button={button}
       />
     </div>
   );

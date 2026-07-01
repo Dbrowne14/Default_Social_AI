@@ -32,3 +32,10 @@ export type PageHeading = {
   title: TitleLine[];
   lede: string;
 };
+
+export type PageCTA = {
+  primaryText: string;
+  secondaryText: string;
+  button: LinkItem;
+  variant?: boolean;
+};

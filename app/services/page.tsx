@@ -15,17 +15,17 @@ export const metadata: Metadata = {
 const Page = async () => {
   const servicesPageData = await getAllServicesPage();
   const services = await getAllServices();
+  const { primaryText, secondaryText, button, variant } = servicesPageData.cta;
   return (
     <div data-screen-label="03 Services">
       <ServicesHeader servicesHeader={servicesPageData.servicesHeader} />
       <StickyToc services={services} />
-      <ServicesDetailed services={services}/>
+      <ServicesDetailed services={services} />
       <CTA
-        primaryText="Not sure where to start?"
-        secondaryText="Talk to a strategist."
-        variant={true}
-        buttonLink="/about"
-        buttonText="About the studio"
+        primaryText={primaryText}
+        secondaryText={secondaryText}
+        variant={variant}
+        button={button}
       />
     </div>
   );
