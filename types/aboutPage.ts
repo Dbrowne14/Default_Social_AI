@@ -1,4 +1,4 @@
-import type { PageHeading, TitleLine, SectionIntro } from "./shared";
+import type { PageHeading, TitleLine, SectionIntro, LinkItem } from "./shared";
 
 export type AboutPage = {
   aboutHeader: AboutHeader;
@@ -6,6 +6,7 @@ export type AboutPage = {
   groupStructure: GroupStructureSection;
   approach: ApproachSection;
   team: SectionIntro;
+  cta: PageCTA; 
 };
 
 export type AboutHeader = PageHeading & {
@@ -51,4 +52,10 @@ export type ApproachPrinciple = {
   id: string;
   title: string;
   description: string;
+};
+
+export type PageCTA = {
+  primaryText: string;
+  secondaryText: string;
+  button: LinkItem;
 };

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 const Page = async () => {
   const aboutPage = await getAboutPage();
   const people = await getAllPeople();
+  const { primaryText, secondaryText, button } = aboutPage.cta;
 
   return (
     <div data-screen-label="02 About">
@@ -24,12 +25,12 @@ const Page = async () => {
       <AboutValues values={aboutPage.values} />
       <AboutGroupStructure groupStructure={aboutPage.groupStructure} />
       <AboutApproach approach={aboutPage.approach} />
-      <AboutTeam people={people} aboutHeader={aboutPage.team}/>
+      <AboutTeam people={people} aboutHeader={aboutPage.team} />
       <CTA
-        primaryText="Want to see what we'd"
-        secondaryText="build for you?"
-        buttonLink="/services"
-        buttonText="See services"
+        primaryText={primaryText}
+        secondaryText={secondaryText}
+        buttonLink={button.href}
+        buttonText={button.label}
       />
     </div>
   );

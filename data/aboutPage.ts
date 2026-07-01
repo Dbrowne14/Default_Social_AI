@@ -237,4 +237,12 @@ export const aboutPage: AboutPage = {
 
     meta: "A flat structure of practice leads. Each owns a discipline; each ships their own work.",
   },
+  cta: {
+    primaryText: "Want to see what we'd",
+    secondaryText: "build for you?",
+    button: {
+      label: "See services",
+      href: "/services",
+    },
+  },
 };
