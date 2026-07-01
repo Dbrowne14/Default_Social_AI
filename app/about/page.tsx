@@ -20,7 +20,7 @@ const Page = async() => {
   return (
     <div data-screen-label="02 About">
       <AboutHeader aboutHeader={aboutPage.aboutHeader}/>
-      <AboutValues />
+      <AboutValues values={aboutPage.values}/>
       <AboutGroupStructure />
       <AboutApproach />
       <AboutTeam/>
