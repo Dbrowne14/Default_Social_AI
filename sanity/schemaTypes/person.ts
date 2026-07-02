@@ -23,5 +23,10 @@ export const person = defineType({
       type: "string",
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: "keyPerson",
+      title: "Key Person",
+      type: "string",
+    }),
   ],
 });
