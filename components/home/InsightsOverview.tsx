@@ -1,4 +1,4 @@
-import { insights } from "@/data/blogData";
+import { insights } from "@/data/insightsData";
 import BlogCard from "../ui/BlogCard";
 import Link from "next/link";
 import type { SectionIntro } from "@/types/shared";

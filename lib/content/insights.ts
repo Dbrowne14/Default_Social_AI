@@ -1,4 +1,4 @@
-import { insights } from "@/data/blogData";
+import { insights } from "@/data/insightsData";
 
 export const getAllInsights = async () => {
   return insights;

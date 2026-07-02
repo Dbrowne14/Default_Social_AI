@@ -1,11 +1,11 @@
-import { servicesDetails, broaderServices } from "@/data/servicesDetails";
+import { servicesDetails, broaderServices } from "@/data/serviceData";
 
 export const getAllServices = async () => {
-    return servicesDetails;
+  return servicesDetails;
 };
 
 export const getServiceTickerItems = async () => {
-    const services = await getAllServices();
+  const services = await getAllServices();
 
   return [
     ...services.map((service) => ({
@@ -16,4 +16,4 @@ export const getServiceTickerItems = async () => {
     })),
     ...broaderServices,
   ];
-}
+};

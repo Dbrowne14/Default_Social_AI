@@ -1,7 +1,7 @@
 import InsightsArticleHeader from "@/components/insights/insightsPage/InsightsArticleHeader";
 import InsightsArticleBody from "@/components/insights/insightsPage/InsightsContent/InsightsArticleBody";
 import InsightsArticleRelated from "@/components/insights/insightsPage/InsightsArticleRelated";
-import { insights } from "@/data/blogData";
+import { insights } from "@/data/insightsData";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getInsightBySlug } from "@/lib/content/insights";

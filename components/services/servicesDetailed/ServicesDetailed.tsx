@@ -1,10 +1,10 @@
-import { servicesDetails } from "@/data/servicesDetails";
+import { servicesDetails } from "@/data/serviceData";
 import ServiceOffers from "./ServiceOffers";
 import ServicesAi from "./ServicesAi";
 import ServicesProcessStrip from "./ServicesProcessStrip";
 import type { ServicesProps } from "@/types/services";
 
-const ServicesDetailed = ({services}:ServicesProps) => {
+const ServicesDetailed = ({ services }: ServicesProps) => {
   return (
     <section className="" id="web" data-screen-label="Web">
       {services.map((service) => {

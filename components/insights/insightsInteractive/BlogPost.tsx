@@ -1,5 +1,5 @@
 import BlogCard from "@/components/ui/BlogCard";
-import { insights } from "@/data/blogData";
+import { insights } from "@/data/insightsData";
 import { BlogStateProps } from "./types";
 
 const BlogPost = ({ isActive, showMore }: BlogStateProps) => {
