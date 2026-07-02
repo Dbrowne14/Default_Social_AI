@@ -4,6 +4,7 @@ import InsightsArticleRelated from "@/components/insights/insightsPage/InsightsA
 import { insights } from "@/data/blogData";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { getInsightBySlug } from "@/lib/content/insights";
 
 export type InsightsArticleBodyProps = {
   params: Promise<{
@@ -16,7 +17,7 @@ export async function generateMetadata({
 }: InsightsArticleBodyProps): Promise<Metadata> {
   const { slug } = await params;
 
-  const article = insights.find((post) => post.slug === slug);
+  const article = await getInsightBySlug(slug);
 
   if (!article) {
     return {
@@ -31,20 +32,20 @@ export async function generateMetadata({
 }
 
 const Page = async ({ params }: InsightsArticleBodyProps) => {
-  const {slug} = await params
-  const article = insights.find((post) => post.slug === slug);
+  const { slug } = await params;
+  const article = await getInsightBySlug(slug);
 
   if (!article) {
     notFound();
   }
 
   const relatedArticles = insights.filter(
-    (post) => post.slug !== article.slug && post.tag === article.tag
+    (post) => post.slug !== article.slug && post.tag === article.tag,
   );
   return (
     <div data-screen-label="04 Insights · Article">
-      <InsightsArticleHeader article={article}/>
-      <InsightsArticleBody article={article}/>
+      <InsightsArticleHeader article={article} />
+      <InsightsArticleBody article={article} />
       <InsightsArticleRelated
         article={article}
         relatedArticles={relatedArticles}
