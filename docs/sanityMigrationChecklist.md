@@ -31,11 +31,11 @@ Why: types define the shape your content layer and components will use.
 
 ### 3. Clean the data model
 
-- [ ] Merge `team` and `author` into a single `person` model
-- [ ] Remove `navData`
-- [ ] Remove duplicated data structures
-- [ ] Review placeholder data structures
-- [ ] Remove obsolete static data files only after nothing imports them
+- [x] Merge `team` and `author` into a single `person` model
+- [x] Remove `navData`
+- [x] Remove duplicated data structures
+- [x] Review placeholder data structures
+- [x] Remove obsolete static data files only after nothing imports them
 
 Why: clean source data before routing it through the content layer.
 
@@ -43,9 +43,9 @@ Why: clean source data before routing it through the content layer.
 
 ### 4. Build the content access layer
 
-- [ ] Introduce a `lib/content/` layer
-- [ ] Create content access functions
-- [ ] Prepare functions with future Sanity names
+- [x] Introduce a `lib/content/` layer
+- [x] Create content access functions
+- [x] Prepare functions with future Sanity names
 
 Example:
 
@@ -61,9 +61,9 @@ Why: this lets you switch from static data to Sanity later without rewriting com
 
 ### 5. Move routes to the content layer
 
-- [ ] Move all routes to use the content layer
-- [ ] Stop importing directly from `data/` in route files
-- [ ] Pass data through props rather than importing in components
+- [x] Move all routes to use the content layer
+- [x] Stop importing directly from `data/` in route files
+- [x] Pass data through props rather than importing in components
 
 Why: routes should own data fetching.
 
@@ -71,11 +71,11 @@ Why: routes should own data fetching.
 
 ### 6. Refactor components gradually
 
-- [ ] Stop importing directly from `data/` in components
-- [ ] Keep components focused on rendering
-- [ ] Keep client components focused on interaction
-- [ ] Ensure features own their own content where appropriate
-- [ ] Review shared UI components
+- [x] Stop importing directly from `data/` in components
+- [x] Keep components focused on rendering
+- [x] Keep client components focused on interaction
+- [x] Ensure features own their own content where appropriate
+- [x] Review shared UI components
 
 Why: do this last so you always have working data shapes first.
 
