@@ -3,7 +3,7 @@ import "./globals.css";
 import Navigation from "@/components/layout/navigation/Navigation";
 import Footer from "@/components/layout/footer/Footer";
 import LoaderStrip from "@/components/ui/LoaderStrip";
-import { siteConfig } from "@/lib/seo/site";
+import { siteSettings } from "@/data/siteSettings";
 import { getSiteSettings } from "@/lib/content/site";
 import { navigationItems } from "@/data/navigation";
 
@@ -31,23 +31,23 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://defaultsocial.co.uk"),
+  metadataBase: new URL(siteSettings.siteUrl),
   title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    default: siteSettings.siteName,
+    template: `%s | ${siteSettings.siteName}`,
   },
-  description: siteConfig.description,
+  description: siteSettings.description,
   openGraph: {
-    title: siteConfig.name,
-    description: siteConfig.description,
+    title: siteSettings.siteName,
+    description: siteSettings.description,
     url: "/",
-    siteName: siteConfig.name,
+    siteName: siteSettings.siteName,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
+    title: siteSettings.siteName,
+    description: siteSettings.description,
   },
 };
 

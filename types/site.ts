@@ -20,6 +20,7 @@ export type GroupLink = LinkItem & {
 export type SiteSettings = {
   siteName: string;
   siteUrl: string;
+  description:string;
   groupLink: GroupLink;
   contact: ContactDetails;
   footer: FooterContent;
