@@ -13,9 +13,25 @@ import {
   insightTextBlock,
   pullQuote,
 } from "./insight";
+import {
+  linkItem,
+  pageCTA,
+  pageHeading,
+  sectionIntro,
+  titleDescription,
+  titleLine,
+  titleSegment,
+} from "./shared";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
+    linkItem,
+    titleDescription,
+    titleSegment,
+    titleLine,
+    sectionIntro,
+    pageHeading,
+    pageCTA,
     service,
     serviceTag,
     serviceCallout,
