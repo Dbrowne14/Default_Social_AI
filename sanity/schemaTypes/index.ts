@@ -7,7 +7,12 @@ import {
   serviceProcessStep,
 } from "./service";
 import { person } from "./person";
-import { insight } from "./insight";
+import {
+  insight,
+  insightSection,
+  insightTextBlock,
+  pullQuote,
+} from "./insight";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -18,5 +23,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     serviceProcessStep,
     person,
     insight,
+    insightSection,
+    insightTextBlock,
+    pullQuote,
   ],
 };
