@@ -116,6 +116,30 @@ export const sectionIntro = defineType({
   ],
 });
 
+//for use in flattened object structures
+export const sectionIntroFields = [
+  defineField({
+    name: "eyebrow",
+    title: "Eyebrow",
+    type: "string",
+    validation: (Rule) => Rule.required(),
+  }),
+  defineField({
+    name: "title",
+    title: "Title",
+    type: "array",
+    of: [{ type: "titleLine" }],
+    validation: (Rule) => Rule.required().min(1),
+  }),
+  defineField({
+    name: "meta",
+    title: "Meta",
+    type: "text",
+    rows: 3,
+    validation: (Rule) => Rule.required(),
+  }),
+];
+
 export const pageHeading = defineType({
   name: "pageHeading",
   title: "Page Heading",
