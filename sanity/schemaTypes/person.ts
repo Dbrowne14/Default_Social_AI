@@ -26,7 +26,13 @@ export const person = defineType({
     defineField({
       name: "keyPerson",
       title: "Key Person",
-      type: "string",
+      type: "boolean",
     }),
   ],
+  preview: {
+    select: {
+      title: "name",
+      subtitle: "role",
+    },
+  },
 });

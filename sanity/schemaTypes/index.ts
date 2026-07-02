@@ -7,6 +7,7 @@ import {
   serviceProcessStep,
 } from "./service";
 import { person } from "./person";
+import { insight } from "./insight";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -16,5 +17,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     serviceOffer,
     serviceProcessStep,
     person,
+    insight,
   ],
 };
