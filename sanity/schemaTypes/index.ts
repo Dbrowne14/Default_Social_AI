@@ -36,6 +36,7 @@ import {
   valuesCallout,
   valuesSection,
 } from "./aboutPage";
+import { insightsPage } from "./insightsPage";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -73,5 +74,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     groupStructureSection,
     valuesCallout,
     valuesSection,
+    insightsPage,
   ],
 };
