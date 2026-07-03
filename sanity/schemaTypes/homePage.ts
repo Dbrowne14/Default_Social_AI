@@ -1,12 +1,12 @@
 import { defineType, defineField } from "sanity";
-import { sectionIntroFields } from "./shared";
+import { sectionIntroFlattened } from "./shared";
 
 export const aboutOverviewSection = defineType({
   name: "aboutOverviewSection",
   title: "About Overview Section",
   type: "object",
   fields: [
-    ...sectionIntroFields,
+    ...sectionIntroFlattened,
     defineField({
       name: "keyPeople",
       title: "Key People",

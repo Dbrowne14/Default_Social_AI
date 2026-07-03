@@ -26,6 +26,7 @@ export const linkItem = defineType({
   ],
 });
 
+//for use in flattened object structures
 export const linkItemFlattened = [
   defineField({
     name: "label",
@@ -138,7 +139,7 @@ export const sectionIntro = defineType({
 });
 
 //for use in flattened object structures
-export const sectionIntroFields = [
+export const sectionIntroFlattened = [
   defineField({
     name: "eyebrow",
     title: "Eyebrow",
@@ -188,6 +189,30 @@ export const pageHeading = defineType({
     }),
   ],
 });
+
+//for use in flattened object structures
+export const pageHeadingFlattened = [
+  defineField({
+    name: "eyebrow",
+    title: "Eyebrow",
+    type: "string",
+    validation: (Rule) => Rule.required(),
+  }),
+  defineField({
+    name: "title",
+    title: "Title",
+    type: "array",
+    of: [{ type: "titleLine" }],
+    validation: (Rule) => Rule.required().min(1),
+  }),
+  defineField({
+    name: "lede",
+    title: "Lede",
+    type: "text",
+    rows: 4,
+    validation: (Rule) => Rule.required(),
+  }),
+];
 
 export const pageCTA = defineType({
   name: "pageCTA",
