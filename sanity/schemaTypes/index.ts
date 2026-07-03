@@ -25,6 +25,17 @@ import {
 import { homePage, aboutOverviewSection, homeHero } from "./homePage";
 import { groupLink, siteSettings, contactDetails, footerContent } from "./site";
 import { servicesPage } from "./servicesPage";
+import {
+  aboutHeader,
+  aboutPage,
+  approachPrinciple,
+  approachSection,
+  companyInformation,
+  groupStructureEntry,
+  groupStructureSection,
+  valuesCallout,
+  valuesSection,
+} from "./aboutPage";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -53,5 +64,14 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     aboutOverviewSection,
     homeHero,
     servicesPage,
+    aboutHeader,
+    aboutPage,
+    approachPrinciple,
+    approachSection,
+    companyInformation,
+    groupStructureEntry,
+    groupStructureSection,
+    valuesCallout,
+    valuesSection,
   ],
 };
