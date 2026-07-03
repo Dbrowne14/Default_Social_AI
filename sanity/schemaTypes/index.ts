@@ -22,6 +22,7 @@ import {
   titleLine,
   titleSegment,
 } from "./shared";
+import { homePage, aboutOverviewSection, homeHero } from "./homePage";
 
 import { groupLink, siteSettings, contactDetails, footerContent } from "./site";
 
@@ -48,5 +49,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     siteSettings,
     contactDetails,
     footerContent,
+    homePage,
+    aboutOverviewSection,
+    homeHero,
   ],
 };
