@@ -98,4 +98,11 @@ export const homePage = defineType({
       validation: (Rule) => Rule.required(),
     }),
   ],
+  preview: {
+    prepare() {
+      return {
+        title: "Home Page",
+      };
+    },
+  },
 });

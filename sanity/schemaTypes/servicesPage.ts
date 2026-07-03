@@ -18,4 +18,11 @@ export const servicesPage = defineType({
       validation: (Rule) => Rule.required(),
     }),
   ],
+  preview: {
+    prepare() {
+      return {
+        title: "Services Page",
+      };
+    },
+  },
 });
