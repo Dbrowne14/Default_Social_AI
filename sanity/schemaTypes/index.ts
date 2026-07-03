@@ -23,6 +23,8 @@ import {
   titleSegment,
 } from "./shared";
 
+import { groupLink, siteSettings, contactDetails, footerContent } from "./site";
+
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     linkItem,
@@ -42,5 +44,9 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     insightSection,
     insightTextBlock,
     pullQuote,
+    groupLink,
+    siteSettings,
+    contactDetails,
+    footerContent,
   ],
 };

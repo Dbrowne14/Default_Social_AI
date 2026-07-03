@@ -26,6 +26,27 @@ export const linkItem = defineType({
   ],
 });
 
+export const linkItemFlattened = [
+  defineField({
+    name: "label",
+    title: "Label",
+    type: "string",
+    validation: (Rule) => Rule.required(),
+  }),
+  defineField({
+    name: "href",
+    title: "Href",
+    type: "string",
+    validation: (Rule) => Rule.required(),
+  }),
+  defineField({
+    name: "external",
+    title: "External Link",
+    type: "boolean",
+    initialValue: false,
+  }),
+];
+
 export const titleDescription = defineType({
   name: "titleDescription",
   title: "Title Description",
