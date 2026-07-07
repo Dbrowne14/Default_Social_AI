@@ -1,4 +1,4 @@
-import type { Insight } from "@/types/insights";
+import type { Insight } from "@/types/collections/insights";
 
 export const insights: Insight[] = [
   {

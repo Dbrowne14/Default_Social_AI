@@ -1,5 +1,5 @@
 import { defineType, defineField } from "sanity";
-import { sectionIntroFlattened } from "./shared";
+import { sectionIntroFlattened } from "../shared";
 
 export const aboutOverviewSection = defineType({
   name: "aboutOverviewSection",

@@ -1,6 +1,6 @@
-import { insightsQuery } from "@/sanity/queries/insights";
+import { insightsQuery } from "@/sanity/queries/collections/insights";
 import { client } from "@/sanity/lib/client";
-import type { Insight } from "@/types/insights";
+import type { Insight } from "@/types/collections/insights";
 
 export const getAllInsights = async (): Promise<Insight[]> => {
   return await client.fetch(insightsQuery);

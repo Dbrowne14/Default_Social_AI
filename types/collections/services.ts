@@ -1,6 +1,6 @@
 //types for service data schema
 
-import type { TitleDescription } from "./shared";
+import type { TitleDescription } from "../shared";
 
 export type Service = {
   id: string;
@@ -34,7 +34,7 @@ export type ServiceTickerItem = {
   label: string;
   href?: string;
   source: "service" | "theme";
-}
+};
 
 export type ServicesProps = {
   services: Service[];

@@ -1,5 +1,5 @@
 import TeamBio from "../ui/TeamBio";
-import type { Person } from "@/types/person";
+import type { Person } from "@/types/collections/person";
 import type { SectionIntro } from "@/types/shared";
 import RichTitle from "../ui/RichTitle";
 

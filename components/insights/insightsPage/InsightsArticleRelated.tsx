@@ -1,6 +1,6 @@
 import BlogCard from "@/components/ui/BlogCard";
 import Button from "@/components/ui/Button";
-import type { InsightArticleProps, Insight } from "@/types/insights";
+import type { InsightArticleProps, Insight } from "@/types/collections/insights";
 
 type InsightsArticleRelatedProps = InsightArticleProps & {
   relatedArticles: Insight[];

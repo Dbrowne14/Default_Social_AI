@@ -1,5 +1,5 @@
 import Button from "../ui/Button";
-import type { Insight } from "@/types/insights";
+import type { Insight } from "@/types/collections/insights";
 
 type FeaturedInsights = {
   featuredInsights: Insight

@@ -1,4 +1,4 @@
-import type { Insight } from "@/types/insights";
+import type { Insight } from "@/types/collections/insights";
 import Link from "next/link";
 
 const BlogCard = ({

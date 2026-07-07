@@ -1,5 +1,5 @@
 import { defineField, defineType } from "sanity";
-import { pageHeadingFlattened, sectionIntroFlattened } from "./shared";
+import { pageHeadingFlattened, sectionIntroFlattened } from "../shared";
 
 export const companyInformation = defineType({
   name: "companyInformation",

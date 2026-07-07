@@ -1,4 +1,4 @@
-import type { ServiceOffer } from "@/types/services";
+import type { ServiceOffer } from "@/types/collections/services";
 
 const ServicesAi = ({ title, description }: ServiceOffer) => {
   return (

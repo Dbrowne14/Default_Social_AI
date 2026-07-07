@@ -6,8 +6,8 @@ import ServicesOverview from "@/components/home/servicesOverview/ServicesOvervie
 import AboutOverview from "@/components/home/AboutOverview";
 import InsightsOverview from "@/components/home/InsightsOverview";
 import ContactForm from "@/components/home/contact/ContactForm";
-import { getHomePage } from "@/lib/content/homePage";
-import { getKeyPeople } from "@/lib/content/people";
+import { getHomePage } from "@/lib/content/pages/homePage";
+import { getKeyPeople } from "@/lib/content/collections/people";
 import { getSiteSettings } from "@/lib/content/site";
 
 export default async function Home() {
@@ -27,7 +27,10 @@ export default async function Home() {
         featuredPeople={feauturedPeople}
       />
       <InsightsOverview section={homePage.insightsOverview} />
-      <ContactForm section={homePage.contactFormOverview} siteSettings={siteSettings} />
+      <ContactForm
+        section={homePage.contactFormOverview}
+        siteSettings={siteSettings}
+      />
     </>
   );
 }

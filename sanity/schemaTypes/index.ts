@@ -5,14 +5,14 @@ import {
   serviceCallout,
   serviceOffer,
   serviceProcessStep,
-} from "./service";
-import { person } from "./person";
+} from "./collections/service";
+import { person } from "./collections/person";
 import {
   insight,
   insightSection,
   insightTextBlock,
   pullQuote,
-} from "./insight";
+} from "./collections/insight";
 import {
   linkItem,
   pageCTA,
@@ -22,9 +22,9 @@ import {
   titleLine,
   titleSegment,
 } from "./shared";
-import { homePage, aboutOverviewSection, homeHero } from "./homePage";
+import { homePage, aboutOverviewSection, homeHero } from "./pages/homePage";
 import { groupLink, siteSettings, contactDetails, footerContent } from "./site";
-import { servicesPage } from "./servicesPage";
+import { servicesPage } from "./pages/servicesPage";
 import {
   aboutHeader,
   aboutPage,
@@ -35,8 +35,8 @@ import {
   groupStructureSection,
   valuesCallout,
   valuesSection,
-} from "./aboutPage";
-import { insightsPage } from "./insightsPage";
+} from "./pages/aboutPage";
+import { insightsPage } from "./pages/insightsPage";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [

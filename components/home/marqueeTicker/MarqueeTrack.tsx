@@ -1,4 +1,4 @@
-import { getServiceTickerItems } from "@/lib/content/services";
+import { getServiceTickerItems } from "@/lib/content/collections/services";
 
 const MarqueeTrack = async () => {
   const services = await getServiceTickerItems();

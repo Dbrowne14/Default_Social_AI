@@ -4,7 +4,7 @@ import ServicesDetailed from "@/components/services/servicesDetailed/ServicesDet
 import CTA from "@/components/ui/Cta";
 import type { Metadata } from "next";
 import { getAllServicesPage } from "@/lib/content/servicesPage";
-import { getAllServices } from "@/lib/content/services";
+import { getAllServices } from "@/lib/content/collections/services";
 
 export const metadata: Metadata = {
   title: "Services",

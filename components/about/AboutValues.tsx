@@ -1,4 +1,4 @@
-import type { ValuesSection } from "@/types/aboutPage";
+import type { ValuesSection } from "@/types/pages/aboutPage";
 import RichTitle from "../ui/RichTitle";
 
 type AboutValuesProps = {

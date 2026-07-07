@@ -1,5 +1,5 @@
-import { getAllServices } from "@/lib/content/services";
-import type { Service } from "@/types/services";
+import { getAllServices } from "@/lib/content/collections/services";
+import type { Service } from "@/types/collections/services";
 
 const ServicesBuckets = async () => {
   const services = await getAllServices();

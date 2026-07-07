@@ -2,8 +2,8 @@ import InsightsHeader from "@/components/insights/InsightsHeader";
 import InsightsInteractive from "@/components/insights/insightsInteractive/InsightsInteractive";
 import InsightsFeatured from "@/components/insights/InsightsFeatured";
 import type { Metadata } from "next";
-import { getInsightsPage } from "@/lib/content/insightsPage";
-import { getFeaturedInsights } from "@/lib/content/insights";
+import { getInsightsPage } from "@/lib/content/pages/insightsPage";
+import { getFeaturedInsights } from "@/lib/content/collections/insights";
 
 export const metadata: Metadata = {
   title: "Insights",

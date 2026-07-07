@@ -1,4 +1,4 @@
-import type { Service, ServiceTickerItem } from "@/types/services";
+import type { Service,ServiceTickerItem } from "@/types/collections/services";
 
 export const servicesDetails: Service[] = [
   {

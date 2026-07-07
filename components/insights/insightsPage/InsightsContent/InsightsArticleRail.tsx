@@ -1,11 +1,11 @@
 "use client";
-import type { InsightArticleProps } from "@/types/insights";
+import type { InsightArticleProps } from "@/types/collections/insights";
 import { useEffect } from "react";
 
 type ArticleRailProps = InsightArticleProps & {
   section: string;
   setSection: React.Dispatch<React.SetStateAction<string>>;
-}
+};
 
 const InsightsArticleRail = ({
   article,

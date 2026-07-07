@@ -2,7 +2,7 @@ import HeroHeaderRibbon from "./HeroHeaderRibbon";
 import HeroMidContent from "./HeroMidContent";
 import HeroFooter from "./HeroFooter";
 import HeroAnimation from "./HeroAnimation";
-import type { HomeHero } from "@/types/homePage";
+import type { HomeHero } from "@/types/pages/homePage";
 
 const Hero = ({ hero }: { hero: HomeHero }) => {
   return (

@@ -1,6 +1,10 @@
-import type { ServiceProcessStep } from "@/types/services";
+import type { ServiceProcessStep } from "@/types/collections/services";
 
-const ServicesProcessStrip = ({ id, title, description }: ServiceProcessStep) => {
+const ServicesProcessStrip = ({
+  id,
+  title,
+  description,
+}: ServiceProcessStep) => {
   return (
     <div className="hidden md:flex flex-col gap-3 rounded-[10px] border border-line bg-ink p-4.5">
       <div className="flex items-center gap-2">

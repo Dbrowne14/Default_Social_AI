@@ -1,4 +1,4 @@
-import type { AboutPage } from "@/types/aboutPage";
+import type { AboutPage } from "@/types/pages/aboutPage";
 
 export const aboutPage: AboutPage = {
   aboutHeader: {

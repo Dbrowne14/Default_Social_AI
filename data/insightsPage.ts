@@ -1,4 +1,4 @@
-import type { InsightsPage } from "@/types/insightsPage";
+import type { InsightsPage } from "@/types/pages/insightsPage";
 
 export const insightsPage: InsightsPage = {
   insightsHeader: {

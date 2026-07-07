@@ -4,7 +4,7 @@ import InsightsArticleRelated from "@/components/insights/insightsPage/InsightsA
 import { insights } from "@/data/insightsData";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getInsightBySlug } from "@/lib/content/insights";
+import { getInsightBySlug } from "@/lib/content/collections/insights";
 
 export type InsightsArticleBodyProps = {
   params: Promise<{

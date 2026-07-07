@@ -1,4 +1,4 @@
-import type { PageHeading, TitleLine, SectionIntro, LinkItem, PageCTA } from "./shared";
+import type { PageHeading, SectionIntro, PageCTA, TitleLine } from "../shared";
 
 export type AboutPage = {
   aboutHeader: AboutHeader;

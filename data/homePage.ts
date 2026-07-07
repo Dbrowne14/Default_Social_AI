@@ -1,4 +1,4 @@
-import type { HomePage } from "@/types/homePage";
+import type { HomePage } from "@/types/pages/homePage";
 export const homePage: HomePage = {
   hero: {
     footer_Text:

@@ -1,5 +1,3 @@
-import React from "react";
-
 const HeroHeaderRibbon = () => {
   return (
     <div className="flex justify-between items-center font-mono text-[11px] tracking-[0.14em] uppercase text-cream mix-blend-difference opacity-0 animate-[fade-in_0.5s_1.7s_forwards]">

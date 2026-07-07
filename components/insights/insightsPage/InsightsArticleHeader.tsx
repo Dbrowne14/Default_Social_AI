@@ -1,6 +1,6 @@
 import SingleStatBlock from "@/components/ui/SingleStatBlock";
 import SocialsFrame from "@/components/ui/SocialsFrame";
-import type { InsightArticleProps } from "@/types/insights";
+import type { InsightArticleProps } from "@/types/collections/insights";
 import Link from "next/link";
 
 const InsightsArticleHeader = ({ article }: InsightArticleProps) => {

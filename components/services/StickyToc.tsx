@@ -1,5 +1,5 @@
 import StickyTocPills from "./StickyTocPills";
-import type { ServicesProps } from "@/types/services";
+import type { ServicesProps } from "@/types/collections/services";
 
 const StickyToc = ({services}:ServicesProps) => {
   return (

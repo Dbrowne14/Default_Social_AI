@@ -1,4 +1,4 @@
-import type { InsightArticleProps } from "@/types/insights";
+import type { InsightArticleProps } from "@/types/collections/insights";
 const InsightsArticleProse = ({
   article,
 }: InsightArticleProps) => {

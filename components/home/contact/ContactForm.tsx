@@ -2,7 +2,7 @@
 import { useActionState } from "react";
 import { submitContactForm } from "@/app/actions/contact";
 import type { ContactFormState } from "@/app/actions/contact";
-import type { SectionIntro } from "@/types/homePage";
+import type { SectionIntro } from "@/types/shared";
 import type { SiteSettings } from "@/types/site";
 import RichTitle from "@/components/ui/RichTitle";
 

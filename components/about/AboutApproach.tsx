@@ -1,4 +1,4 @@
-import type { ApproachSection } from "@/types/aboutPage";
+import type { ApproachSection } from "@/types/pages/aboutPage";
 import RichTitle from "../ui/RichTitle";
 type AboutApproachProps = {
   approach: ApproachSection;

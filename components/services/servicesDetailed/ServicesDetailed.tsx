@@ -2,7 +2,7 @@ import { servicesDetails } from "@/data/serviceData";
 import ServiceOffers from "./ServiceOffers";
 import ServicesAi from "./ServicesAi";
 import ServicesProcessStrip from "./ServicesProcessStrip";
-import type { ServicesProps } from "@/types/services";
+import type { ServicesProps } from "@/types/collections/services";
 
 const ServicesDetailed = ({ services }: ServicesProps) => {
   return (

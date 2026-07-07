@@ -1,6 +1,6 @@
 import PageHeader from "../ui/PageHeader";
 
-import type { AboutHeader } from "@/types/aboutPage";
+import type { AboutHeader } from "@/types/pages/aboutPage";
 
 type AboutHeaderProps = {
   aboutHeader: AboutHeader;

@@ -1,5 +1,5 @@
 "use client";
-import type { ServicesProps } from "@/types/services";
+import type { ServicesProps } from "@/types/collections/services";
 import { useState } from "react";
 
 const StickyTocPills = ({ services }: ServicesProps) => {

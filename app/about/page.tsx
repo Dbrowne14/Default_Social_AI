@@ -5,8 +5,8 @@ import AboutApproach from "@/components/about/AboutApproach";
 import AboutTeam from "@/components/about/AboutTeam";
 import CTA from "@/components/ui/Cta";
 import type { Metadata } from "next";
-import { getAboutPage } from "@/lib/content/aboutPage";
-import { getAllPeople } from "@/lib/content/people";
+import { getAboutPage } from "@/lib/content/pages/aboutPage";
+import { getAllPeople } from "@/lib/content/collections/people";
 
 export const metadata: Metadata = {
   title: "About",

@@ -1,7 +1,7 @@
 import TeamBio from "@/components/ui/TeamBio";
 import RichTitle from "../ui/RichTitle";
-import type { AboutOverviewSection } from "@/types/homePage";
-import type { Person } from "@/types/person";
+import type { AboutOverviewSection } from "@/types/pages/homePage";
+import type { Person } from "@/types/collections/person";
 
 type AboutOverviewProps = {
   section: AboutOverviewSection;
