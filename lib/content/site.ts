@@ -1,7 +1,8 @@
 // lib/content/site.ts
-import { siteSettings } from "@/data/siteSettings";
+import { siteQuery } from "@/sanity/queries/site";
+import { client } from "@/sanity/lib/client";
+import type { SiteSettings } from "@/types/site";
 
-
-export async function getSiteSettings() {
-  return siteSettings;
-}
+export const getSiteSettings = async (): Promise<SiteSettings> => {
+  return await client.fetch(siteQuery);
+};
