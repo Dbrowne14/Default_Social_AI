@@ -4,7 +4,7 @@ export const siteQuery = `
     siteName,
     siteUrl,
     description,
-    parent,
+    groupLink,
     contact,
     footer, 
 }

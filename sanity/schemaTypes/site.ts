@@ -25,8 +25,8 @@ export const siteSettings = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "parent",
-      title: "Parent",
+      name: "groupLink",
+      title: "Group Link",
       type: "groupLink",
       validation: (Rule) => Rule.required(),
     }),
