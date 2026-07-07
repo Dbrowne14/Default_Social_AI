@@ -1,6 +1,6 @@
 export const peopleQuery = `
 *[_type == "person"]
-| order(id asc)
+| order(name asc)
 {
   name,
   intials,
