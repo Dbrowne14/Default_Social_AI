@@ -3,7 +3,7 @@ import ServicesHeader from "@/components/services/ServicesHeader";
 import ServicesDetailed from "@/components/services/servicesDetailed/ServicesDetailed";
 import CTA from "@/components/ui/Cta";
 import type { Metadata } from "next";
-import { getAllServicesPage } from "@/lib/content/servicesPage";
+import { getAllServicesPage } from "@/lib/content/pages/servicesPage";
 import { getAllServices } from "@/lib/content/collections/services";
 
 export const metadata: Metadata = {
