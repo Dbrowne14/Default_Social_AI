@@ -1,4 +1,3 @@
-
 export const servicesQuery = `
 *[_type == "service"]
 | order(id asc)
@@ -8,11 +7,11 @@ export const servicesQuery = `
   category,
   title,
   description,
-  blurb,
   tags,
-  featured,
+  blurb,
   offers,
   aiCallout,
-  processSteps
+  processSteps,
+  featured
 }
 `;
