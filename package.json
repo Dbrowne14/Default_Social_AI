@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "import:services": "tsx scripts/import-services.ts"
+    "import:services": "DOTENV_CONFIG_PATH=.env.local tsx -r dotenv/config scripts/import-services.ts"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",
@@ -26,6 +26,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",

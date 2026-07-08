@@ -9,6 +9,21 @@ async function importServices() {
       _id: `service-${service.id}`,
       _type: "service",
       ...service,
+
+      tags: service.tags.map((tag, index) => ({
+        _key: `tag-${index}`,
+        ...tag,
+      })),
+
+      offers: service.offers.map((offer, index) => ({
+        _key: `offer-${index}`,
+        ...offer,
+      })),
+
+      processSteps: service.processSteps.map((step) => ({
+        _key: `step-${step.id}`,
+        ...step,
+      })),
     });
 
     console.log(`✓ ${service.category}`);
