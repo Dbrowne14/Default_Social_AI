@@ -43,16 +43,6 @@ export const homeHero = defineType({
       rows: 2,
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: "primaryCTA",
-      title: "Primary CTA",
-      type: "linkItem",
-    }),
-    defineField({
-      name: "secondaryCTA",
-      title: "Secondary CTA",
-      type: "linkItem",
-    }),
   ],
 });
 
