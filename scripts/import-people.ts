@@ -5,15 +5,17 @@ async function importPeople() {
   console.log(`Importing ${people.length} people...`);
 
   for (const person of people) {
-    await writeClient.createOrReplace({
-      _id: `person-${person.initials.toLowerCase()}`,
-      _type: "person",
-      ...person,
-      keyPerson: person.keyPerson ?? false,
-    });
+  if (person.initials === "+") continue;
 
-    console.log(`✓ ${person.name}`);
-  }
+  await writeClient.createOrReplace({
+    _id: `person-${person.initials.toLowerCase()}`,
+    _type: "person",
+    ...person,
+    keyPerson: person.keyPerson ?? false,
+  });
+
+  console.log(`✓ ${person.name}`);
+}
 
   console.log("Done!");
 }
