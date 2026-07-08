@@ -9,7 +9,12 @@
     "lint": "eslint",
     "import:services": "DOTENV_CONFIG_PATH=.env.local tsx -r dotenv/config scripts/import-services.ts",
     "import:people": "DOTENV_CONFIG_PATH=.env.local tsx -r dotenv/config scripts/import-people.ts",
-    "import:insights": "DOTENV_CONFIG_PATH=.env.local tsx -r dotenv/config scripts/import-insights.ts"
+    "import:insights": "DOTENV_CONFIG_PATH=.env.local tsx -r dotenv/config scripts/import-insights.ts",
+    "import:site": "DOTENV_CONFIG_PATH=.env.local tsx -r dotenv/config scripts/import-site.ts",
+    "import:insightsPage": "DOTENV_CONFIG_PATH=.env.local tsx -r dotenv/config scripts/import-insightsPage.ts",
+    "import:aboutPage": "DOTENV_CONFIG_PATH=.env.local tsx -r dotenv/config scripts/import-aboutPage.ts",
+    "import:homePage": "DOTENV_CONFIG_PATH=.env.local tsx -r dotenv/config scripts/import-homePage.ts",
+    "import:servicesPage": "DOTENV_CONFIG_PATH=.env.local tsx -r dotenv/config scripts/import-servicesPage.ts"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",
