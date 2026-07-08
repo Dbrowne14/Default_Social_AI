@@ -32,7 +32,7 @@ export const person = defineType({
   preview: {
     select: {
       title: "name",
-      subtitle: "role",
+      subtitle: "_id",
     },
   },
 });

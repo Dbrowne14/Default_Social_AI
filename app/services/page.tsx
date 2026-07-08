@@ -3,7 +3,7 @@ import ServicesHeader from "@/components/services/ServicesHeader";
 import ServicesDetailed from "@/components/services/servicesDetailed/ServicesDetailed";
 import CTA from "@/components/ui/Cta";
 import type { Metadata } from "next";
-import { getAllServicesPage } from "@/lib/content/pages/servicesPage";
+import { getServicesPage } from "@/lib/content/pages/servicesPage";
 import { getAllServices } from "@/lib/content/collections/services";
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const Page = async () => {
-  const servicesPageData = await getAllServicesPage();
+  const servicesPageData = await getServicesPage();
   const services = await getAllServices();
   const { primaryText, secondaryText, button, variant } = servicesPageData.cta;
   return (
