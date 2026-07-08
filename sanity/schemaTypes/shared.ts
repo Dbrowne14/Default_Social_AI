@@ -133,7 +133,6 @@ export const sectionIntro = defineType({
       title: "Meta",
       type: "text",
       rows: 3,
-      validation: (Rule) => Rule.required(),
     }),
   ],
 });
@@ -158,7 +157,6 @@ export const sectionIntroFlattened = [
     title: "Meta",
     type: "text",
     rows: 3,
-    validation: (Rule) => Rule.required(),
   }),
 ];
 
