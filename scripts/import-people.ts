@@ -1,6 +1,13 @@
 import { writeClient } from "../sanity/lib/writeClient";
 import { team as people } from "@/data/peopleData";
 
+const toDocumentId = (value: string) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
 async function importPeople() {
   console.log(`Importing ${people.length} people...`);
 
@@ -8,7 +15,7 @@ async function importPeople() {
   if (person.initials === "+") continue;
 
   await writeClient.createOrReplace({
-    _id: `person-${person.initials.toLowerCase()}`,
+    _id: `person-${toDocumentId(person.name)}`,
     _type: "person",
     ...person,
     keyPerson: person.keyPerson ?? false,
