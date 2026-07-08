@@ -1,12 +1,6 @@
 import { writeClient } from "../sanity/lib/writeClient";
 import { team as people } from "@/data/peopleData";
-
-const toDocumentId = (value: string) =>
-  value
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+import { toDocumentId } from "./utils";
 
 async function importPeople() {
   console.log(`Importing ${people.length} people...`);

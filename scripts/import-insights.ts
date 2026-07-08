@@ -1,12 +1,7 @@
 import { writeClient } from "../sanity/lib/writeClient";
 import { insights } from "@/data/insightsData";
+import { toDocumentId } from "./utils";
 
-const toDocumentId = (value: string) =>
-  value
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
 
 const authorIdFromName = (name: string) => `person-${toDocumentId(name)}`;
 

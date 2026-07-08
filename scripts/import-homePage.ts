@@ -1,19 +1,6 @@
 import { writeClient } from "../sanity/lib/writeClient";
 import { homePage } from "../data/homePage";
-
-const withKeys = <T>(items: T[], prefix: string) =>
-  items.map((item, index) => ({
-    _key: `${prefix}-${index}`,
-    ...item,
-  }));
-
-const withTitleLines = (section: { title: any[] }) => ({
-  ...section,
-  title: withKeys(section.title, "line").map((line, lineIndex) => ({
-    ...line,
-    segments: withKeys(line.segments, `segment-${lineIndex}`),
-  })),
-});
+import { withTitleLines } from "./utils";
 
 async function importHomePage() {
   console.log("Importing Home Page...");
