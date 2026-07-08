@@ -28,6 +28,11 @@ export const person = defineType({
       title: "Key Person",
       type: "boolean",
     }),
+    defineField({
+      name: "order",
+      title: "Display Order",
+      type: "number",
+    }),
   ],
   preview: {
     select: {
