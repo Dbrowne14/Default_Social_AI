@@ -29,7 +29,8 @@ export const person = defineType({
       name: "keyPerson",
       title: "Key Person",
       type: "boolean",
-      description: "Enable to feature this person more prominently on the site."
+      description: "Enable to feature this person more prominently on the site.",
+      initialValue: false
     }),
     defineField({
       name: "order",

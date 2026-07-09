@@ -120,9 +120,9 @@ Future enhancements:
 - [x] Add field groups to singleton page schemas
 - [x] Add field groups to collection schemas
 - [x] Add helpful field descriptions where needed
-- [ ] Improve required-field validation messages
-- [ ] Add sensible max-length warnings for SEO fields
-- [ ] Review initial values for reusable/default fields
+- [x] Improve required-field validation messages
+- [x] Add sensible max-length warnings for SEO fields - Deferred until dedicated SEO fields are introduced.!!!!
+- [x] Review initial values for reusable/default fields
 - [ ] Add icons to main document types
 - [ ] Review Studio document ordering
 - [ ] Improve previews for services
