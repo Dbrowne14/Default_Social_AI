@@ -1,5 +1,5 @@
 
-import type { Person } from "@/types/person";
+import type { Person } from "@/types/collections/person";
 
 const TeamBio = ({ initials, name, role }: Person) => {
   return (
