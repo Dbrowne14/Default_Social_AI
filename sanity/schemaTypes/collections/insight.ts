@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { ComposeIcon } from "@sanity/icons";
 
 export const insightTextBlock = defineType({
   name: "insightTextBlock",
@@ -75,6 +76,7 @@ export const insight = defineType({
   name: "insight",
   title: "Insight",
   type: "document",
+  icon: ComposeIcon,
 
   groups: [
     {
@@ -120,7 +122,8 @@ export const insight = defineType({
       title: "Date",
       type: "date",
       group: "meta",
-      validation: (Rule) => Rule.required().error("Add the date before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the date before publishing."),
     }),
 
     defineField({
@@ -130,7 +133,8 @@ export const insight = defineType({
       description:
         "Primary category label shown on article cards and the article page.",
       group: "meta",
-      validation: (Rule) => Rule.required().error("Add the category tag before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the category tag before publishing."),
     }),
 
     defineField({
@@ -141,7 +145,8 @@ export const insight = defineType({
       description:
         "All tags associated with this article. Used for filtering and related content.",
       group: "meta",
-      validation: (Rule) => Rule.required().min(1).error("Add at least one tag for this post."),
+      validation: (Rule) =>
+        Rule.required().min(1).error("Add at least one tag for this post."),
     }),
 
     defineField({
@@ -150,7 +155,8 @@ export const insight = defineType({
       type: "string",
       description: "Estimated reading time, for example '6 min read'.",
       group: "meta",
-      validation: (Rule) => Rule.required().error("Add the read time before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the read time before publishing."),
     }),
 
     defineField({
@@ -158,7 +164,8 @@ export const insight = defineType({
       title: "Title",
       type: "string",
       group: "card",
-      validation: (Rule) => Rule.required().error("Add the title before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the title before publishing."),
     }),
 
     defineField({
@@ -166,7 +173,8 @@ export const insight = defineType({
       title: "Excerpt",
       type: "text",
       rows: 3,
-      description: "Short summary used on article cards and metadata. Aim for 140–160 characters.",
+      description:
+        "Short summary used on article cards and metadata. Aim for 140–160 characters.",
       group: "card",
     }),
 
@@ -176,27 +184,31 @@ export const insight = defineType({
       type: "reference",
       to: [{ type: "person" }],
       group: "meta",
-      validation: (Rule) => Rule.required().error("Add the author details before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the author details before publishing."),
     }),
 
     defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
-      description: "URL-friendly slug generated from the title. Avoid changing after publishing.",
+      description:
+        "URL-friendly slug generated from the title. Avoid changing after publishing.",
       group: "settings",
       options: {
         source: "title",
         maxLength: 96,
       },
-      validation: (Rule) => Rule.required().error("Add the slug before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the slug before publishing."),
     }),
 
     defineField({
       name: "imageCaption",
       title: "Image Caption",
       type: "string",
-      description: "Optional caption displayed with the article image or visual treatment.",
+      description:
+        "Optional caption displayed with the article image or visual treatment.",
       group: "card",
     }),
 
@@ -214,7 +226,8 @@ export const insight = defineType({
       title: "Pull Quotes",
       type: "array",
       of: [{ type: "pullQuote" }],
-      description: "Optional highlighted quotes used within the article layout.",
+      description:
+        "Optional highlighted quotes used within the article layout.",
       group: "content",
     }),
 

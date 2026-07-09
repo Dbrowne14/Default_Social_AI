@@ -1,5 +1,6 @@
 import { defineType, defineField } from "sanity";
 import { sectionIntroFlattened } from "../shared";
+import { HomeIcon } from "@sanity/icons";
 
 export const aboutOverviewSection = defineType({
   name: "aboutOverviewSection",
@@ -50,7 +51,7 @@ export const homePage = defineType({
   name: "homePage",
   title: "Home Page",
   type: "document",
-
+  icon: HomeIcon,
   groups: [
     {
       name: "hero",
@@ -74,7 +75,8 @@ export const homePage = defineType({
       type: "homeHero",
       description: "Main hero section at the top of the homepage.",
       group: "hero",
-      validation: (Rule) => Rule.required().error("Add the main hero text before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the main hero text before publishing."),
     }),
 
     defineField({
@@ -83,7 +85,8 @@ export const homePage = defineType({
       type: "pageHeading",
       description: "Introductory value statement shown below the hero.",
       group: "sections",
-      validation: (Rule) => Rule.required().error("Add the value proposition before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the value proposition before publishing."),
     }),
 
     defineField({
@@ -92,16 +95,19 @@ export const homePage = defineType({
       type: "sectionIntro",
       description: "Intro content for the services section on the homepage.",
       group: "sections",
-      validation: (Rule) => Rule.required().error("Add the intro content before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the intro content before publishing."),
     }),
 
     defineField({
       name: "aboutOverview",
       title: "About Overview",
       type: "aboutOverviewSection",
-      description: "Homepage section introducing Default Social / Default Media Group.",
+      description:
+        "Homepage section introducing Default Social / Default Media Group.",
       group: "sections",
-      validation: (Rule) => Rule.required().error("Add the about overview before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the about overview before publishing."),
     }),
 
     defineField({
@@ -110,7 +116,8 @@ export const homePage = defineType({
       type: "sectionIntro",
       description: "Intro content for the insights section on the homepage.",
       group: "sections",
-      validation: (Rule) => Rule.required().error("Add the insights overview before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the insights overview before publishing."),
     }),
 
     defineField({
@@ -119,7 +126,10 @@ export const homePage = defineType({
       type: "sectionIntro",
       description: "Intro content shown above the contact form.",
       group: "contact",
-      validation: (Rule) => Rule.required().error("Add the contact form overview before publishing."),
+      validation: (Rule) =>
+        Rule.required().error(
+          "Add the contact form overview before publishing.",
+        ),
     }),
   ],
 

@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { ControlsIcon } from "@sanity/icons";
 
 export const serviceTag = defineType({
   name: "serviceTag",
@@ -93,6 +94,7 @@ export const service = defineType({
   name: "service",
   title: "Service",
   type: "document",
+  icon: ControlsIcon,
 
   groups: [
     {
@@ -119,9 +121,13 @@ export const service = defineType({
       name: "linkName",
       title: "Link name",
       type: "string",
-      description: "Short name used for links, anchors, and navigation-style labels.",
+      description:
+        "Short name used for links, anchors, and navigation-style labels.",
       group: "overview",
-      validation: (Rule) => Rule.required().error("Add a link name before publishing this service."),
+      validation: (Rule) =>
+        Rule.required().error(
+          "Add a link name before publishing this service.",
+        ),
     }),
 
     defineField({
@@ -130,7 +136,8 @@ export const service = defineType({
       type: "string",
       description: "Service category shown in previews and page sections.",
       group: "overview",
-      validation: (Rule) => Rule.required().error("Add a category before publishing this service."),
+      validation: (Rule) =>
+        Rule.required().error("Add a category before publishing this service."),
     }),
 
     defineField({
@@ -139,7 +146,10 @@ export const service = defineType({
       type: "array",
       of: [{ type: "string" }],
       group: "overview",
-      validation: (Rule) => Rule.required().min(1).error("Add at least one title line for this service."),
+      validation: (Rule) =>
+        Rule.required()
+          .min(1)
+          .error("Add at least one title line for this service."),
     }),
 
     defineField({
@@ -149,7 +159,10 @@ export const service = defineType({
       rows: 4,
       description: "Short overview used near the top of the service section.",
       group: "overview",
-      validation: (Rule) => Rule.required().error("Add a short service description before publishing."),
+      validation: (Rule) =>
+        Rule.required().error(
+          "Add a short service description before publishing.",
+        ),
     }),
 
     defineField({
@@ -168,7 +181,8 @@ export const service = defineType({
       rows: 6,
       description: "Longer explanatory copy for this service.",
       group: "content",
-      validation: (Rule) => Rule.required().error("Add the main service blurb before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the main service blurb before publishing."),
     }),
 
     defineField({
@@ -177,7 +191,10 @@ export const service = defineType({
       type: "serviceCallout",
       description: "Highlighted AI-related callout for this service.",
       group: "content",
-      validation: (Rule) => Rule.required().error("Add the AI callout before publishing this service."),
+      validation: (Rule) =>
+        Rule.required().error(
+          "Add the AI callout before publishing this service.",
+        ),
     }),
 
     defineField({
@@ -187,7 +204,10 @@ export const service = defineType({
       of: [{ type: "serviceOffer" }],
       description: "Specific offers or deliverables included in this service.",
       group: "process",
-      validation: (Rule) => Rule.required().min(1).error("Add at least one offer for this service."),
+      validation: (Rule) =>
+        Rule.required()
+          .min(1)
+          .error("Add at least one offer for this service."),
     }),
 
     defineField({
@@ -197,23 +217,31 @@ export const service = defineType({
       of: [{ type: "serviceProcessStep" }],
       description: "Steps explaining how this service is delivered.",
       group: "process",
-      validation: (Rule) => Rule.required().min(1).error("Add at least one process step for this service."),
+      validation: (Rule) =>
+        Rule.required()
+          .min(1)
+          .error("Add at least one process step for this service."),
     }),
 
     defineField({
       name: "id",
       title: "ID",
       type: "string",
-      description: "Internal stable identifier used by the frontend. Avoid changing once set.",
+      description:
+        "Internal stable identifier used by the frontend. Avoid changing once set.",
       group: "settings",
-      validation: (Rule) => Rule.required().error("Add a stable internal ID before publishing this service."),
+      validation: (Rule) =>
+        Rule.required().error(
+          "Add a stable internal ID before publishing this service.",
+        ),
     }),
 
     defineField({
       name: "featured",
       title: "Featured",
       type: "boolean",
-      description: "Enable to feature this service in highlighted homepage sections.",
+      description:
+        "Enable to feature this service in highlighted homepage sections.",
       group: "settings",
       initialValue: false,
     }),

@@ -1,5 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { pageHeadingFlattened, sectionIntroFlattened } from "../shared";
+import {InfoOutlineIcon} from "@sanity/icons";
 
 export const companyInformation = defineType({
   name: "companyInformation",
@@ -216,6 +217,7 @@ export const aboutPage = defineType({
   name: "aboutPage",
   title: "About Page",
   type: "document",
+  icon: InfoOutlineIcon,
 
   groups: [
     {
