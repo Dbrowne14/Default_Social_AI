@@ -123,7 +123,7 @@ Future enhancements:
 - [x] Improve required-field validation messages
 - [x] Add sensible max-length warnings for SEO fields - Deferred until dedicated SEO fields are introduced.!!!!
 - [x] Review initial values for reusable/default fields
-- [ ] Add icons to main document types
+- [x] Add icons to main document types
 - [ ] Review Studio document ordering
 - [ ] Improve previews for services
 - [ ] Improve previews for people

@@ -45,6 +45,13 @@ export const person = defineType({
       description: "Controls display order. Lower numbers appear first.",
     }),
   ],
+  orderings: [
+    {
+      title: "Display Order",
+      name: "displayOrder",
+      by: [{ field: "order", direction: "asc" }],
+    },
+  ],
   preview: {
     select: {
       title: "name",

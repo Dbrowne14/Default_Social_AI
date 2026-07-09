@@ -240,7 +240,13 @@ export const insight = defineType({
       group: "content",
     }),
   ],
-
+  orderings: [
+    {
+      title: "Publish Date (Newest First)",
+      name: "dateDesc",
+      by: [{ field: "date", direction: "desc" }],
+    },
+  ],
   preview: {
     select: {
       title: "title",

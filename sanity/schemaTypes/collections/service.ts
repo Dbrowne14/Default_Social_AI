@@ -246,7 +246,13 @@ export const service = defineType({
       initialValue: false,
     }),
   ],
-
+  orderings: [
+    {
+      title: "Link Name",
+      name: "linkName",
+      by: [{ field: "linkName", direction: "asc" }],
+    },
+  ],
   preview: {
     select: {
       title: "linkName",
