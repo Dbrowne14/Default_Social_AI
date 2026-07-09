@@ -124,7 +124,7 @@ Future enhancements:
 - [x] Add sensible max-length warnings for SEO fields - Deferred until dedicated SEO fields are introduced.!!!!
 - [x] Review initial values for reusable/default fields
 - [x] Add icons to main document types
-- [ ] Review Studio document ordering
+- [x] Review Studio document ordering
 - [ ] Improve previews for services
 - [ ] Improve previews for people
 - [ ] Improve previews for insights

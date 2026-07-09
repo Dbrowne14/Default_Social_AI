@@ -250,7 +250,14 @@ export const insight = defineType({
   preview: {
     select: {
       title: "title",
-      subtitle: "tag",
+      tag: "tag",
+      featured: "featured",
+    },
+    prepare({ title, tag, featured }) {
+      return {
+        title,
+        subtitle: featured ? `⭐ ${tag}` : tag,
+      };
     },
   },
 });
