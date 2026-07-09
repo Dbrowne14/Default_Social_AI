@@ -244,7 +244,7 @@ export const aboutPage = defineType({
       type: "aboutHeader",
       description: "Main heading and intro content for the About page.",
       group: "hero",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the about page header before publishing."),
     }),
 
     defineField({
@@ -253,7 +253,7 @@ export const aboutPage = defineType({
       type: "valuesSection",
       description: "Values section explaining the principles behind the business.",
       group: "content",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the values section content before publishing."),
     }),
 
     defineField({
@@ -262,7 +262,7 @@ export const aboutPage = defineType({
       type: "groupStructureSection",
       description: "Section explaining how Default Social fits within the wider group.",
       group: "content",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the group structure detail before publishing."),
     }),
 
     defineField({
@@ -271,7 +271,7 @@ export const aboutPage = defineType({
       type: "approachSection",
       description: "Section explaining the company approach and working style.",
       group: "content",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the approach section detail before publishing."),
     }),
 
     defineField({
@@ -280,7 +280,7 @@ export const aboutPage = defineType({
       type: "sectionIntro",
       description: "Intro content shown above the team members.",
       group: "team",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the team section intro before publishing."),
     }),
 
     defineField({
@@ -289,7 +289,7 @@ export const aboutPage = defineType({
       type: "pageCTA",
       description: "Final call-to-action section at the bottom of the About page.",
       group: "cta",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the call to action button details before publishing."),
     }),
   ],
 

@@ -9,7 +9,7 @@ export const insightsPage = defineType({
       name: "insightsHeader",
       title: "Insights Header",
       type: "pageHeading",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the insights header before publishing."),
     }),
   ],
   preview: {

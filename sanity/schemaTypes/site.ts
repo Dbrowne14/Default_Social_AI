@@ -30,7 +30,7 @@ export const siteSettings = defineType({
       description:
         "Used as the default site name in metadata and shared layout content.",
       group: "general",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the site name before publishing."),
     }),
 
     defineField({
@@ -40,7 +40,7 @@ export const siteSettings = defineType({
       description:
         "Canonical production URL for the site, for example https://defaultsocial.co.uk.",
       group: "general",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the site url before publishing."),
     }),
 
     defineField({
@@ -50,7 +50,7 @@ export const siteSettings = defineType({
       description:
         "Default site description used for SEO and fallback metadata.",
       group: "general",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the site description before publishing."),
     }),
 
     defineField({
@@ -60,7 +60,7 @@ export const siteSettings = defineType({
       description:
         "Link to the wider Default Media Group site or related group page.",
       group: "general",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the wider group link before publishing."),
     }),
 
     defineField({
@@ -69,7 +69,7 @@ export const siteSettings = defineType({
       type: "contactDetails",
       description: "Shared contact details used across the site.",
       group: "contact",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the company contact details before publishing."),
     }),
 
     defineField({
@@ -78,7 +78,7 @@ export const siteSettings = defineType({
       type: "footerContent",
       description: "Content displayed in the global footer.",
       group: "footer",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the footer content before publishing."),
     }),
   ],
 });

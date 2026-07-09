@@ -74,7 +74,7 @@ export const homePage = defineType({
       type: "homeHero",
       description: "Main hero section at the top of the homepage.",
       group: "hero",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the main hero text before publishing."),
     }),
 
     defineField({
@@ -83,7 +83,7 @@ export const homePage = defineType({
       type: "pageHeading",
       description: "Introductory value statement shown below the hero.",
       group: "sections",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the value proposition before publishing."),
     }),
 
     defineField({
@@ -92,7 +92,7 @@ export const homePage = defineType({
       type: "sectionIntro",
       description: "Intro content for the services section on the homepage.",
       group: "sections",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the intro content before publishing."),
     }),
 
     defineField({
@@ -101,7 +101,7 @@ export const homePage = defineType({
       type: "aboutOverviewSection",
       description: "Homepage section introducing Default Social / Default Media Group.",
       group: "sections",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the about overview before publishing."),
     }),
 
     defineField({
@@ -110,7 +110,7 @@ export const homePage = defineType({
       type: "sectionIntro",
       description: "Intro content for the insights section on the homepage.",
       group: "sections",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the insights overview before publishing."),
     }),
 
     defineField({
@@ -119,7 +119,7 @@ export const homePage = defineType({
       type: "sectionIntro",
       description: "Intro content shown above the contact form.",
       group: "contact",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the contact form overview before publishing."),
     }),
   ],
 

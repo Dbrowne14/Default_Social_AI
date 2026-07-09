@@ -120,7 +120,7 @@ export const insight = defineType({
       title: "Date",
       type: "date",
       group: "meta",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the date before publishing."),
     }),
 
     defineField({
@@ -130,7 +130,7 @@ export const insight = defineType({
       description:
         "Primary category label shown on article cards and the article page.",
       group: "meta",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the category tag before publishing."),
     }),
 
     defineField({
@@ -141,7 +141,7 @@ export const insight = defineType({
       description:
         "All tags associated with this article. Used for filtering and related content.",
       group: "meta",
-      validation: (Rule) => Rule.required().min(1),
+      validation: (Rule) => Rule.required().min(1).error("Add at least one tag for this post."),
     }),
 
     defineField({
@@ -150,7 +150,7 @@ export const insight = defineType({
       type: "string",
       description: "Estimated reading time, for example '6 min read'.",
       group: "meta",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the read time before publishing."),
     }),
 
     defineField({
@@ -158,7 +158,7 @@ export const insight = defineType({
       title: "Title",
       type: "string",
       group: "card",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the title before publishing."),
     }),
 
     defineField({
@@ -176,7 +176,7 @@ export const insight = defineType({
       type: "reference",
       to: [{ type: "person" }],
       group: "meta",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the author details before publishing."),
     }),
 
     defineField({
@@ -189,7 +189,7 @@ export const insight = defineType({
         source: "title",
         maxLength: 96,
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error("Add the slug before publishing."),
     }),
 
     defineField({

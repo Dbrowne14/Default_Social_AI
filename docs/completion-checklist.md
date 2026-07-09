@@ -119,7 +119,7 @@ Future enhancements:
 - [x] Open Studio and review all document types as a non-technical editor
 - [x] Add field groups to singleton page schemas
 - [x] Add field groups to collection schemas
-- [ ] Add helpful field descriptions where needed
+- [x] Add helpful field descriptions where needed
 - [ ] Improve required-field validation messages
 - [ ] Add sensible max-length warnings for SEO fields
 - [ ] Review initial values for reusable/default fields
