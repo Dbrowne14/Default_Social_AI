@@ -2,9 +2,9 @@
 import InsightsFilter from "./InsightsFilter";
 import InsightsBlogPosts from "./InsightsBlogPosts";
 import { useState } from "react";
-import type { Insight } from "@/types/collections/insights";
+import type { InsightsProps } from "./types";
 
-const InsightsInteractive = ({ insights }: { insights: Insight[] }) => {
+const InsightsInteractive = ({ insights }: InsightsProps) => {
   const [isActive, setIsActive] = useState("All");
   return (
     <div>

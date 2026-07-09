@@ -2,11 +2,8 @@
 import { useState, useEffect } from "react";
 import Button from "@/components/ui/Button";
 import BlogPost from "./BlogPost";
-import type { ActiveFilterProps } from "./types";
-import type { Insight } from "@/types/collections/insights";
-type InsightBlogPostsProps = ActiveFilterProps & {
-  insights: Insight[];
-};
+import type { InsightBlogPostsProps } from "./types";
+
 
 const InsightsBlogPosts = ({ isActive, insights }: InsightBlogPostsProps) => {
   const [showMore, setShowMore] = useState<number>(6);

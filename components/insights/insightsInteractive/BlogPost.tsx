@@ -1,11 +1,6 @@
 import BlogCard from "@/components/ui/BlogCard";
-import { getAllInsights } from "@/lib/content/collections/insights";
-import { BlogStateProps } from "./types";
-import type { Insight } from "@/types/collections/insights";
+import type { BlogPostProps } from "./types";
 
-type BlogPostProps = BlogStateProps & {
-  insights: Insight[];
-};
 
 const BlogPost =  ({ isActive, showMore, insights }: BlogPostProps) => {
   return (
