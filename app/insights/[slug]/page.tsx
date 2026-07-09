@@ -1,7 +1,7 @@
 import InsightsArticleHeader from "@/components/insights/insightsPage/InsightsArticleHeader";
 import InsightsArticleBody from "@/components/insights/insightsPage/InsightsContent/InsightsArticleBody";
 import InsightsArticleRelated from "@/components/insights/insightsPage/InsightsArticleRelated";
-import { insights } from "@/data/insightsData";
+import { getAllInsights } from "@/lib/content/collections/insights";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getInsightBySlug } from "@/lib/content/collections/insights";
@@ -34,7 +34,7 @@ export async function generateMetadata({
 const Page = async ({ params }: InsightsArticleBodyProps) => {
   const { slug } = await params;
   const article = await getInsightBySlug(slug);
-
+  const insights = await getAllInsights()
   if (!article) {
     notFound();
   }

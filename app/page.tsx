@@ -9,12 +9,13 @@ import ContactForm from "@/components/home/contact/ContactForm";
 import { getHomePage } from "@/lib/content/pages/homePage";
 import { getKeyPeople } from "@/lib/content/collections/people";
 import { getSiteSettings } from "@/lib/content/site";
+import { getAllInsights } from "@/lib/content/collections/insights";
 
 export default async function Home() {
   const homePage = await getHomePage();
   const feauturedPeople = await getKeyPeople();
   const siteSettings = await getSiteSettings();
-
+  const insights = await getAllInsights();
   return (
     <>
       <Hero hero={homePage.hero} />
@@ -26,7 +27,7 @@ export default async function Home() {
         section={homePage.aboutOverview}
         featuredPeople={feauturedPeople}
       />
-      <InsightsOverview section={homePage.insightsOverview} />
+      <InsightsOverview section={homePage.insightsOverview} insights={insights} />
       <ContactForm
         section={homePage.contactFormOverview}
         siteSettings={siteSettings}

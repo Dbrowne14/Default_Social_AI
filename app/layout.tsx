@@ -3,9 +3,8 @@ import "./globals.css";
 import Navigation from "@/components/layout/navigation/Navigation";
 import Footer from "@/components/layout/footer/Footer";
 import LoaderStrip from "@/components/ui/LoaderStrip";
-import { siteSettings } from "@/data/siteSettings";
 import { getSiteSettings } from "@/lib/content/site";
-import { navigationItems } from "@/data/navigation";
+import type { LinkItem } from "@/types/shared";
 
 import {
   Instrument_Serif,
@@ -30,26 +29,49 @@ const mono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteSettings.siteUrl),
-  title: {
-    default: siteSettings.siteName,
-    template: `%s | ${siteSettings.siteName}`,
+export const navigationItems: LinkItem[] = [
+  {
+    label: "Index",
+    href: "/",
   },
-  description: siteSettings.description,
-  openGraph: {
-    title: siteSettings.siteName,
+  {
+    label: "Services",
+    href: "/services",
+  },
+  {
+    label: "About",
+    href: "/about",
+  },
+  {
+    label: "Insights",
+    href: "/insights",
+  },
+];
+
+export async function generateMetadata(): Promise<Metadata> {
+  const siteSettings = await getSiteSettings();
+
+  return {
+    metadataBase: new URL(siteSettings.siteUrl),
+    title: {
+      default: siteSettings.siteName,
+      template: `%s | ${siteSettings.siteName}`,
+    },
     description: siteSettings.description,
-    url: "/",
-    siteName: siteSettings.siteName,
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteSettings.siteName,
-    description: siteSettings.description,
-  },
-};
+    openGraph: {
+      title: siteSettings.siteName,
+      description: siteSettings.description,
+      url: "/",
+      siteName: siteSettings.siteName,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: siteSettings.siteName,
+      description: siteSettings.description,
+    },
+  };
+}
 
 export default async function RootLayout({
   children,

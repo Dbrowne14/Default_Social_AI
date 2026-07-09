@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navigationItems } from "@/data/navigation";
+import { navigationItems } from "@/app/layout";
 import NavCloseButton from "./NavCloseButton";
 import type { MobileMenuProps } from "./types";
 

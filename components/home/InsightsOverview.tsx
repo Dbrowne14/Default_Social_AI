@@ -1,14 +1,16 @@
-import { insights } from "@/data/insightsData";
+
 import BlogCard from "../ui/BlogCard";
 import Link from "next/link";
 import type { SectionIntro } from "@/types/shared";
 import RichTitle from "../ui/RichTitle";
+import type { Insight } from "@/types/collections/insights";
 
 type InsightsOverviewProps = {
   section: SectionIntro;
+  insights: Insight[];
 };
 
-const InsightsOverview = ({ section }: InsightsOverviewProps) => {
+const InsightsOverview = ({ section, insights }: InsightsOverviewProps) => {
   const { title, eyebrow, meta } = section;
   return (
     <section className="border-t border-t-line" data-screen-label="Insights">
