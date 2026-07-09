@@ -125,10 +125,10 @@ Future enhancements:
 - [x] Review initial values for reusable/default fields
 - [x] Add icons to main document types
 - [x] Review Studio document ordering
-- [ ] Improve previews for services
-- [ ] Improve previews for people
-- [ ] Improve previews for insights
-- [ ] Confirm singleton documents are clearly identifiable
+- [x] Improve previews for services
+- [x] Improve previews for people
+- [x] Improve previews for insights
+- [x] Confirm singleton documents are clearly identifiable
 - [ ] Run `npm run build`
 - [ ] Commit Phase 3.5 CMS polish
 
