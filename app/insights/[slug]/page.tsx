@@ -28,13 +28,23 @@ export async function generateMetadata({
   return {
     title: article.title,
     description: article.excerpt,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+    },
   };
 }
 
 const Page = async ({ params }: InsightsArticleBodyProps) => {
   const { slug } = await params;
   const article = await getInsightBySlug(slug);
-  const insights = await getAllInsights()
+  const insights = await getAllInsights();
   if (!article) {
     notFound();
   }
