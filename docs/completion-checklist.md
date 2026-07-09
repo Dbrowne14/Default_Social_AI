@@ -112,16 +112,25 @@ Future enhancements:
 
 ---
 
-# Phase 3.5
+# Phase 3.5 — CMS Polish
 
-## CMS Polish
+## Studio editing experience
 
-- [ ] Studio field groups
-- [ ] Helpful field descriptions
-- [ ] Better validation messages
-- [ ] Initial values
-- [ ] Icons
-- [ ] Ordering
+- [ ] Open Studio and review all document types as a non-technical editor
+- [ ] Add field groups to singleton page schemas
+- [ ] Add field groups to collection schemas
+- [ ] Add helpful field descriptions where needed
+- [ ] Improve required-field validation messages
+- [ ] Add sensible max-length warnings for SEO fields
+- [ ] Review initial values for reusable/default fields
+- [ ] Add icons to main document types
+- [ ] Review Studio document ordering
+- [ ] Improve previews for services
+- [ ] Improve previews for people
+- [ ] Improve previews for insights
+- [ ] Confirm singleton documents are clearly identifiable
+- [ ] Run `npm run build`
+- [ ] Commit Phase 3.5 CMS polish
 
 # Phase 4 — Performance & SEO
 
