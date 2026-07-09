@@ -1,15 +1,9 @@
-import type { ServiceTickerItem } from "@/types/collections/services";
+import { broaderServices } from "@/lib/broaderServices";
 import { servicesQuery } from "@/sanity/queries/collections/services";
 import { client } from "@/sanity/lib/client";
 import type { Service } from "@/types/collections/services";
 
-export const broaderServices:ServiceTickerItem[] = [
-  {
-    id: "ai",
-    label: "AI Integration",
-    source: "theme",
-  },
-];
+
 
 export const getAllServices = async (): Promise<Service[]> => {
   return client.fetch(servicesQuery);

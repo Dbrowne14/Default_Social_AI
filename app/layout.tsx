@@ -4,7 +4,7 @@ import Navigation from "@/components/layout/navigation/Navigation";
 import Footer from "@/components/layout/footer/Footer";
 import LoaderStrip from "@/components/ui/LoaderStrip";
 import { getSiteSettings } from "@/lib/content/site";
-import type { LinkItem } from "@/types/shared";
+import { navigationItems } from "@/lib/navigation";
 
 import {
   Instrument_Serif,
@@ -29,24 +29,7 @@ const mono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
-export const navigationItems: LinkItem[] = [
-  {
-    label: "Index",
-    href: "/",
-  },
-  {
-    label: "Services",
-    href: "/services",
-  },
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "Insights",
-    href: "/insights",
-  },
-];
+
 
 export async function generateMetadata(): Promise<Metadata> {
   const siteSettings = await getSiteSettings();
