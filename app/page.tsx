@@ -10,12 +10,14 @@ import { getHomePage } from "@/lib/content/pages/homePage";
 import { getKeyPeople } from "@/lib/content/collections/people";
 import { getSiteSettings } from "@/lib/content/site";
 import { getAllInsights } from "@/lib/content/collections/insights";
+import { getAllServices } from "@/lib/content/collections/services";
 
 export default async function Home() {
   const homePage = await getHomePage();
   const feauturedPeople = await getKeyPeople();
   const siteSettings = await getSiteSettings();
   const insights = await getAllInsights();
+
   return (
     <>
       <Hero hero={homePage.hero} />

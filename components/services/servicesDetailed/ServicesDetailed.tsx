@@ -1,4 +1,3 @@
-import { servicesDetails } from "@/data/serviceData";
 import ServiceOffers from "./ServiceOffers";
 import ServicesAi from "./ServicesAi";
 import ServicesProcessStrip from "./ServicesProcessStrip";

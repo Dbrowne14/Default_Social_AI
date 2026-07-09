@@ -1,8 +1,9 @@
 import BlogCard from "@/components/ui/BlogCard";
-import { insights } from "@/data/insightsData";
+import { getAllInsights } from "@/lib/content/collections/insights";
 import { BlogStateProps } from "./types";
 
-const BlogPost = ({ isActive, showMore }: BlogStateProps) => {
+const BlogPost = async ({ isActive, showMore }: BlogStateProps) => {
+  const insights = await getAllInsights();
   return (
     <>
       {insights
