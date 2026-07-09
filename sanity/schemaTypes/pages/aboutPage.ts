@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity";
 import { pageHeadingFlattened, sectionIntroFlattened } from "../shared";
-import {InfoOutlineIcon} from "@sanity/icons";
+import { InfoOutlineIcon } from "@sanity/icons";
 
 export const companyInformation = defineType({
   name: "companyInformation",
@@ -246,25 +246,34 @@ export const aboutPage = defineType({
       type: "aboutHeader",
       description: "Main heading and intro content for the About page.",
       group: "hero",
-      validation: (Rule) => Rule.required().error("Add the about page header before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the about page header before publishing."),
     }),
 
     defineField({
       name: "values",
       title: "Values",
       type: "valuesSection",
-      description: "Values section explaining the principles behind the business.",
+      description:
+        "Values section explaining the principles behind the business.",
       group: "content",
-      validation: (Rule) => Rule.required().error("Add the values section content before publishing."),
+      validation: (Rule) =>
+        Rule.required().error(
+          "Add the values section content before publishing.",
+        ),
     }),
 
     defineField({
       name: "groupStructure",
       title: "Group Structure",
       type: "groupStructureSection",
-      description: "Section explaining how Default Social fits within the wider group.",
+      description:
+        "Section explaining how Default Social fits within the wider group.",
       group: "content",
-      validation: (Rule) => Rule.required().error("Add the group structure detail before publishing."),
+      validation: (Rule) =>
+        Rule.required().error(
+          "Add the group structure detail before publishing.",
+        ),
     }),
 
     defineField({
@@ -273,7 +282,10 @@ export const aboutPage = defineType({
       type: "approachSection",
       description: "Section explaining the company approach and working style.",
       group: "content",
-      validation: (Rule) => Rule.required().error("Add the approach section detail before publishing."),
+      validation: (Rule) =>
+        Rule.required().error(
+          "Add the approach section detail before publishing.",
+        ),
     }),
 
     defineField({
@@ -282,16 +294,21 @@ export const aboutPage = defineType({
       type: "sectionIntro",
       description: "Intro content shown above the team members.",
       group: "team",
-      validation: (Rule) => Rule.required().error("Add the team section intro before publishing."),
+      validation: (Rule) =>
+        Rule.required().error("Add the team section intro before publishing."),
     }),
 
     defineField({
       name: "cta",
       title: "CTA",
       type: "pageCTA",
-      description: "Final call-to-action section at the bottom of the About page.",
+      description:
+        "Final call-to-action section at the bottom of the About page.",
       group: "cta",
-      validation: (Rule) => Rule.required().error("Add the call to action button details before publishing."),
+      validation: (Rule) =>
+        Rule.required().error(
+          "Add the call to action button details before publishing.",
+        ),
     }),
   ],
 

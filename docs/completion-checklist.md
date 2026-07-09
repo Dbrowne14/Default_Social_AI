@@ -138,8 +138,8 @@ Future enhancements:
 - [x] No TypeScript errors
 - [x] No console errors
 - [x] No broken links
-- [ ] No missing images
-- [ ] Responsive check
+- [x] No missing images
+- [x] Responsive check
 - [ ] Metadata sanity check
 - [ ] Deploy to Vercel
 - [ ] Connect Sanity production dataset

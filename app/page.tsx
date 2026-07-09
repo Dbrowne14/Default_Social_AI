@@ -10,7 +10,10 @@ import { getHomePage } from "@/lib/content/pages/homePage";
 import { getKeyPeople } from "@/lib/content/collections/people";
 import { getSiteSettings } from "@/lib/content/site";
 import { getAllInsights } from "@/lib/content/collections/insights";
-import { getAllServices } from "@/lib/content/collections/services";
+import type { Metadata } from "next";
+import { homePage } from "@/sanity/schemaTypes/pages/homePage";
+
+
 
 export default async function Home() {
   const homePage = await getHomePage();

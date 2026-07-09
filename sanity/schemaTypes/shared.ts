@@ -245,3 +245,29 @@ export const pageCTA = defineType({
     }),
   ],
 });
+
+export const metaDetails = defineType({
+  name: "metaDetails",
+  title: "Meta Details",
+  type: "object",
+  fields: [
+    defineField({
+      name: "title",
+      title: "Meta Title",
+      type: "string",
+      description: "Used for browser tabs and search results.",
+      validation: (Rule) =>
+        Rule.max(60).warning("Meta titles are usually best under 60 characters."),
+    }),
+    defineField({
+      name: "description",
+      title: "Meta Description",
+      type: "text",
+      rows: 3,
+      description:
+        "Used for search engines and link previews. Aim for 140–160 characters.",
+      validation: (Rule) =>
+        Rule.max(160).warning("Meta descriptions are usually best under 160 characters."),
+    }),
+  ],
+});

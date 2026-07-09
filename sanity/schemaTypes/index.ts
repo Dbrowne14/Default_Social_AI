@@ -21,6 +21,7 @@ import {
   titleDescription,
   titleLine,
   titleSegment,
+  metaDetails,
 } from "./shared";
 import { homePage, aboutOverviewSection, homeHero } from "./pages/homePage";
 import { groupLink, siteSettings, contactDetails, footerContent } from "./site";
@@ -75,5 +76,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     valuesCallout,
     valuesSection,
     insightsPage,
+    metaDetails,
   ],
 };
