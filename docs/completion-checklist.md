@@ -97,16 +97,31 @@ Documentation → Types → Data cleanup → Content layer → Routes → Compon
 
 Replace static content with Sanity while preserving the completed front-end.
 
-- [ ] Implement schemas
-- [ ] Populate sample content
-- [ ] Build GROQ queries
-- [ ] Connect the content layer
-- [ ] Replace static imports
-- [ ] Build image pipeline
-- [ ] Add previews
-- [ ] QA
+- [x] Implement schemas
+- [x] Populate sample content
+- [x] Build GROQ queries
+- [x] Connect the content layer
+- [x] Replace static imports
+- [x] QA
+
+Phase 3 complete
+
+Future enhancements:
+• Sanity image pipeline
+• Draft preview mode
 
 ---
+
+# Phase 3.5
+
+## CMS Polish
+
+- [ ] Studio field groups
+- [ ] Helpful field descriptions
+- [ ] Better validation messages
+- [ ] Initial values
+- [ ] Icons
+- [ ] Ordering
 
 # Phase 4 — Performance & SEO
 
