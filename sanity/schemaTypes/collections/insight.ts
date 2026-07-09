@@ -101,6 +101,8 @@ export const insight = defineType({
       name: "featured",
       title: "Featured",
       type: "boolean",
+      description:
+        "Enable to feature this article in highlighted areas of the site.",
       group: "settings",
       initialValue: false,
     }),
@@ -109,6 +111,7 @@ export const insight = defineType({
       name: "subject",
       title: "Subject",
       type: "string",
+      description: "Short subject line used in article headers and previews.",
       group: "card",
     }),
 
@@ -124,6 +127,8 @@ export const insight = defineType({
       name: "tag",
       title: "Tag",
       type: "string",
+      description:
+        "Primary category label shown on article cards and the article page.",
       group: "meta",
       validation: (Rule) => Rule.required(),
     }),
@@ -133,6 +138,8 @@ export const insight = defineType({
       title: "All Tags",
       type: "array",
       of: [{ type: "string" }],
+      description:
+        "All tags associated with this article. Used for filtering and related content.",
       group: "meta",
       validation: (Rule) => Rule.required().min(1),
     }),
@@ -141,6 +148,7 @@ export const insight = defineType({
       name: "readTime",
       title: "Read Time",
       type: "string",
+      description: "Estimated reading time, for example '6 min read'.",
       group: "meta",
       validation: (Rule) => Rule.required(),
     }),
@@ -158,6 +166,7 @@ export const insight = defineType({
       title: "Excerpt",
       type: "text",
       rows: 3,
+      description: "Short summary used on article cards and metadata. Aim for 140–160 characters.",
       group: "card",
     }),
 
@@ -174,6 +183,7 @@ export const insight = defineType({
       name: "slug",
       title: "Slug",
       type: "slug",
+      description: "URL-friendly slug generated from the title. Avoid changing after publishing.",
       group: "settings",
       options: {
         source: "title",
@@ -186,6 +196,7 @@ export const insight = defineType({
       name: "imageCaption",
       title: "Image Caption",
       type: "string",
+      description: "Optional caption displayed with the article image or visual treatment.",
       group: "card",
     }),
 
@@ -194,6 +205,7 @@ export const insight = defineType({
       title: "Intro",
       type: "array",
       of: [{ type: "insightTextBlock" }],
+      description: "Opening article content before the main numbered sections.",
       group: "content",
     }),
 
@@ -202,6 +214,7 @@ export const insight = defineType({
       title: "Pull Quotes",
       type: "array",
       of: [{ type: "pullQuote" }],
+      description: "Optional highlighted quotes used within the article layout.",
       group: "content",
     }),
 
@@ -210,6 +223,7 @@ export const insight = defineType({
       title: "Sections",
       type: "array",
       of: [{ type: "insightSection" }],
+      description: "Main body sections of the article.",
       group: "content",
     }),
   ],

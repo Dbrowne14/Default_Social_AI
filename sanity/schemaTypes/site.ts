@@ -27,6 +27,8 @@ export const siteSettings = defineType({
       name: "siteName",
       title: "Site Name",
       type: "string",
+      description:
+        "Used as the default site name in metadata and shared layout content.",
       group: "general",
       validation: (Rule) => Rule.required(),
     }),
@@ -35,6 +37,8 @@ export const siteSettings = defineType({
       name: "siteUrl",
       title: "Site URL",
       type: "string",
+      description:
+        "Canonical production URL for the site, for example https://defaultsocial.co.uk.",
       group: "general",
       validation: (Rule) => Rule.required(),
     }),
@@ -43,6 +47,8 @@ export const siteSettings = defineType({
       name: "description",
       title: "Description",
       type: "string",
+      description:
+        "Default site description used for SEO and fallback metadata.",
       group: "general",
       validation: (Rule) => Rule.required(),
     }),
@@ -51,6 +57,8 @@ export const siteSettings = defineType({
       name: "groupLink",
       title: "Group Link",
       type: "groupLink",
+      description:
+        "Link to the wider Default Media Group site or related group page.",
       group: "general",
       validation: (Rule) => Rule.required(),
     }),
@@ -59,6 +67,7 @@ export const siteSettings = defineType({
       name: "contact",
       title: "Contact Details",
       type: "contactDetails",
+      description: "Shared contact details used across the site.",
       group: "contact",
       validation: (Rule) => Rule.required(),
     }),
@@ -67,12 +76,12 @@ export const siteSettings = defineType({
       name: "footer",
       title: "Footer",
       type: "footerContent",
+      description: "Content displayed in the global footer.",
       group: "footer",
       validation: (Rule) => Rule.required(),
     }),
   ],
 });
-
 
 export const contactDetails = defineType({
   name: "contactDetails",
