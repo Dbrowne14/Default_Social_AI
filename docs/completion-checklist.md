@@ -140,7 +140,7 @@ Future enhancements:
 - [x] No broken links
 - [x] No missing images
 - [x] Responsive check
-- [ ] Metadata sanity check
+- [x] Metadata sanity check
 - [ ] Deploy to Vercel
 - [ ] Connect Sanity production dataset
 - [ ] Share URL with Robin
