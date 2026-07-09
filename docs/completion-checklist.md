@@ -116,7 +116,7 @@ Future enhancements:
 
 ## Studio editing experience
 
-- [ ] Open Studio and review all document types as a non-technical editor
+- [x] Open Studio and review all document types as a non-technical editor
 - [ ] Add field groups to singleton page schemas
 - [ ] Add field groups to collection schemas
 - [ ] Add helpful field descriptions where needed

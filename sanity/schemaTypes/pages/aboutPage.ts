@@ -216,44 +216,77 @@ export const aboutPage = defineType({
   name: "aboutPage",
   title: "About Page",
   type: "document",
+
+  groups: [
+    {
+      name: "hero",
+      title: "Hero",
+      default: true,
+    },
+    {
+      name: "content",
+      title: "Content",
+    },
+    {
+      name: "team",
+      title: "Team",
+    },
+    {
+      name: "cta",
+      title: "Call to Action",
+    },
+  ],
+
   fields: [
     defineField({
       name: "aboutHeader",
       title: "About Header",
       type: "aboutHeader",
+      group: "hero",
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "values",
       title: "Values",
       type: "valuesSection",
+      group: "content",
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "groupStructure",
       title: "Group Structure",
       type: "groupStructureSection",
+      group: "content",
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "approach",
       title: "Approach",
       type: "approachSection",
+      group: "content",
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "team",
       title: "Team",
       type: "sectionIntro",
+      group: "team",
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "cta",
       title: "CTA",
       type: "pageCTA",
+      group: "cta",
       validation: (Rule) => Rule.required(),
     }),
   ],
+
   preview: {
     prepare() {
       return {

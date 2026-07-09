@@ -5,45 +5,74 @@ export const siteSettings = defineType({
   name: "siteSettings",
   title: "Site Settings",
   type: "document",
+
+  groups: [
+    {
+      name: "general",
+      title: "General",
+      default: true,
+    },
+    {
+      name: "contact",
+      title: "Contact",
+    },
+    {
+      name: "footer",
+      title: "Footer",
+    },
+  ],
+
   fields: [
     defineField({
       name: "siteName",
       title: "Site Name",
       type: "string",
+      group: "general",
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "siteUrl",
       title: "Site URL",
       type: "string",
+      group: "general",
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "description",
       title: "Description",
       type: "string",
+      group: "general",
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "groupLink",
       title: "Group Link",
       type: "groupLink",
+      group: "general",
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "contact",
       title: "Contact Details",
       type: "contactDetails",
+      group: "contact",
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: "footer",
       title: "Footer",
       type: "footerContent",
+      group: "footer",
       validation: (Rule) => Rule.required(),
     }),
   ],
 });
+
 
 export const contactDetails = defineType({
   name: "contactDetails",
