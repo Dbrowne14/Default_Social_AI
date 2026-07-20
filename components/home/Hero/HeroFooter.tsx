@@ -7,7 +7,7 @@ type footerTextProps = {
 const HeroFooter = ({ footerText }: footerTextProps) => {
   return (
     <div className="grid 720:grid-cols-[1fr_auto] items-end gap-8 mt-12 opacity-0 animate-[fade-in_0.6s_2s_forwards] grid-cols-1 text-[10px] 720:text-[17px]">
-      <p className="max-w-[46ch] text-black mix-blend-difference leading-normal">
+      <p className="max-w-[46ch] mix-blend-difference leading-normal">
         {footerText}
       </p>
       <div className="flex gap-3 flex-wrap">

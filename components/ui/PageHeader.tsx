@@ -13,7 +13,7 @@ const PageHeader = ({ eyebrow, title, children }: PageHeaderProps) => {
     <header className="relative overflow-hidden pt-nav border-b border-line min-h-dvh md:min-h-screen flex items-center">
       <div
         aria-hidden="true"
-        className="absolute inset-0 z-0 opacity-100 blur-[140px] bg-[radial-gradient(circle_at_15%_20%,color-mix(in_oklch,var(--accent)_40%,transparent),transparent_42%),radial-gradient(circle_at_85%_15%,color-mix(in_oklch,var(--accent-2)_48%,transparent),transparent_36%),radial-gradient(circle_at_50%_40%,color-mix(in_oklch,var(--accent-3)_22%,transparent),transparent_52%)]"
+        className="absolute inset-0 z-0 opacity-100 blur-[140px] "
       />
 
       <div className="container-custom relative z-10">

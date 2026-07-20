@@ -5,8 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { SiteChromeProps } from "@/types/site";
 
-const Navigation = ({ siteSettings, navigation }: SiteChromeProps) => {
-  const { groupLink } = siteSettings;
+const Navigation = ({ navigation }: SiteChromeProps) => {
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 height-nav flex justify-between items-center py-4.5 px-8 bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)] 720:px-5
@@ -24,7 +23,7 @@ const Navigation = ({ siteSettings, navigation }: SiteChromeProps) => {
             width={100}
             height={20}
             priority
-            src="/assets/branding/Default-Alt_DF-SOCIAL-Black.png"
+            src="/assets/branding/Default-Alt_DF SOCIAL-White.png"
           />
         </Link>
       </div>
@@ -39,9 +38,7 @@ const Navigation = ({ siteSettings, navigation }: SiteChromeProps) => {
         })}
       </div>
 
-      <div className="hidden md:block">
-        <Button link="/#contact" text="Start a project" />
-      </div>
+
       <NavHamburgerMenu />
     </nav>
   );
