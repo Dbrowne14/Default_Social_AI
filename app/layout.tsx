@@ -5,29 +5,7 @@ import Footer from "@/components/layout/footer/Footer";
 import LoaderStrip from "@/components/ui/LoaderStrip";
 import { getSiteSettings } from "@/lib/content/site";
 import { navigationItems } from "@/lib/navigation";
-
-import {
-  Instrument_Serif,
-  Space_Grotesk,
-  JetBrains_Mono,
-} from "next/font/google";
-
-const serif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--font-serif",
-});
-
-const sans = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-});
+import { serif, sans, mono } from "@/lib/fonts";
 
 
 
