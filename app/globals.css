@@ -4,7 +4,7 @@
 
 :root {
   --ink: oklch(0% 0 0); /* black — page bg */
-  --ink-2: oklch(0.92 0.01 85); /* paper variant — cards */
+  --ink-2: rgb(63, 47, 47); /* paper variant — cards */
   --ink-3: oklch(0.88 0.012 85); /* paper deeper — chat bubbles */
   --line: oklch(0.28 0.008 85);; /* hairlines on bone */
   /* Foregrounds (was: cream tones) */

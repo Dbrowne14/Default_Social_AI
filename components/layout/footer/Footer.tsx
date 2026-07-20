@@ -20,9 +20,6 @@ const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
         />
 
         <div className="container-thin relative">
-          <div className="text-[clamp(56px,18vw,220px)] leading-[0.9] font-serif my-14 md:my-20 tracking-[-0.02em] text-cream drop-shadow-[0_18px_40px_rgba(0,0,0,0.35)]">
-            default<span className="italic text-accent">/social</span>
-          </div>
 
           <div className="grid mt-6 md:mt-14 gap-10 md:gap-12 grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr]">
             <div className="group border border-transparent hover:border-[color-mix(in_oklch,var(--accent)_20%,var(--line))] col-span-2 md:col-span-1 rounded-xl hidden md:block p-5 md:p-6 mb-10 md:mb-0 hover:shadow-[0_12px_32px_rgba(0,0,0,0.25),0_1px_0_rgba(255,255,255,0.05)_inset]">
