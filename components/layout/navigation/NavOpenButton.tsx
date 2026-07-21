@@ -13,7 +13,6 @@ className={`
   rounded-lg
   cursor-pointer
   shadow-[0_12px_30px_rgba(0,0,0,0.35)]
-  720:hidden
   transition-all duration-200
   hover:-translate-y-px
   ${menuOpen ? "scale-95" : "scale-100"}

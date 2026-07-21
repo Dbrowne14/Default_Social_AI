@@ -1,6 +1,7 @@
 'use client';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SignalAnimation } from "./signal-bars-nav";
 
 type NavLinkProps = {
   href: string;
@@ -18,6 +19,8 @@ export default function NavLink({ href, children }: NavLinkProps) {
       className={`
         relative
         py-2
+        flex
+        gap-2
         hover:text-cream
         ${
           isActive
@@ -26,6 +29,7 @@ export default function NavLink({ href, children }: NavLinkProps) {
         }
       `}
     >
+      <SignalAnimation/>
       {children}
     </Link>
   );
