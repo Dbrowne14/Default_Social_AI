@@ -25,7 +25,7 @@ const CTA = ({
             text="Start a project"
             arrowVariant="primaryBlack"
           />
-          <Button link={button.href} text={button.label} variant="secondary" />
+          <Button link={button.href} text={button.label} variant="dark" arrowVariant="primaryBlack" />
         </div>
       </div>
     </section>

@@ -12,7 +12,7 @@ const AboutTeam = ({ people, aboutHeader }: AboutTeamProps) => {
   const { eyebrow, title, meta } = aboutHeader;
   return (
     <section
-      className="bg-[linear-gradient(180deg,var(--ink-2),var(--ink))] border-t border-line"
+      className=""
       data-screen-label="Team"
     >
       <div className="container-custom">

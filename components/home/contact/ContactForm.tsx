@@ -217,7 +217,7 @@ export default function ContactForm({
             {pending ? "Sending..." : "Send message"}
             <span
               aria-hidden="true"
-              className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-cream text-on-accent text-[10px] leading-none"
+              className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-cream text-ink text-[10px] leading-none"
             >
               →
             </span>

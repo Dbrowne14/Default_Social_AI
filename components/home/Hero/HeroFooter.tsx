@@ -16,7 +16,7 @@ const HeroFooter = ({ footerText }: footerTextProps) => {
           text="Get started"
           arrowVariant="primaryBlack"
         />
-        <Button link="/services" text="Our Services" variant="secondary" />
+        <Button link="/services" text="Our Services" variant="dark" arrowVariant="primaryBlack" />
       </div>
     </div>
   );

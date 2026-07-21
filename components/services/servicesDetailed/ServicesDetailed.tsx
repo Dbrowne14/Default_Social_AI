@@ -5,7 +5,7 @@ import type { ServicesProps } from "@/types/collections/services";
 
 const ServicesDetailed = ({ services }: ServicesProps) => {
   return (
-    <section className="" id="web" data-screen-label="Web">
+    <section>
       {services.map((service) => {
         const { id, category, blurb, offers, aiCallout, processSteps } =
           service;

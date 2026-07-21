@@ -16,7 +16,7 @@ const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
       <footer className="relative overflow-hidden bg-ink pt-1 pb-10 ">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(circle_at_15%_90%,color-mix(in_oklch,var(--accent)_30%,transparent),transparent_42%),radial-gradient(circle_at_85%_95%,color-mix(in_oklch,var(--accent-2)_48%,transparent),transparent_36%),radial-gradient(circle_at_50%_75%,color-mix(in_oklch,var(--accent-3)_22%,transparent),transparent_52%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_15%_90%,color-mix(in_oklch,var(--accent)_30%,transparent),transparent_42%),radial-gradient(circle_at_85%_95%,color-mix(in_oklch,var(--accent-2)_48%,transparent),transparent_36%),radial-gradient(circle_at_50%_75%,color-mix(in_oklch,var(--accent-3)_22%,transparent),transparent_52%)] md:bg-[radial-gradient(circle_at_50%_0%,color-mix(in_oklch,var(--accent)_22%,transparent),transparent_35%),radial-gradient(circle_at_20%_15%,color-mix(in_oklch,var(--accent-2)_32%,transparent),transparent_28%),radial-gradient(circle_at_80%_15%,color-mix(in_oklch,var(--accent-3)_20%,transparent),transparent_30%)]"
         />
 
         <div className="container-thin relative">

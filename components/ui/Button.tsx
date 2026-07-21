@@ -4,7 +4,7 @@ type ButtonProps = {
   link?: string;
   onClick?: () => void;
   text: string;
-  variant?: "primary" | "ghost" | "secondary";
+  variant?: "primary" | "ghost" | "secondary" | "dark";
   arrowVariant?: "primary" | "primaryBlack";
   buttonDirection?: Direction;
 };
@@ -25,14 +25,21 @@ const variants = {
     border-line
     hover:border-accent
     hover:text-accent`,
-secondary: `
-  bg-cream
-  text-ink
-  border
-  border-cream
-  hover:bg-cream-2
-  hover:border-cream-2
-`,
+  secondary: `
+    bg-cream
+    text-ink
+    border
+    border-cream
+    hover:bg-cream-2
+    hover:border-cream-2`,
+  dark: `bg-[#141416]
+    border
+    border-transparent
+    text-cream
+    hover:bg-[var(--ink-2)]
+    hover:border-[var(--line)]
+    transition-all
+    duration-300`,
 };
 
 const arrowVariants = {
