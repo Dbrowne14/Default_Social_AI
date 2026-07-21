@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SignalAnimation } from "./signal-bars-nav";
@@ -6,12 +6,13 @@ import { SignalAnimation } from "./signal-bars-nav";
 type NavLinkProps = {
   href: string;
   children: React.ReactNode;
+  toggleMenu?: () => void;
 };
 
-export default function NavLink({ href, children }: NavLinkProps) {
+export default function NavLink({ href, children, toggleMenu }: NavLinkProps) {
   const pathname = usePathname();
 
-  const isActive = pathname === href ;
+  const isActive = pathname === href;
 
   return (
     <Link
@@ -19,18 +20,20 @@ export default function NavLink({ href, children }: NavLinkProps) {
       className={`
         relative
         py-2
-        hidden
-        720:flex
-        gap-2
+        flex
+        gap-4
         hover:text-cream
+        w-fit
         ${
           isActive
             ? "text-cream  after:absolute  after:left-0 after:bottom-0.5 after:h-px after:w-full after:bg-line after:content-['']"
             : "text-cream-2"
         }
+      
       `}
+      onClick={toggleMenu}
     >
-      <SignalAnimation/>
+      <SignalAnimation />
       {children}
     </Link>
   );

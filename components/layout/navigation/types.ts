@@ -5,3 +5,4 @@ export type ToggleMenuProps = {
 export type MobileMenuProps = ToggleMenuProps & {
   menuOpen: boolean;
 };
+

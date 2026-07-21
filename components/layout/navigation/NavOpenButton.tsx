@@ -8,12 +8,13 @@ const NavOpenButton = ({ menuOpen, toggleMenu }: MobileMenuProps) => {
       className={`
   inline-flex flex-col justify-center gap-1.25
   w-10 h-10 px-2.25
-
+z-60
   rounded-lg
   cursor-pointer
   shadow-[0_12px_30px_rgba(0,0,0,0.35)]
   transition-all duration-200
   hover:-translate-y-px
+border border-line
   ${menuOpen ? "scale-95" : "scale-100"}
 `}
       aria-label={menuOpen ? "Close menu" : "Open menu"}
