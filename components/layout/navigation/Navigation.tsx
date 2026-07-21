@@ -7,7 +7,7 @@ import type { SiteChromeProps } from "@/types/site";
 const Navigation = ({ navigation }: SiteChromeProps) => {
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 h-nav flex justify-between items-center py-4.5 px-8 bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)] 720:px-5
+      className="fixed top-0 left-0 right-0 z-50 h-nav flex justify-between items-center py-4.5 px-3 bg-[color-mix(in_oklch,var(--ink)_70%,transparent)] backdrop-blur-[20px] backdrop-saturate-160 border-b border-b-[color-mix(in_oklch,var(--line)_60%,transparent)] 720:px-5
   720:py-3.5 max-w-[100vw]"
       aria-label="Primary navigation"
     >
