@@ -212,7 +212,7 @@ export default function ContactForm({
           <button
             disabled={pending}
             type="submit"
-            className="btn w-fit border bg-accent text-on-accent hover:bg-accent-deep disabled:opacity-60"
+            className="btn w-fit border bg-accent-deep text-on-accent hover:bg-accent disabled:opacity-60"
           >
             {pending ? "Sending..." : "Send message"}
             <span

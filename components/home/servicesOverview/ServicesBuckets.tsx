@@ -44,7 +44,7 @@ const ServicesBuckets = async () => {
               (tag: { label: string; ai?: boolean }, index: number) => (
                 <span
                   key={index}
-                  className={`pill flex text-[11px] sm:text-xs ${tag.ai ? "ai" : ""}`}
+                  className={`flex text-[11px] sm:text-xs ${tag.ai ? "pill-ai" : "pill"}`}
                 >
                   {tag.ai && <span className="dot" />}
                   {tag.label}

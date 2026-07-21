@@ -2,6 +2,7 @@ import Link from "next/link";
 import FooterRibbon from "./FooterRibbon";
 import type { SiteChromeProps } from "@/types/site";
 import { getAllServices } from "@/lib/content/collections/services";
+import { SignalAnimation } from "@/components/ui/signal-bars-nav";
 
 //adding in footer ribbon required if necessary, but can be removed if not needed. It is a decorative element that adds a visual accent to the footer section of the website. The ribbon is designed to scroll and fade as the user interacts with the page, creating a dynamic and engaging visual effect. The ribbon has a maximum width of 1360 pixels and includes 32px gutters for spacing. It is important to note that the ribbon is purely decorative and does not contain any interactive elements or links.
 const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
@@ -24,7 +25,8 @@ const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
           <div className="grid mt-6 md:mt-14 gap-10 md:gap-12 grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr]">
             <div className="group border border-transparent  col-span-2 md:col-span-1 rounded-xl hidden md:block p-5 md:p-0 mb-10 md:mb-0 hover:shadow-[0_12px_32px_rgba(0,0,0,0.25),0_1px_0_rgba(255,255,255,0.05)_inset]">
               <div className="font-mono text-[clamp(12px,2.2vw,14px)] tracking-[0.16em] uppercase text-muted mb-2 md:mb-4">
-                <span className="group-hover:text-accent transition-all duration-300 group-hover:tracking-[0.34em] group-hover:font-bold">
+                <span className="flex gap-3 items-center group-hover:text-accent transition-all duration-300 group-hover:tracking-[0.34em] group-hover:font-bold">
+                  <SignalAnimation/>
                   {footer.eyebrow}
                 </span>
               </div>

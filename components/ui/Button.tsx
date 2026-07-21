@@ -11,10 +11,10 @@ type ButtonProps = {
 
 const variants = {
   primary: `
-    bg-accent
-    text-on-accent
+    bg-accent-deep
+    text-cream
     border-transparent
-    hover:bg-accent-deep
+    hover:bg-accent
     hover:text-on-accent
     font-semibold`,
   ghost: `
@@ -44,7 +44,8 @@ const variants = {
 
 const arrowVariants = {
   primary: `bg-accent text-on-accent`,
-  primaryBlack: `bg-cream text-ink`,
+  primaryBlack: `bg-black text-on-accent`,
+  primaryWhite: `bg-cream text-ink`,
 };
 
 const buttonDirections = {

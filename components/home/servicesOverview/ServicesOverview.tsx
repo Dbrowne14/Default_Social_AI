@@ -28,7 +28,7 @@ const ServicesOverview = ({ section }: ServicesOverviewProps) => {
           <Button
             link="/services"
             text="Explore all services"
-            variant="secondary"
+            variant="dark"
           />
         </div>
       </div>

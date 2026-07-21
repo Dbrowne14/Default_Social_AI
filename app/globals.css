@@ -10,7 +10,7 @@
   --cream-2: oklch(100% 0.00011 271.152); /* ink-2 — secondary text */
   --muted: rgb(149, 148, 148); /* warm grey — labels */
   /* Accents */
-  --accent: oklch(0.62 0.18 28); /* tomato — primary action */
+  --accent: #ff3b3b;; /* tomato — primary action */
   --accent-deep: oklch(0.54 0.18 28); /* tomato pressed */
   --accent-2: oklch(0.5 0.1 220); /* petrol blue — secondary signal */
   --accent-3: oklch(0.62 0.2 145); /* minty green — tertiary signal */
@@ -229,7 +229,7 @@
   }
 
   .hero-content {
-    @apply relative flex flex-col z-2 min-h-dvh md:min-h-screen 720:p-[80px_32px_48px] p-[100px_20px_28px];
+    @apply relative flex flex-col justify-between z-2 min-h-dvh md:min-h-screen 720:p-[0px_32px_48px] p-[0px_20px_28px];
     pointer-events: none;
   }
 
@@ -262,7 +262,7 @@
   }
 
   .pill-ai {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full border  text-[10px] tracking-widest uppercase font-mono border-accent-2 text-accent-2 shadow-[0_0_12px_color-mix(in_o-klch,var(--accent-2)_50%,transparent)];
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full border  text-[10px] tracking-widest uppercase font-mono border-line text-signal-green shadow-[0_0_12px_color-mix(in_o-klch,var(--accent-2)_50%,transparent)];
   }
 
   .dot {
