@@ -46,7 +46,7 @@ const ServicesBuckets = async () => {
                   key={index}
                   className={`flex text-[11px] sm:text-xs ${tag.ai ? "pill-ai" : "pill"}`}
                 >
-                  {tag.ai && <span className="dot" />}
+                  {tag.ai && <span className="dot-green" />}
                   {tag.label}
                 </span>
               ),

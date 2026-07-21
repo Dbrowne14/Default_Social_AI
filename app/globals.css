@@ -270,6 +270,11 @@
     box-shadow: 0 0 8px color-mix(in oklch, var(--accent-2) 55%, transparent);
   }
 
+  .dot-green{
+    @apply relative -top-px size-1.25 shrink-0 rounded-full bg-signal-green;
+    box-shadow: 0 0 8px color-mix(in oklch, var(--accent-2) 55%, transparent);
+  }
+
   .arr {
     @apply absolute top-10 right-10 w-9 h-9 rounded-[50%] border border-line flex items-center justify-center text-cream-2 transition-[border-color,color,transform] duration-250 ease-in-out group-hover:border-accent group-hover:text-accent group-hover:-rotate-45;
   }
