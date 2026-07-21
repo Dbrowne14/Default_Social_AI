@@ -24,7 +24,7 @@ export default function NavLink({ href, children }: NavLinkProps) {
         hover:text-cream
         ${
           isActive
-            ? "text-cream  after:absolute  after:left-0 after:bottom-0.5 after:h-px after:w-full after:bg-accent-2 after:content-['']"
+            ? "text-cream  after:absolute  after:left-0 after:bottom-0.5 after:h-px after:w-full after:bg-line after:content-['']"
             : "text-cream-2"
         }
       `}
