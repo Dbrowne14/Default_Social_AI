@@ -19,7 +19,8 @@ export default function NavLink({ href, children }: NavLinkProps) {
       className={`
         relative
         py-2
-        flex
+        hidden
+        720:flex
         gap-2
         hover:text-cream
         ${

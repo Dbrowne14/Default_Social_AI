@@ -5,11 +5,10 @@ const NavOpenButton = ({ menuOpen, toggleMenu }: MobileMenuProps) => {
   return (
     <button
       id="navBurger"
-className={`
+      className={`
   inline-flex flex-col justify-center gap-1.25
   w-10 h-10 px-2.25
-  bg-ink-2
-  border border-line
+
   rounded-lg
   cursor-pointer
   shadow-[0_12px_30px_rgba(0,0,0,0.35)]
@@ -27,10 +26,19 @@ className={`
         <span
           key={i}
           className={`
-              block h-px bg-cream rounded-xs
-              transition-all duration-200
-              ${menuOpen && i === 1 ? "opacity-40 w-3/4" : "opacity-100 w-full"}
-            `}
+      block h-px w-full rounded-xs bg-cream
+      origin-center
+      transition-all duration-300 ease-out
+      ${
+        menuOpen
+          ? i === 0
+            ? "translate-y-1.5 rotate-45"
+            : i === 1
+              ? "opacity-0"
+              : "-translate-y-1.5 -rotate-45"
+          : ""
+      }
+    `}
         />
       ))}
     </button>

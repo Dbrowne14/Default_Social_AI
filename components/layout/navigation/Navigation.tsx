@@ -1,5 +1,4 @@
 import NavLink from "../../ui/Navlink";
-import Button from "../../ui/Button";
 import NavHamburgerMenu from "./NavHamburgerMenu";
 import Link from "next/link";
 import Image from "next/image";
@@ -28,18 +27,7 @@ const Navigation = ({ navigation }: SiteChromeProps) => {
         </Link>
       </div>
 
-      <div className="hidden 720:flex gap-7 items-center font-mono text-[12px] tracking-widest uppercase text-cream-2 relative">
-        {navigation.map((page) => {
-          return (
-            <NavLink href={page.href} key={page.label}>
-              {page.label}
-            </NavLink>
-          );
-        })}
-      </div>
-
-
-      <NavHamburgerMenu />
+      <NavHamburgerMenu navigation={navigation} />
     </nav>
   );
 };
