@@ -87,9 +87,7 @@
   --font-sans: var(--sans);
   --font-mono: var(--mono);
   --font-poppins: var(--poppins);
-  --font-dmSans: var(--dmSans)
-
-  --breakpoint-xs: 480px;
+  --font-dmSans: var(--dmSans) --breakpoint-xs: 480px;
   --breakpoint-xs520: 520px;
   --breakpoint-620: 620px;
   --breakpoint-720: 720px;
@@ -160,11 +158,11 @@
     background: var(--accent);
     color: var(--on-accent);
   }
-h1,
-h2,
-h3 {
-  margin: 0;
-}
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
   h1 {
     font-size: clamp(48px, 8vw, 124px);
     line-height: 0.95;
@@ -211,7 +209,7 @@ h3 {
     @apply font-poppins font-semibold uppercase tracking-[-0.045em] leading-[0.9] text-balance;
   }
 
-    .heading-editorial {
+  .heading-editorial {
     @apply font-serif font-normal tracking-[-0.02em] leading-[0.95] text-balance;
   }
 
@@ -266,13 +264,21 @@ h3 {
   .meta {
     @apply font-dmSans text-cream-2 text-[16px] max-w-[36ch];
   }
-
   .pill {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-line text-[10px] tracking-widest uppercase font-mono text-cream-2;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line
+    px-3 py-1
+    font-dmSans text-[9px] font-medium uppercase
+    tracking-[0.18em]
+    text-cream-2;
   }
 
   .pill-ai {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full border  text-[10px] tracking-widest uppercase font-mono border-line text-signal-green shadow-[0_0_12px_color-mix(in_o-klch,var(--accent-2)_50%,transparent)];
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line
+    px-3 py-1
+    font-dmSans text-[9px] font-medium uppercase
+    tracking-[0.18em]
+    text-signal-green
+    shadow-[0_0_12px_color-mix(in_oklch,var(--accent-2)_50%,transparent)];
   }
 
   .dot {
@@ -295,15 +301,15 @@ h3 {
     animation-iteration-count: infinite;
   }
 
-.eyebrow {
-  @apply uppercase font-dmSans
+  .eyebrow {
+    @apply uppercase font-dmSans
     tracking-[0.3em]
     text-[11px]
     text-muted
     inline-flex
     items-center
     gap-2.5;
-}
+  }
   .eyebrow::before {
     @apply w-1.5 h-1.5 rounded-full bg-accent-2 shadow-[0_0_12px_color-mix(in_o-klch,var(--accent-2)_50%,transparent)] content-[''];
   }
