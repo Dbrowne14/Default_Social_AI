@@ -12,7 +12,7 @@ const ValueProp = ({ valueProp }: ValuePropProps) => {
       <div className="container-custom">
         <div className="max-w-190">
           <div className="eyebrow mb-7">{eyebrow}</div>
-          <p className="font-serif text-[clamp(38px,4.6vw,64px)] leading-[1.1] max-w-[18ch] tracking-[-0.01em]">
+          <p className="heading-display text-[clamp(38px,4.6vw,64px)] leading-[1.1] max-w-[18ch]">
             <RichTitle title={title} />
           </p>
           <p className="lede mt-9 max-w-[58ch] text-cream-2 text-4.5 leading-[1.55]">

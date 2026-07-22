@@ -65,7 +65,7 @@ export default function Button({
   arrowVariant = "primary",
   buttonDirection = "right",
 }: ButtonProps) {
-  const classes = `text-[12px] inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-mono uppercase transition-all duration-150 ease-in-out hover:-translate-y-px tracking-widest
+  const classes = `text-[12px] inline-flex items-center gap-2 px-4 py-2.5 rounded-full font-dmSans uppercase transition-all duration-150 ease-in-out hover:-translate-y-px tracking-widest
     ${variants[variant]}`;
 
   const content = (

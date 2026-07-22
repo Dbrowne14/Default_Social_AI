@@ -34,45 +34,64 @@ const HeroMidContent = () => {
   ];
 
   return (
-    <div className="flex-1 flex items-center justify-start relative mt-15">
-      <h1
-        className="relative font-serif  text-[clamp(48px,14vw,72px)] 720:text-[clamp(50px,11vw,150px)] leading-[0.88] tracking-[-0.03em] text-cream max-w-[14ch] m-0 mix-blend-difference"
-        id="headline"
-      >
-        {mainHeading.map((item, index) => {
-          if ("break" in item) return <br key={index} />;
+<div className="relative mt-15 flex flex-1 items-center justify-start">
+  <h1
+    id="headline"
+    className="
+      relative m-0 max-w-[14ch]
+      font-poppins font-semibold uppercase
+      text-[clamp(38px,14vw,72px)]
+      leading-[0.92] tracking-[-0.06em]
+      text-cream mix-blend-difference
+      720:text-[clamp(40px,11vw,120px)]
+    "
+  >
+    {mainHeading.map((item, index) => {
+      if ("break" in item) {
+        return <br key={index} />;
+      }
 
-          return (
+      if (item.rotating) {
+        return (
+          <span key={index} className="inline-block align-top overflow-visible">
             <span
-              key={index}
-              className="inline-block overflow-hidden align-top px-[0.06em] mx-[-0.06em] pb-[0.12em] mb-[-0.12em]"
-            >
-              {item.rotating ? (
-                <span
-                  className={`
-                inline-block italic min-w-[3.5ch] text-signal-red [-webkit-text-stroke:0.3px_white]
+              className={`
+                inline-block min-w-[3.5ch]
+                overflow-visible italic
+                font-extrabold
+                text-signal-red
+                [-webkit-text-stroke:0.3px_white]
                 transition-opacity duration-300
                 ${isFading ? "opacity-0" : "opacity-100"}
               `}
-                >
-                  {VERBS[verbIndex]}
-                </span>
-              ) : (
-                <span
-                  className="inline-block animate-rise"
-                  style={{
-                    animationDelay: `${item.delay}s`,
-                  }}
-                >
-                  <span className={`${item.word === "default" ? "":""}`}>{item.word}</span>
-                  {item.space ? "\u00A0" : ""}
-                </span>
-              )}
+            >
+              {VERBS[verbIndex]}
             </span>
-          );
-        })}
-      </h1>
-    </div>
+
+            {item.space ? "\u00A0" : ""}
+          </span>
+        );
+      }
+
+      return (
+        <span key={index} className="inline-block align-top">
+          <span className="inline-block overflow-hidden pb-[0.12em] mb-[-0.12em]">
+            <span
+              className="inline-block animate-rise"
+              style={{
+                animationDelay: `${item.delay}s`,
+              }}
+            >
+              {item.word}
+            </span>
+          </span>
+
+          {item.space ? "\u00A0" : ""}
+        </span>
+      );
+    })}
+  </h1>
+</div>
   );
 };
 

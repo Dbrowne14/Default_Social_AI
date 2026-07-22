@@ -73,7 +73,7 @@ export default function ContactForm({
         <div>
           <div className="eyebrow">{eyebrow}</div>
 
-          <h2 className="mt-5 font-serif text-[clamp(40px,5vw,80px)]">
+          <h2 className="mt-5  text-[clamp(40px,5vw,70px)]">
             <RichTitle title={title} />
           </h2>
 

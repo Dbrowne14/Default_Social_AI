@@ -24,7 +24,7 @@ const ServicesBuckets = async () => {
             {service.id} / {service.category}
           </div>
 
-          <h3 className="relative z-10 font-serif text-[clamp(34px,10vw,52px)] leading-[0.9] tracking-[-0.03em] md:text-[clamp(36px,3.4vw,48px)]">
+          <h3 className="relative z-10 font-serif text-[clamp(34px,10vw,52px)] leading-[0.93] tracking-[-0.03em] md:text-[clamp(36px,3.4vw,48px)]">
             {service.title[0]}
             <br />
             <span className="text-cream-2">{service.title[1]}</span>

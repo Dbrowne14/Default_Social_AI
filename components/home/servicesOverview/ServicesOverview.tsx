@@ -15,7 +15,7 @@ const ServicesOverview = ({ section }: ServicesOverviewProps) => {
         <div className="section-headings">
           <div className="section-title">
             <div className="eyebrow">{eyebrow}</div>
-            <h2>
+            <h2 className="heading-display">
               <RichTitle title={title} />
             </h2>
           </div>
