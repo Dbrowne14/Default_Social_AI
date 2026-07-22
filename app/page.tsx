@@ -10,8 +10,6 @@ import { getHomePage } from "@/lib/content/pages/homePage";
 import { getKeyPeople } from "@/lib/content/collections/people";
 import { getSiteSettings } from "@/lib/content/site";
 import { getAllInsights } from "@/lib/content/collections/insights";
-import type { Metadata } from "next";
-import { homePage } from "@/sanity/schemaTypes/pages/homePage";
 
 
 
