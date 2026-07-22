@@ -4,12 +4,12 @@ const HeroHeaderRibbon = () => {
       <div className="flex gap-4.5 items-center">
         <div className="inline-flex items-center justify-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-accent-3 shadow-[0_0_12px_var(--accent-3)] animate-pulse"></span>
-          <span className="inline-flex items-center gap-2 text-accent-3">
+          <span className="text-accent-3 font-dmSans text-[11px] font-medium uppercase tracking-[0.18em]">
             ON AIR
           </span>
         </div>
-        <span className="block">52°29′N · LDN</span>
-        <span className="hidden md:block">v2026.05</span>
+        <span className="font-mono block">52°29′N · LDN</span>
+        <span className="font-mono hidden md:block">v2026.05</span>
       </div>
     </div>
   );

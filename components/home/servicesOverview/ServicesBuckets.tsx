@@ -20,11 +20,16 @@ const ServicesBuckets = async () => {
 
           <div className="arr absolute right-5 top-5">↗</div>
 
-          <div className="mb-5 pr-12 font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+          <div
+            className="mb-5 pr-12 font-uppercase font-dmSans tracking-[0.3em] text-[11px] uppercase text-muted"
+          >
             {service.id} / {service.category}
           </div>
 
-          <h3 className="relative z-10 font-serif text-[clamp(34px,10vw,52px)] leading-[0.93] tracking-[-0.03em] md:text-[clamp(36px,3.4vw,48px)]">
+          <h3 className="relative z-10   font-poppins font-semibold
+    text-balance
+    leading-[0.95]
+    tracking-[-0.04em] text-[clamp(34px,10vw,52px)] md:text-[clamp(36px,3.4vw,48px)]">
             {service.title[0]}
             <br />
             <span className="text-cream-2">{service.title[1]}</span>

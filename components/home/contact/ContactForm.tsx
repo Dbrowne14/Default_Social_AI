@@ -27,7 +27,7 @@ type ContactFormProps = {
 function Field({ label, children }: LabelledSlotProps) {
   return (
     <label className="flex flex-col gap-1.5">
-      <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
+      <span className="heading-sans text-[10px] uppercase text-muted">
         {label}
       </span>
       {children}
@@ -37,9 +37,9 @@ function Field({ label, children }: LabelledSlotProps) {
 
 function InfoRow({ label, children }: LabelledSlotProps) {
   return (
-    <div className="flex items-center justify-between font-mono text-[12px] uppercase tracking-[0.08em]">
+    <div className="flex items-center justify-between heading-sans text-[12px] tracking-[0.09em]">
       <span className="text-muted">{label}</span>
-      <span>{children}</span>
+      <span className="text-[color-mix(in_oklch,white_80%,black)]">{children}</span>
     </div>
   );
 }
@@ -83,7 +83,7 @@ export default function ContactForm({
             <InfoRow label="Studio">{location}</InfoRow>
 
             <InfoRow label="Email">
-              <a href={`mailto:${email}`} className="footer-links">
+              <a href={`mailto:${email}`} className="hover:text-signal-red">
                 {email}
               </a>
             </InfoRow>
@@ -108,7 +108,7 @@ export default function ContactForm({
               {state.errors.name && (
                 <p
                   id="name-error"
-                  className="font-mono text-[10px] uppercase tracking-[0.08em] text-red-400"
+                  className="heading-sans text-[10px] text-red-400"
                 >
                   {state.errors.name[0]}
                 </p>
@@ -130,7 +130,7 @@ export default function ContactForm({
               {state.errors.company && (
                 <p
                   id="company-error"
-                  className="font-mono text-[10px] uppercase tracking-[0.08em] text-red-400"
+                  className="heading-sans text-[10px]  text-red-400"
                 >
                   {state.errors.company[0]}
                 </p>
@@ -153,7 +153,7 @@ export default function ContactForm({
               {state.errors.email && (
                 <p
                   id="email-error"
-                  className="font-mono text-[10px] uppercase tracking-[0.08em] text-red-400"
+                  className="headings-sans text-[10px] uppercase tracking-[0.08em] text-red-400"
                 >
                   {state.errors.email[0]}
                 </p>
@@ -178,7 +178,7 @@ export default function ContactForm({
               {state.errors.enquiryType && (
                 <p
                   id="enquiryType-error"
-                  className="font-mono text-[10px] uppercase tracking-[0.08em] text-red-400"
+                  className="heading-sans text-[10px] text-red-400"
                 >
                   {state.errors.enquiryType[0]}
                 </p>
@@ -202,7 +202,7 @@ export default function ContactForm({
             {state.errors.message && (
               <p
                 id="message-error"
-                className="font-mono text-[10px] uppercase tracking-[0.08em] text-red-400"
+                className="heading-sans text-red-400"
               >
                 {state.errors.message[0]}
               </p>
@@ -217,7 +217,7 @@ export default function ContactForm({
             {pending ? "Sending..." : "Send message"}
             <span
               aria-hidden="true"
-              className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-cream text-ink text-[10px] leading-none"
+              className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-ink text-cream text-[10px] leading-none"
             >
               →
             </span>
@@ -226,7 +226,7 @@ export default function ContactForm({
           {state.message && (
             <p
               role="status"
-              className="font-mono text-[11px] uppercase tracking-[0.08em] text-muted"
+              className="heading-sans text-[11px]"
             >
               {state.message}
             </p>

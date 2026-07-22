@@ -246,11 +246,15 @@
   }
 
   .footer-headings {
-    @apply font-mono text-[11px] tracking-[0.14em] uppercase text-muted mb-4.5;
+    @apply font-dmSans font-semibold text-[10px]  uppercase tracking-[0.22em] text-[color-mix(in_oklch,var(--cream)_72%,black)] mb-4.5;
+  }
+
+  .heading-sans {
+    @apply font-dmSans font-semibold tracking-[0.25em] leading-[1.05] text-balance;
   }
 
   .footer-links {
-    @apply text-cream-2 hover:text-accent;
+    @apply text-cream hover:text-accent font-medium font-dmSans text-[15px] tracking-[-0.015em] leading-[1.6] ;
   }
 
   .section-headings {
@@ -323,7 +327,7 @@
   }
 
   .btn {
-    @apply inline-flex items-center gap-2.5 px-6 py-3 rounded-full border border-line text-[12px] tracking-widest uppercase font-mono transition duration-150 ease-in-out;
+    @apply inline-flex items-center gap-2.5 px-6 py-3 rounded-full border border-line text-[12px] tracking-widest uppercase font-dmSans transition duration-150 ease-in-out;
   }
   .btn:hover {
     @apply bg-accent-deep;

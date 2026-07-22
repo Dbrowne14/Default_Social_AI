@@ -21,28 +21,27 @@ const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
         />
 
         <div className="container-thin relative">
-
           <div className="grid mt-6 md:mt-14 gap-10 md:gap-12 grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr]">
             <div className="group border border-transparent  col-span-2 md:col-span-1 rounded-xl hidden md:block p-5 md:p-0 mb-10 md:mb-0 hover:shadow-[0_12px_32px_rgba(0,0,0,0.25),0_1px_0_rgba(255,255,255,0.05)_inset]">
-              <div className="font-mono footer-headings tracking-[0.16em] uppercase text-muted mb-2 md:mb-4">
+              <div className="footer-headings tracking-[0.16em] uppercase text-muted mb-2 md:mb-4">
                 <span className="flex gap-3 items-center group-hover:text-accent transition-all duration-300 group-hover:tracking-[0.34em] group-hover:font-bold">
-                  <SignalAnimation/>
+                  <SignalAnimation />
                   {footer.eyebrow}
                 </span>
               </div>
 
-              <p className=" leading-[1.2] text-cream max-w-[55ch] md:max-w-[40ch] ">
+              <p className=" leading-8 text-cream max-w-[5ch] md:max-w-[40ch] tracking-widest">
                 {footer.description}
               </p>
             </div>
 
             <div>
               <h4 className="footer-headings">Practices</h4>
-              <ul className="flex flex-col gap-1.5 md:gap-2.5 p-0 m-0 list-none">
+              <ul className="flex flex-col gap-2.5 md:gap-3.5 p-0 m-0 list-none">
                 {allServices.map((service) => (
-                  <li key={service.id}>
+                  <li key={service.id} className="group">
                     <Link className="footer-links" href="/services">
-                      <span className="text-accent-deep">/ </span>
+                      <span className="text-red-500/40 group-hover:text-accent">/ </span>
                       {service.linkName}
                     </Link>
                   </li>
@@ -52,25 +51,22 @@ const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
 
             <div>
               <h4 className="footer-headings">Explore</h4>
-              <ul className="flex flex-col gap-1.5 md:gap-2.5 p-0 m-0 list-none ">
+              <ul className="flex flex-col gap-2.5 md:gap-3.5 p-0 m-0 list-none">
                 {navigation
                   .filter((navItem) => navItem.label !== "Index")
                   .map((navItem) => {
                     return (
-                      <li key={navItem.label}>
-                        <span className="text-accent-deep">/ </span>
+                      <li key={navItem.label} className="group">
+                        <span className="text-red-500/40 group-hover:text-accent">/ </span>
                         <Link className="footer-links" href={navItem.href}>
                           {navItem.label}
                         </Link>
                       </li>
                     );
                   })}
-                <li className="flex gap-1">
-                  <span className="text-accent-deep">/</span>
-                  <a
-                    className="footer-links"
-                    href={groupLink.href}
-                  >
+                <li className="flex gap-1 group">
+                  <span className="text-red-500/40 group-hover:text-accent">/</span>
+                  <a className="footer-links" href={groupLink.href}>
                     {groupLink.label}
                   </a>
                 </li>
@@ -80,19 +76,22 @@ const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
             <div className="col-span-2 md:col-span-1">
               <h4 className="footer-headings">Contact</h4>
 
-              <div className="space-y-1.5 md:space-y-2.5 font-mono text-[11px] tracking-[0.08em] uppercase">
+              <div className="flex flex-col gap-2.5 md:gap-3.5  list-none font-dmSans text-[14px] font-medium leading-[1.4] tracking-[-0.01em]">
                 <a
                   href={`mailto:${contact.email}`}
-                  className="footer-links block"
+                  className="text-cream transition-colors duration-200 hover:text-signal-red"
                 >
                   {contact.email}
                 </a>
 
-                <div className="text-cream-2">{contact.phone}</div>
+                <a
+                  href={`tel:${contact.phone.replace(/\s+/g, "")}`}
+                  className="text-cream-2 transition-colors duration-200 hover:text-signal-red"
+                >
+                  {contact.phone}
+                </a>
 
-                <div className="text-muted leading-relaxed">
-                  {contact.location}
-                </div>
+                <span className="text-muted">{contact.location}</span>
               </div>
             </div>
           </div>
