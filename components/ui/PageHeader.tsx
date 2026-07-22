@@ -20,7 +20,12 @@ const PageHeader = ({ eyebrow, title, children }: PageHeaderProps) => {
         <div className="eyebrow mb-9">{eyebrow}</div>
 
         <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-20 md:gap-10 items-end">
-          <h1 className="font-serif text-[clamp(56px,9vw,140px)]"> <RichTitle title={title}/></h1>
+          <h1
+            className="font-semibold uppercase tracking-tighter leading-[0.88] text-balance max-w-[14ch] text-[clamp(48px,7vw,112px)]"
+          >
+            {" "}
+            <RichTitle title={title} />
+          </h1>
           {children}
         </div>
       </div>

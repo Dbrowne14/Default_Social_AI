@@ -10,7 +10,7 @@ const CTA = ({
   return (
     <section className="">
       <div className="container-custom flex justify-between items-end flex-wrap gap-8">
-        <h2 className="font-serif max-w-[18ch]">
+        <h2 className="heading-editorial max-w-[24ch]">
           {primaryText}
           <br />
           {variant ? (
