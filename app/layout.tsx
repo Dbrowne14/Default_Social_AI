@@ -5,7 +5,7 @@ import Footer from "@/components/layout/footer/Footer";
 import LoaderStrip from "@/components/ui/LoaderStrip";
 import { getSiteSettings } from "@/lib/content/site";
 import { navigationItems } from "@/lib/navigation";
-import { serif, sans, mono } from "@/lib/fonts";
+import { serif, sans, mono, poppins } from "@/lib/fonts";
 
 
 
@@ -43,7 +43,7 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sans.variable} ${mono.variable} ${serif.variable} h-full antialiased`}
+      className={`${sans.variable} ${mono.variable} ${serif.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <header>

@@ -36,7 +36,7 @@ const HeroMidContent = () => {
   return (
     <div className="flex-1 flex items-center justify-start relative mt-15">
       <h1
-        className="relative font-serif text-[clamp(48px,14vw,72px)] 720:text-[clamp(50px,11vw,150px)] leading-[0.88] tracking-[-0.03em] text-cream max-w-[14ch] m-0 mix-blend-difference"
+        className="relative font-serif  text-[clamp(48px,14vw,72px)] 720:text-[clamp(50px,11vw,150px)] leading-[0.88] tracking-[-0.03em] text-cream max-w-[14ch] m-0 mix-blend-difference"
         id="headline"
       >
         {mainHeading.map((item, index) => {

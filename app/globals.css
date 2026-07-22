@@ -10,7 +10,7 @@
   --cream-2: oklch(100% 0.00011 271.152); /* ink-2 — secondary text */
   --muted: rgb(149, 148, 148); /* warm grey — labels */
   /* Accents */
-  --accent: #ff3b3b;; /* tomato — primary action */
+  --accent: #ff3b3b; /* tomato — primary action */
   --accent-deep: oklch(0.54 0.18 28); /* tomato pressed */
   --accent-2: oklch(0.5 0.1 220); /* petrol blue — secondary signal */
   --accent-3: oklch(0.62 0.2 145); /* minty green — tertiary signal */
@@ -24,6 +24,7 @@
   --serif: "Instrument Serif", "Times New Roman", serif;
   --sans: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
+  --poppins: "Poppins", serif;
 
   --shadow-1: 0 1px 0 0 oklch(1 1 1 / 0.6) inset, 0 0 0 1px oklch(0 0 0 / 0.03);
   --radius: 14px;
@@ -84,7 +85,7 @@
   --font-serif: var(--serif);
   --font-sans: var(--sans);
   --font-mono: var(--mono);
-
+  --font-poppins: var(--poppins);
   --breakpoint-xs: 480px;
   --breakpoint-xs520: 520px;
   --breakpoint-620: 620px;
@@ -270,7 +271,7 @@
     box-shadow: 0 0 8px color-mix(in oklch, var(--accent-2) 55%, transparent);
   }
 
-  .dot-green{
+  .dot-green {
     @apply relative -top-px size-1.25 shrink-0 rounded-full bg-signal-green;
     box-shadow: 0 0 8px color-mix(in oklch, var(--accent-2) 55%, transparent);
   }
