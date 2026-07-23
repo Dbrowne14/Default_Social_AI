@@ -11,17 +11,17 @@ const ServicesDetailed = ({ services }: ServicesProps) => {
           service;
         return (
           <div className="container-custom" key={service.id}>
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-7 md:gap-20 items-end mb-14">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-7 md:gap-16 items-end mb-14">
               <div>
-                <div className="font-serif text-[clamp(80px,12vw,180px)] leading-[0.85] text-accent tracking-[-0.04em]">
+                <div className="text-[clamp(60px,12vw,132px)] leading-[0.85] text-accent tracking-[-0.04em]">
                   {id}
                 </div>
                 <div className="eyebrow mt-4.5 ">Practice</div>
-                <h2 className="font-serif mt-2.5 text-[clamp(40px,6vw,84px)]">
+                <h2 className="mt-2.5 text-[clamp(35px,6vw,70px)]">
                   {category}
                 </h2>
               </div>
-              <p className="text-cream-2 text-[clamp(14px,1.2vw,17px)] leading-[1.55] max-w-[52ch] mt-5">
+              <p className="text-cream-2 text-[clamp(14px,1.2vw,17px)] leading-[1.55] max-w-[46ch] mt-5">
                 {blurb}
               </p>
             </div>

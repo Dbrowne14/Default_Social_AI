@@ -10,7 +10,7 @@ const ServiceOffers = ({
         ✓
       </span>
       <div>
-        <h4 >{title}</h4>
+        <h4 className="heading-display font-medium text-accent-deep" >{title}</h4>
         <p className="text-[clamp(12px,1.2vw,17px)]" >
           {description}
         </p>

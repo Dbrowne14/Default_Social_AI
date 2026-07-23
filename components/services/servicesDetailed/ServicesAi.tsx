@@ -11,7 +11,7 @@ const ServicesAi = ({ title, description }: ServiceOffer) => {
         </div>
 
         <div className="flex flex-col justify-center">
-          <div className="font-mono text-[10px] md:text-[11px] tracking-[0.12em] uppercase text-accent mb-1.5">
+          <div className="text-[10px] md:text-[11px] tracking-[0.16em] uppercase text-accent mb-1.5">
             AI Integration
           </div>
 
