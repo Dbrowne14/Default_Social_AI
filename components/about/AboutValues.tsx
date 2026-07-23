@@ -13,14 +13,14 @@ const AboutValues = ({ values }: AboutValuesProps) => {
         <div className="eyebrow mb-6">{eyebrow}</div>
 
         <div className="max-w-[clamp(55ch,65vw,80ch)]">
-          <p className="font-serif text-[clamp(28px,4vw,54px)] leading-[1.08] tracking-[-0.02em] text-cream m-0">
+          <p className="heading-display text-[clamp(20px,4vw,40px)] leading-[1.08] tracking-[-0.02em] text-cream m-0">
             <RichTitle title={statement} />
           </p>
         </div>
 
         <div className="mt-[clamp(32px,5vw,64px)] grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-16 pt-8 md:pt-10">
           <div className="text-cream-2 leading-[1.62] text-[clamp(15px,1.4vw,16px)] space-y-4">
-            <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted max-w-[82ch]">
+            <div className=" text-[11px] tracking-[0.14em] uppercase text-muted max-w-[82ch]">
               {intro}
             </div>
             {body.map((para, key) => {
@@ -28,7 +28,7 @@ const AboutValues = ({ values }: AboutValuesProps) => {
             })}
           </div>
           <div className="relative border-y border-line py-6 md:py-8">
-            <span className="block font-mono text-[10px] tracking-[0.16em] uppercase text-muted mb-4">
+            <span className="block text-[10px] tracking-[0.16em] uppercase text-muted mb-4">
               {callout.eyebrow}
             </span>
 

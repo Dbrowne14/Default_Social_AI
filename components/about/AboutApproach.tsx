@@ -41,11 +41,11 @@ export const AboutApproach = ({ approach }: AboutApproachProps) => {
                 className="border-t border-line py-6 md:py-8 flex flex-col gap-3 720:grid 720:grid-cols-[56px_0.8fr_1.5fr] 720:gap-8 720:items-start"
               >
                 <div className="flex items-baseline gap-3 720:contents">
-                  <span className="font-mono text-[11px] text-accent-deep tracking-[0.12em] uppercase 720:pt-1.5">
+                  <span className="font-dmSans font-medium tracking-[0.18em] text-[13px] text-accent-deep uppercase 720:pt-1.5">
                     {approach.id}
                   </span>
 
-                  <h3 className="font-serif text-[clamp(24px,6vw,32px)] leading-[1.1]">
+                  <h3 className="heading-display text-accent-deep text-[clamp(20px,6vw,24px)] leading-[1.1]">
                     {approach.title}
                   </h3>
                 </div>

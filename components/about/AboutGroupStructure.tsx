@@ -27,11 +27,11 @@ const AboutGroupStructure = ({ groupStructure }: AboutGroupStructureProps) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-12 relative">
           {parent && (
             <div className="border rounded-(--radius-brand) p-6 md:p-7 bg-ink flex flex-col gap-3 relative col-span-full md:items-center md:text-center bg-[linear-gradient(180deg,color-mix(in_oklch,var(--accent)_6%,var(--ink-2)),var(--ink))] border-[color-mix(in_oklch,var(--accent)_35%,var(--line))]">
-              <span className="font-mono text-[10px] md:text-[11px] tracking-[0.12em] uppercase text-muted">
+              <span className="text-[10px] md:text-[11px] tracking-[0.12em] uppercase text-muted">
                 {parent.label}
               </span>
 
-              <h3 className="text-[clamp(24px,5vw,28px)] font-serif">
+              <h3 className="text-[clamp(20px,5vw,28px)] tracking-[-0.02em] heading-display">
                 {parent.name}
               </h3>
 
@@ -62,19 +62,19 @@ const AboutGroupStructure = ({ groupStructure }: AboutGroupStructureProps) => {
               >
                 <div className="flex items-center justify-between gap-4">
                   <span
-                    className={`font-mono text-[10px] md:text-[11px] tracking-[0.12em] uppercase ${
+                    className={`text-[10px] md:text-[11px] tracking-[0.12em] uppercase ${
                       sibling.type === "self" ? "text-accent" : "text-muted"
                     }`}
                   >
                     {sibling.label}
                   </span>
 
-                  <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted md:hidden">
+                  <span className="text-[10px] tracking-[0.12em] uppercase text-muted md:hidden">
                     0{key + 1}
                   </span>
                 </div>
 
-                <h3 className="text-[clamp(24px,5vw,28px)] font-serif">
+                <h3 className="text-[clamp(24px,5vw,28px)] tracking-[-0.02em] heading-display">
                   {sibling.name}
                 </h3>
 

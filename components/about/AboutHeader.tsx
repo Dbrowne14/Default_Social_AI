@@ -13,7 +13,7 @@ const AboutHeader = ({ aboutHeader }: AboutHeaderProps) => {
       {" "}
       <div>
         <p className="lede hidden xl:block">{lede}</p>
-        <div className="flex flex-col gap-3 font-mono text-[11px] tracking-[0.08em] uppercase mt-10">
+        <div className="flex flex-col gap-3 text-[11px] tracking-[0.08em] uppercase mt-10">
           {companyInfo.map((info, key) => {
             return (
               <div
