@@ -12,10 +12,7 @@ const ServicesProcessStrip = ({
           {id}
         </span>
         <span className="text-accent-deep ">/</span>
-        <h5 className="font-dmSans
-font-medium
-uppercase
-tracking-[0.12em] text-[15px] m-0 ">{title}</h5>
+        <h5 className="font-dmSans font-medium uppercase tracking-[0.12em] text-[15px] m-0 ">{title}</h5>
       </div>
 
       <p className="text-cream-2 text-[13px] leading-normal m-0">
