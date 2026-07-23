@@ -25,7 +25,7 @@ const InsightsBlogPosts = ({ isActive, insights }: InsightBlogPostsProps) => {
       <div className="container-custom">
         <div className="section-headings mb-6">
           <div className="section-title">
-            <div className="eyebrow">Library · 36 essays</div>
+            <div className="eyebrow">Library · {insights.length-1} essays</div>
             <h2>Recent reading.</h2>
           </div>
           <p className="meta">
