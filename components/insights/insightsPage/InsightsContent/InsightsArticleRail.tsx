@@ -43,7 +43,7 @@ const InsightsArticleRail = ({
         <nav className="toc" aria-label="On this page">
           <div className="flex gap-4 items-baseline">
             <span className="w-1.5 h-1.5 rounded-[50%] bg-accent-2 [box-shadow:0_0_10px_color-mix(in_oklch,var(--accent-2)_50%,transparent)]"></span>
-            <div className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted flex items-center gap-2 mb-4">
+            <div className="text-[10px] tracking-[0.14em] uppercase text-muted flex items-center gap-2 mb-4">
               On this page
             </div>
           </div>
@@ -64,7 +64,7 @@ const InsightsArticleRail = ({
                     }`}
                   >
                     <span
-                      className={`flex size-6 items-center justify-center rounded-full font-mono text-[10px] tracking-[0.06em] transition-colors duration-150
+                      className={`flex size-6 items-center justify-center rounded-full text-[10px] tracking-[0.06em] transition-colors duration-150
                             ${
                               selectedTitle
                                 ? "bg-accent-2 text-ink [box-shadow:0_0_10px_color-mix(in_oklch,var(--accent-2)_50%,transparent)]"
@@ -76,7 +76,7 @@ const InsightsArticleRail = ({
 
                     <span className="flex items-center gap-3 min-w-0">
                       <span
-                        className={`truncate font-mono text-[11px] tracking-[0.12em] uppercase ${
+                        className={`truncate text-[11px] tracking-[0.12em] uppercase ${
                           selectedTitle
                             ? "text-accent-2"
                             : "text-muted group-hover:text-cream-2"

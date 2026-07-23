@@ -47,11 +47,11 @@ const InsightsArticleProse = ({
                   {paragraph.kicker === "Conclusion" ? (
                     <span className="block w-3.5 h-3.5 rounded-[50%] bg-accent-2 [box-shadow:0_0_14px_color-mix(in_oklch,var(--accent-2)_55%,transparent)]"></span>
                   ) : (
-                    <span className="font-serif text-[clamp(40px,4.6vw,56px)] leading-[0.8] text-accent tracking-[-0.02em] shrink-0">
+                    <span className="heading-display text-[clamp(40px,4.6vw,56px)] leading-[0.8] text-accent tracking-[-0.02em] shrink-0">
                       {paragraph.number}
                     </span>
                   )}
-                  <span className="font-mono text-[12px] tracking-[0.18em] uppercase text-muted shrink-0">
+                  <span className="text-[12px] tracking-[0.18em] uppercase text-muted shrink-0">
                     {paragraph.kicker}
                   </span>
                   <span className="flex-1 h-px [background:linear-gradient(90deg,var(--line),color-mix(in_oklch,var(--line)_30%,transparent))]"></span>
