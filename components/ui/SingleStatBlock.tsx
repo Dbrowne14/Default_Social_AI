@@ -10,7 +10,7 @@ const SingleStatBlock = ({
       <span className="font-sans font-semibold text-[15px] text-cream">
         {statsHeader}
       </span>
-      <span className="font-mono text-[10px] tracking-widest uppercase text-muted">
+      <span className="text-[10px] tracking-widest uppercase text-muted">
         {stat}
       </span>
     </div>

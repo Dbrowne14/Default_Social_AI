@@ -13,8 +13,8 @@ const MobileMenu = ({ menuOpen, toggleMenu }: MobileMenuProps) => {
           flex flex-col justify-center items-center
           min-h-screen
           p-[80px_20px_28px]
-          bg-color-faded
-          font-mono text-[20px] tracking-[0.08em] uppercase
+          bg-ink
+          text-[20px] tracking-[0.08em] uppercase
           transition-transform duration-500 ease-in-out
           will-change-transform
           ${menuOpen ? "translate-y-0" : "-translate-y-full"}
