@@ -13,6 +13,7 @@ export const insightsQuery = `
 
     author->{
         name,
+        "slug": slug.current,
         initials,
         role,
         keyPerson

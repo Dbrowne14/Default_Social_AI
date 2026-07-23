@@ -1,16 +1,13 @@
 import type { Person } from "@/types/collections/person";
+import Portrait from "./Portrait";
 
-const TeamBio = ({ initials, name, role }: Person) => {
+const TeamBio = ({ initials, name, role, photo }: Person) => {
   return (
     <div className="flex flex-col gap-3">
-      <div className="relative flex aspect-4/5 items-center justify-center overflow-hidden rounded-xl border border-line bg-[repeating-linear-gradient(135deg,var(--ink-2)_0_14px,var(--ink-3)_14px_28px)]">
-        <span className="font-serif text-[72px] leading-none tracking-[-0.03em] text-cream-2 opacity-40">
-          {initials}
-        </span>
-      </div>
+      <Portrait initials={initials} alt={name} photo={photo} size="grid" />
 
       <div className="flex flex-col gap-1.5">
-        <span className="font-serif text-[24px] leading-[1.05] tracking-[-0.02em] text-cream">
+        <span className="heading-display text-[20px] leading-[1.05] tracking-[-0.02em] text-cream">
           {name}
         </span>
 

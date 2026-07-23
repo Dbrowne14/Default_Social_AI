@@ -2,6 +2,7 @@ import TeamBio from "@/components/ui/TeamBio";
 import RichTitle from "../ui/RichTitle";
 import type { AboutOverviewSection } from "@/types/pages/homePage";
 import type { Person } from "@/types/collections/person";
+import Link from "next/link";
 
 type AboutOverviewProps = {
   section: AboutOverviewSection;
@@ -40,13 +41,19 @@ const AboutOverview = async ({ section, featuredPeople }: AboutOverviewProps) =>
           {" "}
           {featuredPeople.map((person) => {
             return (
-              <div key={person.name} className="min-w-60 md:min-w-0">
+              <Link
+                key={person.slug}
+                href={`/about/${person.slug}`}
+                className="min-w-60 md:min-w-0"
+              >
                 <TeamBio
+                  slug={person.slug}
                   initials={person.initials}
                   name={person.name}
                   role={person.role}
+                  photo={person.photo}
                 />
-              </div>
+              </Link>
             );
           })}
         </div>

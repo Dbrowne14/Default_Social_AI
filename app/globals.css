@@ -87,7 +87,8 @@
   --font-sans: var(--sans);
   --font-mono: var(--mono);
   --font-poppins: var(--poppins);
-  --font-dmSans: var(--dmSans) --breakpoint-xs: 480px;
+  --font-dmSans: var(--dmSans);
+  --breakpoint-xs: 480px;
   --breakpoint-xs520: 520px;
   --breakpoint-620: 620px;
   --breakpoint-720: 720px;

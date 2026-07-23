@@ -2,6 +2,7 @@ import TeamBio from "../ui/TeamBio";
 import type { Person } from "@/types/collections/person";
 import type { SectionIntro } from "@/types/shared";
 import RichTitle from "../ui/RichTitle";
+import Link from "next/link";
 
 type AboutTeamProps = {
   people: Person[];
@@ -28,13 +29,19 @@ const AboutTeam = ({ people, aboutHeader }: AboutTeamProps) => {
 
         <div className="flex gap-4 overflow-x-auto pb-2 md:grid md:overflow-visible md:grid-cols-4">
           {people.map((person) => (
-            <div key={person.initials} className="shrink-0 w-50 md:w-auto">
+            <Link
+              key={person.slug}
+              href={`/about/${person.slug}`}
+              className="shrink-0 w-50 md:w-auto"
+            >
               <TeamBio
+                slug={person.slug}
                 initials={person.initials}
                 name={person.name}
                 role={person.role}
+                photo={person.photo}
               />
-            </div>
+            </Link>
           ))}
         </div>
       </div>
