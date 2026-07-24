@@ -1,8 +1,7 @@
 import type { Person } from "@/types/collections/person";
-import { dummyPerson } from "@/data/dummyTeamData";
 
 const TeamMemberBio = ({ person }: { person: Person }) => {
-  const { bioParagraphs, expertise } = dummyPerson;
+  const { bioParagraphs, expertise } = person;
 
   if (!bioParagraphs?.length && !expertise?.length) {
     return null;
@@ -12,7 +11,7 @@ const TeamMemberBio = ({ person }: { person: Person }) => {
     <section data-screen-label="Team member bio">
       <div className="container-custom py-0">
         
-        <div className="max-w-[900px] space-y-10">
+        <div className="max-w-225 space-y-10">
           
           <div className="eyebrow mb-8">Profile</div>
 

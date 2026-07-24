@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Person } from "@/types/collections/person";
-import { dummyPerson } from "@/data/dummyTeamData";
 
 const TeamMemberNav = ({
   people,

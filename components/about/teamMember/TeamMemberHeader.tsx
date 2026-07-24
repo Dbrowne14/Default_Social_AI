@@ -4,8 +4,6 @@ import type { Person } from "@/types/collections/person";
 import { dummyPerson } from "@/data/dummyTeamData";
 
 const TeamMemberHeader = ({ person }: { person: Person }) => {
-  const {} = person;
-
   const {
     name,
     role,
@@ -17,7 +15,7 @@ const TeamMemberHeader = ({ person }: { person: Person }) => {
     discipline,
     joinedYear,
     location,
-  } = dummyPerson;
+  } = person;
 
   const facts = [
     { label: "Discipline", value: discipline },
