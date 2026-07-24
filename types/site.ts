@@ -4,7 +4,6 @@ import type { LinkItem } from "./shared";
 
 export type ContactDetails = {
   email: string;
-  phone: string;
   location: string;
 };
 

@@ -83,14 +83,6 @@ const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
                 >
                   {contact.email}
                 </a>
-
-                <a
-                  href={`tel:${contact.phone.replace(/\s+/g, "")}`}
-                  className="text-cream-2 transition-colors duration-200 hover:text-signal-red"
-                >
-                  {contact.phone}
-                </a>
-
                 <span className="text-muted">{contact.location}</span>
               </div>
             </div>

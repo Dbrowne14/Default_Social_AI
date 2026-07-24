@@ -56,7 +56,7 @@ export default function ContactForm({
 }: ContactFormProps) {
   const { eyebrow, title, meta } = section;
   const { contact, groupLink } = siteSettings;
-  const { email, phone, location } = contact;
+  const { email, location } = contact;
 
   const [state, formAction, pending] = useActionState(
     submitContactForm,
@@ -87,8 +87,6 @@ export default function ContactForm({
                 {email}
               </a>
             </InfoRow>
-
-            <InfoRow label="Phone">{phone}</InfoRow>
             <InfoRow label="Part of">{groupLink.label}</InfoRow>
           </div>
         </div>

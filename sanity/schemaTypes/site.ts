@@ -95,12 +95,6 @@ export const contactDetails = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "phone",
-      title: "Phone",
-      type: "string",
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
       name: "location",
       title: "Location",
       type: "string",
