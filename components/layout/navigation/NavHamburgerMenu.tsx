@@ -13,9 +13,9 @@ const NavHamburgerMenu = ({ navigation }: { navigation: LinkItem[] }) => {
   };
 
   return (
-    <div className="flex justify-between gap-30">
+    <div className="flex justify-between gap-10 xl:gap-30">
       <div
-        className={`hidden 720:flex gap-7 items-center font-dmSans text-[14px] tracking-widest uppercase text-cream-2 relative transition-all duration-500
+        className={`hidden 720:flex gap-3 xl:gap-7 items-center font-dmSans text-[14px] tracking-widest uppercase text-cream-2 relative transition-all duration-500
         ${menuOpen ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"}`}
       >
         {navigation.map((page) => {
