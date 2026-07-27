@@ -26,7 +26,7 @@ const TeamMemberContact = ({ person }: { person: Person }) => {
           </div>
 
           <div className="flex items-center md:justify-end">
-            <Button text="Brief the studio" link="/contact" variant="ghost" arrowVariant="primaryBlack" />
+            <Button text="Brief the studio" link="/#contact" variant="ghost" arrowVariant="primaryBlack" />
           </div>
         </div>
       </div>
