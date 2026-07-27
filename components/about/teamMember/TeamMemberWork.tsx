@@ -20,7 +20,7 @@ const TeamMemberInsights = ({ name, work }: TeamMemberInsightsProps) => {
           <div className="section-title">
             <div className="eyebrow">Selected thinking</div>
 
-            <h2 className="text-[clamp(30px,4.8vw,60px)] leading-[0.94] tracking-[-0.025em]">
+            <h2 className="text-[clamp(30px,4.8vw,60px)] leading-[0.94] tracking-tight">
               Ideas from
               <br />
               the practice.
@@ -41,7 +41,7 @@ const TeamMemberInsights = ({ name, work }: TeamMemberInsightsProps) => {
               aria-label={`Read ${article.title}`}
               className="group grid grid-cols-[40px_1fr] items-center gap-x-5 gap-y-3 border-t border-line py-8 transition-[padding] duration-200 ease-in-out last:border-b hover:pl-3 motion-reduce:transition-none md:grid-cols-[56px_1.4fr_1fr_auto] md:py-6"
             >
-              <span className="text-[11px] tracking-[0.1em] text-muted">
+              <span className="text-[11px] tracking-widest text-muted">
                 {String(index + 1).padStart(2, "0")}
               </span>
 

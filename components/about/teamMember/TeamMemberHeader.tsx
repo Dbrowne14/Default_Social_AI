@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Portrait from "@/components/ui/Portrait";
 import type { Person } from "@/types/collections/person";
-import { dummyPerson } from "@/data/dummyTeamData";
 
 const TeamMemberHeader = ({ person }: { person: Person }) => {
   const {
@@ -59,7 +58,7 @@ const TeamMemberHeader = ({ person }: { person: Person }) => {
             {lede && <p className="lede mt-7 max-w-[48ch]">{lede}</p>}
           </div>
 
-          <div className="ml-auto w-full max-w-[460px]">
+          <div className="ml-auto w-full max-w-115">
             <Portrait
               initials={initials}
               alt={name}
