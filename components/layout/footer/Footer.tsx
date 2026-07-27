@@ -40,7 +40,7 @@ const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
               <ul className="flex flex-col gap-2.5 md:gap-3.5 p-0 m-0 list-none">
                 {allServices.map((service) => (
                   <li key={service.id} className="group">
-                    <Link className="footer-links" href="/services">
+                    <Link className="footer-links" href={`/services#${service.linkName}`}>
                       <span className="text-red-500/40 group-hover:text-accent">/ </span>
                       {service.linkName}
                     </Link>
