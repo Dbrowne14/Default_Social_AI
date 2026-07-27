@@ -10,7 +10,7 @@ const ServicesDetailed = ({ services }: ServicesProps) => {
         const { id, category, blurb, offers, aiCallout, processSteps } =
           service;
         return (
-          <div className="container-custom" key={service.id}>
+          <div className="container-custom" key={service.id} id={service.linkName}>
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-7 md:gap-16 items-end mb-14">
               <div>
                 <div className="text-[clamp(60px,12vw,132px)] leading-[0.85] text-accent tracking-[-0.04em]">
