@@ -12,7 +12,7 @@ export type HomePage = {
 };
 
 export type HomeHero = {
-  footer_Text: string;
+  footerText: string;
   primaryCta?: LinkItem;
   secondaryCta?: LinkItem;
 };

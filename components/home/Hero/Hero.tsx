@@ -16,7 +16,7 @@ const Hero = ({ hero }: { hero: HomeHero }) => {
         <HeroAnimation />
         <HeroHeaderRibbon />
         <HeroMidContent />
-        <HeroFooter footerText={hero.footer_Text} />
+        <HeroFooter footerText={hero.footerText} />
       </div>
     </header>
   );
