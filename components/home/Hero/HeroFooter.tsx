@@ -1,23 +1,15 @@
 import Button from "@/components/ui/Button";
 
-type footerTextProps = {
-  footerText: string;
-};
-
-const HeroFooter = ({ footerText }: footerTextProps) => {
+const HeroFooter = () => {
   return (
-    <div className="grid 720:grid-cols-[1fr_auto] items-end gap-8 mt-12 opacity-0 animate-[fade-in_0.6s_2s_forwards] grid-cols-1 text-[10px] 720:text-[17px]">
-      <p
-        className="max-w-[46ch] xl:max-w-[70ch] text-[15px] sm:text-[16px] leading-[1.8] text-cream-2 mix-blend-difference font-light"
-      >
-        {footerText}
-      </p>
-      <div className="flex gap-3 flex-wrap">
+    <div className="mt-12 flex justify-start opacity-0 animate-[fade-in_0.6s_2s_forwards] 720:justify-end">
+      <div className="flex flex-wrap gap-3">
         <Button
           link="#contact"
           text="Get started"
           arrowVariant="primaryBlack"
         />
+
         <Button
           link="/services"
           text="Our Services"

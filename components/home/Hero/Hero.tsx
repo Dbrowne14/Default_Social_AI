@@ -2,9 +2,8 @@ import HeroHeaderRibbon from "./HeroHeaderRibbon";
 import HeroMidContent from "./HeroMidContent";
 import HeroFooter from "./HeroFooter";
 import HeroAnimation from "./HeroAnimation";
-import type { HomeHero } from "@/types/pages/homePage";
 
-const Hero = ({ hero }: { hero: HomeHero }) => {
+const Hero = () => {
   return (
     <header
       className="relative p-0 isolate overflow-hidden min-h-dvh md:min-h-screen"
@@ -16,7 +15,7 @@ const Hero = ({ hero }: { hero: HomeHero }) => {
         <HeroAnimation />
         <HeroHeaderRibbon />
         <HeroMidContent />
-        <HeroFooter footerText={hero.footerText} />
+        <HeroFooter />
       </div>
     </header>
   );
