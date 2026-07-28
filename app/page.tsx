@@ -21,7 +21,7 @@ export default async function Home() {
 
   return (
     <>
-      <Hero hero={homePage.hero} />
+      <Hero />
       <MarqueeTicker />
       <ValueProp valueProp={homePage.valueProp} />
       <ClientLogoTicker />
