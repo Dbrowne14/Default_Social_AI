@@ -1,9 +1,10 @@
 import { insightsQuery } from "@/sanity/queries/collections/insights";
 import { client } from "@/sanity/lib/client";
 import type { Insight } from "@/types/collections/insights";
+import { SANITY_FETCH_OPTIONS } from "@/sanity/lib/fetchOptions";
 
 export const getAllInsights = async (): Promise<Insight[]> => {
-  return await client.fetch(insightsQuery);
+  return await client.fetch(insightsQuery, {}, SANITY_FETCH_OPTIONS);
 };
 
 export const getFeaturedInsights = async () => {

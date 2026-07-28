@@ -1,6 +1,7 @@
 import { peopleQuery, personBySlugQuery } from "@/sanity/queries/collections/people";
 import { client } from "@/sanity/lib/client";
 import type { Person } from "@/types/collections/person";
+import { SANITY_FETCH_OPTIONS } from "@/sanity/lib/fetchOptions";
 
 export const getKeyPeople = async () => {
   const team = await getAllPeople();
@@ -8,9 +9,9 @@ export const getKeyPeople = async () => {
 };
 
 export const getAllPeople = async (): Promise<Person[]>  => {
-  return await client.fetch(peopleQuery);
+  return await client.fetch(peopleQuery, {}, SANITY_FETCH_OPTIONS);
 };
 
 export const getPersonBySlug = async (slug: string): Promise<Person | null> => {
-  return await client.fetch(personBySlugQuery, { slug });
+  return await client.fetch(personBySlugQuery, { slug }, SANITY_FETCH_OPTIONS);
 };

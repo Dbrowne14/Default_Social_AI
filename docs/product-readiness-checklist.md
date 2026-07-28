@@ -10,13 +10,13 @@
 
 ## Checklist
 
-- [ ] Identify missing content
-- [ ] Confirm documents are published (not drafts)
-- [ ] Verify GROQ queries return all expected fields
-- [ ] Check mapping functions / data layer
-- [ ] Verify components render all returned data
+- [x] Identify missing content
+- [x] Confirm documents are published (not drafts)
+- [x] Verify GROQ queries return all expected fields
+- [x] Check mapping functions / data layer
+- [x] Verify components render all returned data
 - [ ] Investigate Next.js caching / revalidation
-- [ ] Confirm Vercel production reflects latest content
+- [x] Confirm Vercel production reflects latest content
 - [ ] Test Studio → Website publishing workflow
 
 ---
@@ -31,11 +31,11 @@
 
 ## Contact
 
-- [ ] Remove phone number entirely
-- [ ] Remove phone field from Sanity schema
-- [ ] Remove phone from GROQ queries
-- [ ] Remove phone from TypeScript types
-- [ ] Remove phone UI/components
+- [x] Remove phone number entirely
+- [x] Remove phone field from Sanity schema
+- [x] Remove phone from GROQ queries
+- [x] Remove phone from TypeScript types
+- [x] Remove phone UI/components
 
 ## Visual Review
 

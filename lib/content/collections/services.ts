@@ -2,11 +2,11 @@ import { broaderServices } from "@/lib/broaderServices";
 import { servicesQuery } from "@/sanity/queries/collections/services";
 import { client } from "@/sanity/lib/client";
 import type { Service } from "@/types/collections/services";
-
+import { SANITY_FETCH_OPTIONS } from "@/sanity/lib/fetchOptions";
 
 
 export const getAllServices = async (): Promise<Service[]> => {
-  return client.fetch(servicesQuery);
+  return client.fetch(servicesQuery, {}, SANITY_FETCH_OPTIONS);
 };
 export const getServiceTickerItems = async () => {
   const services = await getAllServices();
