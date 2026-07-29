@@ -11,7 +11,7 @@ const MobileMenu = ({ menuOpen, toggleMenu }: MobileMenuProps) => {
       className={`
           fixed top-0 left-0 right-0 z-55 720:hidden
           flex flex-col justify-center items-center
-          min-h-screen
+          min-h-dvh
           p-[80px_20px_28px]
           bg-ink
           text-[20px] tracking-[0.08em] uppercase
