@@ -53,32 +53,37 @@
 
 Test every page at:
 
-- [ ] 375px
-- [ ] 430px
-- [ ] 768px
-- [ ] 1024px
-- [ ] 1440px+
+- [x] 375px
+- [x] 430px
+- [x] 768px
+- [x] 1024px
+- [x] 1440px+
 
 ## Pages
 
-- [ ] Home
-- [ ] Services
-- [ ] About
-- [ ] Team
-- [ ] Team biography
-- [ ] Insights
-- [ ] Insight article
-- [ ] Contact
+- [x] Home
+- [x] Services
+- [x] About
+- [x] Team
+- [x] Team biography
+- [x] Insights
+- [x] Insight article
+- [x] Contact
 
 ## Check for
 
-- [ ] Overflow
-- [ ] Wrapping issues
-- [ ] Image cropping
-- [ ] Hero layouts
-- [ ] Navigation
-- [ ] Footer
-- [ ] Forms
+- [x] Overflow
+- [x] Wrapping issues
+- [x] Image cropping
+- [x] Hero layouts
+- [x] Navigation
+- [x] Footer
+- [x] Forms
+
+UI work to redo:
+
+- [ ] Page heading sizing 
+- [ ] Focus on mobile of services buckets home page - activate on scroll
 
 ---
 
