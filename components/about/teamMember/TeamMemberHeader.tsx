@@ -58,7 +58,7 @@ const TeamMemberHeader = ({ person }: { person: Person }) => {
             {lede && <p className="lede mt-7 max-w-[48ch]">{lede}</p>}
           </div>
 
-          <div className="ml-auto w-full max-w-115">
+          <div className="mx-0 md:ml-auto  w-full max-w-115">
             <Portrait
               initials={initials}
               alt={name}

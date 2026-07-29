@@ -34,29 +34,40 @@ const TeamMemberInsights = ({ name, work }: TeamMemberInsightsProps) => {
         </div>
 
         <div className="flex flex-col">
-          {work?.map((article, index) => (
+          {work?.slice(0, 5).map((article, index) => (
             <Link
               key={article.slug}
               href={`/insights/${article.slug}`}
               aria-label={`Read ${article.title}`}
-              className="group grid grid-cols-[40px_1fr] items-center gap-x-5 gap-y-3 border-t border-line py-8 transition-[padding] duration-200 ease-in-out last:border-b hover:pl-3 motion-reduce:transition-none md:grid-cols-[56px_1.4fr_1fr_auto] md:py-6"
+              className="
+    group grid grid-cols-[24px_1fr_auto]
+    gap-x-4 gap-y-2 border-t border-line py-7
+    last:border-b
+    md:grid-cols-[56px_1.4fr_1fr_auto]
+    md:items-center md:gap-x-5 md:py-6
+    md:hover:pl-3
+  "
             >
-              <span className="text-[11px] tracking-widest text-muted">
+              <span className="col-start-1 row-start-1 pt-1 text-[10px] tracking-widest text-muted md:row-span-1 md:pt-0">
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <span className="col-span-1 font-serif text-[clamp(22px,2.2vw,29px)] leading-[1.05]">
+              <span className="col-start-2 row-start-1 font-serif text-[clamp(21px,6vw,26px)] leading-[1.05] md:row-span-1 md:text-[clamp(22px,2.2vw,29px)]">
                 {article.title}
               </span>
 
-              <span className="col-start-2 text-[11px] uppercase tracking-[0.08em] text-cream-2 md:col-start-3">
+              <span className="col-start-2 row-start-2 text-[10px] uppercase tracking-[0.08em] text-muted md:col-start-3 md:row-span-1 md:text-cream-2">
                 {article.tag} · {article.date}
               </span>
 
-              <span className="col-start-2 flex justify-self-start md:col-start-4 md:justify-self-end">
+              <span className="col-start-3 row-start-1 row-span-2 self-start justify-self-end md:col-start-4 md:row-span-1 md:self-center">
                 <span
                   aria-hidden="true"
-                  className="flex size-8.5 items-center justify-center rounded-full border border-line text-[13px] text-cream-2 transition-[transform,background,color,border-color] duration-200 ease-in-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:border-accent group-hover:bg-accent group-hover:text-on-accent motion-reduce:transform-none motion-reduce:transition-none"
+                  className="flex size-8.5 items-center justify-center rounded-full border border-line text-[13px] text-cream-2 transition-[transform,background,color,border-color] duration-200 ease-in-out
+                  group-hover:-translate-y-0.5 group-hover:translate-x-0.5
+                  group-hover:border-accent group-hover:bg-accent
+                  group-hover:text-on-accent
+                  "
                 >
                   →
                 </span>
