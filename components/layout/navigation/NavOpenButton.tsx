@@ -27,19 +27,20 @@ border border-line
         <span
           key={i}
           className={`
-      block h-px w-full  bg-cream
-      origin-center
-      transition-all duration-300 ease-out
-      ${
-        menuOpen
-          ? i === 0
-            ? "translate-y-1.5 rotate-45"
-            : i === 1
-              ? "opacity-0"
-              : "-translate-y-1.5 -rotate-45"
-          : ""
-      }
-    `}
+          block h-[2px] w-full bg-cream
+          origin-center
+          rounded-none
+          transition-all duration-300 ease-out
+          ${
+            menuOpen
+              ? i === 0
+                ? "translate-y-1.5 rotate-45"
+                : i === 1
+                  ? "scale-x-0 opacity-0"
+                  : "-translate-y-1.5 -rotate-45"
+              : ""
+          }
+        `}
         />
       ))}
     </button>
