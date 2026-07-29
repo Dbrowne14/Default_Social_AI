@@ -23,19 +23,19 @@ const InsightsArticleHeader = ({ article }: InsightArticleProps) => {
     >
       <div className="container-thin">
         <nav
-          className="flex items-center gap 2.5 text-[9px] tracking-[0.2em] uppercase text-muted mt-4 mb-8 flex-wrap md:no-wrap md:mb-20"
+          className="flex items-center gap 2.5 text-[clamp(7px,1vw,10px)] tracking-[0.2em] uppercase text-muted mt-4 mb-8 flex-wrap md:no-wrap md:mb-20"
           aria-label="Breadcrumb"
         >
           <Link
             href="/insights"
             className="text-muted transition-colors duration-150 ease-in-out hover:text-accent"
           >
-            {slug}
+            Insights
           </Link>
-          <span className=" text-accent-deep">{" "}/{" "}</span>
+          <span className=" text-accent-deep"> / </span>
           <Link
             href="/insights"
-            className="text-muted transition-colors duration-150 ease-in-out hover:text-accent"
+            className="text-muted transition-colors duration-150 ease-in-out hover:text-accent "
           >
             {tag}
           </Link>
@@ -57,24 +57,26 @@ const InsightsArticleHeader = ({ article }: InsightArticleProps) => {
           </p>
         </div>
 
-        <div className="flex items-center gap-y-4.5 gap-x-7 md:gap-7 flex-wrap mt-8 md:mt-11 py-6 border-y border-line">
+        <div className="flex items-center justify-between gap-y-4.5 gap-x-7 md:gap-7 flex-wrap mt-8 md:mt-11 py-6 border-y border-line">
           <div className="flex items-center gap-3.5">
-            <div className="w-11.5 h-11.5 rounded-[50%] bg-accent text-on-accent heading-display tracking-tight font-light text-[22px] flex items-center justify-center shrink-0">
+            <div className="size-10 md:size-11.5 rounded-[50%] bg-accent text-on-accent heading-display tracking-tight font-light text-[22px] flex items-center justify-center shrink-0">
               {author.initials}
             </div>
             <div className="flex flex-col gap-0.75 ">
               <span className="font-sans font-semibold text-[15px] text-cream">
                 {author.name}
               </span>
-              <span className="text-[10px] tracking-widest uppercase text-muted">
+              <span className="text-[8px] md:text-[10px] tracking-widest uppercase text-muted">
                 {author.role}
               </span>
             </div>
           </div>
-          <SingleStatBlock statsHeader="Four Layers" stat="The pattern" />
-          <SingleStatBlock statsHeader="2,940 words" stat="Long-form" />
+          <div className="hidden md:flex  gap-4">
+            <SingleStatBlock statsHeader="Four Layers" stat="The pattern" />
+            <SingleStatBlock statsHeader="2,940 words" stat="Long-form" />
+          </div>
 
-          <div className="md:ml-auto flex gap-2 ml-0" aria-label="Share">
+          <div className="flex md:ml-auto gap-2 ml-0" aria-label="Share">
             <SocialsFrame link="" logo="in" />
             <SocialsFrame link="" logo="↗" />
           </div>

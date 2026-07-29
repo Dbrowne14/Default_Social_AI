@@ -33,7 +33,7 @@ const InsightsFeatured = ({featuredInsights}:FeaturedInsights) => {
               <span>{readTime}</span>
             </div>
 
-            <h2 className="heading-editorial text-[clamp(22px,8.5vw,56px)] leading-[1.02]">
+            <h2 className="font-serif font-normal tracking-[-0.02em] text-[clamp(26px,5vw,56px)] leading-[1.02]">
               {title}
             </h2>
 
