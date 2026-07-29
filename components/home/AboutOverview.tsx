@@ -22,7 +22,7 @@ const AboutOverview = async ({ section, featuredPeople }: AboutOverviewProps) =>
             </h2>
           </div>
           <p className="meta">
-            {meta}
+            {meta} {""}
             <a href="/about" className="text-accent hover:underline">
               More about the studio →
             </a>

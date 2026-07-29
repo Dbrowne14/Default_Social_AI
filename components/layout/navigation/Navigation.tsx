@@ -19,7 +19,7 @@ const Navigation = ({ navigation }: SiteChromeProps) => {
         >
           <Image
             alt="Default Social"
-            width={140}
+            width={200}
             height={40}
             priority
             src="/assets/branding/Default-Alt_DF SOCIAL-White.png"

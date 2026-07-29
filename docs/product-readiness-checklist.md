@@ -15,9 +15,9 @@
 - [x] Verify GROQ queries return all expected fields
 - [x] Check mapping functions / data layer
 - [x] Verify components render all returned data
-- [ ] Investigate Next.js caching / revalidation
+- [x] Investigate Next.js caching / revalidation
 - [x] Confirm Vercel production reflects latest content
-- [ ] Test Studio → Website publishing workflow
+- [x] Test Studio → Website publishing workflow
 
 ---
 
@@ -27,7 +27,7 @@
 
 ## Branding
 
-- [ ] Increase logo size to better match Default Media
+- [x] Increase logo size to better match Default Media
 
 ## Contact
 
@@ -39,13 +39,13 @@
 
 ## Visual Review
 
-- [ ] Final spacing pass
-- [ ] Typography consistency
-- [ ] Hover state review
-- [ ] Focus state review
-- [ ] Border consistency
-- [ ] Motion/animation consistency
-- [ ] Team page polish
+- [x] Final spacing pass
+- [x] Typography consistency
+- [x] Hover state review
+- [x] Focus state review
+- [x] Border consistency
+- [x] Motion/animation consistency
+- [x] Team page polish
 
 ---
 
