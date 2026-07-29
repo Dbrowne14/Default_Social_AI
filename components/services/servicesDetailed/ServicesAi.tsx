@@ -2,7 +2,7 @@ import type { ServiceOffer } from "@/types/collections/services";
 
 const ServicesAi = ({ title, description }: ServiceOffer) => {
   return (
-    <div className="mt-8 p-5 md:p-6 rounded-xl border [background:color-mix(in_oklch,var(--accent)_8%,var(--ink-2))] border-[color-mix(in_oklch,var(--accent)_30%,var(--line))]">
+    <div className="mt-8 p-4 md:p-5 rounded-xl border [background:color-mix(in_oklch,var(--accent)_8%,var(--ink-2))] border-[color-mix(in_oklch,var(--accent)_30%,var(--line))]">
       <div className="grid grid-cols-[48px_1fr] md:grid-cols-[56px_1fr] gap-4.5 items-stretch">
         <div className="flex items-center justify-center">
           <div className="w-12 h-12 md:min-h-14 md:w-14 rounded-full bg-accent text-ink flex items-center justify-center font-serif text-[26px] md:text-[28px]">
