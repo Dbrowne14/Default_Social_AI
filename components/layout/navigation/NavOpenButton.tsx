@@ -27,7 +27,7 @@ border border-line
         <span
           key={i}
           className={`
-      block h-px w-full rounded-xs bg-cream
+      block h-px w-full  bg-cream
       origin-center
       transition-all duration-300 ease-out
       ${

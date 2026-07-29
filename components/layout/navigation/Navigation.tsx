@@ -1,4 +1,3 @@
-import NavLink from "../../ui/Navlink";
 import NavHamburgerMenu from "./NavHamburgerMenu";
 import Link from "next/link";
 import Image from "next/image";
