@@ -5,42 +5,51 @@ const NavOpenButton = ({ menuOpen, toggleMenu }: MobileMenuProps) => {
   return (
     <button
       id="navBurger"
-      className={`
-  inline-flex flex-col justify-center gap-1.25
-  w-10 h-10 px-2.25
-z-60
-  rounded-lg
-  cursor-pointer
-  shadow-[0_12px_30px_rgba(0,0,0,0.35)]
-  transition-all duration-200
-  hover:-translate-y-px
-border border-line
-  ${menuOpen ? "scale-95" : "scale-100"}
-`}
+      type="button"
       aria-label={menuOpen ? "Close menu" : "Open menu"}
       aria-expanded={menuOpen}
       aria-controls="mobile-navigation"
       onClick={toggleMenu}
-      type="button"
+      className={`
+        relative z-60
+        size-10
+        rounded-lg
+        border border-line
+        appearance-none
+        cursor-pointer
+        shadow-[0_12px_30px_rgba(0,0,0,0.35)]
+        transition-transform duration-200
+        [-webkit-tap-highlight-color:transparent]
+        ${menuOpen ? "scale-95" : "scale-100 hover:-translate-y-px"}
+      `}
     >
-      {Array.from({ length: 3 }).map((_, i) => (
+      {Array.from({ length: 3 }).map((_, index) => (
         <span
-          key={i}
+          key={index}
+          aria-hidden="true"
           className={`
-          block h-[2px] w-full bg-cream
-          origin-center
-          rounded-none
-          transition-all duration-300 ease-out
-          ${
-            menuOpen
-              ? i === 0
-                ? "translate-y-1.5 rotate-45"
-                : i === 1
-                  ? "scale-x-0 opacity-0"
-                  : "-translate-y-1.5 -rotate-45"
-              : ""
-          }
-        `}
+            absolute left-1/2 top-1/2
+            block h-[2px] w-5
+            -translate-x-1/2
+            bg-cream
+            origin-center
+            transition-[transform,opacity]
+            duration-300
+            ease-out
+            ${
+              menuOpen
+                ? index === 0
+                  ? "-translate-y-1/2 rotate-45"
+                  : index === 1
+                    ? "-translate-y-1/2 scale-x-0 opacity-0"
+                    : "-translate-y-1/2 -rotate-45"
+                : index === 0
+                  ? "-translate-y-[7px]"
+                  : index === 1
+                    ? "-translate-y-1/2"
+                    : "translate-y-[5px]"
+            }
+          `}
         />
       ))}
     </button>
