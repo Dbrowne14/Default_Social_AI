@@ -30,14 +30,14 @@ const BlogCard = ({
   </div>
 
   <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-dmSans text-[10px] font-medium uppercase tracking-[0.18em] text-muted">
-    <span>By {author.role}</span>
+    <span>By {author.name}</span>
     <span aria-hidden="true">·</span>
     <span>{date}</span>
     <span aria-hidden="true">·</span>
     <span>{readTime}</span>
   </div>
 
-  <h3 className="heading-editorial text-[clamp(24px,2vw,32px)]">
+  <h3 className="font-serif text-[clamp(24px,2vw,32px)]">
     {title}
   </h3>
 

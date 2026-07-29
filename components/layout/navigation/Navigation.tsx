@@ -18,11 +18,12 @@ const Navigation = ({ navigation }: SiteChromeProps) => {
           aria-label="Default Social"
         >
           <Image
+            src="/assets/branding/Default-Alt_DF SOCIAL-White.png"
             alt="Default Social"
             width={200}
             height={40}
             priority
-            src="/assets/branding/Default-Alt_DF SOCIAL-White.png"
+            className="w-40 sm:w-45 md:w-50 h-auto"
           />
         </Link>
       </div>

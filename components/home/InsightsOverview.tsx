@@ -12,6 +12,8 @@ type InsightsOverviewProps = {
 
 const InsightsOverview = ({ section, insights }: InsightsOverviewProps) => {
   const { title, eyebrow, meta } = section;
+  const featuredInsight = insights.find((post) => post.featured);
+const displayedInsights = insights.slice(0, 3);
   return (
     <section className="border-t border-t-line" data-screen-label="Insights">
       <div className="container-custom py-20">
@@ -31,23 +33,39 @@ const InsightsOverview = ({ section, insights }: InsightsOverviewProps) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {insights.slice(0, 3).map((post) => {
-            const { author, tag, title, excerpt, date, readTime, slug } = post;
-            return (
-              <BlogCard
-                author={author}
-                tag={tag}
-                title={title}
-                excerpt={excerpt}
-                date={date}
-                readTime={readTime}
-                slug={slug}
-                key={title}
-              />
-            );
-          })}
-        </div>
+<div className="620:hidden">
+  {featuredInsight && (
+    <BlogCard
+      author={featuredInsight.author}
+      tag={featuredInsight.tag}
+      title={featuredInsight.title}
+      excerpt={featuredInsight.excerpt}
+      date={featuredInsight.date}
+      readTime={featuredInsight.readTime}
+      slug={featuredInsight.slug}
+    />
+  )}
+</div>
+
+{/* 620px and above: first three insights */}
+<div className="hidden 620:grid 620:grid-cols-2 gap-8 min-[1100px]:grid-cols-3">
+  {displayedInsights.map((post) => {
+    const { author, tag, title, excerpt, date, readTime, slug } = post;
+
+    return (
+      <BlogCard
+        key={slug}
+        author={author}
+        tag={tag}
+        title={title}
+        excerpt={excerpt}
+        date={date}
+        readTime={readTime}
+        slug={slug}
+      />
+    );
+  })}
+</div>
       </div>
     </section>
   );

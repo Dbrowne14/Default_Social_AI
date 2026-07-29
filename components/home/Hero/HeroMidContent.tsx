@@ -40,7 +40,7 @@ const HeroMidContent = () => {
     className="
       relative m-0 max-w-[14ch]
       font-poppins font-semibold uppercase
-      text-[clamp(38px,14vw,72px)]
+      text-[clamp(38px,12vw,72px)]
       leading-[0.92] tracking-[-0.06em]
       text-cream mix-blend-difference
       720:text-[clamp(40px,11vw,120px)]
