@@ -117,36 +117,36 @@ Re-run Lighthouse after final changes.
 
 ## Performance
 
-- [ ] Core Web Vitals
-- [ ] Image optimisation
-- [ ] Font loading
-- [ ] Bundle review
-- [ ] Lazy loading
-- [ ] Remove unused code
+- [x] Core Web Vitals
+- [x] Image optimisation
+- [x] Font loading
+- [x] Bundle review
+- [x] Lazy loading
+- [x] Remove unused code
 
 ---
 
 # 6. SEO Validation
 
-- [ ] Metadata
-- [ ] Open Graph
-- [ ] Twitter cards
-- [ ] XML sitemap
-- [ ] robots.txt
-- [ ] Canonicals
-- [ ] Structured data
-- [ ] Breadcrumb schema
-- [ ] Article schema
+- [x] Metadata
+- [x] Open Graph
+- [x] Twitter cards
+- [x] XML sitemap
+- [x] robots.txt
+- [x] Canonicals
+- [x] Structured data
+- [x] Breadcrumb schema
+- [x] Article schema
 
 ---
 
 # 7. Accessibility
 
-- [ ] Keyboard navigation
-- [ ] Focus management
-- [ ] Heading hierarchy
-- [ ] Colour contrast
-- [ ] Screen reader review
+- [x] Keyboard navigation
+- [x] Focus management
+- [x] Heading hierarchy
+- [x] Colour contrast
+- [x] Screen reader review
 
 ---
 
