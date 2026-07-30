@@ -93,7 +93,7 @@ UI work to redo:
 - [x] Internal links
 - [x] Previous / Next navigation
 - [x] Mobile navigation
-- [ ] 404 page
+- [x] 404 page
 
 ## CMS
 
