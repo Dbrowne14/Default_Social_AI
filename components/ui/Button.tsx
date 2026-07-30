@@ -5,7 +5,7 @@ type ButtonProps = {
   onClick?: () => void;
   text: string;
   variant?: "primary" | "ghost" | "secondary" | "dark";
-  arrowVariant?: "primary" | "primaryBlack";
+  arrowVariant?: "primary" | "primaryBlack" | "primaryWhite";
   buttonDirection?: Direction;
 };
 

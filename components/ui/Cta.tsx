@@ -21,7 +21,7 @@ const CTA = ({
         </h2>
         <div className="flex gap-3">
           <Button
-            link="/contact"
+            link="/#contact"
             text="Start a project"
             arrowVariant="primaryBlack"
           />

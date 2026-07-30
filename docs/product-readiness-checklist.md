@@ -90,24 +90,24 @@ UI work to redo:
 
 ## Navigation
 
-- [ ] Internal links
-- [ ] Previous / Next navigation
-- [ ] Mobile navigation
+- [x] Internal links
+- [x] Previous / Next navigation
+- [x] Mobile navigation
 - [ ] 404 page
 
 ## CMS
 
-- [ ] Rich text rendering
-- [ ] Images
-- [ ] Slugs
-- [ ] Dynamic metadata
-- [ ] Content updates correctly
+- [x] Rich text rendering
+- [x] Images
+- [x] Slugs
+- [x] Dynamic metadata
+- [x] Content updates correctly
 
 ## Forms
 
-- [ ] Contact form
-- [ ] Validation
-- [ ] Success state
+- [x] Contact form
+- [x] Validation
+- [x] Success state
 
 ---
 
