@@ -1,5 +1,4 @@
 import Link from "next/link";
-import FooterRibbon from "./FooterRibbon";
 import type { SiteChromeProps } from "@/types/site";
 import { getAllServices } from "@/lib/content/collections/services";
 import { SignalAnimation } from "@/components/ui/signal-bars-nav";
@@ -10,7 +9,6 @@ const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
   const { footer, contact, siteName, groupLink } = siteSettings;
   return (
     <div>
-      <FooterRibbon />
 
       <div className="footer-ribbon" aria-hidden="true" />
 
@@ -36,7 +34,7 @@ const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
             </div>
 
             <div>
-              <h4 className="footer-headings">Practices</h4>
+              <h2 className="footer-headings">Practices</h2>
               <ul className="flex flex-col gap-2.5 md:gap-3.5 p-0 m-0 list-none">
                 {allServices.map((service) => (
                   <li key={service.id} className="group">
@@ -50,7 +48,7 @@ const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
             </div>
 
             <div>
-              <h4 className="footer-headings">Explore</h4>
+              <h2 className="footer-headings">Explore</h2>
               <ul className="flex flex-col gap-2.5 md:gap-3.5 p-0 m-0 list-none">
                 {navigation
                   .filter((navItem) => navItem.label !== "Index")
@@ -74,7 +72,7 @@ const Footer = async ({ siteSettings, navigation }: SiteChromeProps) => {
             </div>
 
             <div className="col-span-2 md:col-span-1">
-              <h4 className="footer-headings">Contact</h4>
+              <h2 className="footer-headings">Contact</h2>
 
               <div className="flex flex-col gap-2.5 md:gap-3.5  list-none font-dmSans text-[14px] font-medium leading-[1.4] tracking-[-0.01em]">
                 <a
