@@ -82,8 +82,7 @@ Test every page at:
 
 UI work to redo:
 
-- [ ] Page heading sizing 
-- [ ] Focus on mobile of services buckets home page - activate on scroll
+- [x] Page heading sizing 
 
 ---
 
