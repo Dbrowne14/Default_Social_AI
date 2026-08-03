@@ -16,14 +16,16 @@ const Navigation = ({ navigation }: SiteChromeProps) => {
           className="font-serif text-[24px] leading-1 tracking-[-0.01em] text-cream inline-flex items-baseline lowercase md:text-[20px]"
           aria-label="Default Social"
         >
-          <Image
-            src="/assets/branding/Default-Alt_DF SOCIAL-White.png"
-            alt="Default Social"
-            width={200}
-            height={40}
-            priority
-            className="w-40 sm:w-45 md:w-50 h-auto"
-          />
+          <div className="shrink-0">
+            <Image
+              src="/assets/branding/Default-Alt_DF SOCIAL-White.png"
+              alt="Default Social"
+              width={370}
+              height={100}
+              priority
+              className="h-auto w-45 sm:w-60 max-w-none"
+            />
+          </div>
         </Link>
       </div>
 
