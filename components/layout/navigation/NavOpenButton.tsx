@@ -14,7 +14,6 @@ const NavOpenButton = ({ menuOpen, toggleMenu }: MobileMenuProps) => {
         relative z-60
         size-10
         rounded-lg
-        border border-line
         appearance-none
         cursor-pointer
         shadow-[0_12px_30px_rgba(0,0,0,0.35)]
@@ -29,7 +28,7 @@ const NavOpenButton = ({ menuOpen, toggleMenu }: MobileMenuProps) => {
           aria-hidden="true"
           className={`
             absolute left-1/2 top-1/2
-            block h-[2px] w-5
+            block h-0.5 w-5
             -translate-x-1/2
             bg-cream
             origin-center
@@ -44,10 +43,10 @@ const NavOpenButton = ({ menuOpen, toggleMenu }: MobileMenuProps) => {
                     ? "-translate-y-1/2 scale-x-0 opacity-0"
                     : "-translate-y-1/2 -rotate-45"
                 : index === 0
-                  ? "-translate-y-[7px]"
+                  ? "-translate-y-1.75"
                   : index === 1
                     ? "-translate-y-1/2"
-                    : "translate-y-[5px]"
+                    : "translate-y-1.25"
             }
           `}
         />

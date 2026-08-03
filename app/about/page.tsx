@@ -1,6 +1,6 @@
 import AboutHeader from "@/components/about/AboutHeader";
 import AboutValues from "@/components/about/AboutValues";
-import AboutGroupStructure from "@/components/about/AboutGroupStructure";
+import AboutGroupStructure from "@/components/archive/AboutGroupStructure";
 import AboutApproach from "@/components/about/AboutApproach";
 import AboutTeam from "@/components/about/AboutTeam";
 import CTA from "@/components/ui/Cta";
@@ -23,9 +23,9 @@ const Page = async () => {
     <div data-screen-label="02 About">
       <AboutHeader aboutHeader={aboutPage.aboutHeader} />
       <AboutValues values={aboutPage.values} />
-      <AboutGroupStructure groupStructure={aboutPage.groupStructure} />
+        <AboutTeam people={people} aboutHeader={aboutPage.team} />
       <AboutApproach approach={aboutPage.approach} />
-      <AboutTeam people={people} aboutHeader={aboutPage.team} />
+
       <CTA
         primaryText={primaryText}
         secondaryText={secondaryText}

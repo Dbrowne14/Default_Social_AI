@@ -8,7 +8,7 @@ type AboutValuesProps = {
 const AboutValues = ({ values }: AboutValuesProps) => {
   const { eyebrow, statement, intro, body, callout } = values;
   return (
-    <section>
+    <section className="bg-[linear-gradient(180deg,color-mix(in_oklch,var(--accent)_6%,var(--ink-2)),var(--ink))] border-[color-mix(in_oklch,var(--accent)_35%,var(--line))]">
       <div className="container-custom">
         <div className="eyebrow mb-6">{eyebrow}</div>
 
