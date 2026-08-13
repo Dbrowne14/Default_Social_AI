@@ -1,0 +1,225 @@
+# Default Social — Launch Content Integration Checklist
+
+## Goal
+
+Integrate the new content and positioning into the completed site without unnecessarily redesigning the existing architecture.
+
+The supplied content should be treated as **source material**, not copied directly page-for-page.
+
+---
+
+## 1. Content Mapping
+
+* [ ] Map new content to the existing site architecture
+* [ ] Keep homepage concise and conversion-focused
+* [ ] Move relevant **Who Are We** content into About
+* [ ] Move relevant **What We Do** content into Services
+* [ ] Add **Our Work** content once projects/client details are supplied
+* [ ] Update Contact messaging
+* [ ] Decide whether **Join Us** is required for launch
+
+### Proposed Mapping
+
+**Home**
+
+* Core positioning
+* Services overview
+* Selected work / clients
+* Key people
+* CTA
+
+**About**
+
+* Who we are
+* Creativity meets technology
+* Our approach
+* Company positioning
+* Team
+
+**Services**
+
+* What we do
+* Three ways to work with Default Social
+* Detailed capabilities
+
+**Work**
+
+* Client/project work
+* Case studies / websites
+
+**Join Us**
+
+* Culture
+* Values
+* Benefits
+* Opportunities
+
+**Contact**
+
+* “Let’s build something meaningful together.”
+* Contact form
+
+---
+
+## 2. Company Positioning
+
+* [ ] Review headline: **“The digital agency built for the next generation of brands.”**
+* [ ] Decide where this should sit within the existing messaging hierarchy
+* [ ] Create shorter supporting copy explaining what Default Social actually does
+* [ ] Retain references to Default Media Group where useful
+* [ ] Keep Group relationship narrative rather than restoring the removed Group Structure section
+* [ ] Ensure consistent use of **Default Social** vs **Default Media Group**
+
+---
+
+## 3. Copy Editing
+
+* [ ] Reduce supplied copy substantially for web use
+* [ ] Preserve Robin's intended positioning and tone
+* [ ] Remove repeated messaging around:
+
+  * Creativity + technology
+  * Changing digital landscape
+  * Meaningful results
+  * Audience connection
+  * Future of digital
+  * AI / emerging technology
+* [ ] Shorten paragraphs for scanning
+* [ ] Strengthen headlines where appropriate
+* [ ] Ensure every section adds new information rather than repeating positioning
+
+**Target:** approximately 40–60% reduction where sections are particularly long.
+
+---
+
+## 4. Services
+
+* [ ] Introduce the three commercial engagement models:
+
+  * Full Service
+  * Strategy
+  * Creative
+* [ ] Decide where these sit within the existing Services page
+* [ ] Retain detailed service capabilities underneath
+* [ ] Avoid duplicating services across engagement models and capability sections
+* [ ] Make the distinction between the three engagement models immediately understandable
+* [ ] Review CTAs around each service/engagement model
+
+---
+
+## 5. Team
+
+* [ ] Confirm which named people should appear publicly at launch
+* [ ] Confirm final titles
+* [ ] Collect profile photographs
+* [ ] Collect/edit biographies
+* [ ] Distinguish actual team members from generic capability/department roles
+* [ ] Do not create profiles for unnamed roles
+* [ ] Keep **key people** on homepage
+* [ ] Use fuller team/profile experience elsewhere
+* [ ] Confirm whether all five proposed departments need to be communicated publicly
+
+---
+
+## 6. Clients & Work
+
+* [ ] Receive client details/logos
+* [ ] Confirm which clients Default Social has permission to display
+* [ ] Determine whether clients belong to Default Social, Default Media or both
+* [ ] Add appropriate client proof to homepage
+* [ ] Receive website/project details for **Our Work**
+* [ ] Populate Work page
+* [ ] Add imagery/screenshots
+* [ ] Add concise project descriptions
+* [ ] Add case studies where sufficient information exists
+* [ ] Prioritise real proof over additional marketing copy
+
+---
+
+## 7. Join Us
+
+* [ ] Confirm whether Robin wants a dedicated Join Us page at launch
+* [ ] Confirm whether there are actual vacancies
+* [ ] If no vacancies, consider a reduced launch version
+* [ ] Condense culture messaging
+* [ ] Condense values
+* [ ] Review benefits claims for accuracy
+* [ ] Add “Current opportunities coming soon” only if appropriate
+* [ ] Avoid building unnecessary recruitment functionality before it is needed
+
+---
+
+## 8. AI Positioning
+
+* [ ] Review all AI-related claims
+* [ ] Keep claims consistent with current capabilities
+* [ ] Position AI as an existing capability/direction without overstating proprietary technology
+* [ ] Retain room for the post-launch AI Concierge
+* [ ] Revisit AI messaging after Phase 4 is implemented
+
+---
+
+## 9. CMS Integration
+
+* [ ] Identify which existing Sanity fields can accommodate the new content
+* [ ] Avoid schema changes where existing structures are sufficient
+* [ ] Add schema fields only where genuinely required
+* [ ] Populate final production content through Sanity
+* [ ] Check images and alt text
+* [ ] Check team data
+* [ ] Check services
+* [ ] Check client/project data
+* [ ] Verify ISR updates correctly in production
+
+---
+
+## 10. Final Content QA
+
+* [ ] Review Home
+* [ ] Review Services
+* [ ] Review About
+* [ ] Review Team/profile pages
+* [ ] Review Work
+* [ ] Review Insights
+* [ ] Review Join Us if included
+* [ ] Review Contact
+* [ ] Remove duplicated messaging
+* [ ] Check headline hierarchy
+* [ ] Check brand terminology
+* [ ] Check AI claims
+* [ ] Check service naming
+* [ ] Check team titles
+* [ ] Check CTA consistency
+* [ ] Check page lengths
+* [ ] Check spelling and grammar
+* [ ] Check mobile content flow
+
+---
+
+## 11. SEO & Launch Content
+
+* [ ] Update page titles
+* [ ] Update meta descriptions
+* [ ] Review Open Graph content
+* [ ] Ensure new pages are included in sitemap
+* [ ] Review structured data if site architecture changes
+* [ ] Check internal links
+* [ ] Check canonical URLs
+* [ ] Confirm no placeholder content remains
+
+---
+
+## Launch Principle
+
+**Do not rebuild the finished website around the structure of the supplied document.**
+
+Use the document as the new source of brand and marketing content, then integrate the strongest material into the existing architecture.
+
+Structural changes should only be introduced where they materially improve the site — particularly around:
+
+* Three ways to work with Default Social
+* Team
+* Work / client proof
+* Join Us
+
+Everything else should primarily be handled through **content editing and CMS updates rather than another redesign**.
