@@ -1,8 +1,8 @@
 import type { Service } from "@/types/collections/services";
-import type { EngagementModel } from "@/types/waysOfWorking";
+import type { WaysOfWorkingModelContent } from "@/types/pages/servicesPage";
 
 type DrawsOnIndicatorProps = {
-  model: EngagementModel;
+  model: WaysOfWorkingModelContent;
   services: Service[];
   label: string;
   className?: string;
@@ -14,9 +14,7 @@ const DrawsOnIndicator = ({
   label,
   className = "",
 }: DrawsOnIndicatorProps) => {
-  const drawnServices = services.filter((service) =>
-    model.drawsOn.includes(service.id),
-  );
+  const drawnIds = new Set(model.practices.map((practice) => practice.id));
 
   return (
     <div className={`flex items-center gap-3 ${className}`}>
@@ -26,7 +24,7 @@ const DrawsOnIndicator = ({
 
       <ul className="flex items-center gap-1.5" aria-hidden="true">
         {services.map((service) => {
-          const isActive = model.drawsOn.includes(service.id);
+          const isActive = drawnIds.has(service.id);
           return (
             <li
               key={service.id}
@@ -41,7 +39,12 @@ const DrawsOnIndicator = ({
       </ul>
 
       <span className="sr-only">
-        {model.title} draws on: {drawnServices.map((service) => service.linkName).join(", ")}.
+        {model.title} draws on:{" "}
+        {services
+          .filter((service) => drawnIds.has(service.id))
+          .map((service) => service.linkName)
+          .join(", ")}
+        .
       </span>
     </div>
   );

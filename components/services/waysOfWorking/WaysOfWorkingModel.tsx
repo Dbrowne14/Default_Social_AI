@@ -1,9 +1,10 @@
 import DrawsOnIndicator from "./DrawsOnIndicator";
 import type { Service } from "@/types/collections/services";
-import type { EngagementModel } from "@/types/waysOfWorking";
+import type { WaysOfWorkingModelContent } from "@/types/pages/servicesPage";
 
 type WaysOfWorkingModelProps = {
-  model: EngagementModel;
+  model: WaysOfWorkingModelContent;
+  number: string;
   services: Service[];
   capabilitiesLabel: string;
   drawsOnLabel: string;
@@ -11,6 +12,7 @@ type WaysOfWorkingModelProps = {
 
 const WaysOfWorkingModel = ({
   model,
+  number,
   services,
   capabilitiesLabel,
   drawsOnLabel,
@@ -25,7 +27,7 @@ const WaysOfWorkingModel = ({
       "
     >
       <div className=" text-accent text-[clamp(56px,11vw,132px)] leading-[0.85] tracking-[-0.02em]">
-        {model.id}
+        {number}
       </div>
 
       <h3 className="heading-display text-cream text-[clamp(22px,2.6vw,34px)] mt-4 md:mt-5">

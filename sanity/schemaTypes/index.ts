@@ -25,7 +25,11 @@ import {
 } from "./shared";
 import { homePage, aboutOverviewSection, homeHero } from "./pages/homePage";
 import { groupLink, siteSettings, contactDetails, footerContent } from "./site";
-import { servicesPage } from "./pages/servicesPage";
+import {
+  servicesPage,
+  waysOfWorkingModel,
+  waysOfWorkingSection,
+} from "./pages/servicesPage";
 import {
   aboutHeader,
   aboutPage,
@@ -66,6 +70,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     aboutOverviewSection,
     homeHero,
     servicesPage,
+    waysOfWorkingModel,
+    waysOfWorkingSection,
     aboutHeader,
     aboutPage,
     approachPrinciple,

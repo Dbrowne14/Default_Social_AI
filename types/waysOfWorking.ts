@@ -1,5 +1,14 @@
 // types for the "Three ways to work" services-page section
-// local, component-owned content — not yet CMS-backed (see lib/content/waysOfWorking.ts)
+// MIGRATION REFERENCE ONLY — the live section is now typed via
+// types/pages/servicesPage.ts (WaysOfWorkingSection). Kept alongside
+// lib/content/waysOfWorking.ts until that content is transcribed into
+// Sanity Studio and verified.
+
+import type { TitleLine } from "./shared";
+
+export type PracticeReference = {
+  id: string;
+};
 
 export type EngagementModel = {
   id: string;
@@ -7,23 +16,13 @@ export type EngagementModel = {
   proposition: string;
   description: string;
   capabilities: string[];
-  /** Stable `service.id` values (e.g. "01") this model draws on, in the same order as the services collection */
-  drawsOn: string[];
+  practices: PracticeReference[];
 };
 
-export type WaysOfWorkingContent = {
+export type WaysOfWorkingSection = {
   eyebrow: string;
-  headline: {
-    line1: string;
-    line2Prefix: string;
-    line2Accent: string;
-    line3: string;
-  };
-  intro: {
-    before: string;
-    accent: string;
-    after: string;
-  };
+  title: TitleLine[];
+  intro: TitleLine[];
   capabilitiesLabel: string;
   drawsOnLabel: string;
   practicesStatement: string;
