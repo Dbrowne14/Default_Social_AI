@@ -1,5 +1,6 @@
 import StickyToc from "@/components/services/StickyToc";
 import ServicesHeader from "@/components/services/ServicesHeader";
+import WaysOfWorking from "@/components/services/waysOfWorking/WaysOfWorking";
 import ServicesDetailed from "@/components/services/servicesDetailed/ServicesDetailed";
 import CTA from "@/components/ui/Cta";
 import type { Metadata } from "next";
@@ -19,6 +20,7 @@ const Page = async () => {
   return (
     <div data-screen-label="03 Services">
       <ServicesHeader servicesHeader={servicesPageData.servicesHeader} />
+      <WaysOfWorking services={services} />
       <StickyToc services={services} />
       <ServicesDetailed services={services} />
       <CTA
