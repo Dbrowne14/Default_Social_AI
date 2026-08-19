@@ -1,5 +1,6 @@
-import type { PageHeading } from "../shared";
+import type { PageHeading, SectionIntro } from "../shared";
 
 export type InsightsPage = {
   insightsHeader: PageHeading;
+  articlesIntro: SectionIntro;
 };

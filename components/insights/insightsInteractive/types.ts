@@ -13,6 +13,8 @@ export type ActiveFilterSetterProps = {
   setIsActive: React.Dispatch<React.SetStateAction<string>>;
 };
 
+export type LibraryFilterProps = ActiveFilterSetterProps & InsightsProps;
+
 export type BlogStateProps = ActiveFilterProps & {
   showMore: number;
 };

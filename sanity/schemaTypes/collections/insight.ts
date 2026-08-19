@@ -127,6 +127,24 @@ export const insight = defineType({
     }),
 
     defineField({
+      name: "contentType",
+      title: "Content Type",
+      type: "string",
+      description:
+        "Whether this piece is an essay/article or a client case study. Drives the Articles/Case Studies filter and the featured-article label.",
+      group: "meta",
+      options: {
+        list: [
+          { title: "Article", value: "article" },
+          { title: "Case Study", value: "caseStudy" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "article",
+      validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
       name: "tag",
       title: "Tag",
       type: "string",

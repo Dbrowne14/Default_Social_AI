@@ -1,4 +1,5 @@
 import InsightsHeader from "@/components/insights/InsightsHeader";
+import InsightsIntro from "@/components/insights/InsightsIntro";
 import InsightsInteractive from "@/components/insights/insightsInteractive/InsightsInteractive";
 import InsightsFeatured from "@/components/insights/InsightsFeatured";
 import type { Metadata } from "next";
@@ -16,6 +17,11 @@ export const metadata: Metadata = {
 const Page = async () => {
   const insightsPage = await getInsightsPage();
   const featureInsights = await getFeaturedInsights();
+  const DEFAULT_INSIGHTS_INTRO = {
+  eyebrow: "Insights",
+  title: "Articles & Case Studies.",
+  meta: "Ideas, observations and practical lessons from building digital products.",
+};
   if (!featureInsights) {
     return null;
   }
@@ -23,6 +29,7 @@ const Page = async () => {
   return (
     <div data-screen-label="03 Insights">
       <InsightsHeader insightsHeader={insightsPage.insightsHeader} />
+      <InsightsIntro intro={insightsPage.articlesIntro ?? DEFAULT_INSIGHTS_INTRO} />
       <InsightsFeatured featuredInsights={featureInsights} />
       <InsightsInteractive insights={insights} />
     </div>

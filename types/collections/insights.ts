@@ -1,10 +1,15 @@
 //types for Insights data schema
 import type { Person } from "./person";
 
+export type InsightContentType = "article" | "caseStudy";
+
 export type Insight = {
   featured?: boolean;
   subject?: string;
   date: string;
+  // Optional: existing published entries predate this field until re-saved in Studio.
+  // Treat a missing value as "article" (see getInsightContentType in lib/content/collections/insights.ts).
+  contentType?: InsightContentType;
   tag: string;
   allTags?: string[];
   readTime: string;

@@ -5,6 +5,7 @@ export const insightsQuery = `
     featured,
     subject,
     date,
+    contentType,
     tag,
     allTags,
     readTime, 

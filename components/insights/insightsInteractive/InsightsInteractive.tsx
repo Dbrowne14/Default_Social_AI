@@ -8,7 +8,11 @@ const InsightsInteractive = ({ insights }: InsightsProps) => {
   const [isActive, setIsActive] = useState("All");
   return (
     <div>
-      <InsightsFilter isActive={isActive} setIsActive={setIsActive} />
+      <div className="container-thin pt-16 md:pt-20 pb-6">
+        <div className="eyebrow">The Library</div>
+      </div>
+
+      <InsightsFilter isActive={isActive} setIsActive={setIsActive} insights={insights} />
       <InsightsBlogPosts isActive={isActive} insights={insights} />
     </div>
   );

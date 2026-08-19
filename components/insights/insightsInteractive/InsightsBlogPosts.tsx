@@ -21,21 +21,10 @@ const InsightsBlogPosts = ({ isActive, insights }: InsightBlogPostsProps) => {
     return () => media.removeEventListener("change", update);
   }, []);
   return (
-    <section className="pt-10">
-      <div className="container-custom">
-        <div className="section-headings mb-6">
-          <div className="section-title">
-            <div className="eyebrow">Library · {insights.length-1} essays</div>
-            <h2>Recent reading.</h2>
-          </div>
-          <p className="meta">
-            Updated weekly. Long-form by default — we&apos;d rather publish one
-            good essay than ten posts.
-          </p>
-        </div>
-
+    <section className="">
+      <div className="container-custom pt-0">
         <div
-          className="grid grid-cols-1 xs520:grid-cols-2 md:grid-cols-3 gap-8 mt-6"
+          className="grid grid-cols-1 xs520:grid-cols-2 md:grid-cols-3 gap-8 pt-4 "
           id="articles-grid"
         >
           <BlogPost
