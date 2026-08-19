@@ -11,7 +11,7 @@ const InsightsArticleBody = ({ article }: InsightArticleProps) => {
   const [section, setSection] = useState("");
   return (
     <div className="pt-12 720:pt-18">
-      <div className="container-custom">
+      <div className="container-custom pt-0">
         <div className="grid grid-cols-1 min-[900px]:grid-cols-[minmax(0,1fr)_280px] min-[1080px]:grid-cols-[minmax(0,1fr)_320px] min-[900px]:gap-x-12 min-[1080px]:gap-x-18">
           <InsightsArticleProse article={article} />
           <InsightsArticleRail
