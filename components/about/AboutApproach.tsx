@@ -38,10 +38,10 @@ export const AboutApproach = ({ approach }: AboutApproachProps) => {
             return (
               <div
                 key={approach.id}
-                className="border-t border-line py-6 md:py-8 flex flex-col gap-3 720:grid 720:grid-cols-[56px_0.8fr_1.5fr] 720:gap-8 720:items-start"
+                className="border-t border-line h-30 py-6 md:py-8 flex flex-col gap-3 720:grid 720:grid-cols-[56px_0.8fr_1.5fr] 720:gap-8 720:items-center"
               >
-                <div className="flex items-baseline gap-3 720:contents">
-                  <span className="font-dmSans font-medium tracking-[0.18em] text-[13px] text-accent-deep uppercase 720:pt-1.5">
+                <div className="flex items-center justify-center gap-3 720:contents">
+                  <span className="font-dmSans font-medium tracking-[0.18em] text-[13px] text-accent-deep uppercase">
                     {approach.id}
                   </span>
 
