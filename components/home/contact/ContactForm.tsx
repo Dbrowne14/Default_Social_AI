@@ -15,6 +15,7 @@ const enquiries = [
 ] as const;
 
 const careersData: CareersData = {
+  eyebrow: "05 · Join us",
   title: [
     {
       segments: [{ text: "LET'S MAKE" }],
@@ -38,6 +39,7 @@ type FieldText = {
 };
 
 type CareersData = {
+  eyebrow: string;
   title: TitleLine[];
   meta: string;
   email: FieldText;
@@ -107,7 +109,9 @@ export default function ContactForm({
     >
       <div className="container-custom grid gap-10 py-20 md:grid-cols-2 md:gap-12">
         <div>
-          <div className="eyebrow">{eyebrow}</div>
+          <div className="eyebrow">
+            {isCareers ? careersData.eyebrow : eyebrow}
+          </div>
 
           <h2 className="mt-5  text-[clamp(40px,5vw,70px)]">
             <RichTitle title={isCareers ? careersData.title : title} />
