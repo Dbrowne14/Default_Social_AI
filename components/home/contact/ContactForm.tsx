@@ -1,18 +1,49 @@
 "use client";
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { submitContactForm } from "@/app/actions/contact";
 import type { ContactFormState } from "@/app/actions/contact";
-import type { SectionIntro } from "@/types/shared";
+import type { SectionIntro, TitleLine } from "@/types/shared";
 import type { SiteSettings } from "@/types/site";
 import RichTitle from "@/components/ui/RichTitle";
 
 const enquiries = [
   "New project",
+  "Careers",
   "Retained partnership",
   "Speaking & press",
-  "Careers",
   "Other",
 ] as const;
+
+const careersData: CareersData = {
+  title: [
+    {
+      segments: [{ text: "LET'S MAKE" }],
+    },
+    {
+      segments: [{ text: "SOMETHING" }],
+    },
+    {
+      segments: [{ text: "REMARKABLE.", accent: true }],
+    },
+  ],
+  meta: "Interested in joining Default Social? Tell us a little about yourself, what you do and where you think you could make an impact.",
+  email: { label: "Email" },
+  company: { label: "Current Role", placeholder: "Role / area of expertise" },
+  buttonText: "Send Inquiry",
+};
+
+type FieldText = {
+  label: string;
+  placeholder?: string;
+};
+
+type CareersData = {
+  title: TitleLine[];
+  meta: string;
+  email: FieldText;
+  company: FieldText;
+  buttonText: string;
+};
 
 type LabelledSlotProps = {
   label: string;
@@ -39,7 +70,9 @@ function InfoRow({ label, children }: LabelledSlotProps) {
   return (
     <div className="flex items-center justify-between heading-sans text-[12px] tracking-[0.09em]">
       <span className="text-muted">{label}</span>
-      <span className="text-[color-mix(in_oklch,white_80%,black)]">{children}</span>
+      <span className="text-[color-mix(in_oklch,white_80%,black)]">
+        {children}
+      </span>
     </div>
   );
 }
@@ -63,6 +96,9 @@ export default function ContactForm({
     initialState,
   );
 
+  const [enquiry, setEnquiry] = useState("");
+  const isCareers = enquiry === "Careers";
+
   return (
     <section
       id="contact"
@@ -74,10 +110,12 @@ export default function ContactForm({
           <div className="eyebrow">{eyebrow}</div>
 
           <h2 className="mt-5  text-[clamp(40px,5vw,70px)]">
-            <RichTitle title={title} />
+            <RichTitle title={isCareers ? careersData.title : title} />
           </h2>
 
-          <p className="mt-4.5 max-w-[38ch] text-cream-2">{meta}</p>
+          <p className="mt-4.5 max-w-[38ch] text-cream-2">
+            {isCareers ? careersData.meta : meta}
+          </p>
 
           <div className="mt-10 hidden md:flex flex-col gap-4 border-t border-line pt-6">
             <InfoRow label="Studio">{location}</InfoRow>
@@ -113,13 +151,15 @@ export default function ContactForm({
               )}
             </Field>
 
-            <Field label="Company">
+            <Field label={isCareers ? careersData.company.label : "Company"}>
               <input
                 id="company"
                 className="form-field"
                 type="text"
                 name="company"
-                placeholder="Brand or org"
+                placeholder={
+                  isCareers ? careersData.company.placeholder : "Brand or Org"
+                }
                 aria-invalid={Boolean(state.errors.company)}
                 aria-describedby={
                   state.errors.company ? "company-error" : undefined
@@ -135,7 +175,7 @@ export default function ContactForm({
               )}
             </Field>
 
-            <Field label="Work email">
+            <Field label={isCareers ? careersData.email.label : "Work email"}>
               <input
                 required
                 id="email"
@@ -164,6 +204,7 @@ export default function ContactForm({
                 id="enquiryType"
                 name="enquiryType"
                 className="form-field"
+                onChange={(e) => setEnquiry(e.target.value)}
                 aria-invalid={Boolean(state.errors.enquiryType)}
                 aria-describedby={
                   state.errors.enquiryType ? "enquiryType-error" : undefined
@@ -198,10 +239,7 @@ export default function ContactForm({
               }
             />
             {state.errors.message && (
-              <p
-                id="message-error"
-                className="heading-sans text-red-400"
-              >
+              <p id="message-error" className="heading-sans text-red-400">
                 {state.errors.message[0]}
               </p>
             )}
@@ -212,7 +250,11 @@ export default function ContactForm({
             type="submit"
             className="btn w-fit border bg-accent-deep text-on-accent hover:bg-accent disabled:opacity-60"
           >
-            {pending ? "Sending..." : "Send message"}
+            {pending
+              ? "Sending..."
+              : isCareers
+                ? careersData.buttonText
+                : "Send message"}
             <span
               aria-hidden="true"
               className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-ink text-cream text-[10px] leading-none"
@@ -222,10 +264,7 @@ export default function ContactForm({
           </button>
 
           {state.message && (
-            <p
-              role="status"
-              className="heading-sans text-[11px]"
-            >
+            <p role="status" className="heading-sans text-[11px]">
               {state.message}
             </p>
           )}
