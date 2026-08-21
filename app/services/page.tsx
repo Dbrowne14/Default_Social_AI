@@ -21,15 +21,6 @@ const Page = async () => {
 
   const sanityWaysOfWorking = servicesPageData.waysOfWorking;
 
-  const hasValidWaysOfWorking =
-    sanityWaysOfWorking &&
-    Array.isArray(sanityWaysOfWorking.title) &&
-    Array.isArray(sanityWaysOfWorking.models);
-
-  const waysOfWorking = hasValidWaysOfWorking
-    ? sanityWaysOfWorking
-    : waysOfWorkingContent;
-
   const { primaryText, secondaryText, button, variant } =
     servicesPageData.cta;
 
@@ -38,13 +29,13 @@ const Page = async () => {
       <ServicesHeader servicesHeader={servicesPageData.servicesHeader} />
 
       <WaysOfWorking
-        waysOfWorking={waysOfWorking}
+        waysOfWorking={sanityWaysOfWorking}
         services={services}
       />
 
       <StickyToc
         services={services}
-        practicesStatement={waysOfWorking.practicesStatement}
+        practicesStatement={sanityWaysOfWorking.practicesStatement}
       />
 
       <ServicesDetailed services={services} />

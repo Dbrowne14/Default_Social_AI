@@ -15,6 +15,7 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem("service"),
       S.documentTypeListItem("insight"),
       S.documentTypeListItem("person"),
+      S.documentTypeListItem("client"),
 
       S.divider(),
 
