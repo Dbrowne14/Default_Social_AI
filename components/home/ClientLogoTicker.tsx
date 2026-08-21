@@ -1,4 +1,4 @@
-import DummyClientData from "../ui/DummyClientData"
+import ClientLogos from "../ui/ClientLogos"
 
 const ClientLogoTicker = () => {
   return (
@@ -16,8 +16,8 @@ const ClientLogoTicker = () => {
     <div className="rounded-xl border border-line bg-[color-mix(in_oklch,var(--ink)_82%,transparent)] py-4 shadow-[0_1px_0_rgba(255,255,255,0.05)_inset,0_18px_40px_rgba(0,0,0,0.18)] overflow-hidden">
       <div className="flex whitespace-nowrap mask-[linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
         <div className="flex items-center w-max will-change-transform animate-marquee motion-reduce:animate-none [animation-duration:40s]">
-          <DummyClientData />
-          <DummyClientData />
+          <ClientLogos />
+          <ClientLogos />
         </div>
       </div>
     </div>
