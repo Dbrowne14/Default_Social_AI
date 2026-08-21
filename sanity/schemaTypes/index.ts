@@ -7,6 +7,7 @@ import {
   serviceProcessStep,
 } from "./collections/service";
 import { person } from "./collections/person";
+import { client } from "./collections/client";
 import {
   insight,
   insightSection,
@@ -58,6 +59,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     serviceOffer,
     serviceProcessStep,
     person,
+    client,
     insight,
     insightSection,
     insightTextBlock,
