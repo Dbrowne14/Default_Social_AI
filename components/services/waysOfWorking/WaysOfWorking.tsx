@@ -15,7 +15,7 @@ const WaysOfWorking = ({ waysOfWorking, services }: WaysOfWorkingProps) => {
   const { eyebrow, title, intro, models } = waysOfWorking;
 
   return (
-    <section className="border-b border-line md:py-20" data-screen-label="Ways of working">
+    <section className="border-b border-line min-h-dvh md:py-20" data-screen-label="Ways of working">
       <div className="container-custom ">
         <div className="section-headings">
           <div className="section-title">
