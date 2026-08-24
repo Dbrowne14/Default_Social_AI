@@ -17,14 +17,22 @@ const sizeClasses = {
 const Portrait = ({ initials, alt, photo, size = "grid" }: PortraitProps) => {
   return (
     <div
-      className={`relative flex aspect-4/5 items-center justify-center overflow-hidden border border-line bg-[repeating-linear-gradient(135deg,var(--ink-2)_0_14px,var(--ink-3)_14px_28px)] ${sizeClasses[size]}`}
+      className={`relative flex aspect-4/5 items-center justify-center overflow-hidden border border-line ${
+        photo
+          ? "bg-[linear-gradient(135deg,#686666_0%,#8A8989_50%,#999798_100%)]"
+          : "bg-[repeating-linear-gradient(135deg,var(--ink-2)_0_14px,var(--ink-3)_14px_28px)]"
+      } ${sizeClasses[size]}`}
     >
       {photo ? (
         <Image
           src={urlFor(photo).width(900).height(1125).fit("crop").url()}
           alt={alt}
           fill
-          sizes={size === "hero" ? "(min-width: 900px) 45vw, 100vw" : "(min-width: 768px) 25vw, 50vw"}
+          sizes={
+            size === "hero"
+              ? "(min-width: 900px) 45vw, 100vw"
+              : "(min-width: 768px) 25vw, 50vw"
+          }
           className="object-cover"
           priority={size === "hero"}
         />
@@ -37,4 +45,4 @@ const Portrait = ({ initials, alt, photo, size = "grid" }: PortraitProps) => {
   );
 };
 
-export default Portrait;
+export default Portrait
