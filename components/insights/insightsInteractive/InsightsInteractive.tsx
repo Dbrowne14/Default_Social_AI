@@ -8,7 +8,7 @@ const InsightsInteractive = ({ insights }: InsightsProps) => {
   const [isActive, setIsActive] = useState("All");
   return (
     <div>
-      <div className="container-thin pt-16 md:pt-20 pb-2">
+      <div className="container-thin pt-0 md:pt-20 pb-2">
         <div className="eyebrow">The Library</div>
       </div>
 

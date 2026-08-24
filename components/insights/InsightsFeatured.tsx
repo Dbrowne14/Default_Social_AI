@@ -28,7 +28,7 @@ const InsightsFeatured = ({featuredInsights}:FeaturedInsights) => {
           </div>
 
           <div className="py-8 px-5 sm:px-7 md:py-14 md:px-14 flex flex-col gap-5 md:gap-6 bg-ink">
-            <div className="meta flex flex-wrap gap-x-4 gap-y-1 text-[10px] md:text-[11px] text-muted tracking-widest uppercase">
+            <div className="meta hidden md:flex flex-wrap gap-x-4 gap-y-1 text-[10px] md:text-[11px] text-muted tracking-widest uppercase">
               <span>{contentTypeLabel}</span>
               <span>·</span>
               <span>{tag}</span>
