@@ -38,6 +38,7 @@ const InsightsArticleRelated = ({
                 excerpt={article.excerpt}
                 slug={article.slug}
                 key={article.title}
+                image={article.image}
               />
             );
           })}

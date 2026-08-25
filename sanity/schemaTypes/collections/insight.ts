@@ -222,6 +222,26 @@ export const insight = defineType({
     }),
 
     defineField({
+      name: "image",
+      title: "Image",
+      type: "image",
+      description: "Main visual used for the insight card and article header.",
+      group: "card",
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        defineField({
+          name: "alt",
+          title: "Alt Text",
+          type: "string",
+          description:
+            "Describe the image for screen readers. Leave empty only if the image is purely decorative.",
+        }),
+      ],
+    }),
+
+    defineField({
       name: "imageCaption",
       title: "Image Caption",
       type: "string",

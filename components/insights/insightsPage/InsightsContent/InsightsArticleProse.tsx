@@ -3,7 +3,7 @@ const InsightsArticleProse = ({
   article,
 }: InsightArticleProps) => {
   return (
-    <article className="text-[17.5px] 720:text-[19px] leading-[1.68] 720:leading-[1.72] text-cream-2 min-[900px]:col-start-1 space-y-7">
+    <article className="text-[16px] 720:text-[19px] leading-[1.68] 720:leading-[1.72] text-cream-2 min-[900px]:col-start-1 space-y-7">
       {article && (
         <>
           {article.intro?.map((paragraph, index) => {
@@ -11,7 +11,7 @@ const InsightsArticleProse = ({
               return (
                 <p
                   key={index}
-                  className="text-[19px] leading-[1.6] text-cream 720:text-[21px] first-letter:float-left first-letter:font-serif first-letter:text-[72px] first-letter:leading-[0.72] first-letter:pr-2.5 first-letter:pt-1.5 first-letter:text-accent 720:first-letter:text-[88px] 720:first-letter:pr-3.5 720:first-letter:pt-2 max-w-[74ch]"
+                  className=" leading-[1.6] text-cream 720:text-[21px] max-w-[74ch]"
                 >
                   {paragraph.superText}
                 </p>
@@ -27,7 +27,7 @@ const InsightsArticleProse = ({
           {article.pullQuotes?.map((paragraph, index) => {
             return (
               <div className="max-w-full my-14 p-0 border-none" key={index}>
-                <p className="max-w-[22ch] font-serif text-[clamp(30px,4vw,46px)] leading-[1.12] tracking-[-0.015em] text-cream">
+                <p className="md:max-w-[22ch] font-serif text-[clamp(30px,4vw,46px)] leading-[1.12] tracking-[-0.015em] text-cream">
                   {paragraph.quote}
                 </p>
 

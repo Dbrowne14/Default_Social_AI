@@ -1,5 +1,6 @@
 //types for Insights data schema
 import type { Person } from "./person";
+import type { Image as SanityImage } from "sanity";
 
 export type InsightContentType = "article" | "caseStudy";
 
@@ -17,6 +18,9 @@ export type Insight = {
   excerpt?: string;
   author: Person;
   slug: string;
+  image?: SanityImage & {
+    alt?: string;
+  };
   imageCaption?: string;
   intro?: InsightTextBlock[];
   pullQuotes?: PullQuote[];

@@ -43,6 +43,7 @@ const displayedInsights = insights.slice(0, 3);
       date={featuredInsight.date}
       readTime={featuredInsight.readTime}
       slug={featuredInsight.slug}
+      image={featuredInsight.image}
     />
   )}
 </div>
@@ -50,7 +51,7 @@ const displayedInsights = insights.slice(0, 3);
 {/* 620px and above: first three insights */}
 <div className="hidden 620:grid 620:grid-cols-2 gap-8 min-[1100px]:grid-cols-3">
   {displayedInsights.map((post) => {
-    const { author, tag, title, excerpt, date, readTime, slug } = post;
+    const { author, tag, title, excerpt, date, readTime, slug, image } = post;
 
     return (
       <BlogCard
@@ -62,6 +63,7 @@ const displayedInsights = insights.slice(0, 3);
         date={date}
         readTime={readTime}
         slug={slug}
+        image={image}
       />
     );
   })}

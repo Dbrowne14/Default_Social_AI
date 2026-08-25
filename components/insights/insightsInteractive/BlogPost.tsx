@@ -7,19 +7,23 @@ const FILTER_TO_CONTENT_TYPE = {
   "Case Studies": "caseStudy",
 } as const;
 
-const BlogPost =  ({ isActive, showMore, insights }: BlogPostProps) => {
+const BlogPost = ({ isActive, showMore, insights }: BlogPostProps) => {
   return (
     <>
       {insights
         .filter((post) => {
           if (post.featured) return false;
           if (isActive === "All") return true;
-          const wanted = FILTER_TO_CONTENT_TYPE[isActive as keyof typeof FILTER_TO_CONTENT_TYPE];
+          const wanted =
+            FILTER_TO_CONTENT_TYPE[
+              isActive as keyof typeof FILTER_TO_CONTENT_TYPE
+            ];
           return wanted !== undefined && getInsightContentType(post) === wanted;
         })
         .slice(0, showMore)
         .map((post) => {
-          const { author, tag, title, excerpt, date, readTime, slug } = post;
+          const { author, tag, title, excerpt, date, readTime, slug, image } =
+            post;
           return (
             <BlogCard
               author={author}
@@ -30,6 +34,7 @@ const BlogPost =  ({ isActive, showMore, insights }: BlogPostProps) => {
               readTime={readTime}
               slug={slug}
               key={title}
+              image={image}
             />
           );
         })}

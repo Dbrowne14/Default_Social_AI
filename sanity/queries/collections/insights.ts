@@ -1,6 +1,6 @@
 export const insightsQuery = `
 *[_type=="insight"] 
-| order(date asc) 
+| order(date desc) 
 {
     featured,
     subject,
@@ -21,6 +21,12 @@ export const insightsQuery = `
     },
 
     "slug": slug.current,
+
+    image {
+        ...,
+        alt
+    },
+
 
     imageCaption,
     intro,

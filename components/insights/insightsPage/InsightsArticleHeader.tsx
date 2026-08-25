@@ -2,6 +2,8 @@ import SingleStatBlock from "@/components/ui/SingleStatBlock";
 import SocialsFrame from "@/components/ui/SocialsFrame";
 import type { InsightArticleProps } from "@/types/collections/insights";
 import Link from "next/link";
+import Image from "next/image";
+import { urlFor } from "@/sanity/lib/image";
 
 const InsightsArticleHeader = ({ article }: InsightArticleProps) => {
   const {
@@ -13,6 +15,7 @@ const InsightsArticleHeader = ({ article }: InsightArticleProps) => {
     excerpt,
     date,
     subject,
+    image,
     imageCaption,
   } = article;
 
@@ -82,18 +85,31 @@ const InsightsArticleHeader = ({ article }: InsightArticleProps) => {
           </div>
         </div>
 
-        <figure className="md:mt-14 mt-10">
-          <div className="md:aspect-21/9 aspect-4/3 border border-line rounded-[18px] relative overflow-hidden [background:radial-gradient(circle_at_26%_32%,color-mix(in_oklch,var(--accent)_20%,var(--ink-3)),transparent_52%),radial-gradient(circle_at_76%_70%,color-mix(in_oklch,var(--accent-2)_18%,var(--ink-3)),transparent_56%),repeating-linear-gradient(135deg,var(--ink-2)_0_15px,var(--ink-3)_15px_30px)]">
-            <span className="absolute inset-0 flex items-center justify-center font-serif text-[clamp(120px,20vw,280px)] text-cream opacity-[0.55] tracking-[-0.04em]">
-              ⌁
-            </span>
-            <span className="absolute left-5.5 bottom-4.5 font-mono text-[10px] tracking-[0.12em] uppercase text-muted py-1.25 px-2.5 rounded-md border border-line">
-              cover image · commissioned illustration
-            </span>
+        <figure className="mt-10 md:mt-14">
+          <div className="relative aspect-4/3 overflow-hidden rounded-[18px] border border-line md:aspect-21/9">
+            {image ? (
+              <Image
+                src={urlFor(image).width(1800).height(770).url()}
+                alt={image.alt ?? ""}
+                fill
+                priority
+                className="object-cover"
+                sizes="100vw"
+              />
+            ) : (
+              <div className="absolute inset-0 [background:radial-gradient(circle_at_26%_32%,color-mix(in_oklch,var(--accent)_20%,var(--ink-3)),transparent_52%),radial-gradient(circle_at_76%_70%,color-mix(in_oklch,var(--accent-2)_18%,var(--ink-3)),transparent_56%),repeating-linear-gradient(135deg,var(--ink-2)_0_15px,var(--ink-3)_15px_30px)]">
+                <span className="absolute inset-0 flex items-center justify-center font-serif text-[clamp(120px,20vw,280px)] tracking-[-0.04em] text-cream opacity-[0.55]">
+                  ⌁
+                </span>
+              </div>
+            )}
           </div>
-          <figcaption className="text-[11px] tracking-[0.06em] text-muted mt-3.5 uppercase">
-            {imageCaption}
-          </figcaption>
+
+          {imageCaption && (
+            <figcaption className="mt-3.5 text-[11px] uppercase tracking-[0.06em] text-muted">
+              {imageCaption}
+            </figcaption>
+          )}
         </figure>
       </div>
     </header>
