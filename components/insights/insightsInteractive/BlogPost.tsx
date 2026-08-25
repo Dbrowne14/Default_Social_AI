@@ -1,5 +1,5 @@
 import BlogCard from "@/components/ui/BlogCard";
-import { getInsightContentType } from "@/lib/content/collections/insights";
+import { getInsightContentType } from "@/lib/content/insightUtils";
 import type { BlogPostProps } from "./types";
 
 const FILTER_TO_CONTENT_TYPE = {

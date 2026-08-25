@@ -1,28 +1,27 @@
+import "server-only";
 import { insightsQuery } from "@/sanity/queries/collections/insights";
-import { client } from "@/sanity/lib/client";
-import type { Insight, InsightContentType } from "@/types/collections/insights";
-import { SANITY_FETCH_OPTIONS } from "@/sanity/lib/fetchOptions";
+import { sanityFetch } from "@/sanity/lib/live";
 
-// Entries published before the contentType field existed have no value yet;
-// default them to "article" until re-saved in Studio.
-export const getInsightContentType = (insight: Insight): InsightContentType =>
-  insight.contentType ?? "article";
-
-export const INSIGHT_CONTENT_TYPE_LABEL: Record<InsightContentType, string> = {
-  article: "Article",
-  caseStudy: "Case Study",
-};
+import type {
+  Insight,
+} from "@/types/collections/insights";
 
 export const getAllInsights = async (): Promise<Insight[]> => {
-  return await client.fetch(insightsQuery, {}, SANITY_FETCH_OPTIONS);
+  const result = await sanityFetch({
+    query: insightsQuery,
+  });
+
+  return result.data as Insight[];
 };
 
 export const getFeaturedInsights = async () => {
-  const insights = await getAllInsights()
-  return insights.find((blog) => blog.featured);
+  const insights = await getAllInsights();
+
+  return insights.find((insight) => insight.featured);
 };
 
 export const getInsightBySlug = async (slug: string) => {
-  const insights = await getAllInsights()
-  return insights.find((post) => post.slug === slug) ?? null;
+  const insights = await getAllInsights();
+
+  return insights.find((insight) => insight.slug === slug) ?? null;
 };

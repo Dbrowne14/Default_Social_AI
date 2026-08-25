@@ -3,6 +3,9 @@ import "./globals.css";
 import Navigation from "@/components/layout/navigation/Navigation";
 import Footer from "@/components/layout/footer/Footer";
 import LoaderStrip from "@/components/ui/LoaderStrip";
+import { draftMode } from "next/headers";
+import { VisualEditing } from "next-sanity/visual-editing";
+import { SanityLive } from "@/sanity/lib/live";
 import { ScrollToTopButton } from "@/components/layout/redirectButton/ScrollToTopButton";
 import { getSiteSettings } from "@/lib/content/site";
 import { navigationItems } from "@/lib/navigation";
@@ -57,6 +60,8 @@ export default async function RootLayout({
           <Footer siteSettings={siteSettings} navigation={navigationItems} />
         </footer>
         <ScrollToTopButton />
+        <SanityLive />
+        {(await draftMode()).isEnabled && <VisualEditing />}
       </body>
     </html>
   );

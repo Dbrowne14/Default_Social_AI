@@ -1,4 +1,4 @@
-import { getInsightContentType } from "@/lib/content/collections/insights";
+import { getInsightContentType } from "@/lib/content/insightUtils";
 import type { LibraryFilterProps } from "./types";
 
 const LIBRARY_FILTERS = ["All", "Articles", "Case Studies"] as const;

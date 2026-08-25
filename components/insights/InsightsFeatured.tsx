@@ -1,5 +1,5 @@
 import Button from "../ui/Button";
-import { INSIGHT_CONTENT_TYPE_LABEL, getInsightContentType } from "@/lib/content/collections/insights";
+import { INSIGHT_CONTENT_TYPE_LABEL, getInsightContentType } from "@/lib/content/insightUtils";
 import type { Insight } from "@/types/collections/insights";
 
 type FeaturedInsights = {
