@@ -1,8 +1,9 @@
 import { clientsQuery } from "@/sanity/queries/collections/clients";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import { urlFor } from "@/sanity/lib/image";
+
 import { clients as fallbackClients } from "@/lib/clients";
-import { SANITY_FETCH_OPTIONS } from "@/sanity/lib/fetchOptions";
+
 import type { Client } from "@/types/collections/clients";
 import type { Image as SanityImage } from "sanity";
 
@@ -15,7 +16,11 @@ type SanityClientDoc = {
 };
 
 export const getAllClients = async (): Promise<Client[]> => {
-  const docs = await client.fetch<SanityClientDoc[]>(clientsQuery, {}, SANITY_FETCH_OPTIONS);
+  const { data } = await sanityFetch({
+    query: clientsQuery,
+  });
+
+  const docs = data as SanityClientDoc[];
 
   if (!docs || docs.length === 0) {
     // Temporary migration fallback: Sanity has no published client documents

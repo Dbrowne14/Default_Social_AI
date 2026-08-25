@@ -1,8 +1,11 @@
-import { client } from "@/sanity/lib/client";
-import { insightsPageQuery } from "@/sanity/queries/pages/insgihtsPage";
+import { sanityFetch } from "@/sanity/lib/live";
+import { insightsPageQuery } from "@/sanity/queries/pages/insightsPage";
 import type { InsightsPage } from "@/types/pages/insightsPage";
-import { SANITY_FETCH_OPTIONS } from "@/sanity/lib/fetchOptions";
 
 export const getInsightsPage = async (): Promise<InsightsPage> => {
-  return await client.fetch<InsightsPage>(insightsPageQuery, {}, SANITY_FETCH_OPTIONS);
+  const { data } = await sanityFetch({
+    query: insightsPageQuery,
+  });
+
+  return data as InsightsPage;
 };

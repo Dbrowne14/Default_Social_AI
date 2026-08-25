@@ -1,17 +1,35 @@
-import { peopleQuery, personBySlugQuery } from "@/sanity/queries/collections/people";
-import { client } from "@/sanity/lib/client";
-import type { Person } from "@/types/collections/person";
-import { SANITY_FETCH_OPTIONS } from "@/sanity/lib/fetchOptions";
+import "server-only";
 
-export const getKeyPeople = async () => {
+import {
+  peopleQuery,
+  personBySlugQuery,
+} from "@/sanity/queries/collections/people";
+
+import { sanityFetch } from "@/sanity/lib/live";
+
+import type { Person } from "@/types/collections/person";
+
+export const getAllPeople = async (): Promise<Person[]> => {
+  const { data } = await sanityFetch({
+    query: peopleQuery,
+  } as const);
+
+  return data as Person[];
+};
+
+export const getKeyPeople = async (): Promise<Person[]> => {
   const team = await getAllPeople();
+
   return team.filter((person) => person.keyPerson === true);
 };
 
-export const getAllPeople = async (): Promise<Person[]>  => {
-  return await client.fetch(peopleQuery, {}, SANITY_FETCH_OPTIONS);
-};
+export const getPersonBySlug = async (
+  slug: string,
+): Promise<Person | null> => {
+  const { data } = await sanityFetch({
+    query: personBySlugQuery,
+    params: { slug },
+  } as const);
 
-export const getPersonBySlug = async (slug: string): Promise<Person | null> => {
-  return await client.fetch(personBySlugQuery, { slug }, SANITY_FETCH_OPTIONS);
+  return data as Person | null;
 };
