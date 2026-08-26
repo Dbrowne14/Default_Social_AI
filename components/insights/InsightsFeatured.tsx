@@ -1,34 +1,53 @@
 import Button from "../ui/Button";
-import { INSIGHT_CONTENT_TYPE_LABEL, getInsightContentType } from "@/lib/content/insightUtils";
+import {
+  INSIGHT_CONTENT_TYPE_LABEL,
+  getInsightContentType,
+} from "@/lib/content/insightUtils";
 import type { Insight } from "@/types/collections/insights";
+import Image from "next/image";
+import { urlFor } from "@/sanity/lib/image";
 
 type FeaturedInsights = {
-  featuredInsights: Insight
-}
+  featuredInsights: Insight;
+};
 
-const InsightsFeatured = ({featuredInsights}:FeaturedInsights) => {
-  const{date, tag, readTime, title, excerpt, author, slug} = featuredInsights;
+const InsightsFeatured = ({ featuredInsights }: FeaturedInsights) => {
+  const { date, tag, readTime, title, excerpt, author, slug, image } =
+    featuredInsights;
   const contentType = getInsightContentType(featuredInsights);
   const contentTypeLabel = INSIGHT_CONTENT_TYPE_LABEL[contentType];
 
   return (
-    <section
-      className="px-0 xl:px-15"
-      data-screen-label="Featured"
-    >
+    <section className="px-0 xl:px-15" data-screen-label="Featured">
       <div className="container-custom">
         <article className="grid grid-cols-1 md:grid-cols-2 gap-0 xl:gap-14 items-stretch border border-line rounded-[20px] overflow-hidden [background:linear-gradient(180deg,var(--ink-2),var(--ink))]">
-          <div className="  aspect-4/3
-  xl:aspect-auto
-  xl:min-h-fullrelative items-start justify-start p-5 md:p-9 [background:radial-gradient(circle_at_30%_30%,color-mix(in_oklch,var(--accent)_25%,var(--ink-3)),transparent_55%),radial-gradient(circle_at_70%_70%,color-mix(in_oklch,var(--accent)_12%,var(--ink-3)),transparent_60%),repeating-linear-gradient(135deg,var(--ink-2)_0_14px,var(--ink-3)_14px_28px)]">
+          <div
+            className="
+    relative
+    aspect-4/3
+    xl:aspect-auto
+    xl:min-h-full
+    overflow-hidden
+  "
+          >
+            {image ? (
+              <Image
+                src={urlFor(image).width(1400).url()}
+                alt={image.alt ?? ""}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1280px) 50vw, 100vw"
+              />
+            ) : (
+              <div className="absolute inset-0 [background:radial-gradient(circle_at_30%_30%,color-mix(in_oklch,var(--accent)_25%,var(--ink-3)),transparent_55%),radial-gradient(circle_at_70%_70%,color-mix(in_oklch,var(--accent)_12%,var(--ink-3)),transparent_60%),repeating-linear-gradient(135deg,var(--ink-2)_0_14px,var(--ink-3)_14px_28px)]" />
+            )}
 
-            <span className="inline-flex gap-2 py-1.5 px-3 rounded-[999px] bg-ink border border-line text-[10px] tracking-[0.12em] uppercase text-cream">
+            <span className="absolute left-5 top-5 z-10 inline-flex pill shadow-[0_0_0px_var(--accent),0_0_10px_color-mix(in_oklch,var(--accent)_60%,transparent)]">
               Featured {contentTypeLabel}
             </span>
           </div>
-
           <div className="py-8 px-5 sm:px-7 md:py-14 md:px-14 flex flex-col gap-5 md:gap-6 bg-ink">
-            <div className="meta hidden md:flex flex-wrap gap-x-4 gap-y-1 text-[10px] md:text-[11px] text-muted tracking-widest uppercase">
+            <div className="hidden md:flex flex-wrap gap-x-4 gap-y-1 text-[10px] md:text-[11px] text-muted tracking-widest uppercase">
               <span>{contentTypeLabel}</span>
               <span>·</span>
               <span>{tag}</span>
@@ -61,7 +80,11 @@ const InsightsFeatured = ({featuredInsights}:FeaturedInsights) => {
               <div>
                 <Button
                   link={`/insights/${slug}`}
-                  text={contentType === "caseStudy" ? "Read the case study" : "Read the essay"}
+                  text={
+                    contentType === "caseStudy"
+                      ? "Read the case study"
+                      : "Read the essay"
+                  }
                   arrowVariant="primaryBlack"
                 />
               </div>

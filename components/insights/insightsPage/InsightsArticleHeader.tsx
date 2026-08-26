@@ -21,7 +21,7 @@ const InsightsArticleHeader = ({ article }: InsightArticleProps) => {
 
   return (
     <header
-      className="pt-nav min-h-dvh md:min-h-screenflex items-center"
+      className="pt-nav  md:min-h-screenflex items-center"
       data-screen-label="Article header"
     >
       <div className="container-thin">

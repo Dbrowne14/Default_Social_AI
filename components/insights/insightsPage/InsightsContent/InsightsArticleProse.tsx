@@ -27,7 +27,7 @@ const InsightsArticleProse = ({
           {article.pullQuotes?.map((paragraph, index) => {
             return (
               <div className="max-w-full my-14 p-0 border-none" key={index}>
-                <p className="md:max-w-[22ch] font-serif text-[clamp(30px,4vw,46px)] leading-[1.12] tracking-[-0.015em] text-cream">
+                <p className="md:max-w-[74ch] font-serif text-[clamp(30px,4vw,46px)] leading-[1.12] tracking-[-0.015em] text-cream">
                   {paragraph.quote}
                 </p>
 
