@@ -4,7 +4,6 @@ import Button from "@/components/ui/Button";
 import BlogPost from "./BlogPost";
 import type { InsightBlogPostsProps } from "./types";
 
-
 const InsightsBlogPosts = ({ isActive, insights }: InsightBlogPostsProps) => {
   const [showMore, setShowMore] = useState<number>(6);
 
@@ -34,14 +33,16 @@ const InsightsBlogPosts = ({ isActive, insights }: InsightBlogPostsProps) => {
           />
         </div>
 
-        <div className="flex justify-center items-center mt-21">
-          <Button
-            text="Load more "
-            variant="ghost"
-            buttonDirection="down"
-            onClick={() => setShowMore((prev) => prev + 6)}
-          />
-        </div>
+        {insights?.length > 6 && (
+          <div className="flex justify-center items-center mt-21">
+            <Button
+              text="Load more "
+              variant="ghost"
+              buttonDirection="down"
+              onClick={() => setShowMore((prev) => prev + 6)}
+            />
+          </div>
+        )}
       </div>
     </section>
   );
