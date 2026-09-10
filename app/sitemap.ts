@@ -4,6 +4,8 @@ import { getAllPeople } from "@/lib/content/collections/people";
 
 const BASE_URL = "https://defaultsocial.co.uk";
 
+export const revalidate = 60;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [insights, people] = await Promise.all([
     getAllInsights(),
